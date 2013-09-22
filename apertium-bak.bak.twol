@@ -1,0 +1,190 @@
+
+Alphabet
+
+ А Б В Г Ғ Д Ҙ Е Ё Ж З И Й К Ҡ Л М Н Ң О Ө П Р С Ҫ Т У Ү Ф Х Һ Ц Ч Ш Щ Ъ Ы Ь Э Ә Ю Я 
+ а б в г ғ д ҙ е ё ж з и й к ҡ л м н ң о ө п р с ҫ т у ү ф х һ ц ч ш щ ъ ы ь э ә ю я
+
+ %{A%}:а %{I%}:ы %{E%}:а %{U%}:у
+
+ %{L%}:л %{G%}:г %{N%}:н %{K%}:к
+
+ %{h%}:һ %{n%}:н %{l%}:л
+
+ %>:0  ; 
+
+Sets
+
+SurVow           =  А О Ә Е Э И Ө У Ү Ы Ю Я
+                    а о ә е э и ө у ү ы ю я  ; 
+
+Vow              =  А О Ә Е Э И Ө У Ү Ы Ю Я
+                    а о ә е э и ө у ү ы ю я 
+                  %{E%} %{A%} %{I%} ;
+
+BackVow          =  А О Ы У Ю Я
+                    а о ы у ю я ; 
+
+FrontVow         =  Ә Е Э И Ө Ү
+                    ә е э и ө ү ; 
+
+! FrontRoundVow    =  Ө   ! These names are ridiculous, but I redid it anyway
+!                     ө ; 
+! 
+! BackRoundVow     =  О 
+!                     о ; 
+
+Cns              =  Б В Г Ғ Д Ҙ Ж З Й К Ҡ Л М Н Ң П Р С Ҫ Т Ф Х Һ Ц Ч Ш Щ Ъ Ь 
+                    б в г ғ д ҙ ж з й к ҡ л м н ң п р с ҫ т ф х һ ц ч ш щ ъ ь ; 
+
+CnsVoiceless     =  П Т К Ҡ Ф Ҫ С Ш Щ Х Һ Б Г Ғ Д Ц Ч
+                    п т к ҡ ф ҫ с ш щ х һ б г ғ д ц ч ; 
+
+CnsVcdConts      =  Й В Р Ҙ      ! Voiced Continuants
+                    й в р ҙ ;
+
+CnsVcdNonConts   =  Л М Н Ң Ж    ! Voiced Non-Continuants
+                    л м н ң ж ;
+
+Nasals           =  М Н Ң 
+                    м н ң ; 
+
+FrontCns         =  К Г Ь
+                    к г ь ;
+
+BackCns          =  Ҡ Ғ  
+                    ҡ ғ ; 
+
+Rules 
+
+
+"{E} turns to й after a vowel"
+%{E%}:й <=> :SurVow %>: _ ;
+
+!!!! Vowel Harmony !!!!
+"A Vowel Harmony"
+%{A%}:ә <=> [ :FrontVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+
+"I Vowel Harmony"
+%{I%}:Vy <=> [ :PreviousVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+             except
+                                      %{n%}:н/[ :0 | %>: ] _ ;
+             where          Vy in ( о е е е е ө е )
+                   PreviousVow in ( о ә е э и ө ү )
+             matched;
+
+! "I Vowel Harmony (о)"
+! %{I%}:о <=> [ :BackRoundVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+! 
+! "I Vowel Harmony (ө)"
+! %{I%}:ө <=> [ :FrontRoundVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+
+"E Vowel Harmony"
+%{E%}:ә <=> [ :FrontVow :Cns* ]/[ %>: | %  | :0 ] _ ;
+    except
+         :SurVow %>: _ ;
+
+"U Vowel Harmony"
+%{U%}:ү <=> [ :FrontVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+
+
+
+"Deletion of {I} after vowels"
+%{I%}:0 <=> [ :SurVow ]/[ :0 | %>: ] _ ;
+            except
+         [ :SurVow :у ]/[ %>: | :0 ] _ ;
+
+
+"Deletion of {A} after vowels"
+%{A%}:0 <=> [ :SurVow ]/[ :0 | %>: ] _ ;
+
+
+!!!! Desonorisation !!!!
+
+"L desonorisation after continuants"
+%{L%}:ҙ <=> [ :CnsVcdConts ]/[ %>: | :0 | %  ] _ ;
+
+"N desonorisation after continuants"
+%{N%}:ҙ <=> [ :CnsVcdConts ]/[ %>: | :0 | %  ] _ ;
+            except
+                               %{n%}: %>: _ %{I%}: .#. ;
+
+"L desonorisation after non-continuants"
+%{L%}:д <=> [ :CnsVcdNonConts ]/[ %>: | :0 | %  ] _ ;
+
+"N desonorisation after non-continuants"
+%{N%}:д <=> [ :CnsVcdNonConts ]/[ %>: | :0 | %  ] _ ;
+            except
+                                  %{n%}: %>: _ %{I%}: .#. ;
+
+!!!! Special archiphonemes !!!!
+
+"Deletion of {h} after a consonant"
+%{h%}:0 <=> [ :Cns ]/[ %>: | :0 ] _ ;
+      [ :SurVow :у ]/[ %>: | :0 ] _ ;
+
+"Deletion of accusative {N} after {n}"
+%{N%}:0 <=> %{n%}: %>: _ %{I%}: .#. ;
+
+!"Deletion of {n} before genitive {N}s"
+!%{n%}:0 <=> _ %>: %{N%}: %{I%}: \[ .#. ]  ;
+!
+!"Deletion of {n} before ablative {N}"
+!%{n%}:0 <=> _ %>: %{N%}: %{A%}: :н ;
+
+"Deletion of {n} before any {N} except accusative"
+%{n%}:0 <=> _ %>: %{N%}: ;
+            except
+            _ %>: %{N%}: %{I%}: .#. ;
+
+"Deletion of {I} after {n}"
+%{I%}:0 <=> %{n%}:н/[ :0 | %>: ] _ ;
+
+"/n/ deletion in px3 nominative"
+%{n%}:0 <=> _ .#. ;
+
+"Deletion of dative {G} after px1sg, px2sg"
+%{G%}:0 <=>  %{I%}: :Nasals %>: _ %{A%}: .#. ;
+
+
+!!!! Voicing assimilation, etc. !!!!
+
+"Intervocalic voicing of к/ҡ"
+Cx:Cy <=> :Vow (:0) _ %>: (:0) :Vow ;
+          where Cx in ( п к ҡ )
+                Cy in ( б г ғ )
+                matched;
+
+
+! "N desonorisation after voiceless consonants"
+! %{N%}:т <=> [ :CnsVoiceless ]/[ %>: | :0 ] _ ;
+!             except
+!                                 %{n%}: %>: _ %{I%}: .#. ;
+
+"Forward voicing assimilation"
+Cx:Cy <=> :CnsVoiceless/[ %>: | %  ] _ ;
+          where Cx in ( %{M%}  %{L%}  %{N%} )
+                Cy in (   п      т      т   )
+                matched;
+
+"Back assimilation of G"
+%{G%}:ғ <=> [ :BackVow :Cns* ]/[ %>: | :0 | :и | :у ] _ ;
+            except
+    :CnsVoiceless/[ %>: | :0 ] _ ;
+        :FrontCns/[ %>: | :0 ] _ ;
+                   :Nasals %>: _ %{A%}: .#. ;
+
+"Voicing assimilation of back G"
+%{G%}:ҡ <=> [ :BackVow :Cns* [ :CnsVoiceless - :FrontCns ] ]/[ %>: | :0 ] _ ;
+
+"Voicing assimilation of front G"
+%{G%}:к <=> [ :FrontVow :Cns* [ :CnsVoiceless - :BackCns ] ]/[ %>: | :0 ] _ ;
+!                               [ :CnsVoiceless & :FrontCns ]/[ %>: ] _ ;
+
+"Passive {l} becomes n after verb stem ending in /l/ or /r/"
+%{l%}:н <=> [ л :SurVow ]/[ :0 | %>: ] _ ;
+            [ р :SurVow ]/[ :0 | %>: ] _ ;
+
+"Voicing assimilation of back K"
+%{K%}:ҡ <=> [ :BackVow ]/[ %>: | :0 ] _ ; 
+
+

@@ -1,0 +1,18 @@
+* text=auto !eol
+/AUTHORS -text
+/COPYING -text
+/ChangeLog -text
+/Makefile.am -text
+/NEWS -text
+/README -text
+/apertium-bak.bak.lexc -text
+/apertium-bak.bak.rlx -text
+/apertium-bak.bak.twol -text
+/autogen.sh -text
+/configure.ac -text
+dev/editdist.py -text
+/modes.xml -text
+speller/editdist.default.txt -text
+speller/index.xml -text
+speller/strings.default.txt -text
+speller/words.default.txt -text
