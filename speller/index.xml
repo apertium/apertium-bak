@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <hfstspeller dtdversion="1.0" hfstversion="3">
   <info>
-    <locale>tt</locale>
-    <title>Apertium morphological analyser-based speller (Tatar)</title>
+    <locale>ba</locale>
+    <title>Apertium morphological analyser-based speller (Bashkir)</title>
     <description>
     </description>
     <version vcsrev="GT_REVISION">GT_VERSION</version>
@@ -12,9 +12,9 @@
         website="http://divvun.no"/>
   </info>
   <acceptor type="general" id="acceptor.default.hfst">
-    <title>Apertium dictionary (Tatar)</title>
+    <title>Apertium dictionary (Bashkir)</title>
     <description>
-        Apertium dictionary for Tatar compiled for HFST.
+        Apertium dictionary for Bashkir compiled for HFST.
     </description>
   </acceptor>
   <errmodel id="errmodel.default.hfst">

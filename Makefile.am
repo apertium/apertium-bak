@@ -1,10 +1,10 @@
 ###############################################################################
-## Makefile for apertium-tat
+## Makefile for apertium-bak
 ###############################################################################
 
 RELEASE=0.1
 VERSION=0.1.0
-LANG1=tat
+LANG1=bak
 BASENAME=apertium-$(LANG1)
 
 TARGETS_COMMON = $(LANG1).automorf.hfst $(LANG1).autogen.hfst \
@@ -13,7 +13,7 @@ TARGETS_COMMON = $(LANG1).automorf.hfst $(LANG1).autogen.hfst \
         $(LANG1).rlx.bin modes
 
 ###############################################################################
-## Tatar transducer
+## Bashkir transducer
 ###############################################################################
 
 .deps/$(LANG1).twol.hfst: $(BASENAME).$(LANG1).twol
@@ -118,14 +118,14 @@ $(LANG1).zhfst: .deps/acceptor.default.hfst .deps/errmodel.default.hfst
 ## Installation stuff
 ###############################################################################
 #
-#   apertium_tat_libdir: This is where the compiled binaries go
-#   apertium_tat_srcdir: This is where the source files go
+#   apertium_bak_libdir: This is where the compiled binaries go
+#   apertium_bak_srcdir: This is where the source files go
 
 modes: modes.xml
 	apertium-gen-modes modes.xml
 
-apertium_tatdir=$(prefix)/lib/apertium/$(BASENAME)/
-apertium_tat_srcdir=$(prefix)/share/apertium/$(BASENAME)/
+apertium_bakdir=$(prefix)/lib/apertium/$(BASENAME)/
+apertium_bak_srcdir=$(prefix)/share/apertium/$(BASENAME)/
 
 EXTRA_TARGETS=
 
@@ -133,7 +133,7 @@ if HAVE_HFSTOSPELL
 EXTRA_TARGETS += $(LANG1).zhfst
 endif # HAVE_HFSTOSPELL
 
-apertium_tat_DATA=$(LANG1).automorf.hfst $(LANG1).autogen.hfst \
+apertium_bak_DATA=$(LANG1).automorf.hfst $(LANG1).autogen.hfst \
 		    $(LANG1).automorf.bin $(LANG1).autogen.bin \
 		    $(LANG1).automorf.att.gz $(LANG1).autogen.att.gz \
 		    $(LANG1).rlx.bin modes $(EXTRA_TARGETS)
@@ -142,9 +142,9 @@ pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = $(BASENAME)-$(RELEASE).pc
 
 install-data-local:
-	if [ ! -d $(DESTDIR)$(apertium_tat_srcdir) ]; then mkdir -p $(DESTDIR)$(apertium_tat_srcdir); fi
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).lexc $(DESTDIR)$(apertium_tat_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).twol $(DESTDIR)$(apertium_tat_srcdir)
-	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_tat_srcdir)
+	if [ ! -d $(DESTDIR)$(apertium_bak_srcdir) ]; then mkdir -p $(DESTDIR)$(apertium_bak_srcdir); fi
+	$(INSTALL_DATA) $(BASENAME).$(LANG1).lexc $(DESTDIR)$(apertium_bak_srcdir)
+	$(INSTALL_DATA) $(BASENAME).$(LANG1).twol $(DESTDIR)$(apertium_bak_srcdir)
+	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_bak_srcdir)
 
 CLEANFILES = -r $(TARGETS_COMMON) .deps/

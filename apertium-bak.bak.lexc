@@ -115,7 +115,7 @@ Multichar_Symbols
 %<prc_impf%>       ! -{E}    !# ул _уйный_ алмады; мин _килә_ алмадым
 %<prc2%>           ! -{I}п   !# "_Йоклап_ яткан мәче авызына тычкан үзе _килеп_ керми."
 %<prc_vol%>        ! -{G}{I} !# _барғым_ килә             ! FIXME:NOTE: as far as I know, there are two types of vol.prc in Bashkir:
-                                                          ! 1. looks like Tatar vol.prc, 2. the second is like in in the example above.
+                                                          ! 1. looks like Bashkir vol.prc, 2. the second is like in in the example above.
                                                           ! {{test|tt|Бараһым килә.|Барасым килә.}}
                                                           ! {{test|tt|Барғым килә.|Барасым килә.}}
 
@@ -210,7 +210,7 @@ N-INFL-COMMON ;
 %<pl%>:%>%{L%}%{A%}р N-INFL-COMMON ;
 
 ! NOTE: Some substantivized things might not have pl. form, numerals e.g. 
-! (not too sure, because in Tatar they have it: 
+! (not too sure, because in Bashkir they have it: 
 ! #1 <11 ones meaning pupils from a given class: # өчләр = "pupils from the 3. class" 
 ! #2 "Мин белгәндә аңа, мөгаен, _иллеләр_ тирәсе булгандыр."
 !
