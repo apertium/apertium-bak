@@ -1,6 +1,8 @@
 prefix=@prefix@
 exec_prefix=${prefix}
 libdir=@libdir@
+dir=@libdir@/apertium/apertium-bak
+srcdir=@datarootdir@/apertium/apertium-bak
 
 Name: apertium-bak
 Description: Finite-state morphological transducer and constraint grammar for Bashkir 
