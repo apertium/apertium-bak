@@ -5,10 +5,10 @@
 /Makefile.am -text
 /NEWS -text
 /README -text
-/apertium-bak-0.1.pc.in -text
 /apertium-bak.bak.lexc -text
 /apertium-bak.bak.rlx -text
 /apertium-bak.bak.twol -text
+/apertium-bak.pc.in -text
 /autogen.sh -text
 /configure.ac -text
 dev/editdist.py -text
