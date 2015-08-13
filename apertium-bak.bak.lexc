@@ -8,7 +8,7 @@ Multichar_Symbols
 ! Followed http://wiki.apertium.org/wiki/Turkic_languages
 
 ! Part of speech categories
-%<n%>          ! Noun                       ! Имя существительное 
+%<n%>          ! Noun                       ! Имя существительное
 %<np%>         ! Proper noun                ! Имя собственное
 %<adj%>        ! Adjective                  ! Прилагательное
 %<num%>        ! Numeral                    ! Числительное
@@ -27,7 +27,7 @@ Multichar_Symbols
 %<abbr%>       ! Abbreviation               ! Аббревиатура
 %<cop%>        ! Copula                     ! Связка
 !%<ideo%>       ! Ideophone                  ! (Звуко)подражательное слово
-!модаль сүз     ! модальное слово 
+!модаль сүз     ! модальное слово
 
 ! *1. Асыҡлаган һүҙҙәренең артынан килә торған рәүешләр/"кисәксәләр" !# ғына, уҡ
 
@@ -99,9 +99,9 @@ Multichar_Symbols
 ! Tense, aspect, mood
 %<imp%>            ! Imperative
 %<cond%>           ! -h{A}
-%<caus%>           ! 
-%<pass%>           ! 
-%<coop%>           ! 
+%<caus%>           !
+%<pass%>           !
+%<coop%>           !
 
 %<pres%>           ! -{A}
 %<past%>           ! -{G}{A}н
@@ -119,7 +119,7 @@ Multichar_Symbols
                                                           ! {{test|tt|Бараһым килә.|Барасым килә.}}
                                                           ! {{test|tt|Барғым килә.|Барасым килә.}}
 
-!! Verbal adverbs - Хәл фигыльләр - Глаголные наречия 
+!! Verbal adverbs - Хәл фигыльләр - Глаголные наречия
 %<gna_cond%>       ! -с{A}  !# "...кайда икәнен _белсә_ дә, әйтми..."
 %<gna9%>           ! -{I}п  !# "...ул вакытта инде кояш _баеп_, йолдызлар күренә башлаган иде..." (Ф.Хөсни)
 
@@ -136,7 +136,7 @@ Multichar_Symbols
 %<inf%>            ! Infinitive ! Инфинитив ! -{I}рг{A}
 
 !!! the next will be removed soon; kept to let others know about changes
-%<ger2%>           ! -{I}п !WARNING: This was replaced with prc2 and gna9; turned off 
+%<ger2%>           ! -{I}п !WARNING: This was replaced with prc2 and gna9; turned off
 %<vol%>            ! !WARNING: This was replaced with prc_vol
 
 ! Transitivity ! Переходность
@@ -149,7 +149,7 @@ Multichar_Symbols
 %<p3%>             ! Third person
 %<frm%>            ! Formality ! This is not really needed for tat-bak pair, but it is needed, e.g. for kaz-tat pair
                                ! (or, let's say bak-kaz pair). So it won't hurt if we add it here.
-  
+
 ! Clitics
 %<qst%>            ! Modal question particle
 %<mod_foc%>        ! focus thingy
@@ -161,23 +161,23 @@ Multichar_Symbols
 %<guio%>           ! Hyphen
 %<cm%>             ! Comma
 %<apos%>           ! Apostrophe
-%<rquot%>          ! Quote marker (right hand side) 
-%<lquot%>          ! Quote marker (left hand side) 
-%<rpar%>           ! Parenthetical marker (right hand side) 
-%<lpar%>           ! Parenthetical marker (left hand side) 
+%<rquot%>          ! Quote marker (right hand side)
+%<lquot%>          ! Quote marker (left hand side)
+%<rpar%>           ! Parenthetical marker (right hand side)
+%<lpar%>           ! Parenthetical marker (left hand side)
 
-%{L%}              ! 
-%{N%}              ! 
-%{G%}              ! 
-%{K%}              ! 
-%{I%}              ! 
-%{A%}              ! 
-%{E%}              ! 
-%{U%}              ! 
+%{L%}              !
+%{N%}              !
+%{G%}              !
+%{K%}              !
+%{I%}              !
+%{A%}              !
+%{E%}              !
+%{U%}              !
 
-%{h%}              ! 
-%{n%}              ! 
-%{l%}              ! 
+%{h%}              !
+%{n%}              !
+%{l%}              !
 
 %>                 !
 %~                 !
@@ -188,30 +188,30 @@ Multichar_Symbols
 
 LEXICON Root
 
-Conjunctions ; 
-Postpositions ; 
-Postadverbs ; 
-Pronouns ; 
-Determiners ; 
-Numerals ; 
-Nouns ; 
-ProperNouns ; 
-Adjectives ; 
-Adverbs ; 
-Verbs ; 
-Abbreviations ; 
-Punctuation ; 
+Conjunctions ;
+Postpositions ;
+Postadverbs ;
+Pronouns ;
+Determiners ;
+Numerals ;
+Nouns ;
+ProperNouns ;
+Adjectives ;
+Adverbs ;
+Verbs ;
+Abbreviations ;
+Punctuation ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON SUBST
 
-N-INFL-COMMON ; 
+N-INFL-COMMON ;
 %<pl%>:%>%{L%}%{A%}р N-INFL-COMMON ;
 
-! NOTE: Some substantivized things might not have pl. form, numerals e.g. 
-! (not too sure, because in Bashkir they have it: 
-! #1 <11 ones meaning pupils from a given class: # өчләр = "pupils from the 3. class" 
+! NOTE: Some substantivized things might not have pl. form, numerals e.g.
+! (not too sure, because in Bashkir they have it:
+! #1 <11 ones meaning pupils from a given class: # өчләр = "pupils from the 3. class"
 ! #2 "Мин белгәндә аңа, мөгаен, _иллеләр_ тирәсе булгандыр."
 !
 ! If they don't have pl. form; link them to N-INFL-COMMON; if they do - to SUBST.
@@ -244,14 +244,14 @@ LEXICON CASE
 
 LEXICON ADJ-DAGI
 
-%<subst%>: CASE ; 
+%<subst%>: CASE ;
 %<attr%>: CLIT ;
 
 LEXICON GENPOSS-ETC
 
 %<px%>:%>%{L%}%{I%}%{K%}%{I%}{n} CASE ;
 %<loc%>:%>%{L%}%{A%}%{G%}%{I%} ADJ-DAGI ;
-%<sim%>:%>%{L%}%{A%}й CLIT ;       
+%<sim%>:%>%{L%}%{A%}й CLIT ;
 
 LEXICON CASE-ETC
 CASE ;
@@ -266,9 +266,9 @@ LEXICON POSS-REAL
 %<px2pl%>:%>%{I%}%{G%}%{I%}ҙ CASE-ETC ;
 
 CASE-ETC ; ! FIXME:NOTE:! this was temporarily put here because some gerunds and pronouns are linked
-                        ! to POSS-REAL. They should be linked to SUBST actually (and they will) /I.S./ 
+                        ! to POSS-REAL. They should be linked to SUBST actually (and they will) /I.S./
 
-LEXICON N-INFL-COMMON 
+LEXICON N-INFL-COMMON
 POSS-REAL ;
 CASE-ETC ;
 
@@ -281,7 +281,7 @@ LEXICON NLEX
 
 LEXICON DIGITLEX
 
-%<num%>: # ; 
+%<num%>: # ;
 
 LEXICON NUMLEX
 
@@ -304,33 +304,33 @@ LEXICON NPCOGMFLEX
 
 LEXICON NPANTMLEX
 
-%<np%>%<ant%>%<m%>: CASE ; 
+%<np%>%<ant%>%<m%>: CASE ;
 
 LEXICON NPANTFLEX
 
-%<np%>%<ant%>%<f%>: CASE ; 
+%<np%>%<ant%>%<f%>: CASE ;
 
 LEXICON NPTOPLEX
 
-%<np%>%<top%>: CASE ; 
+%<np%>%<top%>: CASE ;
 
 !!!!!!!!!!!!!!!!!!!!!!     ADJECTIVE'S (ADJECTIVIAL) INFLECTION
 
 LEXICON A3
 
-%<adj%>: CLIT ; 
-!%<pred%>: V-NONFINITE-FORMS ; 
+%<adj%>: CLIT ;
+!%<pred%>: V-NONFINITE-FORMS ;
 
 LEXICON ALEX
 
-%<adj%>: # ; 
-%<adj%>%<subst%>: SUBST ; 
-%<adj%>%<comp%>:%>%{I%}р%{A%}%{K%} # ; 
-%<adj%>%<advl%>: CLIT ; 
+%<adj%>: # ;
+%<adj%>%<subst%>: SUBST ;
+%<adj%>%<comp%>:%>%{I%}р%{A%}%{K%} # ;
+%<adj%>%<advl%>: CLIT ;
 
 !!!!!!!!!!!!!!!!!!!!!!     VERBAL INFLECTION
 
-LEXICON V-PERS-S1 
+LEXICON V-PERS-S1
 
 %<p1%>%<sg%>:%>%{I%}м CLIT ;
 %<p2%>%<sg%>:%>%{h%}%{I%}ң CLIT ;
@@ -361,7 +361,7 @@ LEXICON V-PERS-S3
 
 %<p1%>%<sg%>:%>м%{I%}н CLIT ;
 
-V-PERS-S3-NO1SG ; 
+V-PERS-S3-NO1SG ;
 
 LEXICON V-PERS-S4 ! Volition endings
 
@@ -384,9 +384,9 @@ LEXICON V-PERS-S4 ! Volition endings
 
 LEXICON V-FINITE-FORMS
 
-%<pres%>:%>%{E%} V-PERS-S1 ; 
-%<ifi%>:%>%{N%}%{I%} V-PERS-S2 ; 
-%<past%>:%>%{G%}%{A%}н V-PERS-S3 ; 
+%<pres%>:%>%{E%} V-PERS-S1 ;
+%<ifi%>:%>%{N%}%{I%} V-PERS-S2 ;
+%<past%>:%>%{G%}%{A%}н V-PERS-S3 ;
 
 LEXICON V-NONFINITE-FORMS
 
@@ -412,25 +412,25 @@ LEXICON V-NONFINITE-FORMS
 
 LEXICON V-COMMON-LEX
 
-V-FINITE-FORMS ; 
+V-FINITE-FORMS ;
 V-NONFINITE-FORMS ;
 
 LEXICON V-IRREG-LEX
 
 %<prc2%>:%>%{I%}п # ;
 %<gna9%>:%>%{I%}п CLIT ;
-%<fut%>:%>%{I%}р V-PERS-S3 ; 
-%<neg%>%<fut%>:%>м%{A%}ҫ V-PERS-S3-NO1SG ; 
+%<fut%>:%>%{I%}р V-PERS-S3 ;
+%<neg%>%<fut%>:%>м%{A%}ҫ V-PERS-S3-NO1SG ;
 %<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}%>м CLIT ;
 %<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}ҫ%>м%{I%}н CLIT ; ! Dir/LR
 
-LEXICON V-NEG-LEX 
+LEXICON V-NEG-LEX
 
 %<neg%>:%>м%{A%} V-COMMON-LEX ;
 %<neg%>%<prc2%>:%>м%{A%}%>%{E%}%>с%{A%} # ; ! FIXME: Check continuations
 %<neg%>%<gna9%>:%>м%{A%}%>%{E%}%>с%{A%} # ; ! FIXME: Check continuations
 
-V-COMMON-LEX ; 
+V-COMMON-LEX ;
 
 LEXICON V-IV-LEX
 
@@ -440,7 +440,7 @@ LEXICON V-IV-LEX
 %<v%>%<iv%>%<neg%>:%>м%{A%} V-COMMON-LEX ;
 %<v%>%<iv%>%<caus%>:%>%{I%}т V-NEG-LEX ;
 %<v%>%<iv%>%<caus%>:%>%{I%}т V-IRREG-LEX ;
-%<v%>%<iv%>%<coop%>:%>%{I%}ш V-NEG-LEX ; 
+%<v%>%<iv%>%<coop%>:%>%{I%}ш V-NEG-LEX ;
 %<v%>%<iv%>%<coop%>:%>%{I%}ш V-IRREG-LEX ;
 
 LEXICON V-TV-LEX
@@ -451,9 +451,9 @@ LEXICON V-TV-LEX
 %<v%>%<tv%>%<neg%>:%>м%{A%} V-COMMON-LEX ;
 %<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-NEG-LEX ;
 %<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-IRREG-LEX ;
-%<v%>%<tv%>%<caus%>:%>%{I%}т V-NEG-LEX ; 
+%<v%>%<tv%>%<caus%>:%>%{I%}т V-NEG-LEX ;
 %<v%>%<tv%>%<caus%>:%>%{I%}т V-IRREG-LEX ;
-%<v%>%<tv%>%<coop%>:%>%{I%}ш V-NEG-LEX ; 
+%<v%>%<tv%>%<coop%>:%>%{I%}ш V-NEG-LEX ;
 %<v%>%<tv%>%<coop%>:%>%{I%}ш V-IRREG-LEX ;
 
 !!!!!!!!!!!!!!!!!!!!!!     auxiliary verbs
@@ -470,47 +470,47 @@ LEXICON VAUX
 
 LEXICON PRNLEX-PERS
 
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:мин # ; 
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:минең # ; 
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:миңә # ; 
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<acc%>:мине # ; 
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:миндә # ; 
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<abl%>:минән # ; 
+мин%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:мин # ;
+мин%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:минең # ;
+мин%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:миңә # ;
+мин%<prn%>%<pers%>%<p1%>%<sg%>%<acc%>:мине # ;
+мин%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:миндә # ;
+мин%<prn%>%<pers%>%<p1%>%<sg%>%<abl%>:минән # ;
 
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>:һин # ; 
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<gen%>:һинең # ; 
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:һиңә # ; 
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<acc%>:һине # ; 
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:һиндә # ; 
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<abl%>:һинән # ; 
+һин%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>:һин # ;
+һин%<prn%>%<pers%>%<p2%>%<sg%>%<gen%>:һинең # ;
+һин%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:һиңә # ;
+һин%<prn%>%<pers%>%<p2%>%<sg%>%<acc%>:һине # ;
+һин%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:һиндә # ;
+һин%<prn%>%<pers%>%<p2%>%<sg%>%<abl%>:һинән # ;
 
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:ул # ; 
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:улың # ; 
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:уға # ; 
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:уны # ; 
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:унда # ; 
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:унан # ; 
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:ул # ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:улың # ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:уға # ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:уны # ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:унда # ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:унан # ;
 
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:беҙ # ; 
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<gen%>:беҙҙең # ; 
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<dat%>:беҙғә # ; 
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<acc%>:беҙҙе # ; 
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<loc%>:беҙҙә # ; 
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<abl%>:беҙҙән # ; 
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:беҙ # ;
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<gen%>:беҙҙең # ;
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<dat%>:беҙғә # ;
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<acc%>:беҙҙе # ;
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<loc%>:беҙҙә # ;
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<abl%>:беҙҙән # ;
 
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:һеҙ # ; 
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<gen%>:һеҙҙең # ; 
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<dat%>:һеҙғә # ; 
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<acc%>:һеҙҙе # ; 
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<loc%>:һеҙҙә # ; 
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<abl%>:һеҙҙән # ; 
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:һеҙ # ;
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<gen%>:һеҙҙең # ;
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<dat%>:һеҙғә # ;
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<acc%>:һеҙҙе # ;
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<loc%>:һеҙҙә # ;
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<abl%>:һеҙҙән # ;
 
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<nom%>:улар # ; 
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<gen%>:уларҙың # ; 
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<dat%>:уларға # ; 
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<acc%>:уларҙы # ; 
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<loc%>:уларҙа # ; 
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<abl%>:уларҙан # ; 
+улар%<prn%>%<pers%>%<p3%>%<pl%>%<nom%>:улар # ;
+улар%<prn%>%<pers%>%<p3%>%<pl%>%<gen%>:уларҙың # ;
+улар%<prn%>%<pers%>%<p3%>%<pl%>%<dat%>:уларға # ;
+улар%<prn%>%<pers%>%<p3%>%<pl%>%<acc%>:уларҙы # ;
+улар%<prn%>%<pers%>%<p3%>%<pl%>%<loc%>:уларҙа # ;
+улар%<prn%>%<pers%>%<p3%>%<pl%>%<abl%>:уларҙан # ;
 
 LEXICON PRNDEM-BUL
 
@@ -524,71 +524,71 @@ LEXICON PRNDEM-BUL
 
 LEXICON PRNDEM-UL       ! FIXME: Unify demonstrative pronouns later
 
-%<prn%>%<dem%>%<nom%>:ул # ; 
-%<prn%>%<dem%>%<gen%>:улың # ; 
-%<prn%>%<dem%>%<dat%>:уға # ; 
-%<prn%>%<dem%>%<acc%>:уны # ; 
-%<prn%>%<dem%>%<loc%>:унда # ; 
-%<prn%>%<dem%>%<abl%>:унан # ; 
+%<prn%>%<dem%>%<nom%>:ул # ;
+%<prn%>%<dem%>%<gen%>:улың # ;
+%<prn%>%<dem%>%<dat%>:уға # ;
+%<prn%>%<dem%>%<acc%>:уны # ;
+%<prn%>%<dem%>%<loc%>:унда # ;
+%<prn%>%<dem%>%<abl%>:унан # ;
 
-%<prn%>%<dem%>%<pl%>:улар CASE ; 
+%<prn%>%<dem%>%<pl%>:улар CASE ;
 
 LEXICON PRNITGLEX
 
-%<prn%>%<itg%>: POSS-REAL ; 
+%<prn%>%<itg%>: POSS-REAL ;
 
 LEXICON PRNDEMLEX
 
-%<prn%>%<dem%>: CASE ; 
-%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASE ; 
+%<prn%>%<dem%>: CASE ;
+%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASE ;
 
 LEXICON PRNREFLEX
 
-%<prn%>%<ref%>: POSS-REAL ; 
+%<prn%>%<ref%>: POSS-REAL ;
 
 LEXICON DETQNTLEX
 
-%<det%>%<qnt%>: # ; 
+%<det%>%<qnt%>: # ;
 
 LEXICON DETINDLEX
 
-%<det%>%<ind%>: # ; 
+%<det%>%<ind%>: # ;
 
 LEXICON DETDEMLEX
 
-%<det%>%<dem%>: # ; 
+%<det%>%<dem%>: # ;
 
 LEXICON POSTLEX
 
-%<post%>: # ; 
+%<post%>: # ;
 
 LEXICON POSTADVLEX
 
-%<postadv%>: # ; 
+%<postadv%>: # ;
 
 LEXICON ADVITGLEX
 
-%<adv%>%<itg%>: # ; 
+%<adv%>%<itg%>: # ;
 
 LEXICON ADVLEX
 
-%<adv%>: CLIT ; 
+%<adv%>: CLIT ;
 
 LEXICON CCLEX
 
-%<cnjcoo%>: # ; 
+%<cnjcoo%>: # ;
 
 LEXICON CALEX
 
-%<cnjadv%>: # ; 
+%<cnjadv%>: # ;
 
 LEXICON COP-I
 
-и%<cop%>%<neg%>:түгел V-PERS-S3 ; 
+и%<cop%>%<neg%>:түгел V-PERS-S3 ;
 и%<cop%>%<ger5%>:и%>кән POSS-REAL ;
-и%<cop%>%<ifi%>:и%>не V-PERS-S2 ; 
+и%<cop%>%<ifi%>:и%>не V-PERS-S2 ;
 
-LEXICON ABBR 
+LEXICON ABBR
 
 %<abbr%>: # ;
 
@@ -601,7 +601,7 @@ LEXICON ABBR
 LEXICON Conjunctions
 
 үә:үә CCLEX ; ! ""
-һәм:һәм CCLEX ; ! ""  
+һәм:һәм CCLEX ; ! ""
 ә:ә CCLEX ; ! ""
 әммә:әммә CCLEX ; ! ""
 йә:йә CCLEX ; ! ""
@@ -621,7 +621,7 @@ LEXICON Conjunctions
 шуға% күрә:шуға% күрә CALEX ; ! ""
 шул% сәбәпле:шул% сәбәпле CALEX ; ! ""
 
-LEXICON Postpositions 
+LEXICON Postpositions
 
 менән:менән POSTLEX ; ! ""
 инде:инде POSTLEX ; ! ""
@@ -657,7 +657,7 @@ LEXICON Postadverbs
 
 LEXICON Pronouns
 
-PRNLEX-PERS ; 
+PRNLEX-PERS ;
 
 ни:ни PRNITGLEX ; ! ""
 нимә:нимә PRNITGLEX ; ! ""
@@ -672,7 +672,7 @@ PRNLEX-PERS ;
 үҙ:үҙ PRNREFLEX ; ! ""
 
 
-LEXICON Determiners 
+LEXICON Determiners
 
 был:был DETDEMLEX ; ! ""
 ошо:ошо DETDEMLEX ; ! ""
@@ -726,7 +726,7 @@ LEXICON Numerals
 миллион:миллион NUMLEX ; ! ""
 миллиард:миллиард NUMLEX ; ! ""
 
-LEXICON Nouns 
+LEXICON Nouns
 
 аҫт:аҫт NLEX ; ! ""
 абҙый:абҙый NLEX ; ! ""
@@ -1433,7 +1433,7 @@ LEXICON Nouns
 нигеҙ:нигеҙ NLEX ; ! ""
 нигеҙ:нигеҙ NLEX ; ! ""
 нимес:нимес NLEX ; ! ""
-нимыс:нимыс NLEX ; ! "" 
+нимыс:нимыс NLEX ; ! ""
 нөктә:нөктә NLEX ; ! ""
 нөктә:нөктә NLEX ; ! ""
 объект:объект NLEX ; ! ""
@@ -1940,6 +1940,7 @@ LEXICON Nouns
 шинель:шинель NLEX ; ! ""
 ширкәт:ширкәт NLEX ; ! ""
 ширкәт:ширкәт NLEX ; ! ""
+шишәмбе:шишәмбе NLEX ; ! ""
 шишмә:шишмә NLEX ; ! ""
 шкаф:шкаф NLEX ; ! ""
 шөбһә:шөбһә NLEX ; ! ""
@@ -3077,7 +3078,7 @@ LEXICON Adjectives
 кесе:кесе ALEX ; ! ""
 иғтибарлы:иғтибарлы ALEX ; ! ""
 
-LEXICON Adverbs 
+LEXICON Adverbs
 
 нисек:нисек ADVITGLEX ; ! ""
 ни% өсөн:ни% өсөн ADVITGLEX ; ! "why,what for" Use/MT
@@ -3155,7 +3156,7 @@ LEXICON Adverbs
 әле:әле ADVLEX ; ! ""
 әлегә:әлегә ADVLEX ; ! ""
 
-LEXICON Verbs 
+LEXICON Verbs
 
 бар:бар A3 ; ! ""
 юҡ:юҡ A3 ; ! ""
@@ -3683,11 +3684,11 @@ COP-I ; ! ""
 яу:яу V-IV-LEX ; ! ""
 бай:бай V-IV-LEX ; ! ""            FIXME:check - might be "байы"
 
-LEXICON Abbreviations 
+LEXICON Abbreviations
 
-км²:км² ABBR ; 
-км³:км³ ABBR ; 
-км:км ABBR ; 
+км²:км² ABBR ;
+км³:км³ ABBR ;
+км:км ABBR ;
 
 LEXICON Punctuation
 
@@ -3700,7 +3701,7 @@ LEXICON Punctuation
 %-%<guio%>:%- # ;
 %—%<guio%>:%— # ;
 ,%<cm%>:, # ;
-%?%<sent%>:%? # ; 
+%?%<sent%>:%? # ;
 %'%<apos%>:%' # ;
 %"%<sent%>:%" # ;
 %«%<lquot%>:%« # ;
