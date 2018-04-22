@@ -128,8 +128,8 @@ Multichar_Symbols
 %<ger1%>           ! -м{A}{K}
 %<ger3%>           ! -{G}{A}с
 %<ger4%>           ! -{G}{A}нс{I}
-%<ger5%>           ! -{G}{A}н
-%<ger6%>           ! -{I}р
+%<ger_past%>           ! -{G}{A}н
+%<ger_fut%>           ! -{I}р
 %<ger7%>           ! -{A}с{A}{K}
 %<ger8%>           ! -{E}h
 
@@ -398,8 +398,8 @@ LEXICON V-NONFINITE-FORMS
 %<ger1%>:%>м%{A%}%{K%} POSS-REAL ;
 %<ger3%>:%>%{G%}%{A%}с SUBST ;
 %<ger4%>:%>%{G%}%{A%}нс%{I%} POSS-REAL ;
-%<ger5%>:%>%{G%}%{A%}н POSS-REAL ;
-%<ger6%>:%>%{I%}р POSS-REAL ;
+%<ger_past%>:%>%{G%}%{A%}н POSS-REAL ;
+%<ger_fut%>:%>%{I%}р POSS-REAL ;
 %<inf%>:%>%{I%}рг%{A%} # ;
 %<ger7%>:%>%{A%}с%{A%}%{K%} POSS-REAL ;
 %<prc_vol%>:%>%{E%}һ%{I%} V-PERS-S4 ;   ! FIXME:NOTE: this is the first type of volitative
@@ -589,7 +589,7 @@ LEXICON CALEX
 LEXICON COP-I
 
 и%<cop%>%<neg%>:түгел V-PERS-S3 ;
-и%<cop%>%<ger5%>:и%>кән POSS-REAL ;
+и%<cop%>%<ger_past%>:и%>кән POSS-REAL ;
 и%<cop%>%<ifi%>:и%>не V-PERS-S2 ;
 
 LEXICON ABBR
