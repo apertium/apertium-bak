@@ -21,6 +21,8 @@ LIST Postadv = postadv ;
 LIST Cm = cm ; 
 LIST Pred = pred ;
 
+LIST Nom = nom ;
+LIST Gen = gen ;
 LIST Interr = itg ;
 
 # Semantic lists 
@@ -70,3 +72,4 @@ SELECT Det IF (0 V OR Det OR Pred OR N) (1* NPMARK BARRIER N) ;
     ## Акча бармы? Бар<pred>, ләкин бик аз!
 
 
+"<тураһында>"i SELECT Post IF (-1 Nom OR Pron + Gen);
