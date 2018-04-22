@@ -314,6 +314,10 @@ LEXICON NPTOPLEX
 
 %<np%>%<top%>: CASE ;
 
+LEXICON NPALLEX
+
+%<np%>%<al%>: CASE ;
+
 !!!!!!!!!!!!!!!!!!!!!!     ADJECTIVE'S (ADJECTIVIAL) INFLECTION
 
 LEXICON A3
@@ -485,7 +489,7 @@ LEXICON PRNLEX-PERS
 һин%<prn%>%<pers%>%<p2%>%<sg%>%<abl%>:һинән # ;
 
 ул%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:ул # ;
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:улың # ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:уның # ;
 ул%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:уға # ;
 ул%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:уны # ;
 ул%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:унда # ;
@@ -1596,7 +1600,7 @@ LEXICON Nouns
 статья:статья NLEX ; ! ""
 статья:статья NLEX ; ! ""
 стена:стена NLEX ; ! ""
-стиль:стил NLEX ; ! ""
+стиль:стиль NLEX ; ! ""
 структура:структура NLEX ; ! ""
 студент:студент NLEX ; ! ""
 суд:суд NLEX ; ! ""
@@ -1829,8 +1833,8 @@ LEXICON Nouns
 һалҡын:һалҡын NLEX ; ! ""
 һалҡын:һалҡын NLEX ; ! ""
 халыҡ% төркөмө:халыҡ% төркөмө NLEX ; ! ""
-халыҡ:халыҡ NLEX ; ! ""
-халыҡ:халыҡ NLEX ; ! ""
+халыҡ:хал%{е%}ҡ NLEX ; ! ""
+халыҡ:халыҡ NLEX ; ! "" ! Dir/LR ! Err/Orth
 һан:һан NLEX ; ! ""
 һан:һан NLEX ; ! ""
 һан:һан NLEX ; ! ""
@@ -2382,6 +2386,7 @@ LEXICON ProperNouns
 Дон:Дон NPTOPLEX ; ! ""
 Париж:Париж NPTOPLEX ; ! ""
 
+Арран:Арран NPTOPLEX ; ! ""
 Афғанстан:Афғанстан NPTOPLEX ; ! ""
 Иҙел:Иҙел NPTOPLEX ; ! ""
 Герат:Герат NPTOPLEX ; ! ""
@@ -2417,10 +2422,12 @@ LEXICON ProperNouns
 Бөрө:Бөрө NPTOPLEX ; ! ""
 Бүздәк:Бүздәк NPTOPLEX ; ! ""
 Грузия:Грузия NPTOPLEX ; ! ""
+Гәнжә:Гәнжә NPTOPLEX ; ! ""
 Ираҡ:Ираҡ NPTOPLEX ; ! ""
 Иран:Иран NPTOPLEX ; ! ""
 Кавказ:Кавказ NPTOPLEX ; ! ""
 Пакистан:Пакистан NPTOPLEX ; ! ""
+Персия:Персия NP-TOP ; ! ""
 Төркиә:Төркиә NPTOPLEX ; ! ""
 Тажикстан:Тажикстан NPTOPLEX ; ! ""
 Үзбәкстан:Үзбәкстан NPTOPLEX ; ! ""
@@ -2433,15 +2440,19 @@ LEXICON ProperNouns
 
 Ирина:Ирина NPANTFLEX ; ! ""
 Лилиә:Лилиә NPANTFLEX ; ! ""
+Ләйлә:Ләйлә NPANTFLEX ; ! ""
 Айгөл:Айгөл NPANTFLEX ; ! ""
 Айзирә:Айзирә NPANTFLEX ; ! ""
 Алина:Алина NPANTFLEX ; ! ""
 Алла:Алла NPANTFLEX ; ! ""
 Альбина:Альбина NPANTFLEX ; ! ""
 Анна:Анна NPANTFLEX ; ! ""
+Ширин:Ширин NPANTFLEX ; ! ""
 
+Арслан:Арслан NPANTMLEX ; ! ""
 Артур:Артур NPANTMLEX ; ! ""
 Әбйәлил:Әбйәлил NPANTMLEX ; ! ""
+Әбү:Әбү NPANTMLEX ; ! ""
 Виктор:Виктор NPANTMLEX ; ! ""
 Владимир:Владимир NPANTMLEX ; ! ""
 Ғәйнетдин:Ғәйнетдин NPANTMLEX ; ! ""
@@ -2450,13 +2461,18 @@ LEXICON ProperNouns
 Зәки:Зәки NPANTMLEX ; ! ""
 Илмир:Илмир NPANTMLEX ; ! ""
 Ильяс:Ильяс NPANTMLEX ; ! ""
+Искәндәр:Искәндәр NPANTMLEX ; ! ""
 Йәләлетдин:Йәләлетдин NPANTMLEX ; ! ""
 Йософ:Йософ NPANTMLEX ; ! ""
+Киракос:Киракос NPANTMLEX ; ! ""
 Кирилл:Кирилл NPANTMLEX ; ! ""
 Константин:Константин NPANTMLEX ; ! ""
 Марат:Марат NPANTMLEX ; ! ""
 Михаил:Михаил NPANTMLEX ; ! ""
 Мөхәммәт:Мөхәммәт NPANTMLEX ; ! ""
+Муайад:Муайад NPANTMLEX ; ! ""
+Мәжнүн:Мәжнүн NPANTMLEX ; ! ""
+Низам:Низам NPANTMLEX ; ! ""
 Низами:Низами NPANTMLEX ; ! ""
 Николай:Николай NPANTMLEX ; ! ""
 Радмир:Радмир NPANTMLEX ; ! ""
@@ -2467,6 +2483,7 @@ LEXICON ProperNouns
 Салауат:Салауат NPANTMLEX ; ! ""
 Тимерйән:Тимерйән NPANTMLEX ; ! ""
 Тимур:Тимур NPANTMLEX ; ! ""
+Хосров:Хосров NPANTMLEX ; ! ""
 Юрий:Юрий NPANTMLEX ; ! ""
 Азамат:Азамат NPANTMLEX ; ! ""
 Азат:Азат NPANTMLEX ; ! ""
@@ -2484,12 +2501,15 @@ LEXICON ProperNouns
 
 Әхмәтов:Әхмәтов NPCOGMLEX ; ! ""
 Балабанов:Балабанов NPCOGMLEX ; ! ""
+Гандзакеци:Гандзакеци NPCOGMLEX ; ! ""
 Зубков:Зубков NPCOGMLEX ; ! ""
 Исхаҡов:Исхаҡов NPCOGMLEX ; ! ""
 Маврин:Маврин NPCOGMLEX ; ! ""
 Нәбиуллин:Нәбиуллин NPCOGMLEX ; ! ""
 Путин:Путин NPCOGMLEX ; ! ""
+Рыпка:Рыпка NPCOGMLEX ; ! ""
 Рәжәпов:Рәжәпов NPCOGMLEX ; ! ""
+Саади:Саади NPCOGMLEX ; ! ""
 Сәфиуллин:Сәфиуллин NPCOGMLEX ; ! ""
 Тазиев:Тазиев NPCOGMLEX ; ! ""
 Толкачев:Толкачев NPCOGMLEX ; ! ""
@@ -2512,6 +2532,9 @@ LEXICON ProperNouns
 Руми:Руми NPCOGMFLEX ; ! ""
 Семивеличенко:Семивеличенко NPCOGMFLEX ; ! ""
 Ширази:Ширази NPCOGMFLEX ; ! ""
+әд%-Дин:әд%-Дин NPCOGMFLEX ; ! ""
+
+Хәмсә:Хәмсә NPALLEX ; ! ""
 
 
 LEXICON Adjectives
