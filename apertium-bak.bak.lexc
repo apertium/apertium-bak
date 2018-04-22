@@ -529,7 +529,7 @@ LEXICON PRNDEM-BUL
 LEXICON PRNDEM-UL       ! FIXME: Unify demonstrative pronouns later
 
 %<prn%>%<dem%>%<nom%>:ул # ;
-%<prn%>%<dem%>%<gen%>:улың # ;
+%<prn%>%<dem%>%<gen%>:уның # ;
 %<prn%>%<dem%>%<dat%>:уға # ;
 %<prn%>%<dem%>%<acc%>:уны # ;
 %<prn%>%<dem%>%<loc%>:унда # ;
