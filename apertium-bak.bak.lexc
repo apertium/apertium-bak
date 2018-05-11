@@ -4,30 +4,33 @@
 
 ! See http://wiki.apertium.org/wiki/Turkic_lexicon
 
-Multichar_Symbols
+!=================!
+ Multichar_Symbols
+!=================!
+
 ! Followed http://wiki.apertium.org/wiki/Turkic_languages
 
-! Part of speech categories
-%<n%>          ! Noun                       ! Имя существительное
-%<np%>         ! Proper noun                ! Имя собственное
-%<adj%>        ! Adjective                  ! Прилагательное
-%<num%>        ! Numeral                    ! Числительное
-%<prn%>        ! Pronoun                    ! Местоимение
-%<det%>        ! Determiner                 ! Детерминатив
-%<v%>          ! Verb                       ! Глагол
-%<vaux%>       ! Auxilary verb              ! Вспомогательный гл.
-%<adv%>        ! Adverb                     ! Наречие
-%<post%>       ! Postposition               ! Послелог
-%<postadv%>    ! Postadverb                 ! "Посленаречие" (*1)    !# "ғына"
-%<cnjcoo%>     ! Co-ordinating conjunction  ! Сочинительный союз
-%<cnjsub%>     ! Sub-ordinating conjunction ! Подчинительный союз
-%<cnjadv%>     ! Adverbial conjunction      ! ~Союз
-%<part%>       ! Particle                   ! Частица
-%<ij%>         ! Interjection               ! Междометие
-%<abbr%>       ! Abbreviation               ! Аббревиатура
-%<cop%>        ! Copula                     ! Связка
-!%<ideo%>       ! Ideophone                  ! (Звуко)подражательное слово
-!модаль сүз     ! модальное слово
+! Part of speech categories = First-level tags
+%<n%>        ! Noun                       ! Имя существительное
+%<np%>       ! Proper noun                ! Имя собственное
+%<adj%>      ! Adjective                  ! Прилагательное
+%<num%>      ! Numeral                    ! Числительное
+%<prn%>      ! Pronoun                    ! Местоимение
+%<det%>      ! Determiner                 ! Детерминатив
+%<v%>        ! Verb                       ! Глагол
+%<vaux%>     ! Auxiliary verb             ! Вспомогательный глагол
+%<adv%>      ! Adverb                     ! Наречие
+%<post%>     ! Postposition               ! Послелог
+%<postadv%>  ! Postadverb                 ! Посленаречие (*1)    !# "ғына"
+%<cnjcoo%>   ! Coordinating conjunction   ! Сочинительный союз
+%<cnjsub%>   ! Subordinating conjunction  ! Подчинительный союз
+%<cnjadv%>   ! Adverbial conjunction      ! Наречие-союз 
+%<part%>     ! Particle                   ! Частица
+%<ij%>       ! Interjection               ! Междометие
+%<abbr%>     ! Abbreviation               ! Аббревиатура
+%<cop%>      ! Copula                     ! Копула
+!%<ideo%>    ! Ideophone                  ! Звукоподражательное слово
+!модаль сүз  ! модальное слово
 
 ! *1. Асыҡлаган һүҙҙәренең артынан килә торған рәүешләр/"кисәксәләр" !# ғына, уҡ
 
@@ -186,7 +189,9 @@ Multichar_Symbols
 !!!                       M O R P H O T A C T I C S                         !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-LEXICON Root
+!============!
+ LEXICON Root
+!============!
 
 Conjunctions ;
 Postpositions ;
@@ -601,8 +606,10 @@ LEXICON ABBR
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
+!====================!
+ LEXICON Conjunctions
+!====================!
 
-LEXICON Conjunctions
 
 үә:үә CCLEX ; ! ""
 һәм:һәм CCLEX ; ! ""
@@ -625,7 +632,11 @@ LEXICON Conjunctions
 шуға% күрә:шуға% күрә CALEX ; ! ""
 шул% сәбәпле:шул% сәбәпле CALEX ; ! ""
 
-LEXICON Postpositions
+
+!=====================!
+ LEXICON Postpositions
+!=====================!
+
 
 менән:менән POSTLEX ; ! ""
 инде:инде POSTLEX ; ! ""
@@ -652,7 +663,10 @@ LEXICON Postpositions
 булараҡ:булараҡ POSTLEX ; ! ""
 
 
-LEXICON Postadverbs
+!===================!
+ LEXICON Postadverbs
+!===================!
+
 
 ғына:%~ғына POSTADVLEX ; ! "" Dir/RL
 ғына:ғына POSTADVLEX ; ! "" Dir/LR
@@ -660,7 +674,11 @@ LEXICON Postadverbs
 ғына:ҡына POSTADVLEX ; ! "" Dir/LR
 ғына:кенә POSTADVLEX ; ! "" Dir/LR
 
-LEXICON Pronouns
+
+!================!
+ LEXICON Pronouns
+!================!
+
 
 PRNLEX-PERS ;
 
@@ -677,7 +695,10 @@ PRNLEX-PERS ;
 үҙ:үҙ PRNREFLEX ; ! ""
 
 
-LEXICON Determiners
+!===================!
+ LEXICON Determiners
+!===================!
+
 
 был:был DETDEMLEX ; ! ""
 ошо:ошо DETDEMLEX ; ! ""
@@ -693,7 +714,11 @@ LEXICON Determiners
 берәр:берәр DETINDLEX ; ! ""
 бер% ниндәй:бер% ниндәй DETINDLEX ; ! ""
 
-LEXICON Numerals
+
+!================!
+ LEXICON Numerals
+!================!
+
 
 нуль:нуль NUMLEX ; ! ""
 бер:бер NUMLEX ; ! ""
@@ -732,40 +757,112 @@ LEXICON Numerals
 миллион:миллион NUMLEX ; ! ""
 миллиард:миллиард NUMLEX ; ! ""
 
-LEXICON Nouns
 
-аҫт:аҫт NLEX ; ! ""
+!=============!
+ LEXICON Nouns
+!=============!
+
+
+абаға:абаға NLEX ; ! ""
+абайһыҙлыҡ:абайһыҙлыҡ NLEX ; ! ""
+абажур:абажур NLEX ; ! ""
+аббат:аббат NLEX ; ! ""
+аббатлыҡ:аббатлыҡ NLEX ; ! ""
+аббревиатура:аббревиатура NLEX ; ! ""
+абзац:абзац NLEX ; ! ""
 абҙый:абҙый NLEX ; ! ""
+абҙыҡай:абҙыҡай NLEX ; ! ""
+абонемент:абонемент NLEX ; ! ""
+абонент:абонент NLEX ; ! ""
+аборт:аборт NLEX ; ! ""
+абрикос:абрикос NLEX ; ! ""
 абруй:абруй NLEX ; ! ""
+абсолют:абсолют NLEX ; ! ""
+абстракция:абстракция NLEX ; ! ""
+абсурд:абсурд NLEX ; ! ""
+абуна:абуна NLEX ; ! ""
+абунасы:абунасы NLEX ; ! ""
+абыз:абыз NLEX ; ! ""
+абыстай:абыстай NLEX ; ! ""
+авангард:авангард NLEX ; ! ""
+аванпост:аванпост NLEX ; ! ""
+аванс:аванс NLEX ; ! ""
+авантюра:авантюра NLEX ; ! ""
+авантюрист:авантюрист NLEX ; ! ""
+авария:авария NLEX ; ! ""
 август:август NLEX ; ! ""
+авиакомпания:авиакомпания NLEX ; ! ""
+авиалиния:авиалиния NLEX ; ! ""
+авиатика:авиатика NLEX ; ! ""
+авиатор:авиатор NLEX ; ! ""
+авиатөҙөлөш:авиатөҙөлөш NLEX ; ! ""
+авиация:авиация NLEX ; ! ""
+авто:авто NLEX ; ! ""
+автобензин:автобензин NLEX ; ! ""
+автобиография:автобиография NLEX ; ! ""
 автобус:автобус NLEX ; ! ""
 автомат:автомат NLEX ; ! ""
 автомат% мылтык:автомат% мылтык NLEX ; ! ""
 автомобиль:автомобиль NLEX ; ! ""
+автономия:автономия NLEX ; ! ""
 автор:автор NLEX ; ! ""
+авторизация:авторизация NLEX ; ! ""
+авторитет:авторитет NLEX ; ! ""
+авторлыҡ:авторлыҡ NLEX ; ! ""
+автотип:автотип NLEX ; ! ""
+автотипография:автотипография NLEX ; ! ""
+автотранспорт:автотранспорт NLEX ; ! ""
+агглютинация:агглютинация NLEX ; ! ""
+агент:агент NLEX ; ! ""
+агентлыҡ:агентлыҡ NLEX ; ! ""
+агитатор:агитатор NLEX ; ! ""
+агитация:агитация NLEX ; ! ""
+аграрий:аграрий NLEX ; ! ""
+агрария:агрария NLEX ; ! ""
+агрегат:агрегат NLEX ; ! ""
+агрокомплекс:агрокомплекс NLEX ; ! ""
+агрокультура:агрокультура NLEX ; ! ""
+агроном:агроном NLEX ; ! ""
+агрономия:агрономия NLEX ; ! ""
+агросәнәғәт:агросәнәғәт NLEX ; ! ""
+агрофирма NLEX ; ! ""
 аға:аға NLEX ; ! ""
 ағай:ағай NLEX ; ! ""
 ағас:ағас NLEX ; ! ""
-бар:бар NLEX ; ! ""
-ағза:ағза NLEX ; ! ""
-ағза:ағза NLEX ; ! ""
+ағаслыҡ:ағаслыҡ NLEX ; ! ""
 ағза:ағза NLEX ; ! ""
 ағым:ағым NLEX ; ! ""
-ағым:ағым NLEX ; ! ""
+ағыу:ағыу NLEX ; ! ""
 ағыш:ағыш NLEX ; ! ""
+адвокат:адвокат NLEX ; ! "lawyer"
+адвокатлыҡ:адвокатлыҡ NLEX ; ! ""
+администратор:администратор NLEX ; ! "administrator"
+администрация:администрация NLEX ; ! "administration"
+адмирал:адмирал NLEX ; ! ""
 адрес:адрес NLEX ; ! ""
+адресат:адресат NLEX ; ! ""
+адъюнкт:адъюнкт NLEX ; ! ""
+адъютант:адъютант NLEX ; ! ""
+ажиотаж:ажиотаж NLEX ; ! ""
+ажур:ажур NLEX ; ! ""
 аҙаҡ:аҙаҡ NLEX ; ! ""
+аҙаш:аҙаш NLEX ; ! ""
 азатлыҡ:азатлыҡ NLEX ; ! ""
+аҙбар:аҙбар NLEX ; ! "" 
 аҙна:аҙна NLEX ; ! ""
 аҙыҡ:аҙыҡ NLEX ; ! ""
 аҙыҡ-түлек:аҙыҡ-түлек NLEX ; ! ""
 аҙым:аҙым NLEX ; ! ""
 ай:ай NLEX ; ! ""
-ай:ай NLEX ; ! ""
+айыҡлыҡ:айыҡлыҡ NLEX ; ! ""
+айыл:айыл NLEX ; ! ""
 айырма:айырма NLEX ; ! ""
 айырмалыҡ:айырмалыҡ NLEX ; ! ""
-аҡса:аҡса NLEX ; ! ""
+академия:академия NLEX ; ! ""
 актер:актер NLEX ; ! ""
+акционер:акционер NLEX ; ! ""
+акция:акция NLEX ; ! ""
+аҡса:аҡса NLEX ; ! ""
 аҡыл:аҡыл NLEX ; ! ""
 алд:алд NLEX ; ! ""
 алман:алман NLEX ; ! ""
@@ -773,11 +870,14 @@ LEXICON Nouns
 алыҫлыҡ:алыҫлыҡ NLEX ; ! ""
 алыҫлыҡ:алыҫлыҡ NLEX ; ! ""
 алыу:алыу NLEX ; ! ""
+аналитика:аналитика NLEX ; ! ""
 антология:антология NLEX ; ! ""
+аныҡлыҡ:аныҡлыҡ NLEX ; ! ""
 аң:аң NLEX ; ! ""
 апай:апай NLEX ; ! ""
 апай:апай NLEX ; ! ""
 аппарат:аппарат NLEX ; ! ""
+апрель:апрель NLEX ; ! ""
 ара:ара NLEX ; ! ""
 ара:ара NLEX ; ! ""
 аракы:аракы NLEX ; ! ""
@@ -787,9 +887,11 @@ LEXICON Nouns
 армия:армия NLEX ; ! ""
 арт:арт NLEX ; ! ""
 артист:артист NLEX ; ! ""
+архитектура:архитектура NLEX ; ! ""
 асҡыс:асҡыс NLEX ; ! ""
 асыл:асыл NLEX ; ! ""
 асыу:асыу NLEX ; ! ""
+аҫт:аҫт NLEX ; ! ""
 ата-әсә:ата-әсә NLEX ; ! ""
 атай:атай NLEX ; ! ""
 атама:атама NLEX ; ! ""
@@ -802,14 +904,18 @@ LEXICON Nouns
 ау:ау NLEX ; ! ""
 аусылыҡ:аусылыҡ NLEX ; ! ""
 ауыҙ:ауыҙ NLEX ; ! ""
-ауыҙ:ауыҙ NLEX ; ! ""
+ауыҙлыҡ:ауыҙлыҡ NLEX ; ! ""
 ауыл:ауыл NLEX ; ! ""
+ауылдаш:ауылдаш NLEX ; ! ""
 ауырлыҡ:ауырлыҡ NLEX ; ! ""
 ауыртыу:ауыртыу NLEX ; ! ""
 ауырыу:ауырыу NLEX ; ! ""
-ауырыу:ауырыу NLEX ; ! ""
+ауырыусы:ауырыусы NLEX ; ! ""
+ауышлыҡ:ауышлыҡ NLEX ; ! ""
+афғансы:афғансы NLEX ; ! ""
 ахмаҡ:ахмаҡ NLEX ; ! ""
 ахыр:ахыр NLEX ; ! ""
+аш:аш NLEX ; ! ""
 ашамлыҡ:ашамлыҡ NLEX ; ! ""
 ашамлыҡ:ашамлыҡ NLEX ; ! ""
 ашамлыҡтар:ашамлыҡтар NLEX ; ! ""
@@ -1020,6 +1126,7 @@ LEXICON Nouns
 әйләнә-тирәлек:әйләнә-тирәлек NLEX ; ! ""
 әйтем:әйтем NLEX ; ! ""
 әйтем:әйтем NLEX ; ! ""
+әҙәм:әҙәм NLEX ; ! ""
 ел:ел NLEX ; ! ""
 елкә:елкә NLEX ; ! ""
 әмәл:әмәл NLEX ; ! ""
@@ -1633,10 +1740,6 @@ LEXICON Nouns
 тартма:тартма NLEX ; ! ""
 тауар:тауар NLEX ; ! ""
 тау:тау NLEX ; ! ""
-тауыш:тауыш NLEX ; ! ""
-тауыш:тауыш NLEX ; ! ""
-тауыш:тауыш NLEX ; ! ""
-тауыш:тауыш NLEX ; ! ""
 тауыш:тауыш NLEX ; ! ""
 ташҡын:ташҡын NLEX ; ! ""
 таш:таш NLEX ; ! ""
@@ -2362,7 +2465,11 @@ LEXICON Nouns
 
 ибн%<n%>%<px3sp%>%<nom%>:ибн # ; ! "son of"
 
-LEXICON ProperNouns
+
+!===================!
+ LEXICON ProperNouns
+!===================!
+
 
 Татарстан:Татарстан NPTOPLEX ; ! ""
 Рәсәй:Рәсәй NPTOPLEX ; ! ""
@@ -2539,7 +2646,10 @@ LEXICON ProperNouns
 Хәмсә:Хәмсә NPALLEX ; ! ""
 
 
-LEXICON Adjectives
+!==================!
+ LEXICON Adjectives
+!==================!
+
 
 сәбәпле:сәбәпле ALEX ; ! ""
 һуң:һуң ALEX ; ! ""
@@ -3154,7 +3264,11 @@ LEXICON Adjectives
 кесе:кесе ALEX ; ! ""
 иғтибарлы:иғтибарлы ALEX ; ! ""
 
-LEXICON Adverbs
+
+!===============!
+ LEXICON Adverbs
+!===============!
+
 
 нисек:нисек ADVITGLEX ; ! ""
 ни% өсөн:ни% өсөн ADVITGLEX ; ! "why,what for" Use/MT
@@ -3232,7 +3346,11 @@ LEXICON Adverbs
 әле:әле ADVLEX ; ! ""
 әлегә:әлегә ADVLEX ; ! ""
 
-LEXICON Verbs
+
+!=============!
+ LEXICON Verbs
+!=============!
+
 
 бар:бар A3 ; ! ""
 юҡ:юҡ A3 ; ! ""
@@ -3762,14 +3880,111 @@ COP-I ; ! ""
 яу:яу V-IV-LEX ; ! ""
 бай:бай V-IV-LEX ; ! ""            FIXME:check - might be "байы"
 
-LEXICON Abbreviations
 
+!=====================!
+ LEXICON Abbreviations
+!=====================!
+
+
+BAE:BAE ABBR ; ! ""
+BG:BG ABBR ; ! ""
+CEZ:CEZ ABBR ; ! ""
+CNPC:CNPC ABBR ; ! ""
+EITI:EITI ABBR ; ! ""
+ER:ER ABBR ; ! ""
+HAS:HAS ABBR ; ! ""
+IMD:IMD ABBR ; ! ""
+Kaz:Kaz ABBR ; ! ""
+KPO:KPO ABBR ; ! ""
+kz:kz ABBR ; ! ""
+KZ:KZ ABBR ; ! ""
+ААЙ:ААЙ ABBR ; ! "Асыҡ акционерҙар йәмғиәте"
+АК:АК ABBR ; ! ""
+АҠШ:АҠШ ABBR ; ! "USA"
+АССР:АССР ABBR ; ! ""
+БДБ:БДБ ABBR ; ! "CIS"
+бейекл%.:бейекл%. ABBR ; ! ""
+биол%.:биол%. ABBR ; ! ""
+Биохим:Биохим ABBR ; ! "Разведка&Добыча"
+БМО:БМО ABBR ; ! "United Nations"
+БТА:БТА ABBR ; ! "a bank in Kazakhstan"
+б%.э%.:б%.э%. ABBR ;  ! "CE"
+б%.э%.:б%.э ABBR ;  ! "CE" Dir/LR
+б%.э%.к%.:б%.э%.к%. ABBR ;  ! "BCE"
+б%.э%.к%.:б%.э%.к ABBR ;  ! "BCE" Dir/LR
+ВАЗ:ВАЗ ABBR ; ! ""
+ВИЧ:ВИЧ ABBR ; ! ""
+геогр%.:геогр%. ABBR ; ! ""
+геол%.:геол%. ABBR ; ! ""
+Гленкор:Гленкор ABBR ; ! ""
+ГЭС:ГЭС ABBR ; ! ""
+ДНК:ДНК ABBR ; ! ""
+ЕБ:ЕБ ABBR ; ! ""
+Евросоюз:Евросоюз ABBR ; ! ""
+й%.:й%. ABBR ;  ! "year"
+ЗАГС:ЗАГС ABBR ; ! ""
+КазМУ:КазМУ ABBR ; ! "Al-Farabi Kazakh National Universty"
+КамАЗ:КамАЗ ABBR ; ! ""
+КВН:КВН ABBR ; ! ""
+кг:кг ABBR ;  ! "kg"
+КГБ:КГБ ABBR ; ! ""
+КДУ:КДУ ABBR ; ! "Казан дәүләт университеты"
+км:км ABBR ; ! "km"
 км²:км² ABBR ;
-км³:км³ ABBR ;
-км:км ABBR ;
+км²:км2 ABBR ; ! "km²" Dir/LR
+км³:км³ ABBR ;  ! "km³"
+км³:км3 ABBR ;  ! "km³" Dir/LR
+КПРФ:КПРФ ABBR ; ! ""
+КПСС:КПСС ABBR ; ! ""
+КР:КР ABBR ; ! "Republic of Kazakhstan"
+КФУ:КФУ ABBR ; ! "Казан федераль университеты"
+КХДР:КХДР ABBR ; ! ""
+КХР:КХР ABBR ; ! ""
+лат%.:лат%. ABBR ; ! ""
+м:м ABBR ; ! "m"
+мм:мм ABBR ; ! "mm"
+м²:м² ABBR ;  ! "m²"
+м²:м2 ABBR ; ! "m²" Dir/LR
+м³:м³ ABBR ;  ! "m³"
+м³:м3 ABBR ;  ! "m³" Dir/LR
+МАГАТЭ:МАГАТЭ ABBR ; ! ""
+МВт:МВт ABBR ; ! ""
+млн:млн ABBR ;  ! "million"
+млрд:млрд ABBR ; ! "billion"
+МУП:МУП ABBR ; ! "Муниципаль унитар предприятие"
+НАСА:НАСА ABBR ; ! ""
+НАТО:НАТО ABBR ; ! ""
+НКВД:НКВД ABBR ; ! ""
+обл%.:обл%. ABBR ; ! ""
+ОГПУ:ОГПУ ABBR ; ! ""
+ОДКБ:ОДКБ ABBR ; ! ""
+ОПЕК:ОПЕК ABBR ; ! ""
+РСФСР:РСФСР ABBR ; ! ""
+РФ:РФ ABBR ; ! "Russian Federation"
+см:см ABBR ;  ! "cm"
+СПИД:СПИД ABBR ; ! ""
+ССРБ:ССРБ ABBR ; ! "USSR"
+ССР:ССР ABBR ; ! ""
+СССР:СССР ABBR ; ! "USSR"
+т%.:т%. ABBR ; ! "tonne"
+т%.:т ABBR ; ! "tonne" Dir/LR
+ТВ:ТВ ABBR ; ! ""
+ТР:ТР ABBR ; ! "Republic of Tatarstan"
+ТЭЦ:ТЭЦ ABBR ; ! ""
+УАЗ:УАЗ ABBR ; ! ""
+УЕФА:УЕФА ABBR ; ! ""
+ФСБ:ФСБ ABBR ; ! ""
+хим%.:хим%. ABBR ; ! "chemical"
+экон%.:экон%. ABBR ; ! "economic"
 ЮНЕСКО:ЮНЕСКО ABBR ; ! ""
+ЮБАИТ:ЮБАИТ ABBR ; ! "Юлдан барышма аҙаһыҙлығының иллек тикшерешселеге"
+ЯАЙ:ЯАЙ ABBR ; ! "Ябыҡ акционерҙар йәмғиәте"
 
-LEXICON Punctuation
+
+!===================!
+ LEXICON Punctuation
+!===================!
+
 
 .%<sent%>:. # ;
 ..%<sent%>:.. # ;
