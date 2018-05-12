@@ -316,7 +316,7 @@ LEXICON NPANTFLEX
 %<np%>%<ant%>%<f%>: CASE ;
 
 LEXICON NPTOPLEX
-fhn
+
 %<np%>%<top%>: CASE ;
 
 LEXICON NPALLEX
