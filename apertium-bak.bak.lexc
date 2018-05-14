@@ -1128,8 +1128,8 @@ PRNLEX-PERS ;
 дошман:дошман NLEX ; ! ""
 дошман:дошман NLEX ; ! ""
 драматург:драматург NLEX ; ! ""
-дуҫ:дуҫ NLEX ; ! ""
-!дуҫ:дуҫ NLEX ; ! "" ! FIXME: gets an epenthetic 'т' in some forms: 'дуҫтым'
+дуҫ:дуҫ NLEX ; ! "" Dir/LR
+дуҫ:дуҫт NLEX ; ! "" 
 әбей:әбей NLEX ; ! ""
 әбей:әбей NLEX ; ! ""
 әбей:әбей NLEX ; ! ""
