@@ -578,7 +578,7 @@ LEXICON POSTADVLEX
 
 LEXICON ADVITGLEX
 
-%<adv%>%<itg%>: # ;
+%<adv%>%<itg%>: CLIT ;
 
 LEXICON ADVLEX
 
