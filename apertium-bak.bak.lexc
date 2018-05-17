@@ -584,11 +584,15 @@ LEXICON ADVLEX
 
 %<adv%>: CLIT ;
 
-LEXICON CCLEX
+LEXICON CC
 
 %<cnjcoo%>: # ;
 
-LEXICON CALEX
+LEXICON CS
+
+%<cnjsub%>: # ; 
+
+LEXICON CA
 
 %<cnjadv%>: # ;
 
@@ -612,27 +616,48 @@ LEXICON ABBR
 !====================!
 
 
-үә:үә CCLEX ; ! ""
-һәм:һәм CCLEX ; ! ""
-ә:ә CCLEX ; ! ""
-әммә:әммә CCLEX ; ! ""
-йә:йә CCLEX ; ! ""
-йәиһә:йәиһә CCLEX ; ! ""
-ләкин:ләкин CCLEX ; ! ""
-ни:ни CCLEX ; ! "neither... , nor ... (x2)"
+! Co-ordinating conjunctions
+! ==========================
 
-да:%~да CCLEX ; ! "" Dir/RL
-да:да CCLEX ; ! "" Dir/LR
-да:та CCLEX ; ! "" Dir/LR
-да:ҙа CCLEX ; ! "" Dir/LR
-да:ла CCLEX ; ! "" Dir/LR
-да:дә CCLEX ; ! "" Dir/LR
-да:тә CCLEX ; ! "" Dir/LR
-да:ҙә CCLEX ; ! "" Dir/LR
-да:лә CCLEX ; ! "" Dir/LR
+!! Соединительные - Йыйыу теркәүестәре
 
-шуға% күрә:шуға% күрә CALEX ; ! ""
-шул% сәбәпле:шул% сәбәпле CALEX ; ! ""
+да:%~да CC ; ! "" Dir/RL
+да:да CC ; ! "" Dir/LR
+да:та CC ; ! "" Dir/LR
+да:ҙа CC ; ! "" Dir/LR
+да:ла CC ; ! "" Dir/LR
+да:дә CC ; ! "" Dir/LR
+да:тә CC ; ! "" Dir/LR
+да:ҙә CC ; ! "" Dir/LR
+да:лә CC ; ! "" Dir/LR
+ни:ни CC ; ! "neither... , nor ... (x2)"
+плюс:плюс CC ; ! ""
+үә:үә CC ; ! "and (archaic)"
+һәм:һәм CC ; ! ""
+
+!! Противительные - Ҡаршы ҡуйыу теркәүестәре
+
+ә:ә CC ; ! "contrastive and"
+әммә:әммә CC ; ! "but"
+ләкин:ләкин CC ; ! "but"
+
+!! Разделительные - Бүлеү теркәүестәре
+
+йә:йә CC ; ! "or"
+йәиһә:йәиһә CC ; ! "or"
+
+! Sub-ordinating conjunctions
+! ===========================
+
+йәғни:йәғни  CS ; ! "that is, то есть"
+сөнки:сөнки CS ; ! "because"
+әгәр:әгәр CS ; ! "if"
+
+! Adverbial conjunctions = "Относительные слова"
+! ==============================================
+
+шуға% күрә:шуға% күрә CA ; ! ""
+шул% сәбәпле:шул% сәбәпле CA ; ! ""
 
 
 !=====================!
