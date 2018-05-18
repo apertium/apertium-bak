@@ -630,34 +630,58 @@ LEXICON ABBR
 да:тә CC ; ! "" Dir/LR
 да:ҙә CC ; ! "" Dir/LR
 да:лә CC ; ! "" Dir/LR
+менән:менән CC ; ! ""
 ни:ни CC ; ! "neither... , nor ... (x2)"
 плюс:плюс CC ; ! ""
 үә:үә CC ; ! "and (archaic)"
 һәм:һәм CC ; ! ""
+шулай% уҡ:шулай% уҡ CC ; ! "likewise"
 
 !! Противительные - Ҡаршы ҡуйыу теркәүестәре
 
+бары% тик:бары% тик CC ; ! "but, just"
+бәлки:бәлки CC ; ! "but, but also"
 ә:ә CC ; ! "contrastive and"
 әммә:әммә CC ; ! "but"
 ләкин:ләкин CC ; ! "but"
+мәгәр:мәгәр CC ; ! "but, just"
+тик:тик CC ; ! "but, just"
+фәҡәт:фәҡәт CC ; ! "но, только"
 
 !! Разделительные - Бүлеү теркәүестәре
 
 йә:йә CC ; ! "or"
 йәиһә:йәиһә CC ; ! "or"
+йәки:йәки CC ; ! "or"
+яхут:яхут CC ; ! ""
+әле:әле CC ; ! "то ... , то ... (х2) "
 
 ! Sub-ordinating conjunctions
 ! ===========================
 
+гәрсә:гәрсә CS ; ! "even if"
+гүйә:гүйә CS ; ! "as if"
+гүйәки:гүйәки CS ; ! "as if"
 йәғни:йәғни  CS ; ! "that is, то есть"
+ки:ки CS ; ! "that, in order that"
 сөнки:сөнки CS ; ! "because"
 әгәр:әгәр CS ; ! "if"
+әгәр% ҙә:әгәр% ҙә CS ; ! "if"
+юғиһә:юғиһә CS ; ! ""
+юҡһа:юҡһа CS ; ! ""
 
 ! Adverbial conjunctions = "Относительные слова"
 ! ==============================================
 
+улай% ҙа:улай% ҙа CA ; ! "despite it,nevertheless"
+улайһа:улайһа CA ; ! ""
+уның% ҡарауы:уның% ҡарауы CA ; ! "nevertheless"
+фекеренсә:фекеренсә CA ; ! ""
 шуға% күрә:шуға% күрә CA ; ! ""
 шул% сәбәпле:шул% сәбәпле CA ; ! ""
+шулай% ҙа:шулай% ҙа CA ; ! "nevertheless"
+шунлыҡтан:шунлыҡтан CA ; ! "that is why"
+әйтеүҙәренсә:әйтеүҙәренсә CA ; ! ""
 
 
 !=====================!
@@ -665,31 +689,67 @@ LEXICON ABBR
 !=====================!
 
 
-менән:менән POSTLEX ; ! ""
 инде:инде POSTLEX ; ! ""
-өсөн:өсөн POSTLEX ; ! ""
-арҡыры:арҡыры POSTLEX ; ! ""
-аша:аша POSTLEX ; ! ""
 кәрәк:кәрәк POSTLEX ; ! ""
-ҡаршы:ҡаршы POSTLEX ; ! ""
-башҡа:башҡа POSTLEX ; ! ""
-ҡарамаҫтан:ҡарамаҫтан POSTLEX ; ! ""
 аҫтында:аҫтында POSTLEX ; ! ""
-күрә:күрә POSTLEX ; ! ""
-
-буйынса:буйынса POSTLEX ; ! ""
-кеүек:кеүек POSTLEX ; ! ""
 ҡарамағында:ҡарамағында POSTLEX ; ! ""
 тапҡыр:тапҡыр POSTLEX ; ! ""
-тиклем:тиклем POSTLEX ; ! ""
+аҫтына:аҫтына POSTLEX ; ! ""
+хаҡына:хаҡына POSTLEX ; ! ""
+
+! which Govern the Nominative Case
+! ================================
+
+булараҡ:булараҡ POSTLEX ; ! ""
+
+! which Govern the Nominative Case of Nouns and
+! the Genitive Case of (Personal and Demonstrative) Pronouns
+! ==========================================================
+
+арҡыры:арҡыры POSTLEX ; ! ""
+аша:аша POSTLEX ; ! ""
+буйы:буйы POSTLEX ; ! ""
+буйынса:буйынса POSTLEX ; ! ""
+буйлап:буйлап POSTLEX ; ! ""
+кеүек:кеүек POSTLEX ; ! ""
+күк:күк POSTLEX ; ! ""
+менән:менән POSTLEX ; ! ""
+өсөн:өсөн POSTLEX ; ! ""
 тураһында:тураһында POSTLEX ; ! ""
 хаҡында:хаҡында POSTLEX ; ! ""
 һайын:һайын POSTLEX ; ! ""
-аҫтына:аҫтына POSTLEX ; ! ""
-буйлап:буйлап POSTLEX ; ! ""
-булараҡ:булараҡ POSTLEX ; ! ""
-хаҡына:хаҡына POSTLEX ; ! ""
+һымаҡ:һымаҡ POSTLEX ; ! ""
+шикелле:шикелле POSTLEX ; ! ""
+
+! which Govern Nominative/Genitive/Dative cases
+! =============================================
+
+ҡәҙәр:ҡәҙәр POSTLEX ; ! ""
+саҡлы:саҡлы POSTLEX ; ! ""
+тиклем:тиклем POSTLEX ; ! ""
 хәтле:хәтле POSTLEX ; ! ""
+
+! which Govern the Dative Case
+! ============================
+
+ҡарағанда:ҡарағанда POSTLEX ; ! ""
+ҡарамаҫтан:ҡарамаҫтан POSTLEX ; ! ""
+ҡарата:ҡарата POSTLEX ; ! ""
+ҡаршы:ҡаршы POSTLEX ; ! ""
+күрә:күрә POSTLEX ; ! ""
+табан:табан POSTLEX ; ! ""
+яҡын:яҡын POSTLEX ; ! ""
+
+! which Govern the Ablative Case
+! ==============================
+
+ары:ары POSTLEX ; ! ""
+башҡа:башҡа POSTLEX ; ! ""
+бирле:бирле POSTLEX ; ! ""
+бүтән:бүтән POSTLEX ; ! ""
+һуң:һуң POSTLEX ; ! ""
+тыш:тыш POSTLEX ; ! ""
+элек:элек POSTLEX ; ! ""
 
 
 !===================!
@@ -792,6 +852,8 @@ PRNLEX-PERS ;
 төмән:төмән NUMLEX ; ! "archaic for 10 000"
 миллион:миллион NUMLEX ; ! ""
 миллиард:миллиард NUMLEX ; ! ""
+триллион:триллион NUMLEX ; ! "trillion"
+триллиард:триллиард NUMLEX ; ! "trilliard"
 
 
 !=============!
