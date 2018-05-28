@@ -557,6 +557,10 @@ LEXICON PRNREFLEX
 
 %<prn%>%<ref%>: POSS-REAL ;
 
+LEXICON PRON-IND
+
+%<prn%>%<ind%>: CASE ;
+
 LEXICON DETQNTLEX
 
 %<det%>%<qnt%>: # ;
@@ -795,6 +799,8 @@ PRNLEX-PERS ;
 
 үҙ:үҙ PRNREFLEX ; ! ""
 
+береһе:береһе PRON-IND ; ! ""
+
 
 !===================!
  LEXICON Determiners
@@ -811,7 +817,6 @@ PRNLEX-PERS ;
 барлыҡ:барлыҡ DETQNTLEX ; ! ""
 
 бер:бер DETINDLEX ; ! ""
-береһе:береһе DETINDLEX ; ! ""
 берәр:берәр DETINDLEX ; ! ""
 бер% ниндәй:бер% ниндәй DETINDLEX ; ! ""
 
@@ -2336,7 +2341,7 @@ PRNLEX-PERS ;
 этнос:этнос NLEX ; ! ""
 эфир:эфир NLEX ; ! ""
 эш:эш NLEX ; ! ""
-эш% ҡағыҙы:эш% ҡағыҙ NLEX ; ! ""
+эш% ҡағыҙы:эш% ҡағыҙ NLEX ; ! "" Use/MT
 эшҡыуар:эшҡыуар NLEX ; ! ""
 эшҡыуарлыҡ:эшҡыуарлыҡ NLEX ; ! ""
 эшкәртеү:эшкәртеү NLEX ; ! ""
@@ -2812,8 +2817,10 @@ PRNLEX-PERS ;
 Париж:Париж NPTOPLEX ; ! ""
 Лондон:Лондон NPTOPLEX ; ! ""
 
+Австралия:Австралия NPTOPLEX ; ! ""
 Азия:Азия NPTOPLEX ; ! ""
-Англия:Англия NLEX ; ! ""
+Англия:Англия NPTOPLEX ; ! ""
+Антарктида:Антарктида NPTOPLEX ; ! ""
 Арран:Арран NPTOPLEX ; ! ""
 Афғанстан:Афғанстан NPTOPLEX ; ! ""
 Африка:Африка NPTOPLEX ; ! ""
@@ -2859,7 +2866,7 @@ PRNLEX-PERS ;
 Мысыр:Мысыр NPTOPLEX ; ! ""
 Пакистан:Пакистан NPTOPLEX ; ! ""
 Персия:Персия NPTOPLEX ; ! ""
-Польша:Польша NLEX ; ! ""
+Польша:Польша NPTOPLEX ; ! ""
 Төркиә:Төркиә NPTOPLEX ; ! ""
 Тажикстан:Тажикстан NPTOPLEX ; ! ""
 Үзбәкстан:Үзбәкстан NPTOPLEX ; ! ""
@@ -3631,7 +3638,6 @@ PRNLEX-PERS ;
 һис% ҡасан:һис% ҡасан ADV ; ! "never" Use/MT
 
 айырыуса:айырыуса ADV ; ! ""
-алдындағы:алдындағы ADV ; ! ""
 артабан:артабан ADV ; ! ""
 !аннары:аннары ADV ; ! "then"
 аңлатыуҙарынса:аңлатыуҙарынса ADV ; ! ""
@@ -4277,8 +4283,8 @@ KZ:KZ ABBR ; ! ""
 БТА:БТА ABBR ; ! "a bank in Kazakhstan"
 б%.э%.:б%.э%. ABBR ;  ! "CE"
 б%.э%.:б%.э ABBR ;  ! "CE" Dir/LR
-б%.э%.к%.:б%.э%.к%. ABBR ;  ! "BCE"
-б%.э%.к%.:б%.э%.к ABBR ;  ! "BCE" Dir/LR
+б%.э%.т%.:б%.э%.т%. ABBR ;  ! "BCE"
+б%.э%.т%.:б%.э%.т ABBR ;  ! "BCE" Dir/LR
 ВАЗ:ВАЗ ABBR ; ! ""
 ВИЧ:ВИЧ ABBR ; ! ""
 геогр%.:геогр%. ABBR ; ! ""
