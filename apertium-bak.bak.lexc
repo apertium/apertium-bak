@@ -285,6 +285,13 @@ LEXICON NLEX
 %<n%>%<attr%>: # ;
 %<n%>: SUBST ;
 
+LEXICON N-COMPOUND-PX
+
+%<n%>:%>%{h%}%{I%}%{n%} CASE-ETC ;
+%<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%}%{n%} CASE-ETC ; ! (e.g. чик сакчылары=пограничники)
+%<n%>: POSS-REAL ; ! for stuff like "біздің ауа райымыз" and even "оның ауа райы",
+                   ! which should have a <px3sp> analysis
+
 LEXICON DIGITLEX
 
 %<num%>: # ;
@@ -1543,10 +1550,7 @@ PRNLEX-PERS ;
 !краб:краб NLEX ; ! ""
 край:край NLEX ; ! ""
 кресло:кресло NLEX ; ! ""
-күҙ% йәше:күҙ% йәше NLEX ; ! ""
-күҙ% йәше:күҙ% йәше NLEX ; ! ""   !!TODO: this kind of compound words already have a px3sp ending
-                                  !!(no matter are they written separately or not). Maybe we should
-                                  !! make -e- an archivowel here, so that [с]{I} of px3sp could be deleted after it
+күҙ% йәше:күҙ% йәш N-COMPOUND-PX ; ! ""
 күҙ:күҙ NLEX ; ! ""
 күҙәнәк:күҙәнәк NLEX ; ! ""
 күк:күк NLEX ; ! ""
@@ -3071,7 +3075,7 @@ PRNLEX-PERS ;
 кәрәк:кәрәк ALEX ; ! ""
 кәрәкле:кәрәкле ALEX ; ! ""
 континенталь:континенталь ALEX ; ! ""
-көрән:көрән АLEX ; ! ""
+көрән:көрән ALEX ; ! ""
 көслө:көслө ALEX ; ! ""
 матур:матур ALEX ; ! ""
 мөһим:мөһим ALEX ; ! ""
