@@ -101,7 +101,7 @@
 
 ! Tense, aspect, mood
 %<imp%>            ! Imperative
-%<cond%>           ! -h{A}
+!%<cond%>           ! -h{A}
 %<caus%>           !
 %<pass%>           !
 %<coop%>           !
@@ -116,20 +116,20 @@
 
 !! Participles
 %<prc_impf%>       ! -{E}    !# ул _уйный_ алмады; мин _килә_ алмадым
-%<prc2%>           ! -{I}п   !# "_Йоклап_ яткан мәче авызына тычкан үзе _килеп_ керми."
+%<prc_perf%>           ! -{I}п   !# "_Йоклап_ яткан мәче авызына тычкан үзе _килеп_ керми."
 %<prc_vol%>        ! -{G}{I} !# _барғым_ килә             ! FIXME:NOTE: as far as I know, there are two types of vol.prc in Bashkir:
                                                           ! 1. looks like Bashkir vol.prc, 2. the second is like in in the example above.
                                                           ! {{test|tt|Бараһым килә.|Барасым килә.}}
                                                           ! {{test|tt|Барғым килә.|Барасым килә.}}
-
+%<prc_cond%>       ! -h{A}
 !! Verbal adverbs - Хәл фигыльләр - Глаголные наречия
 %<gna_cond%>       ! -с{A}  !# "...кайда икәнен _белсә_ дә, әйтми..."
-%<gna9%>           ! -{I}п  !# "...ул вакытта инде кояш _баеп_, йолдызлар күренә башлаган иде..." (Ф.Хөсни)
+%<gna_perf%>           ! -{I}п  !# "...ул вакытта инде кояш _баеп_, йолдызлар күренә башлаган иде..." (Ф.Хөсни)
 
 !! Gerunds - Исем фигыльләр
 %<ger%>            ! -{U}
 %<ger1%>           ! -м{A}{K}
-%<ger3%>           ! -{G}{A}с
+%<gna_after%>           ! -{G}{A}с
 %<ger4%>           ! -{G}{A}нс{I}
 %<ger_past%>           ! -{G}{A}н
 %<ger_fut%>           ! -{I}р
@@ -139,7 +139,6 @@
 %<inf%>            ! Infinitive ! Инфинитив ! -{I}рг{A}
 
 !!! the next will be removed soon; kept to let others know about changes
-%<ger2%>           ! -{I}п !WARNING: This was replaced with prc2 and gna9; turned off
 %<vol%>            ! !WARNING: This was replaced with prc_vol
 
 ! Transitivity ! Переходность
@@ -416,7 +415,7 @@ LEXICON V-NONFINITE-FORMS
 
 %<ger%>:%>%{U%} POSS-REAL ;
 %<ger1%>:%>м%{A%}%{K%} POSS-REAL ;
-%<ger3%>:%>%{G%}%{A%}с SUBST ;
+%<gna_after%>:%>%{G%}%{A%}с SUBST ;
 %<ger4%>:%>%{G%}%{A%}нс%{I%} POSS-REAL ;
 %<ger_past%>:%>%{G%}%{A%}н POSS-REAL ;
 %<ger_fut%>:%>%{I%}р POSS-REAL ;
@@ -427,12 +426,23 @@ LEXICON V-NONFINITE-FORMS
                                         ! Former it was called <ger8>.
                                         ! A transfer rule to match bashkir prc_vol2 to tatar prc_vol is needed. /I.S./
 
-%<cond%>:%>һ%{A%} V-PERS-S2 ;
 %<prc_vol2%>:%>%{G%}%{I%} V-PERS-S2 ;   ! FIXME: check cont. class
 
-!%<imp%>%<p1%>%<sg%>:%>%{A%}й%{I%}м CLIT ; ! jussive ^____^
+%<prc_cond%>:%>һ%{A%} V-PERS-S2 ;
+
+! Imperatives
+
 %<imp%>%<p2%>%<sg%>: CLIT  ;
 %<imp%>%<p2%>%<pl%>:%>%{I%}г%{I%}ҙ CLIT ;
+%<imp%>%<p2%>%<frm%>%<sg%>:%>%{I%}г%{I%}ҙ  CLIT ;
+%<imp%>%<p2%>%<frm%>%<pl%>:%>%{I%}г%{I%}ҙ  CLIT ;
+
+! Optative/jussive forms
+
+%<opt%>%<p1%>%<sg%>:%{A%}й%{I%}м CLIT ;
+%<opt%>%<p3%>%<sg%>:%>һ%{I%}н CLIT ;
+%<opt%>%<p1%>%<pl%>:%>%{A%}й%{I%}ҡ CLIT ;
+%<opt%>%<p3%>%<pl%>:%>һ%{I%}нд{A%}р CLIT ;
 
 LEXICON V-COMMON-LEX
 
@@ -441,8 +451,8 @@ V-NONFINITE-FORMS ;
 
 LEXICON V-IRREG-LEX
 
-%<prc2%>:%>%{I%}п # ;
-%<gna9%>:%>%{I%}п CLIT ;
+%<prc_perf%>:%>%{I%}п # ;
+%<gna_perf%>:%>%{I%}п CLIT ;
 %<fut%>:%>%{I%}р V-PERS-S3 ;
 %<neg%>%<fut%>:%>м%{A%}ҫ V-PERS-S3-NO1SG ;
 %<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}%>м CLIT ;
@@ -1020,6 +1030,7 @@ PRNLEX-PERS ;
 антропология:антропология NLEX ; ! ""
 аныҡлыҡ:аныҡлыҡ NLEX ; ! ""
 аң:аң NLEX ; ! ""
+аңлатма:аңлатма NLEX ; ! ""
 апай:апай NLEX ; ! ""
 аппарат:аппарат NLEX ; ! ""
 аппаратсы:аппаратсы NLEX ; ! ""
@@ -1289,6 +1300,7 @@ PRNLEX-PERS ;
 вулкан:вулкан NLEX ; ! ""
 выждан:выждан NLEX ; ! ""
 вәкил:вәкил NLEX ; ! ""
+вәғәҙә:вәғәҙә NLEX ; ! ""
 газ:газ NLEX ; ! ""
 газета:газета NLEX ; ! ""
 галактика:галактика NLEX ; ! ""
@@ -1644,12 +1656,14 @@ PRNLEX-PERS ;
 классицизм:классицизм NLEX ; ! ""
 климат:климат NLEX ; ! ""
 клуб:клуб NLEX ; ! ""
+клип:клип NLEX ; ! ""
 код:код NLEX ; ! ""
 кодекс:кодекс NLEX ; ! ""
 коллега:коллега NLEX ; ! ""
 колхоз:колхоз NLEX ; ! ""
 команда:команда NLEX ; ! ""
 командир:командир NLEX ; ! ""
+комбинация:комбинация NLEX ; ! ""
 комедия:комедия NLEX ; ! ""
 комета:комета NLEX ; ! ""
 комиссия:комиссия NLEX ; ! ""
@@ -2348,6 +2362,7 @@ PRNLEX-PERS ;
 төбәк:төбәк NLEX ; ! ""
 төҙөлөш:төҙөлөш NLEX ; ! ""
 төҙөү:төҙөү NLEX ; ! ""
+төймә:төймә NLEX ; ! ""
 төлкө:төлкө NLEX ; ! ""
 төн:төн NLEX ; ! ""
 төньяҡ:төньяҡ NLEX ; ! ""
@@ -2556,6 +2571,7 @@ PRNLEX-PERS ;
 Хоҙай:Хоҙай NLEX ; ! ""
 хоҡуҡ:хоҡуҡ NLEX ; ! ""
 холоҡ:холоҡ NLEX ; ! ""
+хосусилыҡ:хосусилыҡ NLEX ; ! ""
 хөкөм:хөкөм NLEX ; ! ""
 хөкүмәт:хөкүмәт NLEX ; ! ""
 хөрриәт:хөрриәт NLEX ; ! ""
@@ -2902,6 +2918,7 @@ PRNLEX-PERS ;
 яға:яға NLEX ; ! ""
 яғыулыҡ:яғыулыҡ NLEX ; ! ""
 яҙ:яҙ NLEX ; ! ""
+яҙҙырыу:яҙҙырыу NLEX ; ! ""
 яҙма:яҙма NLEX ; ! ""
 яҙмыш:яҙмыш NLEX ; ! ""
 яҙыҡ:яҙыҡ NLEX ; ! ""
@@ -3432,6 +3449,7 @@ PRNLEX-PERS ;
 һыуыҡ:һыуыҡ ALEX ; ! ""
 әҙер:әҙер ALEX ; ! ""
 өлкән:өлкән ALEX ; ! ""
+нәзәкәтле:нәзәкәтле ALEX ; ! ""
 
 ышаныслы:ышаныслы ALEX ; ! ""
 билдәһеҙ:билдәһеҙ ALEX ; ! ""
@@ -3902,6 +3920,7 @@ PRNLEX-PERS ;
 былтырғы:былтырғы ALEX ; ! ""
 кесе:кесе ALEX ; ! ""
 иғтибарлы:иғтибарлы ALEX ; ! ""
+һуңғы:һуңғы ALEX ; ! ""
 
 
 !===============!
@@ -3986,6 +4005,7 @@ PRNLEX-PERS ;
 әлбиттә:әлбиттә ADV ; ! "certainly"
 әле:әле ADV ; ! ""
 әлегә:әлегә ADV ; ! ""
+ваҡытында:ваҡытында ADV ; ! ""
 
 ! Languages
 ! =========
@@ -4287,6 +4307,7 @@ COP-I ; ! ""
 бир:бир V-TV-LEX ; ! ""
 һатып% ал:һатып% ал V-TV-LEX ; ! ""
 эс:эс V-TV-LEX ; ! ""
+сирт:сирт V-TV-LEX ; ! ""
 хәбәр% ит:хәбәр% ит V-TV-LEX ; ! ""
 үлтер:үлтер V-TV-LEX ; ! ""
 һиҙ:һиҙ V-TV-LEX ; ! ""
@@ -4618,6 +4639,7 @@ COP-I ; ! ""
 тасуирла:тасуирла V-TV-LEX ; ! ""
 тыу:тыу V-IV-LEX ; ! ""
 урынлаш:урынлаш V-IV-LEX ; ! ""
+яҙҙыр:яҙҙыр V-TV-LEX ; ! ""
 
 !! added for testing twol rules
 ҡуй:ҡуй V-TV-LEX ; ! ""
@@ -4738,6 +4760,7 @@ KZ:KZ ABBR ; ! ""
 ФСБ:ФСБ ABBR ; ! ""
 хим%.:хим%. ABBR ; ! "chemical"
 экон%.:экон%. ABBR ; ! "economic"
+эл%.:эл%. ABBR ; ! ""
 ЮНЕСКО:ЮНЕСКО ABBR ; ! ""
 ЮБАИТ:ЮБАИТ ABBR ; ! "Юлдан барышма аҙаһыҙлығының иллек тикшерешселеге"
 ЯАЙ:ЯАЙ ABBR ; ! "Ябыҡ акционерҙар йәмғиәте"
