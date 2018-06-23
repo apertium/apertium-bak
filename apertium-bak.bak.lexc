@@ -112,15 +112,15 @@
 %<ifi%>            ! -{N}{I}
 
 ! Non-Finite verb forms ! WARNING: Number part of the tags is subject to change :)
-                        ! Stay up-to-date
+                    ! Stay up-to-date
 
 !! Participles
 %<prc_impf%>       ! -{E}    !# ул _уйный_ алмады; мин _килә_ алмадым
 %<prc_perf%>           ! -{I}п   !# "_Йоклап_ яткан мәче авызына тычкан үзе _килеп_ керми."
 %<prc_vol%>        ! -{G}{I} !# _барғым_ килә             ! FIXME:NOTE: as far as I know, there are two types of vol.prc in Bashkir:
-                                                          ! 1. looks like Bashkir vol.prc, 2. the second is like in in the example above.
-                                                          ! {{test|tt|Бараһым килә.|Барасым килә.}}
-                                                          ! {{test|tt|Барғым килә.|Барасым килә.}}
+                                                      ! 1. looks like Bashkir vol.prc, 2. the second is like in in the example above.
+                                                      ! {{test|tt|Бараһым килә.|Барасым килә.}}
+                                                      ! {{test|tt|Барғым килә.|Барасым килә.}}
 %<prc_cond%>       ! -h{A}
 !! Verbal adverbs - Хәл фигыльләр - Глаголные наречия
 %<gna_cond%>       ! -с{A}  !# "...кайда икәнен _белсә_ дә, әйтми..."
@@ -150,7 +150,7 @@
 %<p2%>             ! Second person
 %<p3%>             ! Third person
 %<frm%>            ! Formality ! This is not really needed for tat-bak pair, but it is needed, e.g. for kaz-tat pair
-                               ! (or, let's say bak-kaz pair). So it won't hurt if we add it here.
+                           ! (or, let's say bak-kaz pair). So it won't hurt if we add it here.
 
 ! Clitics
 %<qst%>            ! Modal question particle
@@ -272,7 +272,7 @@ LEXICON POSS-REAL
 %<px2pl%>:%>%{I%}%{G%}%{I%}ҙ CASE-ETC ;
 
 CASE-ETC ; ! FIXME:NOTE:! this was temporarily put here because some gerunds and pronouns are linked
-                        ! to POSS-REAL. They should be linked to SUBST actually (and they will) /I.S./
+                    ! to POSS-REAL. They should be linked to SUBST actually (and they will) /I.S./
 
 LEXICON N-INFL-COMMON
 POSS-REAL ;
@@ -290,7 +290,7 @@ LEXICON N-COMPOUND-PX
 %<n%>:%>%{h%}%{I%}%{n%} CASE-ETC ;
 %<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%}%{n%} CASE-ETC ; ! (e.g. чик сакчылары=пограничники)
 %<n%>: POSS-REAL ; ! for stuff like "біздің ауа райымыз" and even "оның ауа райы",
-                   ! which should have a <px3sp> analysis
+               ! which should have a <px3sp> analysis
 
 LEXICON ADV-LANG
 
@@ -422,9 +422,9 @@ LEXICON V-NONFINITE-FORMS
 %<inf%>:%>%{I%}рг%{A%} # ;
 %<ger7%>:%>%{A%}с%{A%}%{K%} POSS-REAL ;
 %<prc_vol%>:%>%{E%}һ%{I%} V-PERS-S4 ;   ! FIXME:NOTE: this is the first type of volitative
-                                        ! participle in Bashkir (see comment for <prc_vol> tag above).
-                                        ! Former it was called <ger8>.
-                                        ! A transfer rule to match bashkir prc_vol2 to tatar prc_vol is needed. /I.S./
+                                    ! participle in Bashkir (see comment for <prc_vol> tag above).
+                                    ! Former it was called <ger8>.
+                                    ! A transfer rule to match bashkir prc_vol2 to tatar prc_vol is needed. /I.S./
 
 %<prc_vol2%>:%>%{G%}%{I%} V-PERS-S2 ;   ! FIXME: check cont. class
 
@@ -3943,6 +3943,79 @@ PRNLEX-PERS ;
 кесе:кесе ALEX ; ! ""
 иғтибарлы:иғтибарлы ALEX ; ! ""
 һуңғы:һуңғы ALEX ; ! ""
+
+авиацион:авиацион ALEX ; ! ""
+автоном:авиацион ALEX ; ! ""
+автономиялы:автономиялы ALEX ; ! ""
+авторитар:авторитар ALEX ; ! ""
+атлы:атлы ALEX ; ! ""
+бәхәсле:бәхәсле ALEX ; ! ""
+буйлы:буйлы ALEX ; ! ""
+буржуаз:буржуаз ALEX ; ! ""
+ғәҙәттән% тыш:ғәҙәттән% тыш ALEX ; ! ""
+генетик:генетик ALEX ; ! ""
+геологик:геологик ALEX ; ! ""
+глобаль:глобаль ALEX ; ! ""
+горизонталь:горизонталь ALEX ; ! ""
+гравитацион:гравитацион ALEX ; ! ""
+гуманитар:гуманитар ALEX ; ! ""
+дәртле:дәртле ALEX ; ! ""
+динамик:динамик ALEX ; ! ""
+докторлыҡ:докторлыҡ ALEX ; ! ""
+доминант:доминант ALEX ; ! ""
+индукцион:индукцион ALEX ; ! ""
+иң% яҡшы:иң% яҡшы ALEX ; ! ""
+ирле:ирле ALEX ; ! ""
+квалификациялы:квалификациялы ALEX ; ! ""
+композицион:композицион ALEX ; ! ""
+ҡораллы:ҡораллы ALEX ; ! ""
+көндәлек:көндәлек ALEX ; ! ""
+күп% балалы:күп% балалы ALEX ; ! ""
+лингвистик:лингвистик ALEX ; ! ""
+математик:математик ALEX ; ! ""
+материаль:материаль ALEX ; ! ""
+механик:механик ALEX ; ! ""
+мираҫҡа% ҡалған:мираҫҡа% ҡалған ALEX ; ! ""
+молекуляр:молекуляр ALEX ; ! ""
+мөгөҙлө:мөгөҙлө ALEX ; ! ""
+музыкаль:музыкаль ALEX ; ! ""
+оло% йәштәге:оло% йәштәге ALEX ; ! ""
+органик:органик ALEX ; ! ""
+периодик:периодик ALEX ; ! ""
+радиоактив:радиоактив ALEX ; ! ""
+радиолокацион:радиолокацион ALEX ; ! ""
+революцион:революцион ALEX ; ! ""
+рәтле:рәтле ALEX ; ! ""
+ризаһыҙ:ризаһыҙ ALEX ; ! ""
+синтаксик:синтаксик ALEX ; ! ""
+синтетик:синтетик ALEX ; ! ""
+социалистик:социалистик ALEX ; ! ""
+структур:структур ALEX ; ! ""
+субъектив:субъектив ALEX ; ! ""
+табышһыҙ:табышһыҙ ALEX ; ! ""
+теоретик:теоретик ALEX ; ! ""
+термик:термик ALEX ; ! ""
+террорсылыҡ:террорсылыҡ ALEX ; ! ""
+тип%-тигеҙ:тип%-тигеҙ ALEX ; ! ""
+тропик:тропик ALEX ; ! ""
+файҙалы:файҙалы ALEX ; ! ""
+феодаль:феодаль ALEX ; ! ""
+формаль:формаль ALEX ; ! ""
+фундаменталь:фундаменталь ALEX ; ! ""
+хайран:хайран ALEX ; ! ""
+цикллы:цикллы ALEX ; ! ""
+сиктән% тыш:сиктән% тыш ALEX ; ! ""
+эволюцион:эволюцион ALEX ; ! ""
+экстремистик:экстремистик ALEX ; ! ""
+экс:экс ALEX ; ! ""
+электромагнитик:электромагнитик ALEX ; ! ""
+электронлы:электронлы ALEX ; ! ""
+элементар:элементар ALEX ; ! ""
+асыулы:асыулы ALEX ; ! ""
+ҡуш:ҡуш ALEX ; ! ""
+традицион:традицион ALEX ; ! ""
+тоғро:тоғро ALEX ; ! ""
+эйәһеҙ:эйәһеҙ ALEX ; ! ""
 
 
 !===============!
