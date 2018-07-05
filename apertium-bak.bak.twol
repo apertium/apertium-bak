@@ -10,7 +10,7 @@ Alphabet
 
  %{h%}:һ %{n%}:н %{l%}:л
 
- %{т%}:0
+ %{т%}:0 %{ъ%}:0 %{☭%}:0
 
  %>:0  ; 
 
@@ -67,7 +67,7 @@ Rules
 %{A%}:ә <=> [ :FrontVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
 
 "I Vowel Harmony"
-%{I%}:Vy <=> [ :PreviousVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+%{I%}:Vy <=> [ :PreviousVow :Cns* :Cns ]/[ %>: | %  | [ :0 - [ %{ъ%}: | %{☭%}: ] ] ] _ ;
              except
                                       %{n%}:н/[ :0 | %>: ] _ ;
              where          Vy in ( о е е е е ө е )
