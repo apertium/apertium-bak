@@ -75,6 +75,7 @@
 !! some additional ~cases
 %<locattr%>    ! Relativised locative=Locative attribute=Местно-временной2 !# LAGI !! FIXME:Not needed anymore, bcs we switched to <loc><attr>
 %<sim%>        ! Similative !# ?LAй
+%<abe%>        ! Abessive=Privative
 !лишительный   !# -һыз/-һез !! not used after posessives
 !обладательный !# -Lы/-Lе   !! not used after posessives
 
@@ -88,6 +89,7 @@
 ! Pronoun types
 %<pers%>           ! Personal
 %<ref%>            ! Reflexive
+
 ! Pronoun and determiner types
 %<dem%>            ! Demonstrative
 %<ind%>            ! Indefinite
@@ -100,17 +102,25 @@
 %<coll%>           ! Collective  !# берәү, икәү
 %<dist%>           ! Distibutive !# берәр, икешәр
 
-! Tense, aspect, mood
-%<imp%>            ! Imperative
-!%<cond%>           ! -h{A}
-%<caus%>           !
-%<pass%>           !
-%<coop%>           !
+! Mood
+%<imp%>       ! Imperative
+%<opt%>       ! Optative/jussive
+%<evid%>      ! Evidential, a.k.a. "indirect" / non-eyewitness / hearsay
 
-%<pres%>           ! -{A}
-%<past%>           ! -{G}{A}н
-%<fut%>            ! -{I}р
-%<ifi%>            ! -{N}{I}
+! Derivation
+%<caus%>      ! Causative
+%<pass%>      ! Passive 
+%<coop%>      ! Cooperative
+
+! Tenses / finite forms
+%<pres%>      ! -{A}
+%<aor%>       ! 
+%<past%>      ! -{G}{A}н
+%<ifi%>       ! -{N}{I}
+%<fut%>       ! -{I}р
+%<fut2%>      ! -{A}c{A}{K}
+%<fut_plan%>  ! -м{A}кc{I}
+
 
 ! Non-Finite verb forms ! WARNING: Number part of the tags is subject to change :)
                     ! Stay up-to-date
@@ -127,20 +137,27 @@
 %<gna_cond%>       ! -с{A}  !# "...кайда икәнен _белсә_ дә, әйтми..."
 %<gna_perf%>           ! -{I}п  !# "...ул вакытта инде кояш _баеп_, йолдызлар күренә башлаган иде..." (Ф.Хөсни)
 
-!! Gerunds - Исем фигыльләр
-%<ger%>            ! -{U}
-%<ger1%>           ! -м{A}{K}
-%<gna_after%>           ! -{G}{A}с
-%<ger4%>           ! -{G}{A}нс{I}
-%<ger_past%>           ! -{G}{A}н
-%<ger_fut%>           ! -{I}р
-%<ger7%>           ! -{A}с{A}{K}
-%<ger8%>           ! -{E}h
+! Gerunds
 
-%<inf%>            ! Infinitive ! Инфинитив ! -{I}рг{A}
+%<prc_perf%>  ! Perfect participle
+             
+%<prc_impf%>  ! Imperfect participle
+              
+%<prc_vol%>   ! Volition participle
+              
+%<prc_cond%>  ! Conditional participle
+              
+%<prc_fplan%> ! Future plan participle
+              
+!!! Verbal adverbs ! Хәл фигыльләр ! Глагольные наречия
+%<gna_perf%>  
+%<gna_cond%>  
+%<gna_until%> 
+%<gna_after%> 
 
-!!! the next will be removed soon; kept to let others know about changes
-%<vol%>            ! !WARNING: This was replaced with prc_vol
+!! Transitivity ! Күчмәлек ! Переходность
+%<tv%>        ! Transitive
+%<iv%>        ! Intransitive
 
 ! Transitivity ! Переходность
 %<tv%>             ! Transitive
@@ -183,6 +200,7 @@
 %{l%}              !
 %{т%}              ! Realised as т before vowels, 0 otherwise
 %{ъ%}              ! Disappears and makes back harmony
+%{е%}              !
 
 %>                 !
 %~                 !
@@ -212,10 +230,10 @@ Interjections ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-LEXICON SUBST
+!LEXICON SUBST
 
-N-INFL-COMMON ;
-%<pl%>:%>%{L%}%{A%}р N-INFL-COMMON ;
+!N-INFL-COMMON ;
+!%<pl%>:%>%{L%}%{A%}р N-INFL-COMMON ;
 
 ! NOTE: Some substantivized things might not have pl. form, numerals e.g.
 ! (not too sure, because in Bashkir they have it:
@@ -229,63 +247,155 @@ N-INFL-COMMON ;
 
 !!!!!!!!!!!!!!!!!!!!!!     CLITICS
 
-LEXICON CLIT
+LEXICON CLIT-EMPH-SANA
 
-%+да%<cnjcoo%>:% %{D%}%{A%} # ;
-%+мы%<qst%>:%>м%{I%} # ;
-%+лыр%<mod_ind%>:%>%{L%}%{I%}р # ;
-
-!%+мы% ни%<qst%>:%>м%{I%}% ни # ;
-!%+уҡ%<part%>:% %{U%}%{K%} # ;
+%+һана%<emph%>:%>һ%{A%}н%{A%} # ; ! ""
 # ;
+
+LEXICON CLIT-EMPH-CHI
+
+%+cы%<emph%>:%>c%{I%} # ; ! ""
+# ;
+
+LEXICON CLIT-EMPH
+
+CLIT-EMPH-SANA ; ! ""
+CLIT-EMPH-CHI ; ! ""
+
+LEXICON CLIT-QST
+
+%+мы%<qst%>:%>м%{I%} # ; ! ""
+%+мы% ни%<qst%>:%>м%{I%}% ни # ; ! ""
+# ;
+
+LEXICON CLIT-MODASS
+
+%+ла%<mod_ass%>:%>%{L%}%{A%} # ; ! ""
+%+лаһа%<mod_ass%>:%>%{L%}аһа # ; ! ""
+# ;
+
+LEXICON CLIT-MODIND
+
+%+лыр%<mod_ind%>:%>%{L%}%{I%}р # ; ! ""
+# ;
+
+LEXICON CLIT-GHANA
+
+%+гына%<postadv%>:% %{G%}%{I%}н%{A%} # ; ! ""
+
+LEXICON CLIT-DA-CNJ
+
+%+да%<cnjcoo%>:% %{D%}%{A%} # ; ! ""
+
+LEXICON CLIT-GHANA-ETC
+
+CLIT-GHANA ;
+CLIT-DA-CNJ ;
+%+да%<postadv%>:% %{D%}%{A%} # ; ! ""
+%+уҡ%<postadv%>:% %{U%}%{K%} # ; ! ""
+# ;
+
+LEXICON CLIT-COP
+
+%+и%<cop%>%<aor%>: V-PERS-S1-COP ;
+
+LEXICON CLITICS-NO-COP
+
+CLIT-QST ;
+CLIT-MODASS ;
+CLIT-MODIND ;
+CLIT-GHANA-ETC ;
+
+LEXICON CLITICS-INCL-COP 
+
+CLITICS-NO-COP ;
+CLIT-COP ;
+
+LEXICON CLITICS-AFTER-IMP-SG
+
+CLIT-EMPH ;
+CLIT-GHANA ;
+CLIT-DA-CNJ ;
+
+LEXICON CLITICS-AFTER-IMP-PL
+
+CLIT-EMPH-CHI ;
+CLIT-GHANA ;
+CLIT-DA-CNJ ;
+
 
 !!!!!!!!!!!!!!!!!!!!!!     NOMINAL INFLECTION (N-INFL-COMMON)
 
-LEXICON CASE
+LEXICON CASES-COMMON
 
-%<nom%>: CLIT ;
-%<gen%>:%>%{N%}%{I%}ң CLIT ;
-%<dat%>:%>%{G%}%{A%} CLIT ;
-%<acc%>:%>%{N%}%{I%} CLIT ;
-%<abl%>:%>%{N%}%{A%}н CLIT ;
-%<loc%>:%>%{L%}%{A%} CLIT ;
+%<gen%>:%>%{N%}%{I%}ң CLITICS-NO-COP ;
+%<dat%>:%>%{G%}%{A%} CLITICS-NO-COP ;
+%<acc%>:%>%{N%}%{I%} CLITICS-NO-COP ;
 
-LEXICON ADJ-DAGI
+LEXICON CASES
 
-%<subst%>: CASE ;
-%<attr%>: CLIT ;
+CASES-COMMON ;
+%<nom%>: CLITICS-INCL-COP ;
+%<abl%>:%>%{N%}%{A%}н CLITICS-INCL-COP ;
+%<loc%>:%>%{L%}%{A%} CLITICS-INCL-COP ;
 
-LEXICON GENPOSS-ETC
+LEXICON ATTR-SUBST
 
-%<px%>:%>%{L%}%{I%}%{K%}%{I%}{n} CASE ;
-%<loc%>:%>%{L%}%{A%}%{G%}%{I%} ADJ-DAGI ;
-%<sim%>:%>%{L%}%{A%}й CLIT ;
+%<attr%>: # ;
+%<subst%>: CASES ;
+%<subst%>%<pl%>:%>%{L%}%{A%}р CASES ;
 
-LEXICON CASE-ETC
-CASE ;
-GENPOSS-ETC ;
+LEXICON GENERAL-POSSESSIVE-ETC
 
-LEXICON POSS-REAL
+%<px%>:%>%{L%}%{I%}%{K%}%{I%}%{n%} CASES ;
+%<px%>%<pl%>:%>%{L%}%{I%}%{K%}%{I%}%>%{L%}%{A%}р CASES ;
+%<loc%>:%>%{L%}%{A%}%{G%}%{I%} ATTR-SUBST ;
+%<sim%>:%>%{L%}%{A%}й CLITICS-NO-COP ;
 
-%<px1sg%>:%>%{I%}м CASE-ETC ;
-%<px2sg%>:%>%{I%}ң CASE-ETC ;
-%<px3sp%>:%>%{h%}%{I%}%{n%} CASE-ETC ;
-%<px1pl%>:%>%{I%}б%{I%}ҙ CASE-ETC ;
-%<px2pl%>:%>%{I%}%{G%}%{I%}ҙ CASE-ETC ;
+LEXICON CASES-ETC
 
-CASE-ETC ; ! FIXME:NOTE:! this was temporarily put here because some gerunds and pronouns are linked
-                    ! to POSS-REAL. They should be linked to SUBST actually (and they will) /I.S./
+CASES ;
+GENERAL-POSSESSIVE-ETC ;
 
-LEXICON N-INFL-COMMON
-POSS-REAL ;
-CASE-ETC ;
+LEXICON POSSESSIVES
+
+%<px1sg%>:%>%{I%}м CASES-ETC ;
+%<px2sg%>:%>%{I%}ң CASES-ETC ;
+%<px3sp%>:%>%{h%}%{I%}%{n%} CASES-ETC ;
+%<px1pl%>:%>%{I%}б%{I%}ҙ CASES-ETC ;
+%<px2pl%>:%>%{I%}%{G%}%{I%}ҙ CASES-ETC ;
+
+%<px2sg%>%<frm%>:%>%{I%}%{G%}%{I%}ҙ CASES-ETC ;
+%<px2pl%>%<frm%>:%>%{I%}%{G%}%{I%}ҙ CASES-ETC ;
+
+LEXICON ABESSIVE-POSTPOSITION
+
+%+hыҙ%<post%>:%>h%{I%}ҙ CLITICS-NO-COP ;
+
+LEXICON LI-POSTPOSITION
+
+%+лы%<post%>:%>л%{I%} CLITICS-NO-COP ;
+
+LEXICON PLURAL
+
+%<pl%>:%>%{L%}%{A%}р CASES-ETC ;
+%<pl%>:%>%{L%}%{A%}р POSSESSIVES ;
+%<pl%>:%>%{L%}%{A%}р ABESSIVE-POSTPOSITION ;
+
+LEXICON FULL-NOMINAL-INFLECTION
+
+PLURAL ;
+CASES-ETC ;
+POSSESSIVES ;
+ABESSIVE-POSTPOSITION ;
+LI-POSTPOSITION ;
 
 !!!!!!!!!!!!!!!!!!!!!!     PART-OF-SPEECH LEXICONS (beginning)
 
 LEXICON N1
 
 %<n%>%<attr%>: # ;
-%<n%>: SUBST ;
+%<n%>: FULL-NOMINAL-INFLECTION ;
 
 LEXICON N1-RUS
 
@@ -293,17 +403,18 @@ LEXICON N1-RUS
 
 LEXICON N-COMPOUND-PX
 
-%<n%>:%>%{h%}%{I%}%{n%} CASE-ETC ;
-%<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%}%{n%} CASE-ETC ; ! (e.g. чик сакчылары=пограничники)
-%<n%>: POSS-REAL ; ! for stuff like "біздің ауа райымыз" and even "оның ауа райы",
+%<n%>:%>%{h%}%{I%}%{n%} CASES-ETC ;
+%<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%}%{n%} CASES-ETC ; ! (e.g. чик сакчылары=пограничники)
+%<n%>: POSSESSIVES ; ! for stuff like "біздің ауа райымыз" and even "оның ауа райы",
                ! which should have a <px3sp> analysis
 
 LEXICON N3
 ! Singularia tantum
 
 %<n%>%<attr%>: # ;
-%<n%>: CASE-ETC ;
-%<n%>: POSS-REAL ;
+%<n%>: CASES-ETC ;
+%<n%>: POSSESSIVES ;
+%<n%>: ABESSIVE-POSTPOSITION ;
 
 LEXICON ADV-LANG
 
@@ -316,235 +427,390 @@ LEXICON DIGITLEX
 
 LEXICON NUMLEX
 
-%<num%>: # ;
-%<num%>%<subst%>: SUBST ;
+%<num%>: CLITICS-NO-COP ;
+%<num%>%<subst%>: CLITICS-INCL-COP ;
 %<num%>%<ord%>:%>%{I%}нс%{I%} # ;
-%<num%>%<ord%>:%>%{I%}нс%{I%} SUBST ;
-%<num%>%<dist%>:%>%{A%}р SUBST ;
+%<num%>%<ord%>:%>%{I%}нс%{I%} CLITICS-INCL-COP ;
+%<num%>%<dist%>:%>%{A%}р CLITICS-INCL-COP ;
+
+LEXICON NP-COMMON
+
+CASES-ETC ;
+POSSESSIVES ;
+ABESSIVE-POSTPOSITION ;
 
 LEXICON NP-COG-M
 
-%<np%>%<cog%>%<m%>: SUBST ;
+%<np%>%<cog%>%<m%>: NP-COMMON ;
 
 LEXICON NP-COG-F
 
-%<np%>%<cog%>%<f%>: SUBST ;
+%<np%>%<cog%>%<f%>: NP-COMMON ;
 
 LEXICON NP-COG-MF
 
-%<np%>%<cog%>%<mf%>: SUBST ;
+%<np%>%<cog%>%<mf%>: NP-COMMON ;
 
 LEXICON NP-ANT-M
 
-%<np%>%<ant%>%<m%>: SUBST ;
+%<np%>%<ant%>%<m%>: NP-COMMON ;
 
 LEXICON NP-ANT-F
 
-%<np%>%<ant%>%<f%>: SUBST ;
+%<np%>%<ant%>%<f%>: NP-COMMON ;
 
 LEXICON NP-COG-OB
 
-%<np%>%<cog%>%<m%>:%{☭%} SUBST ; ! Dir/LR
-%<np%>%<cog%>%<m%>:%{а%}%{с%} SUBST ;
+%<np%>%<cog%>%<m%>:%{☭%} NP-COMMON ; ! Dir/LR
+%<np%>%<cog%>%<m%>:%{а%}%{с%} NP-COMMON ;
 
 LEXICON NP-PAT-VICH
 
-%<np%>%<pat%>%<m%>:вич N-INFL-COMMON ;
+%<np%>%<pat%>%<m%>:вич NP-COMMON ;
 
-%<np%>%<pat%>%<f%>:вна N-INFL-COMMON ;
+%<np%>%<pat%>%<f%>:вна NP-COMMON ;
 
 LEXICON NP-TOP
 
-%<np%>%<top%>: CASE ;
+%<np%>%<top%>: CASES ;
 
 LEXICON NP-ORG
 
-%<np%>%<org%>: CASE ;
+%<np%>%<org%>: CASES ;
 
 LEXICON NP-AL
 
-%<np%>%<al%>: CASE ;
+%<np%>%<al%>: CASES ;
 
-!!!!!!!!!!!!!!!!!!!!!!     ADJECTIVE%'S (ADJECTIVIAL) INFLECTION
+!!!!!!!!!!!!!!!!!!!!!!     ADJECTIVE'S (ADJECTIVIAL) INFLECTION
 
 LEXICON A1
 
-%<adj%>: CLIT ;
-%<adj%>%<comp%>:%>%{I%}р%{A%}%{K%} CLIT ;
+%<adj%>: CLITICS-INCL-COP ;
+%<adj%>%<comp%>:%>%{I%}р%{A%}%{K%} CLITICS-INCL-COP ;
 
-%<adj%>%<subst%>: SUBST ;
-%<adj%>%<comp%>%<subst%>:%>%{I%}р%{A%}%{K%} # ;
+%<adj%>%<subst%>: FULL-NOMINAL-INFLECTION ;
+%<adj%>%<comp%>%<subst%>:%>%{I%}р%{A%}%{K%} FULL-NOMINAL-INFLECTION ;
 
-%<adj%>%<advl%>: CLIT ;
-%<adj%>%<comp%>%<advl%>:%>%{I%}р%{A%}%{K%} CLIT ;
+%<adj%>%<advl%>: CLITICS-NO-COP ;
+%<adj%>%<comp%>%<advl%>:%>%{I%}р%{A%}%{K%} CLITICS-NO-COP ;
 
 LEXICON A2                
 
-%<adj%>: CLIT ;
-%<adj%>%<comp%>:%>%{I%}р%{A%}%{K%} CLIT ;
+%<adj%>: CLITICS-INCL-COP ;
+%<adj%>%<comp%>:%>%{I%}р%{A%}%{K%} CLITICS-INCL-COP ;
 
-%<adj%>%<subst%>: SUBST ;
-%<adj%>%<comp%>%<subst%>:%>%{I%}р%{A%}%{K%} # ;
+%<adj%>%<subst%>: FULL-NOMINAL-INFLECTION ;
+%<adj%>%<comp%>%<subst%>:%>%{I%}р%{A%}%{K%} FULL-NOMINAL-INFLECTION ;
 
 LEXICON A3
 
-%<adj%>: CLIT ;
-%<adj%>%<subst%>: SUBST ;
+%<adj%>: CLITICS-INCL-COP ;
+%<adj%>%<subst%>: FULL-NOMINAL-INFLECTION ;
 
 LEXICON A4                 
 
-%<adj%>: CLIT ;
+%<adj%>: CLITICS-INCL-COP ;
+
+LEXICON V-ADJ
+
+# ;
+%<subst%>: GER-INFL ;
+
 
 !!!!!!!!!!!!!!!!!!!!!!     VERBAL INFLECTION
 
+LEXICON V-PERS-S1-NO1SG
+
+%<p2%>%<sg%>:%>%{h%}%{I%}ң CLITICS-NO-COP ;
+%<p3%>%<sg%>:%> CLITICS-NO-COP ;
+%<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>%{h%}%{I%}г%{I%}ҙ CLITICS-NO-COP ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
+
 LEXICON V-PERS-S1
 
-%<p1%>%<sg%>:%>%{I%}м CLIT ;
-%<p2%>%<sg%>:%>%{h%}%{I%}ң CLIT ;
-%<p2%>%<frm%>%<sg%>:%{h%}%{I%}г%{I%}ҙ CLIT ; ! FIXME: Check %'Ни өчен беләһегеҙме?%' ! <frm><sg> and <frm><pl> are the same forms in Bashkir; so maybe <frm><sp> would be better /I.S./
-%<p3%>%<sg%>:%> CLIT ;
-%<p1%>%<pl%>:%>б%{I%}ҙ CLIT ;
-%<p2%>%<pl%>:%>%{h%}%{I%}г%{I%}ҙ CLIT ;
-%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+%<p1%>%<sg%>:%>м%{I%}н CLITICS-NO-COP ;
+
+V-PERS-S1-NO1SG ;
+
+LEXICON V-PERS-S1-COP
+
+%<p1%>%<sg%>:%>%{I%}м CLITICS-NO-COP ;
+%<p2%>%<sg%>:%>%{h%}%{I%}ң CLITICS-NO-COP ;
+%<p2%>%<frm%>%<sg%>:%{h%}%{I%}г%{I%}ҙ CLITICS-NO-COP ; ! FIXME: Check %'Ни өчен беләһегеҙме?%' ! <frm><sg> and <frm><pl> are the same forms in Bashkir; so maybe <frm><sp> would be better /I.S./
+%<p3%>%<sg%>:%> CLITICS-NO-COP ;
+%<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>%{h%}%{I%}г%{I%}ҙ CLITICS-NO-COP ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
 LEXICON V-PERS-S2
 
-%<p1%>%<sg%>:%>м CLIT ;
-%<p2%>%<sg%>:%>ң CLIT ;
-%<p3%>%<sg%>:%> CLIT ;
-%<p1%>%<pl%>:%>ҡ CLIT ;
-%<p2%>%<pl%>:%>г%{I%}ҙ CLIT ;
-%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+%<p1%>%<sg%>:%>м CLITICS-NO-COP ;
+%<p2%>%<sg%>:%>ң CLITICS-NO-COP ;
+%<p3%>%<sg%>:%> CLITICS-NO-COP ;
+%<p1%>%<pl%>:%>ҡ CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>г%{I%}ҙ CLITICS-NO-COP ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
-LEXICON V-PERS-S3-NO1SG
+LEXICON V-PERS-PRESENT
 
-%<p2%>%<sg%>:%>%{h%}%{I%}ң CLIT ;
-%<p3%>%<sg%>:%> CLIT ;
-%<p1%>%<pl%>:%>б%{I%}ҙ CLIT ;
-%<p2%>%<pl%>:%>%{h%}%{I%}г%{I%}ҙ CLIT ;
-%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+V-PERS-S1-NO1SG ;
+%<p1%>%<sg%>:%>м CLITICS-NO-COP ;
+%<p1%>%<sg%>:%>м%{I%}н CLITICS-NO-COP ; ! Dir/LR
 
-LEXICON V-PERS-S3
+LEXICON V-PERS-VOLITIONAL
 
-%<p1%>%<sg%>:%>м%{I%}н CLIT ;
+%<p1%>%<sg%>:%>м CLIT-GHANA-ETC ;
+%<p2%>%<sg%>:%>ң CLIT-GHANA-ETC ;
+%<p3%>%<sg%>: CLIT-GHANA-ETC ;
+%<p1%>%<pl%>:%>б%{I%}ҙ CLIT-GHANA-ETC ;
+%<p2%>%<pl%>:%>г%{I%}ҙ CLIT-GHANA-ETC ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р%>%{I%} CLIT-GHANA-ETC ;
 
-V-PERS-S3-NO1SG ;
+%<p2%>%<frm%>%<sg%>:%>г%{I%}ҙ CLIT-GHANA-ETC ;
+%<p2%>%<frm%>%<pl%>:%>г%{I%}ҙ CLIT-GHANA-ETC ;
 
-LEXICON V-PERS-S4 ! Volition endings
+! G E R U N D S   I N F L E C T I O N
 
-! FIXME:NOTE: this works, but can be laid out better
-%<p1%>%<sg%>:м CLIT ;
-%<p2%>%<sg%>:ң CLIT ;
-%<p3%>%<sg%>: CLIT ;
-%<p1%>%<pl%>:б%{I%}ҙ CLIT ;
-%<p2%>%<pl%>:г%{I%}ҙ CLIT ;
-%<p3%>%<pl%>:%{L%}%{A%}р%{I%} CLIT ;
+LEXICON GER-CASE-NO_COPULA
 
-!LEXICON V-PERS-S4 ! Volition endings
+CASES-COMMON ;
+%<nom%>: CLITICS-NO-COP ;
+%<abl%>:%>%{N%}%{A%}н CLITICS-NO-COP ;
+%<loc%>:%>%{N%}%{A%} CLITICS-NO-COP ;
 
-!%<p1%>%<sg%>:%>%{I%}м CLIT ;
-!%<p2%>%<sg%>:%>%{h%}%{I%}ң CLIT ;
-!%<p3%>%<sg%>:%>%{h%}%{I%}%{n%} CLIT ;
-!%<p1%>%<pl%>:%>б%{I%}ҙ CLIT ;
-!%<p2%>%<pl%>:%>%{h%}%{I%}г%{I%}ҙ CLIT ;
-!%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+LEXICON GER-ATTR-SUBST
 
-LEXICON V-FINITE-FORMS
+%<attr%>: CLITICS-NO-COP ;
+!%<subst%>: CASE ;
+!%<subst%>%<pl%>:%>%{L%}%{A%}р CASE ;
 
-%<pres%>:%>%{E%} V-PERS-S1 ;
+LEXICON GER-ABE-ATTR/ADVL/SUBST
+
+!%<attr%>: CLITICS-NO-COP ;
+%<advl%>: CLITICS-NO-COP ;
+!%<subst%>: CASE-2 ;
+!%<subst%>%<pl%>:%>%{L%}%{A%}р CASE-2 ;
+
+LEXICON GER-ABE-ETC          ! Stuff which doesn't appear after possessives
+
+%+hыҙ%<post%>:%>h%{I%}ҙ GER-ABE-ATTR/ADVL/SUBST ;
+
+LEXICON GER-GENPOSS-ETC      ! Stuff which can appear after possessives too
+
+%<px%>:%>%{L%}%{I%}%{K%}%{I%}%{n%} CLITICS-NO-COP ;
+%<loc%>:%>%{L%}%{A%}%{G%}%{I%} GER-ATTR-SUBST ;
+%<sim%>:%>%{L%}%{A%}й CLITICS-NO-COP ;
+
+LEXICON GER-CASE-ETC
+
+GER-CASE-NO_COPULA ;
+GER-GENPOSS-ETC ;
+
+LEXICON GER-POSS-REAL-COMMON
+
+%<px1sg%>:%>%{I%}м GER-CASE-ETC ;
+%<px2sg%>:%>%{I%}ң GER-CASE-ETC ;
+%<px1pl%>:%>%{I%}б%{I%}ҙ GER-CASE-ETC ;
+%<px2pl%>:%>%{I%}%{G%}%{I%}ҙ GER-CASE-ETC ;
+
+%<px2sg%>%<frm%>:%>%{I%}%{G%}%{I%}ҙ GER-CASE-ETC ;
+%<px2pl%>%<frm%>:%>%{I%}%{G%}%{I%}ҙ GER-CASE-ETC ;
+
+LEXICON GER_FUT3-POSS-REAL
+
+GER-POSS-REAL-COMMON ;
+%<px3sp%>: GER-CASE-ETC ;
+
+LEXICON GER-POSS-REAL
+
+GER-POSS-REAL-COMMON ;
+%<px3sp%>:%>%{h%}%{I%}%{n%} GER-CASE-ETC ;
+
+LEXICON GER-INFL
+
+GER-POSS-REAL ;
+GER-CASE-ETC ;
+%<pl%>:%>%{L%}%{A%}р GER-POSS-REAL ;
+%<pl%>:%>%{L%}%{A%}р GER-CASE-ETC ;
+GER-ABE-ETC ;
+
+!!!!!!!   end of gerunds inflection lexicon
+
+LEXICON V-FUT
+
+%<fut%>:%>%{I%}р V-PERS-S1 ;
+%<neg%>%<fut%>:%>м%{A%}ҫ V-PERS-S1-NO1SG ;
+%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}%>м CLITICS-NO-COP ;
+%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}ҫ%>м%{I%}н CLITICS-NO-COP ; ! Dir/LR
+%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}%>м%{I%}н CLITICS-NO-COP ;  ! Dir/LR
+
+%<gpr_fut%>:%>%{I%}р V-ADJ ;
+%<neg%>%<gpr_fut%>:%>м%{A%}ҫ V-ADJ ;
+
+%<gpr_ppot%>:%>%{I%}рл%{I%}%{K%} # ;
+%<neg%>%<gpr_ppot%>:%>м%{A%}ҫл%{I%}%{K%} # ;
+
+%<ger_fut%>:%>%{I%}р GER-POSS-REAL ;
+%<neg%>%<ger_fut%>:%>м%{A%}ҫ GER-POSS-REAL ;
+
+%<ger_ppot%>:%>%{I%}рл%{I%}%{K%} GER-POSS-REAL ;
+%<neg%>%<ger_ppot%>:%>м%{A%}ҫл%{I%}к GER-POSS-REAL ;
+
+%<inf%>:%>%{I%}рг%{A%} CLITICS-NO-COP ;
+%<neg%>%<inf%>:%>м%{A%}ҫк%{A%} CLITICS-NO-COP ;
+
+LEXICON V-FINITE-REGULAR_NEGATIVE
+
+%<pres%>:%>%{E%} V-PERS-PRESENT ;
+%<past%>:%>%{G%}%{A%}н V-PERS-S1 ;
 %<ifi%>:%>%{N%}%{I%} V-PERS-S2 ;
-%<past%>:%>%{G%}%{A%}н V-PERS-S3 ;
+%<fut2%>:%>%{j%}%{A%}c%{A%}%{K%} V-PERS-S1 ;
 
-LEXICON V-NONFINITE-FORMS
+LEXICON V-NONFINITE-IRREGULAR_NEGATIVE
 
-%<ger%>:%>%{U%} POSS-REAL ;
-%<ger1%>:%>м%{A%}%{K%} POSS-REAL ;
-%<gna_after%>:%>%{G%}%{A%}с SUBST ;
-%<ger4%>:%>%{G%}%{A%}нс%{I%} POSS-REAL ;
-%<ger_past%>:%>%{G%}%{A%}н POSS-REAL ;
-%<ger_fut%>:%>%{I%}р POSS-REAL ;
-%<inf%>:%>%{I%}рг%{A%} # ;
-%<ger7%>:%>%{A%}с%{A%}%{K%} POSS-REAL ;
-%<prc_vol%>:%>%{E%}һ%{I%} V-PERS-S4 ;   ! FIXME:NOTE: this is the first type of volitative
+! Participles
+%<prc_perf%>:%>%{I%}п CLIT-GHANA-ETC ;
+%<neg%>%<prc_perf%>:%>м%{A%}й%{е%}нc%{A%} CLIT-GHANA-ETC ;
+%<neg%>%<prc_perf%>:%>м%{A%}й CLIT-GHANA-ETC ;       ! Dir/LR
+%<neg%>%<prc_perf%>:%>м%{A%}йc%{A%} CLIT-GHANA-ETC ;      ! Dir/LR
+
+%<prc_impf%>:%>%{E%} CLIT-GHANA-ETC ;
+%<neg%>%<prc_impf%>:%>м%{A%}й%{е%}нc%{A%} CLIT-GHANA-ETC ;
+%<neg%>%<prc_impf%>:%>м%{A%}й CLIT-GHANA-ETC ;       ! Dir/LR
+%<neg%>%<prc_impf%>:%>м%{A%}йc%{A%} CLIT-GHANA-ETC ;      ! Dir/LR
+
+%<prc_vol%>:%>%{E%}һ%{I%} V-PERS-VOLITIONAL ;   ! FIXME:NOTE: this is the first type of volitative
                                     ! participle in Bashkir (see comment for <prc_vol> tag above).
                                     ! Former it was called <ger8>.
                                     ! A transfer rule to match bashkir prc_vol2 to tatar prc_vol is needed. /I.S./
 
-%<prc_vol2%>:%>%{G%}%{I%} V-PERS-S2 ;   ! FIXME: check cont. class
+%<prc_fplan%>:%>м%{A%}ҡc%{I%} CLITICS-NO-COP ;
 
+! Verbal adverbs
+%<gna_perf%>:%>%{I%}п CLITICS-NO-COP ;
+%<neg%>%<gna_perf%>:%>м%{A%}й%{е%}нc%{A%} CLITICS-NO-COP ;
+%<neg%>%<gna_perf%>:%>м%{A%}й CLITICS-NO-COP ;       ! Dir/LR
+%<neg%>%<gna_perf%>:%>м%{A%}йc%{A%} CLITICS-NO-COP ;      ! Dir/LR
+
+%<gna_until%>:%>%{G%}%{A%}нс%{I%} CLITICS-NO-COP ;
+
+! Verbal adjectives
+%<gpr_fut3%>:%>%{E%}һ%{I%} V-ADJ ;
+
+! Gerunds
+%<ger1%>:%>м%{A%}%{K%} GER-INFL ;
+%<ger_fut3%>:%>%{E%}һ%{I%} GER_FUT3-POSS-REAL ;
+
+%<fut_plan%>:%>м%{A%}ҡc%{I%} V-PERS-S1 ;
+
+LEXICON V-NONFINITE-REGULAR_NEGATIVE
+
+! Participles
 %<prc_cond%>:%>һ%{A%} V-PERS-S2 ;
 
-! Imperatives
+! Verbal adverbs
+%<gna_cond%>:%>һ%{A%} V-PERS-S2 ;
+%<gna_after%>:%>%{G%}%{A%}с CLITICS-NO-COP ;
 
-%<imp%>%<p2%>%<sg%>: CLIT  ;
-%<imp%>%<p2%>%<pl%>:%>%{I%}г%{I%}ҙ CLIT ;
-%<imp%>%<p2%>%<frm%>%<sg%>:%>%{I%}г%{I%}ҙ  CLIT ;
-%<imp%>%<p2%>%<frm%>%<pl%>:%>%{I%}г%{I%}ҙ  CLIT ;
+! Verbal adjectives
+%<gpr_past%>:%>%{G%}%{A%}н V-ADJ ;
+%<gpr_impf%>:%>%{E%}% торған V-ADJ ;
+%<gpr_pot%>:%>%{U%}c%{е%} V-ADJ ;
+%<gpr_fut2%>:%>%{j%}%{A%}c%{A%}%{K%} V-ADJ ;
+
+! Gerunds
+%<ger%>:%>%{U%} GER-INFL ;
+%<ger_past%>:%>%{G%}%{A%}н GER-INFL ;
+%<ger_perf%>:%>%{G%}%{A%}н%>%{L%}%{I%}%{K%} GER-INFL ;
+%<ger_abs%>:%>%{U%}%>с%{e%}%>%{L%}%{I%}%{K%} GER-INFL ;
+%<ger_fut2%>:%>%{j%}%{A%}c%{A%}%{K%} GER-POSS-REAL ;
+
+! Imperatives
+%<imp%>%<p2%>%<sg%>: CLITICS-AFTER-IMP-SG ;
+%<imp%>%<p2%>%<pl%>:%>%{I%}г%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
+%<imp%>%<p2%>%<frm%>%<sg%>:%>%{I%}г%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
+%<imp%>%<p2%>%<frm%>%<pl%>:%>%{I%}г%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
 
 ! Optative/jussive forms
 
-%<opt%>%<p1%>%<sg%>:%{A%}й%{I%}м CLIT ;
-%<opt%>%<p3%>%<sg%>:%>һ%{I%}н CLIT ;
-%<opt%>%<p1%>%<pl%>:%>%{A%}й%{I%}ҡ CLIT ;
-%<opt%>%<p3%>%<pl%>:%>һ%{I%}нд{A%}р CLIT ;
+%<opt%>%<p1%>%<sg%>:%{A%}й%{I%}м CLITICS-NO-COP ;
+%<opt%>%<p3%>%<sg%>:%>һ%{I%}н CLITICS-NO-COP ;
+%<opt%>%<p1%>%<pl%>:%>%{A%}й%{I%}ҡ CLITICS-NO-COP ;
+%<opt%>%<p3%>%<pl%>:%>һ%{I%}нд{A%}р CLITICS-NO-COP ;
 
-LEXICON V-COMMON-LEX
+LEXICON V-COMMON
 
-V-FINITE-FORMS ;
-V-NONFINITE-FORMS ;
+V-FINITE-REGULAR_NEGATIVE ;
+%<neg%>:%>м%{A%} V-FINITE-REGULAR_NEGATIVE ;
 
-LEXICON V-IRREG-LEX
+V-NONFINITE-REGULAR_NEGATIVE ;
+%<neg%>:%>м%{A%} V-NONFINITE-REGULAR_NEGATIVE ;
 
-%<prc_perf%>:%>%{I%}п # ;
-%<gna_perf%>:%>%{I%}п CLIT ;
-%<fut%>:%>%{I%}р V-PERS-S3 ;
-%<neg%>%<fut%>:%>м%{A%}ҫ V-PERS-S3-NO1SG ;
-%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}%>м CLIT ;
-%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}ҫ%>м%{I%}н CLIT ; ! Dir/LR
+V-NONFINITE-IRREGULAR_NEGATIVE ;
 
-LEXICON V-NEG-LEX
+LEXICON V-COMMON-PASSIVE
 
-%<neg%>:%>м%{A%} V-COMMON-LEX ;
-%<neg%>%<prc2%>:%>м%{A%}%>%{E%}%>с%{A%} # ; ! FIXME: Check continuations
-%<neg%>%<gna9%>:%>м%{A%}%>%{E%}%>с%{A%} # ; ! FIXME: Check continuations
+%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-COMMON ;
+%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-FUT ;
 
-V-COMMON-LEX ;
+LEXICON V-DER
 
-LEXICON V-IV-LEX
+!%<caus%>:%>%{I%}т V-COMMON ;
+!%<caus%>:%>%{I%}т V-FUT ;
 
-%<v%>%<iv%>: V-COMMON-LEX ;
-%<v%>%<iv%>: V-IRREG-LEX ;
-%<v%>%<iv%>: V-NEG-LEX ;
-%<v%>%<iv%>%<neg%>:%>м%{A%} V-COMMON-LEX ;
-%<v%>%<iv%>%<caus%>:%>%{I%}т V-NEG-LEX ;
-%<v%>%<iv%>%<caus%>:%>%{I%}т V-IRREG-LEX ;
-%<v%>%<iv%>%<coop%>:%>%{I%}ш V-NEG-LEX ;
-%<v%>%<iv%>%<coop%>:%>%{I%}ш V-IRREG-LEX ;
+%<coop%>:%>%{I%}ш V-COMMON ;
+%<coop%>:%>%{I%}ш V-FUT ;
 
-LEXICON V-TV-LEX
+LEXICON V-IV
 
-%<v%>%<tv%>: V-COMMON-LEX ;
-%<v%>%<tv%>: V-IRREG-LEX ;
-%<v%>%<tv%>: V-NEG-LEX ;
-%<v%>%<tv%>%<neg%>:%>м%{A%} V-COMMON-LEX ;
-%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-NEG-LEX ;
-%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-IRREG-LEX ;
-%<v%>%<tv%>%<caus%>:%>%{I%}т V-NEG-LEX ;
-%<v%>%<tv%>%<caus%>:%>%{I%}т V-IRREG-LEX ;
-%<v%>%<tv%>%<coop%>:%>%{I%}ш V-NEG-LEX ;
-%<v%>%<tv%>%<coop%>:%>%{I%}ш V-IRREG-LEX ;
+%<v%>%<iv%>: V-COMMON ;
+%<v%>%<iv%>: V-FUT ;
+%<v%>%<iv%>: V-DER ;
 
-!!!!!!!!!!!!!!!!!!!!!!     auxiliary verbs
+!LEXICON V-TV-NOPASS
+
+!%<v%>%<tv%>: V-COMMON ;
+!%<v%>%<tv%>: V-FUT ;
+!%<v%>%<tv%>: V-DER ;
+
+!LEXICON V-TV-PASS
+
+%<v%>%<tv%>%<pass%>: V-COMMON ;
+!%<v%>%<tv%>%<pass%>: V-FUT ;
+!%<v%>%<tv%>%<pass%>: V-DER ;
+
+LEXICON V-TV
+
+%<v%>%<tv%>: V-COMMON ;
+%<v%>%<tv%>: V-FUT ;
+%<v%>%<tv%>: V-DER ;
+V-COMMON-PASSIVE ;
+
+!!!!!!!!!!!!!!!!!!!!!!     Auxiliary verbs
 
 LEXICON VAUX
 
-%<vaux%>: V-COMMON-LEX ;
-%<vaux%>%<neg%>:%>м%{A%} V-COMMON-LEX ;
+%<vaux%>: V-COMMON ;
+%<vaux%>: V-FUT ;
+
+!!!!!!!!!!!!!!!!!!!!!!     Copula
+
+LEXICON COP-I
+
+и%<cop%>%<ger_past%>:икән GER-POSS-REAL ;
+и%<cop%>%<ger_perf%>:икән%>%{L%}%{I%}%{K%} GER-POSS-REAL ;
+
+и%<cop%>%<aor%>%<evid%>:икән V-PERS-S1 ;
+и%<cop%>%<neg%>%<aor%>%<evid%>:түгел% икән V-PERS-S1 ;
+
+и%<cop%>%<ifi%>:и%>не V-PERS-S2 ;
+
+и%<cop%>%<neg%>%<aor%>:түгел V-PERS-S1 ;
 
 
-!!!!!!!!!!!!!!!!!!!!!!     copula
-
-!!!!!!!!!!!!!!!!!!!!!!     PRONOUN%'S INFLECTION
+!!!!!!!!!!!!!!!!!!!!!!     PRONOUN'S INFLECTION
 
 LEXICON PRNLEX-PERS
 
@@ -598,7 +864,7 @@ LEXICON PRNDEM-BUL
 %<prn%>%<dem%>%<acc%>:ны # ;
 %<prn%>%<dem%>%<loc%>:нда # ;
 %<prn%>%<dem%>%<abl%>:нан # ;
-%<prn%>%<dem%>%<pl%>:л%>%{L%}%{A%}р CASE ;
+%<prn%>%<dem%>%<pl%>:л%>%{L%}%{A%}р CASES ;
 
 LEXICON PRNDEM-UL       ! FIXME: Unify demonstrative pronouns later
 
@@ -609,24 +875,24 @@ LEXICON PRNDEM-UL       ! FIXME: Unify demonstrative pronouns later
 %<prn%>%<dem%>%<loc%>:унда # ;
 %<prn%>%<dem%>%<abl%>:унан # ;
 
-%<prn%>%<dem%>%<pl%>:улар CASE ;
+%<prn%>%<dem%>%<pl%>:улар CASES ;
 
 LEXICON PRNITGLEX
 
-%<prn%>%<itg%>: POSS-REAL ;
+%<prn%>%<itg%>: POSSESSIVES ;
 
 LEXICON PRNDEMLEX
 
-%<prn%>%<dem%>: CASE ;
-%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASE ;
+%<prn%>%<dem%>: CASES ;
+%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASES ;
 
 LEXICON PRNREFLEX
 
-%<prn%>%<ref%>: POSS-REAL ;
+%<prn%>%<ref%>: POSSESSIVES ;
 
 LEXICON PRON-IND
 
-%<prn%>%<ind%>: CASE ;
+%<prn%>%<ind%>: CASES ;
 
 LEXICON DETQNTLEX
 
@@ -650,16 +916,16 @@ LEXICON POSTADV
 
 LEXICON KI
 
-%<attr%>:%>%{G%}%{I%} CLIT ;
-%<subst%>:%>%{G%}%{I%} # ;
+%<attr%>:%>%{G%}%{I%}  CLITICS-NO-COP ;
+%<subst%>:%>%{G%}%{I%} FULL-NOMINAL-INFLECTION ;
 
 LEXICON ADVITGLEX
 
-%<adv%>%<itg%>: CLIT ;
+%<adv%>%<itg%>: CLITICS-NO-COP ;
 
 LEXICON ADV
 
-%<adv%>: CLIT ;
+%<adv%>: CLITICS-NO-COP ;
 
 LEXICON ADV-WITH-KI
 
@@ -669,7 +935,7 @@ ADV ;
 LEXICON ADV-WITH-KI-BIRE
 
 ADV ;
-%<adv%>%<attr%>:%>%{L%}%{A%}%{G%}%{I%} CLIT ;
+%<adv%>%<attr%>:%>%{L%}%{A%}%{G%}%{I%} CLITICS-NO-COP ;
 
 LEXICON CC
 
@@ -682,12 +948,6 @@ LEXICON CS
 LEXICON CA
 
 %<cnjadv%>: # ;
-
-LEXICON COP-I
-
-и%<cop%>%<neg%>:түгел V-PERS-S3 ;
-и%<cop%>%<ger_past%>:и%>кән POSS-REAL ;
-и%<cop%>%<ifi%>:и%>не V-PERS-S2 ;
 
 LEXICON ABBR
 
@@ -39046,6 +39306,7 @@ orgy:orgy N1 ; ! ""
 кәбисә:кәбисә A3 ; ! ""
 ҡуш:ҡуш A3 ; ! ""
 мөмкин:мөмкин A3 ; ! ""
+мәжбүр:мәжбүр A3 ; ! ""
 өҫтәмә:өҫтәмә A3 ; ! ""
 рухани:рухани%{ъ%} A3 ; ! ""
 рәсми:рәсми A3 ; ! ""
@@ -40733,1790 +40994,1790 @@ orgy:orgy N1 ; ! ""
 
 бар:бар A3 ; ! ""
 юҡ:юҡ A3 ; ! ""
-мәжбүр:мәжбүр A3 ; ! ""
+
 COP-I ; ! ""
 
 кил:кил VAUX ; ! ""
 ал:ал VAUX ; ! ""
 
-бул:бул V-IV-LEX ; ! ""
-тор:тор V-IV-LEX ; ! ""
-йәшә:йәшә V-IV-LEX ; ! ""
-ит:ит V-TV-LEX ; ! ""
-эс:эс V-TV-LEX ; ! ""
-күр:күр V-TV-LEX ; ! ""
-эҙлә:эҙлә V-TV-LEX ; ! ""
-йөрө:йөрө V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-кил:кил V-IV-LEX ; ! ""
-көл:көл V-IV-LEX ; ! ""
-һана:һана V-TV-LEX ; ! ""
-тап:тап V-TV-LEX ; ! ""
-ҡара:ҡара V-TV-LEX ; ! ""
-бел:бел V-TV-LEX ; ! ""
-уйна:уйна V-TV-LEX ; ! ""
-ултыр:ултыр V-IV-LEX ; ! ""
-йоҡла:йоҡла V-IV-LEX ; ! ""
-ҡайт:ҡайт V-IV-LEX ; ! ""
-һора:һора V-TV-LEX ; ! ""
-бәс:бәс V-TV-LEX ; ! ""
-әйт:әйт V-TV-LEX ; ! ""
-тыңла:тыңла V-TV-LEX ; ! ""
-эшлә:эшлә V-TV-LEX ; ! ""
-ишет:ишет V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-ярат:ярат V-TV-LEX ; ! ""
-тырыш:тырыш V-IV-LEX ; ! ""
-күҙәт:күҙәт V-TV-LEX ; ! ""
-аңла:аңла V-TV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-һөйлә:һөйлә V-TV-LEX ; ! ""
-ти:ти V-TV-LEX ; ! ""
-!ҡапла:ҡапла V-TV-LEX ; ! ""
-аша:аша V-TV-LEX ; ! ""
-әйлән:әйлән V-IV-LEX ; ! ""
-йөгөр:йөгөр V-IV-LEX ; ! ""
-йәшерен:йәшерен V-IV-LEX ; ! ""
-бет:бет V-IV-LEX ; ! ""
+бул:бул V-IV ; ! ""
+тор:тор V-IV ; ! ""
+йәшә:йәшә V-IV ; ! ""
+ит:ит V-TV ; ! ""
+эс:эс V-TV ; ! ""
+күр:күр V-TV ; ! ""
+эҙлә:эҙлә V-TV ; ! ""
+йөрө:йөрө V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+кил:кил V-IV ; ! ""
+көл:көл V-IV ; ! ""
+һана:һана V-TV ; ! ""
+тап:тап V-TV ; ! ""
+ҡара:ҡара V-TV ; ! ""
+бел:бел V-TV ; ! ""
+уйна:уйна V-TV ; ! ""
+ултыр:ултыр V-IV ; ! ""
+йоҡла:йоҡла V-IV ; ! ""
+ҡайт:ҡайт V-IV ; ! ""
+һора:һора V-TV ; ! ""
+бәс:бәс V-TV ; ! ""
+әйт:әйт V-TV ; ! ""
+тыңла:тыңла V-TV ; ! ""
+эшлә:эшлә V-TV ; ! ""
+ишет:ишет V-TV ; ! ""
+ал:ал V-TV ; ! ""
+ярат:ярат V-TV ; ! ""
+тырыш:тырыш V-IV ; ! ""
+күҙәт:күҙәт V-TV ; ! ""
+аңла:аңла V-TV ; ! ""
+бир:бир V-TV ; ! ""
+һөйлә:һөйлә V-TV ; ! ""
+ти:ти V-TV ; ! ""
+!ҡапла:ҡапла V-TV ; ! ""
+аша:аша V-TV ; ! ""
+әйлән:әйлән V-IV ; ! ""
+йөгөр:йөгөр V-IV ; ! ""
+йәшерен:йәшерен V-IV ; ! ""
+бет:бет V-IV ; ! ""
 
-һөйлә:һөйлә V-TV-LEX ; ! ""
-телә:телә V-TV-LEX ; ! ""
-уйла:уйла V-TV-LEX ; ! ""
-һора:һора V-TV-LEX ; ! ""
-ҡара:ҡара V-TV-LEX ; ! ""
-аңла:аңла V-TV-LEX ; ! ""
-аңла:аңла V-TV-LEX ; ! ""
-башла:башла V-TV-LEX ; ! ""
-эшлә:эшлә V-TV-LEX ; ! ""
-көт:көт V-TV-LEX ; ! ""
-ҡара:ҡара V-TV-LEX ; ! ""
-тап:тап V-TV-LEX ; ! ""
-хәл% ит:хәл% ит V-TV-LEX ; ! ""
-ҡарар% ит:ҡарар% ит V-TV-LEX ; ! ""
-сис:сис V-TV-LEX ; ! ""
-яҙ:яҙ%{ъ%} V-TV-LEX ; ! ""
-һана:һана V-TV-LEX ; ! ""
-хәтерҙә% тот:хәтерҙә% тот V-TV-LEX ; ! ""
-иҫтә% тот:иҫтә% тот V-TV-LEX ; ! ""
-хәтерлә:хәтерлә V-TV-LEX ; ! ""
-тыңла:тыңла V-TV-LEX ; ! ""
-ҡара:ҡара V-TV-LEX ; ! ""
-яҙ:яҙ%{ъ%} V-TV-LEX ; ! ""
-һиҙ:һиҙ V-TV-LEX ; ! ""
-дауам% ит:дауам% ит V-TV-LEX ; ! ""
-үт:үт V-TV-LEX ; ! ""
-башла:башла V-TV-LEX ; ! ""
-тот:тот V-TV-LEX ; ! ""
-һора:һора V-TV-LEX ; ! ""
-ата:ата V-TV-LEX ; ! ""
-исемлә:исемлә V-TV-LEX ; ! ""
-һөйлә:һөйлә V-TV-LEX ; ! ""
-ташла:ташла V-TV-LEX ; ! ""
-һөйлә:һөйлә V-TV-LEX ; ! ""
-эҙлә:эҙлә V-TV-LEX ; ! ""
-уйна:уйна V-TV-LEX ; ! ""
-ас:ас V-TV-LEX ; ! ""
-ата:ата V-TV-LEX ; ! ""
-исемлә:исемлә V-TV-LEX ; ! ""
-алып% ташла:алып% ташла V-TV-LEX ; ! ""
-сис:сис V-TV-LEX ; ! ""
-эс:эс V-TV-LEX ; ! ""
-хәбәр% ит:хәбәр% ит V-TV-LEX ; ! ""
-ата:ата V-TV-LEX ; ! ""
-исем% ҡуш:исем% ҡуш V-TV-LEX ; ! ""
-исемлә:исемлә V-TV-LEX ; ! ""
-һиҙ:һиҙ V-TV-LEX ; ! ""
-тәҡдим% ит:тәҡдим% ит V-TV-LEX ; ! ""
-ҡабул% ит:ҡабул% ит V-TV-LEX ; ! ""
-һора:һора V-TV-LEX ; ! ""
-талап% ит:талап% ит V-TV-LEX ; ! ""
-эс:эс V-TV-LEX ; ! ""
-ярҙам% ит:ярҙам% ит V-TV-LEX ; ! ""
-туҡма:туҡма V-TV-LEX ; ! ""
-ват:ват V-TV-LEX ; ! ""
-төҙө:төҙө V-TV-LEX ; ! ""
-тап:тап V-TV-LEX ; ! ""
-йырла:йырла V-TV-LEX ; ! ""
-ғәфү% ит:ғәфү% ит V-TV-LEX ; ! ""
-туҡта:туҡта V-TV-LEX ; ! ""
-ташла:ташла V-TV-LEX ; ! ""
-бүләк% ит:бүләк% ит V-TV-LEX ; ! ""
-өмөт% ит:өмөт% ит V-TV-LEX ; ! ""
-һуҙ:һуҙ V-TV-LEX ; ! ""
-тап% ит:тап% ит V-TV-LEX ; ! ""
-рөхсәт% ит:рөхсәт% ит V-TV-LEX ; ! ""
-тап:тап V-TV-LEX ; ! ""
-килеп% ет:килеп% ет V-TV-LEX ; ! ""
-эшлә:эшлә V-TV-LEX ; ! ""
-өҫтә:өҫтә V-TV-LEX ; ! ""
-ҡабатла:ҡабатла V-TV-LEX ; ! ""
-ҡара:ҡара V-TV-LEX ; ! ""
-ат:ат V-TV-LEX ; ! ""
-әйт:әйт V-TV-LEX ; ! ""
-бел:бел V-TV-LEX ; ! ""
-күр:күр V-TV-LEX ; ! ""
-төшөн:төшөн V-TV-LEX ; ! ""
-ҡыл:ҡыл V-TV-LEX ; ! ""
-ҡыл:ҡыл V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-күр:күр V-TV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-яуап% бир:яуап% бир V-TV-LEX ; ! ""
-уйлап% ал:уйлап% ал V-TV-LEX ; ! ""
-ярат:ярат V-TV-LEX ; ! ""
-аңлат:аңлат V-TV-LEX ; ! ""
-хәл% ит:хәл% ит V-TV-LEX ; ! ""
-ҡарар% ит:ҡарар% ит V-TV-LEX ; ! ""
-сис:сис V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-бел:бел V-TV-LEX ; ! ""
-белеш:белеш V-TV-LEX ; ! ""
-күреп% ҡал:күреп% ҡал V-TV-LEX ; ! ""
-ишет:ишет V-TV-LEX ; ! ""
-ҡурҡ:ҡурҡ V-TV-LEX ; ! ""
-яҙып% бөтөр:яҙып% бөтөр V-TV-LEX ; ! ""
-уҡы:уҡы V-TV-LEX ; ! ""
-һиҙ:һиҙ V-TV-LEX ; ! ""
-алып% бар:алып% бар V-TV-LEX ; ! ""
-дауам% ит:дауам% ит V-TV-LEX ; ! ""
-өлгөрт:өлгөрт V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-үт:үт V-TV-LEX ; ! ""
-онот:онот V-TV-LEX ; ! ""
-иҫкә% төшөр:иҫкә% төшөр V-TV-LEX ; ! ""
-тотоп% тор:тотоп% тор V-TV-LEX ; ! ""
-үтен:үтен V-TV-LEX ; ! ""
-күрһәт:күрһәт V-TV-LEX ; ! ""
-күтәр:күтәр V-TV-LEX ; ! ""
-ебәр:ебәр V-TV-LEX ; ! ""
-һөйләп% бир:һөйләп% бир V-TV-LEX ; ! ""
-һораш:һораш V-TV-LEX ; ! ""
-ырғыт:ырғыт V-TV-LEX ; ! ""
-ҡалдыр:ҡалдыр V-TV-LEX ; ! ""
-яуап% бир:яуап% бир V-TV-LEX ; ! ""
-һөйләп% бир:һөйләп% бир V-TV-LEX ; ! ""
-булдыра% ал:булдыра% ал V-TV-LEX ; ! ""
-булдыр:булдыр V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-ишет:ишет V-TV-LEX ; ! ""
-ҡысҡыр:ҡысҡыр V-TV-LEX ; ! ""
-булдыра% ал:булдыра% ал V-TV-LEX ; ! ""
-бел:бел V-TV-LEX ; ! ""
-һал:һал V-TV-LEX ; ! ""
-саҡыр:саҡыр V-TV-LEX ; ! ""
-үтеп% бар:үтеп% бар V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-сис:сис V-TV-LEX ; ! ""
-төшөр:төшөр V-TV-LEX ; ! ""
-тапшыр:тапшыр V-TV-LEX ; ! ""
-күҙ% алдына% килтер:күҙ% алдына% килтер V-TV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-әйт:әйт V-TV-LEX ; ! ""
-аңлат:аңлат V-TV-LEX ; ! ""
-төшөндөр:төшөндөр V-TV-LEX ; ! ""
-тапшыр:тапшыр V-TV-LEX ; ! ""
-күҙ% алдына% килтер:күҙ% алдына% килтер V-TV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-һатып% ал:һатып% ал V-TV-LEX ; ! ""
-эс:эс V-TV-LEX ; ! ""
-сирт:сирт V-TV-LEX ; ! ""
-хәбәр% ит:хәбәр% ит V-TV-LEX ; ! ""
-үлтер:үлтер V-TV-LEX ; ! ""
-һиҙ:һиҙ V-TV-LEX ; ! ""
-алып% кил:алып% кил V-TV-LEX ; ! ""
-килтер:килтер V-TV-LEX ; ! ""
-тәҡдим% ит:тәҡдим% ит V-TV-LEX ; ! ""
-саҡырып% сығар:саҡырып% сығар V-TV-LEX ; ! ""
-эләктереп% ал:эләктереп% ал V-TV-LEX ; ! ""
-эләктер:эләктер V-TV-LEX ; ! ""
-алып% кил:алып% кил V-TV-LEX ; ! ""
-килтер:килтер V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-ҡабул% ит:ҡабул% ит V-TV-LEX ; ! ""
-үткәр:үткәр V-TV-LEX ; ! ""
-ҡысҡырып% ебәр:ҡысҡырып% ебәр V-TV-LEX ; ! ""
-талап% ит:талап% ит V-TV-LEX ; ! ""
-ебәрергә:ебәрергә V-TV-LEX ; ! ""
-юғалт:юғалт V-TV-LEX ; ! ""
-эс:эс V-TV-LEX ; ! ""
-күрһәт:күрһәт V-TV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-кире% бир:кире% бир V-TV-LEX ; ! ""
-ҡайтарып% бир:ҡайтарып% бир V-TV-LEX ; ! ""
-ярҙам% ит:ярҙам% ит V-TV-LEX ; ! ""
-булдыр:булдыр V-TV-LEX ; ! ""
-барлыҡҡа% килтер:барлыҡҡа% килтер V-TV-LEX ; ! ""
-иҫкә% төшөр:иҫкә% төшөр V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-ебәр:ебәр V-TV-LEX ; ! ""
-тын% ал:тын% ал V-TV-LEX ; ! ""
-ғәфү% ит:ғәфү% ит V-TV-LEX ; ! ""
-кисер:кисер V-TV-LEX ; ! ""
-бүләк% ит:бүләк% ит V-TV-LEX ; ! ""
-өмөт% ит:өмөт% ит V-TV-LEX ; ! ""
-өмөтлән:өмөтлән V-TV-LEX ; ! ""
-ҡуллан:ҡуллан V-TV-LEX ; ! ""
-файҙалан:файҙалан V-TV-LEX ; ! ""
-саҡыр:саҡыр V-TV-LEX ; ! ""
-осрат:осрат V-TV-LEX ; ! ""
-тап% ит:тап% ит V-TV-LEX ; ! ""
-рөхсәт% ит:рөхсәт% ит V-TV-LEX ; ! ""
-килеп% ет:килеп% ет V-TV-LEX ; ! ""
-алып% бар:алып% бар V-TV-LEX ; ! ""
-уҡы:уҡы V-TV-LEX ; ! ""
-өйрән:өйрән V-TV-LEX ; ! ""
-тапшыр:тапшыр V-TV-LEX ; ! ""
-әйт:әйт V-TV-LEX ; ! ""
-үткәр:үткәр V-TV-LEX ; ! ""
-оҙат:оҙат V-TV-LEX ; ! ""
-оҙата% бар:оҙата% бар V-TV-LEX ; ! ""
+һөйлә:һөйлә V-TV ; ! ""
+телә:телә V-TV ; ! ""
+уйла:уйла V-TV ; ! ""
+һора:һора V-TV ; ! ""
+ҡара:ҡара V-TV ; ! ""
+аңла:аңла V-TV ; ! ""
+аңла:аңла V-TV ; ! ""
+башла:башла V-TV ; ! ""
+эшлә:эшлә V-TV ; ! ""
+көт:көт V-TV ; ! ""
+ҡара:ҡара V-TV ; ! ""
+тап:тап V-TV ; ! ""
+хәл% ит:хәл% ит V-TV ; ! ""
+ҡарар% ит:ҡарар% ит V-TV ; ! ""
+сис:сис V-TV ; ! ""
+яҙ:яҙ%{ъ%} V-TV ; ! ""
+һана:һана V-TV ; ! ""
+хәтерҙә% тот:хәтерҙә% тот V-TV ; ! ""
+иҫтә% тот:иҫтә% тот V-TV ; ! ""
+хәтерлә:хәтерлә V-TV ; ! ""
+тыңла:тыңла V-TV ; ! ""
+ҡара:ҡара V-TV ; ! ""
+яҙ:яҙ%{ъ%} V-TV ; ! ""
+һиҙ:һиҙ V-TV ; ! ""
+дауам% ит:дауам% ит V-TV ; ! ""
+үт:үт V-TV ; ! ""
+башла:башла V-TV ; ! ""
+тот:тот V-TV ; ! ""
+һора:һора V-TV ; ! ""
+ата:ата V-TV ; ! ""
+исемлә:исемлә V-TV ; ! ""
+һөйлә:һөйлә V-TV ; ! ""
+ташла:ташла V-TV ; ! ""
+һөйлә:һөйлә V-TV ; ! ""
+эҙлә:эҙлә V-TV ; ! ""
+уйна:уйна V-TV ; ! ""
+ас:ас V-TV ; ! ""
+ата:ата V-TV ; ! ""
+исемлә:исемлә V-TV ; ! ""
+алып% ташла:алып% ташла V-TV ; ! ""
+сис:сис V-TV ; ! ""
+эс:эс V-TV ; ! ""
+хәбәр% ит:хәбәр% ит V-TV ; ! ""
+ата:ата V-TV ; ! ""
+исем% ҡуш:исем% ҡуш V-TV ; ! ""
+исемлә:исемлә V-TV ; ! ""
+һиҙ:һиҙ V-TV ; ! ""
+тәҡдим% ит:тәҡдим% ит V-TV ; ! ""
+ҡабул% ит:ҡабул% ит V-TV ; ! ""
+һора:һора V-TV ; ! ""
+талап% ит:талап% ит V-TV ; ! ""
+эс:эс V-TV ; ! ""
+ярҙам% ит:ярҙам% ит V-TV ; ! ""
+туҡма:туҡма V-TV ; ! ""
+ват:ват V-TV ; ! ""
+төҙө:төҙө V-TV ; ! ""
+тап:тап V-TV ; ! ""
+йырла:йырла V-TV ; ! ""
+ғәфү% ит:ғәфү% ит V-TV ; ! ""
+туҡта:туҡта V-TV ; ! ""
+ташла:ташла V-TV ; ! ""
+бүләк% ит:бүләк% ит V-TV ; ! ""
+өмөт% ит:өмөт% ит V-TV ; ! ""
+һуҙ:һуҙ V-TV ; ! ""
+тап% ит:тап% ит V-TV ; ! ""
+рөхсәт% ит:рөхсәт% ит V-TV ; ! ""
+тап:тап V-TV ; ! ""
+килеп% ет:килеп% ет V-TV ; ! ""
+эшлә:эшлә V-TV ; ! ""
+өҫтә:өҫтә V-TV ; ! ""
+ҡабатла:ҡабатла V-TV ; ! ""
+ҡара:ҡара V-TV ; ! ""
+ат:ат V-TV ; ! ""
+әйт:әйт V-TV ; ! ""
+бел:бел V-TV ; ! ""
+күр:күр V-TV ; ! ""
+төшөн:төшөн V-TV ; ! ""
+ҡыл:ҡыл V-TV ; ! ""
+ҡыл:ҡыл V-TV ; ! ""
+ал:ал V-TV ; ! ""
+күр:күр V-TV ; ! ""
+бир:бир V-TV ; ! ""
+бир:бир V-TV ; ! ""
+яуап% бир:яуап% бир V-TV ; ! ""
+уйлап% ал:уйлап% ал V-TV ; ! ""
+ярат:ярат V-TV ; ! ""
+аңлат:аңлат V-TV ; ! ""
+хәл% ит:хәл% ит V-TV ; ! ""
+ҡарар% ит:ҡарар% ит V-TV ; ! ""
+сис:сис V-TV ; ! ""
+ал:ал V-TV ; ! ""
+бел:бел V-TV ; ! ""
+белеш:белеш V-TV ; ! ""
+күреп% ҡал:күреп% ҡал V-TV ; ! ""
+ишет:ишет V-TV ; ! ""
+ҡурҡ:ҡурҡ V-TV ; ! ""
+яҙып% бөтөр:яҙып% бөтөр V-TV ; ! ""
+уҡы:уҡы V-TV ; ! ""
+һиҙ:һиҙ V-TV ; ! ""
+алып% бар:алып% бар V-TV ; ! ""
+дауам% ит:дауам% ит V-TV ; ! ""
+өлгөрт:өлгөрт V-TV ; ! ""
+ал:ал V-TV ; ! ""
+үт:үт V-TV ; ! ""
+онот:онот V-TV ; ! ""
+иҫкә% төшөр:иҫкә% төшөр V-TV ; ! ""
+тотоп% тор:тотоп% тор V-TV ; ! ""
+үтен:үтен V-TV ; ! ""
+күрһәт:күрһәт V-TV ; ! ""
+күтәр:күтәр V-TV ; ! ""
+ебәр:ебәр V-TV ; ! ""
+һөйләп% бир:һөйләп% бир V-TV ; ! ""
+һораш:һораш V-TV ; ! ""
+ырғыт:ырғыт V-TV ; ! ""
+ҡалдыр:ҡалдыр V-TV ; ! ""
+яуап% бир:яуап% бир V-TV ; ! ""
+һөйләп% бир:һөйләп% бир V-TV ; ! ""
+булдыра% ал:булдыра% ал V-TV ; ! ""
+булдыр:булдыр V-TV ; ! ""
+ал:ал V-TV ; ! ""
+ишет:ишет V-TV ; ! ""
+ҡысҡыр:ҡысҡыр V-TV ; ! ""
+булдыра% ал:булдыра% ал V-TV ; ! ""
+бел:бел V-TV ; ! ""
+һал:һал V-TV ; ! ""
+саҡыр:саҡыр V-TV ; ! ""
+үтеп% бар:үтеп% бар V-TV ; ! ""
+ал:ал V-TV ; ! ""
+сис:сис V-TV ; ! ""
+төшөр:төшөр V-TV ; ! ""
+тапшыр:тапшыр V-TV ; ! ""
+күҙ% алдына% килтер:күҙ% алдына% килтер V-TV ; ! ""
+бир:бир V-TV ; ! ""
+әйт:әйт V-TV ; ! ""
+аңлат:аңлат V-TV ; ! ""
+төшөндөр:төшөндөр V-TV ; ! ""
+тапшыр:тапшыр V-TV ; ! ""
+күҙ% алдына% килтер:күҙ% алдына% килтер V-TV ; ! ""
+бир:бир V-TV ; ! ""
+һатып% ал:һатып% ал V-TV ; ! ""
+эс:эс V-TV ; ! ""
+сирт:сирт V-TV ; ! ""
+хәбәр% ит:хәбәр% ит V-TV ; ! ""
+үлтер:үлтер V-TV ; ! ""
+һиҙ:һиҙ V-TV ; ! ""
+алып% кил:алып% кил V-TV ; ! ""
+килтер:килтер V-TV ; ! ""
+тәҡдим% ит:тәҡдим% ит V-TV ; ! ""
+саҡырып% сығар:саҡырып% сығар V-TV ; ! ""
+эләктереп% ал:эләктереп% ал V-TV ; ! ""
+эләктер:эләктер V-TV ; ! ""
+алып% кил:алып% кил V-TV ; ! ""
+килтер:килтер V-TV ; ! ""
+ал:ал V-TV ; ! ""
+ҡабул% ит:ҡабул% ит V-TV ; ! ""
+үткәр:үткәр V-TV ; ! ""
+ҡысҡырып% ебәр:ҡысҡырып% ебәр V-TV ; ! ""
+талап% ит:талап% ит V-TV ; ! ""
+ебәрергә:ебәрергә V-TV ; ! ""
+юғалт:юғалт V-TV ; ! ""
+эс:эс V-TV ; ! ""
+күрһәт:күрһәт V-TV ; ! ""
+бир:бир V-TV ; ! ""
+кире% бир:кире% бир V-TV ; ! ""
+ҡайтарып% бир:ҡайтарып% бир V-TV ; ! ""
+ярҙам% ит:ярҙам% ит V-TV ; ! ""
+булдыр:булдыр V-TV ; ! ""
+барлыҡҡа% килтер:барлыҡҡа% килтер V-TV ; ! ""
+иҫкә% төшөр:иҫкә% төшөр V-TV ; ! ""
+ал:ал V-TV ; ! ""
+ал:ал V-TV ; ! ""
+ебәр:ебәр V-TV ; ! ""
+тын% ал:тын% ал V-TV ; ! ""
+ғәфү% ит:ғәфү% ит V-TV ; ! ""
+кисер:кисер V-TV ; ! ""
+бүләк% ит:бүләк% ит V-TV ; ! ""
+өмөт% ит:өмөт% ит V-TV ; ! ""
+өмөтлән:өмөтлән V-TV ; ! ""
+ҡуллан:ҡуллан V-TV ; ! ""
+файҙалан:файҙалан V-TV ; ! ""
+саҡыр:саҡыр V-TV ; ! ""
+осрат:осрат V-TV ; ! ""
+тап% ит:тап% ит V-TV ; ! ""
+рөхсәт% ит:рөхсәт% ит V-TV ; ! ""
+килеп% ет:килеп% ет V-TV ; ! ""
+алып% бар:алып% бар V-TV ; ! ""
+уҡы:уҡы V-TV ; ! ""
+өйрән:өйрән V-TV ; ! ""
+тапшыр:тапшыр V-TV ; ! ""
+әйт:әйт V-TV ; ! ""
+үткәр:үткәр V-TV ; ! ""
+оҙат:оҙат V-TV ; ! ""
+оҙата% бар:оҙата% бар V-TV ; ! ""
 
-баҫ:баҫ V-IV-LEX ; ! ""
-ғүмер% ит:ғүмер% ит V-IV-LEX ; ! ""
-йәшә:йәшә V-IV-LEX ; ! ""
-сыҡ:сыҡ V-IV-LEX ; ! ""
-ят:ят V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-килеп% сыҡ:килеп% сыҡ V-IV-LEX ; ! ""
-сыҡ:сыҡ V-IV-LEX ; ! ""
-аяҡҡа% баҫ:аяҡҡа% баҫ V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-тын:тын V-IV-LEX ; ! ""
-йоҡла:йоҡла V-IV-LEX ; ! ""
-туҡта:туҡта V-IV-LEX ; ! ""
-сап:сап V-IV-LEX ; ! ""
-ҡас:ҡас V-IV-LEX ; ! ""
-килеп% сыҡ:килеп% сыҡ V-IV-LEX ; ! ""
-барып% сыҡ:барып% сыҡ V-IV-LEX ; ! ""
-мен:мен V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-уңышлы% бөт:уңышлы% бөт V-IV-LEX ; ! ""
-үл:үл V-IV-LEX ; ! ""
-күн:күн V-IV-LEX ; ! ""
-көлөмһөрә:көлөмһөрә V-IV-LEX ; ! ""
-көлөмһөрә:көлөмһөрә V-IV-LEX ; ! ""
-оҡша:оҡша V-IV-LEX ; ! ""
-ет:ет V-IV-LEX ; ! ""
-булып% сыҡ:булып% сыҡ V-IV-LEX ; ! ""
-баш% ҡағ:баш% ҡағ V-IV-LEX ; ! ""
-ымла:ымла V-IV-LEX ; ! ""
-килеп% сыҡ:килеп% сыҡ V-IV-LEX ; ! ""
-ау:ау V-IV-LEX ; ! ""
-яр:яр V-IV-LEX ; ! ""
-килеп% сыҡ:килеп% сыҡ V-IV-LEX ; ! ""
-күҙ% ташла:күҙ% ташла V-IV-LEX ; ! ""
-хеҙмәт% ит:хеҙмәт% ит V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-яра:яра V-IV-LEX ; ! ""
-эш% ит:эш% ит V-IV-LEX ; ! ""
-ян:ян V-IV-LEX ; ! ""
-ярҙам% ит:ярҙам% ит V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-тор:тор V-IV-LEX ; ! ""
-бар:бар V-IV-LEX ; ! ""
-тор:тор V-IV-LEX ; ! ""
-ғүмер% ит:ғүмер% ит V-IV-LEX ; ! ""
-ултыр:ултыр V-IV-LEX ; ! ""
-тойол:тойол V-IV-LEX ; ! ""
-күрен:күрен V-IV-LEX ; ! ""
-ҡал:ҡал V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-тура% кил:тура% кил V-IV-LEX ; ! ""
-ҡайт:ҡайт V-IV-LEX ; ! ""
-кил:кил V-IV-LEX ; ! ""
-йөрө:йөрө V-IV-LEX ; ! ""
-булғал:булғал V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-ултыр:ултыр V-IV-LEX ; ! ""
-ҡал:ҡал V-IV-LEX ; ! ""
-күрен:күрен V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-тор:тор V-IV-LEX ; ! ""
-яҡын% кил:яҡын% кил V-IV-LEX ; ! ""
-тор:тор V-IV-LEX ; ! ""
-эйәр:эйәр V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-ин:ин V-IV-LEX ; ! ""
-булып% һанал:булып% һанал V-IV-LEX ; ! ""
-булып% тор:булып% тор V-IV-LEX ; ! ""
-туҡтал:туҡтал V-IV-LEX ; ! ""
-ышан:ышан V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-йүгер:йүгер V-IV-LEX ; ! ""
-ҡайт:ҡайт V-IV-LEX ; ! ""
-кил:кил V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-йыйылыш:йыйылыш V-IV-LEX ; ! ""
-күрен:күрен V-IV-LEX ; ! ""
-тейҙер:тейҙер V-IV-LEX ; ! ""
-тей:тей V-IV-LEX ; ! ""
-кил:кил V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-мен:мен V-IV-LEX ; ! ""
-күтәрел:күтәрел V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-!тырыш:тырыш V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-шөғөллән:шөғөллән V-IV-LEX ; ! ""
-башлан:башлан V-IV-LEX ; ! ""
-уңышлы% бул:уңышлы% бул V-IV-LEX ; ! ""
-тура% кил:тура% кил V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-бар% бул:бар% бул V-IV-LEX ; ! ""
-вафат% бул:вафат% бул V-IV-LEX ; ! ""
-үл:үл V-IV-LEX ; ! ""
-риза% бул:риза% бул V-IV-LEX ; ! ""
-күн:күн V-IV-LEX ; ! ""
-килеш:килеш V-IV-LEX ; ! ""
-йылмай:йылмай V-IV-LEX ; ! ""
-йылмай:йылмай V-IV-LEX ; ! ""
-ет:ет V-IV-LEX ; ! ""
-тура% кил:тура% кил V-IV-LEX ; ! ""
-көл:көл V-IV-LEX ; ! ""
-ҡайт:ҡайт V-IV-LEX ; ! ""
-юҡ% бул:юҡ% бул V-IV-LEX ; ! ""
-йығыл:йығыл V-IV-LEX ; ! ""
-ышан:ышан V-IV-LEX ; ! ""
-өмөтлән:өмөтлән V-IV-LEX ; ! ""
-тура% кил:тура% кил V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-кил:кил V-IV-LEX ; ! ""
-ышан:ышан V-IV-LEX ; ! ""
-күрен:күрен V-IV-LEX ; ! ""
-хеҙмәт% ит:хеҙмәт% ит V-IV-LEX ; ! ""
-кит:кит%{ъ%} V-IV-LEX ; ! ""
-ышан:ышан V-IV-LEX ; ! ""
-атал:атал V-IV-LEX ; ! ""
-исемлән:исемлән V-IV-LEX ; ! ""
-һөйләш:һөйләш V-IV-LEX ; ! ""
-борол:борол V-IV-LEX ; ! ""
-әйлән:әйлән V-IV-LEX ; ! ""
-кил:кил V-IV-LEX ; ! ""
-тура% кил:тура% кил V-IV-LEX ; ! ""
-эленеп% тор:эленеп% тор V-IV-LEX ; ! ""
-аҫылынып% тор:аҫылынып% тор V-IV-LEX ; ! ""
-күрен:күрен V-IV-LEX ; ! ""
-эш% ит:эш% ит V-IV-LEX ; ! ""
-йөрө:йөрө V-IV-LEX ; ! ""
-ултыр:ултыр V-IV-LEX ; ! ""
-ярҙам% ит:ярҙам% ит V-IV-LEX ; ! ""
-мөнәсәбәте% бул:мөнәсәбәте% бул V-IV-LEX ; ! ""
-ғәжәплән:ғәжәплән V-IV-LEX ; ! ""
-хайран% ҡал:хайран% ҡал V-IV-LEX ; ! ""
-таң% ҡал:таң% ҡал V-IV-LEX ; ! ""
-һәләк% бул:һәләк% бул V-IV-LEX ; ! ""
-тотон:тотон V-IV-LEX ; ! ""
-тотоноп% тор:тотоноп% тор V-IV-LEX ; ! ""
-ин:ин V-IV-LEX ; ! ""
-өлгөр:өлгөр V-IV-LEX ; ! ""
-яһа:яһа V-TV-LEX ; ! ""
+баҫ:баҫ V-IV ; ! ""
+ғүмер% ит:ғүмер% ит V-IV ; ! ""
+йәшә:йәшә V-IV ; ! ""
+сыҡ:сыҡ V-IV ; ! ""
+ят:ят V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+килеп% сыҡ:килеп% сыҡ V-IV ; ! ""
+сыҡ:сыҡ V-IV ; ! ""
+аяҡҡа% баҫ:аяҡҡа% баҫ V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+тын:тын V-IV ; ! ""
+йоҡла:йоҡла V-IV ; ! ""
+туҡта:туҡта V-IV ; ! ""
+сап:сап V-IV ; ! ""
+ҡас:ҡас V-IV ; ! ""
+килеп% сыҡ:килеп% сыҡ V-IV ; ! ""
+барып% сыҡ:барып% сыҡ V-IV ; ! ""
+мен:мен V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+уңышлы% бөт:уңышлы% бөт V-IV ; ! ""
+үл:үл V-IV ; ! ""
+күн:күн V-IV ; ! ""
+көлөмһөрә:көлөмһөрә V-IV ; ! ""
+көлөмһөрә:көлөмһөрә V-IV ; ! ""
+оҡша:оҡша V-IV ; ! ""
+ет:ет V-IV ; ! ""
+булып% сыҡ:булып% сыҡ V-IV ; ! ""
+баш% ҡағ:баш% ҡағ V-IV ; ! ""
+ымла:ымла V-IV ; ! ""
+килеп% сыҡ:килеп% сыҡ V-IV ; ! ""
+ау:ау V-IV ; ! ""
+яр:яр V-IV ; ! ""
+килеп% сыҡ:килеп% сыҡ V-IV ; ! ""
+күҙ% ташла:күҙ% ташла V-IV ; ! ""
+хеҙмәт% ит:хеҙмәт% ит V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+яра:яра V-IV ; ! ""
+эш% ит:эш% ит V-IV ; ! ""
+ян:ян V-IV ; ! ""
+ярҙам% ит:ярҙам% ит V-IV ; ! ""
+бул:бул V-IV ; ! ""
+бул:бул V-IV ; ! ""
+тор:тор V-IV ; ! ""
+бар:бар V-IV ; ! ""
+тор:тор V-IV ; ! ""
+ғүмер% ит:ғүмер% ит V-IV ; ! ""
+ултыр:ултыр V-IV ; ! ""
+тойол:тойол V-IV ; ! ""
+күрен:күрен V-IV ; ! ""
+ҡал:ҡал V-IV ; ! ""
+бул:бул V-IV ; ! ""
+тура% кил:тура% кил V-IV ; ! ""
+ҡайт:ҡайт V-IV ; ! ""
+кил:кил V-IV ; ! ""
+йөрө:йөрө V-IV ; ! ""
+булғал:булғал V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+ултыр:ултыр V-IV ; ! ""
+ҡал:ҡал V-IV ; ! ""
+күрен:күрен V-IV ; ! ""
+бул:бул V-IV ; ! ""
+тор:тор V-IV ; ! ""
+яҡын% кил:яҡын% кил V-IV ; ! ""
+тор:тор V-IV ; ! ""
+эйәр:эйәр V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+ин:ин V-IV ; ! ""
+булып% һанал:булып% һанал V-IV ; ! ""
+булып% тор:булып% тор V-IV ; ! ""
+туҡтал:туҡтал V-IV ; ! ""
+ышан:ышан V-IV ; ! ""
+бул:бул V-IV ; ! ""
+йүгер:йүгер V-IV ; ! ""
+ҡайт:ҡайт V-IV ; ! ""
+кил:кил V-IV ; ! ""
+бул:бул V-IV ; ! ""
+йыйылыш:йыйылыш V-IV ; ! ""
+күрен:күрен V-IV ; ! ""
+тейҙер:тейҙер V-IV ; ! ""
+тей:тей V-IV ; ! ""
+кил:кил V-IV ; ! ""
+бул:бул V-IV ; ! ""
+мен:мен V-IV ; ! ""
+күтәрел:күтәрел V-IV ; ! ""
+бул:бул V-IV ; ! ""
+!тырыш:тырыш V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+шөғөллән:шөғөллән V-IV ; ! ""
+башлан:башлан V-IV ; ! ""
+уңышлы% бул:уңышлы% бул V-IV ; ! ""
+тура% кил:тура% кил V-IV ; ! ""
+бул:бул V-IV ; ! ""
+бар% бул:бар% бул V-IV ; ! ""
+вафат% бул:вафат% бул V-IV ; ! ""
+үл:үл V-IV ; ! ""
+риза% бул:риза% бул V-IV ; ! ""
+күн:күн V-IV ; ! ""
+килеш:килеш V-IV ; ! ""
+йылмай:йылмай V-IV ; ! ""
+йылмай:йылмай V-IV ; ! ""
+ет:ет V-IV ; ! ""
+тура% кил:тура% кил V-IV ; ! ""
+көл:көл V-IV ; ! ""
+ҡайт:ҡайт V-IV ; ! ""
+юҡ% бул:юҡ% бул V-IV ; ! ""
+йығыл:йығыл V-IV ; ! ""
+ышан:ышан V-IV ; ! ""
+өмөтлән:өмөтлән V-IV ; ! ""
+тура% кил:тура% кил V-IV ; ! ""
+бул:бул V-IV ; ! ""
+кил:кил V-IV ; ! ""
+ышан:ышан V-IV ; ! ""
+күрен:күрен V-IV ; ! ""
+хеҙмәт% ит:хеҙмәт% ит V-IV ; ! ""
+кит:кит%{ъ%} V-IV ; ! ""
+ышан:ышан V-IV ; ! ""
+атал:атал V-IV ; ! ""
+исемлән:исемлән V-IV ; ! ""
+һөйләш:һөйләш V-IV ; ! ""
+борол:борол V-IV ; ! ""
+әйлән:әйлән V-IV ; ! ""
+кил:кил V-IV ; ! ""
+тура% кил:тура% кил V-IV ; ! ""
+эленеп% тор:эленеп% тор V-IV ; ! ""
+аҫылынып% тор:аҫылынып% тор V-IV ; ! ""
+күрен:күрен V-IV ; ! ""
+эш% ит:эш% ит V-IV ; ! ""
+йөрө:йөрө V-IV ; ! ""
+ултыр:ултыр V-IV ; ! ""
+ярҙам% ит:ярҙам% ит V-IV ; ! ""
+мөнәсәбәте% бул:мөнәсәбәте% бул V-IV ; ! ""
+ғәжәплән:ғәжәплән V-IV ; ! ""
+хайран% ҡал:хайран% ҡал V-IV ; ! ""
+таң% ҡал:таң% ҡал V-IV ; ! ""
+һәләк% бул:һәләк% бул V-IV ; ! ""
+тотон:тотон V-IV ; ! ""
+тотоноп% тор:тотоноп% тор V-IV ; ! ""
+ин:ин V-IV ; ! ""
+өлгөр:өлгөр V-IV ; ! ""
+яһа:яһа V-TV ; ! ""
 
-аңлашыл:аңлашыл V-IV-LEX ; ! ""
-аралаш:аралаш V-IV-LEX ; ! ""
-арнал:арнал V-IV-LEX ; ! ""
-арттыр:арттыр V-TV-LEX ; ! ""
-арт:арт V-IV-LEX ; ! ""
-ашыр:ашыр V-TV-LEX ; ! ""
-ашы:ашы V-IV-LEX ; ! ""
-әҙерлә:әҙерлә V-TV-LEX ; ! ""
-бағышла:бағышла V-TV-LEX ; ! ""
-башла:башла V-TV-LEX ; ! ""
-бәйлән:бәйлән V-IV-LEX ; ! ""
-белдер:белдер V-TV-LEX ; ! ""
-бел:бел V-TV-LEX ; ! ""
-билдәлә:билдәлә V-TV-LEX ; ! ""
-бирел:бирел V-IV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-бөт:бөт V-IV-LEX ; ! ""
-булдыр:булдыр V-TV-LEX ; ! ""
-бүл:бүл V-TV-LEX ; ! ""
-индер:индер V-TV-LEX ; ! ""
-иҫәплән:иҫәплән V-IV-LEX ; ! ""
-иҫлә:иҫлә V-TV-LEX ; ! ""
-ит:ит V-TV-LEX ; ! ""
-йәлеп% ит:йәлеп% ит V-TV-LEX ; ! ""
-йүнәлт:йүнәлт V-TV-LEX ; ! ""
-йылын:йылын V-TV-LEX ; ! ""
-камиллаштыр:камиллаштыр V-TV-LEX ; ! ""
-килеш:килеш V-IV-LEX ; ! ""
-күсер:күсер V-TV-LEX ; ! ""
-ҡарал:ҡарал V-IV-LEX ; ! ""
-ҡатнаш:ҡатнаш V-IV-LEX ; ! ""
-ҡуллан:ҡуллан V-TV-LEX ; ! ""
-нығыт:нығыт V-TV-LEX ; ! ""
-ойошторол:ойошторол V-TV-LEX ; ! ""
-ойоштор:ойоштор V-TV-LEX ; ! ""
-осраш:осраш V-IV-LEX ; ! ""
-планлаштыр:планлаштыр V-TV-LEX ; ! ""
-раҫлан:раҫлан V-IV-LEX ; ! ""
-раҫла:раҫла V-TV-LEX ; ! ""
-ремонтла:ремонтла V-TV-LEX ; ! ""
-сығар:сығар V-TV-LEX ; ! ""
-тап:тап V-TV-LEX ; ! ""
-таныштыр:таныштыр V-TV-LEX ; ! ""
-тапшыр:тапшыр V-TV-LEX ; ! ""
-тарҡал:тарҡал V-IV-LEX ; ! ""
-тарт:тарт V-TV-LEX ; ! ""
-ташы:ташы V-TV-LEX ; ! ""
-тикшер:тикшер V-TV-LEX ; ! ""
-тикшерен:тикшерен V-IV-LEX ; ! ""
-төҙө:төҙө V-TV-LEX ; ! ""
-уҡы:уҡы V-TV-LEX ; ! ""
-үҙгәрт:үҙгәрт V-TV-LEX ; ! ""
-үҙләштер:үҙләштер V-TV-LEX ; ! ""
-үҫтер:үҫтер V-TV-LEX ; ! ""
-үткәр:үткәр V-TV-LEX ; ! ""
-файҙалан:файҙалан V-IV-LEX ; ! ""
-фаразла:фаразла V-TV-LEX ; ! ""
-финансла:финансла V-TV-LEX ; ! ""
-хупла:хупла V-TV-LEX ; ! ""
-һайла:һайла V-TV-LEX ; ! ""
-һаҡлан:һаҡлан V-IV-LEX ; ! ""
-һаҡла:һаҡла V-TV-LEX ; ! ""
-һат:һат V-TV-LEX ; ! ""
-һөйлә:һөйлә V-TV-LEX ; ! ""
-һыуыт:һыуыт V-TV-LEX ; ! ""
-шартла:шартла V-IV-LEX ; ! ""
-эшкәрт:эшкәрт V-TV-LEX ; ! ""
-яҡла:яҡла V-TV-LEX ; ! ""
-яңырт:яңырт V-TV-LEX ; ! ""
-яула:яула V-TV-LEX ; ! ""
-яһа:яһа V-TV-LEX ; ! ""
-арттырыл:арттырыл V-IV-LEX ; ! ""
-арттыр:арттыр V-TV-LEX ; ! ""
-айыр:айыр V-TV-LEX ; ! ""
-формалаштыр:формалаштыр V-TV-LEX ; ! ""
-үткәрел:үткәрел V-IV-LEX ; ! ""
-сәләмлә:сәләмлә V-TV-LEX ; ! ""
-саҡырыл:саҡырыл V-IV-LEX ; ! ""
-киңәйтел:киңәйтел V-IV-LEX ; ! ""
-ҡара:ҡара V-TV-LEX ; ! ""
-әүҙемләштер:әүҙемләштер V-TV-LEX ; ! ""
-әҙерлә:әҙерлә V-TV-LEX ; ! ""
-бүлен:бүлен V-TV-LEX ; ! ""
-яҡшырт:яҡшырт V-TV-LEX ; ! ""
-аҡла:аҡла V-TV-LEX ; ! ""
-алмаштыр:алмаштыр V-TV-LEX ; ! ""
-алмаш:алмаш V-IV-LEX ; ! ""
-ал:ал V-TV-LEX ; ! ""
-алыш:алыш V-IV-LEX ; ! ""
-аныҡла:аныҡла V-TV-LEX ; ! ""
-аралаш:аралаш V-IV-LEX ; ! ""
-арт:арт V-IV-LEX ; ! ""
-арттыр:арттыр V-TV-LEX ; ! ""
-ары:ары V-IV-LEX ; ! ""
-асыҡлан:асыҡлан V-IV-LEX ; ! ""
-асыҡла:асыҡла V-TV-LEX ; ! ""
-асыл:асыл V-IV-LEX ; ! ""
-аш:аш V-IV-LEX ; ! ""
-ашырыл:ашырыл V-IV-LEX ; ! ""
-ашыр:ашыр V-TV-LEX ; ! ""
-әҙерлә:әҙерлә V-TV-LEX ; ! ""
-әҙерлән:әҙерлән V-IV-LEX ; ! ""
-әңгәмәләш:әңгәмәләш V-IV-LEX ; ! ""
-барыл:барыл V-IV-LEX ; ! ""
-бар:бар V-IV-LEX ; ! ""
-баҫтыр:баҫтыр V-TV-LEX ; ! ""
-баҫтырыл:баҫтырыл V-IV-LEX ; ! ""
-баҫыл:баҫыл V-IV-LEX ; ! ""
-баһалан:баһалан V-IV-LEX ; ! ""
-баһала:баһала V-TV-LEX ; ! ""
-башҡар:башҡар V-TV-LEX ; ! ""
-башҡарыл:башҡарыл V-IV-LEX ; ! ""
-бейе:бейе V-TV-LEX ; ! ""
-белдер:белдер V-TV-LEX ; ! ""
-берләштер:берләштер V-TV-LEX ; ! ""
-бил:бил V-TV-LEX ; ! ""
-билдәлә:билдәлә V-TV-LEX ; ! ""
-билдәлән:билдәлән V-IV-LEX ; ! ""
-бирел:бирел V-IV-LEX ; ! ""
-бир:бир V-TV-LEX ; ! ""
-боҙ:боҙ V-TV-LEX ; ! ""
-борсо:борсо V-TV-LEX ; ! ""
-бөтөр:бөтөр V-TV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-булдырыл:булдырыл V-IV-LEX ; ! ""
-булдыр:булдыр V-TV-LEX ; ! ""
-бүл:бүл V-TV-LEX ; ! ""
-бүләклән:бүләклән V-IV-LEX ; ! ""
-бүләклә:бүләклә V-TV-LEX ; ! ""
-бүлен:бүлен V-IV-LEX ; ! ""
-бүлеш:бүлеш V-TV-LEX ; ! ""
-бүлеш:бүлеш V-IV-LEX ; ! ""
-бысран:бысран V-IV-LEX ; ! ""
-ҡапла:ҡапла V-TV-LEX ; ! ""
-йәшер:йәшер V-TV-LEX ; ! ""
-тасуирла:тасуирла V-TV-LEX ; ! ""
-тыу:тыу V-IV-LEX ; ! ""
-урынлаш:урынлаш V-IV-LEX ; ! ""
-яҙҙыр:яҙҙыр V-TV-LEX ; ! ""
+аңлашыл:аңлашыл V-IV ; ! ""
+аралаш:аралаш V-IV ; ! ""
+арнал:арнал V-IV ; ! ""
+арттыр:арттыр V-TV ; ! ""
+арт:арт V-IV ; ! ""
+ашыр:ашыр V-TV ; ! ""
+ашы:ашы V-IV ; ! ""
+әҙерлә:әҙерлә V-TV ; ! ""
+бағышла:бағышла V-TV ; ! ""
+башла:башла V-TV ; ! ""
+бәйлән:бәйлән V-IV ; ! ""
+белдер:белдер V-TV ; ! ""
+бел:бел V-TV ; ! ""
+билдәлә:билдәлә V-TV ; ! ""
+бирел:бирел V-IV ; ! ""
+бир:бир V-TV ; ! ""
+бөт:бөт V-IV ; ! ""
+булдыр:булдыр V-TV ; ! ""
+бүл:бүл V-TV ; ! ""
+индер:индер V-TV ; ! ""
+иҫәплән:иҫәплән V-IV ; ! ""
+иҫлә:иҫлә V-TV ; ! ""
+ит:ит V-TV ; ! ""
+йәлеп% ит:йәлеп% ит V-TV ; ! ""
+йүнәлт:йүнәлт V-TV ; ! ""
+йылын:йылын V-TV ; ! ""
+камиллаштыр:камиллаштыр V-TV ; ! ""
+килеш:килеш V-IV ; ! ""
+күсер:күсер V-TV ; ! ""
+ҡарал:ҡарал V-IV ; ! ""
+ҡатнаш:ҡатнаш V-IV ; ! ""
+ҡуллан:ҡуллан V-TV ; ! ""
+нығыт:нығыт V-TV ; ! ""
+ойошторол:ойошторол V-TV ; ! ""
+ойоштор:ойоштор V-TV ; ! ""
+осраш:осраш V-IV ; ! ""
+планлаштыр:планлаштыр V-TV ; ! ""
+раҫлан:раҫлан V-IV ; ! ""
+раҫла:раҫла V-TV ; ! ""
+ремонтла:ремонтла V-TV ; ! ""
+сығар:сығар V-TV ; ! ""
+тап:тап V-TV ; ! ""
+таныштыр:таныштыр V-TV ; ! ""
+тапшыр:тапшыр V-TV ; ! ""
+тарҡал:тарҡал V-IV ; ! ""
+тарт:тарт V-TV ; ! ""
+ташы:ташы V-TV ; ! ""
+тикшер:тикшер V-TV ; ! ""
+тикшерен:тикшерен V-IV ; ! ""
+төҙө:төҙө V-TV ; ! ""
+уҡы:уҡы V-TV ; ! ""
+үҙгәрт:үҙгәрт V-TV ; ! ""
+үҙләштер:үҙләштер V-TV ; ! ""
+үҫтер:үҫтер V-TV ; ! ""
+үткәр:үткәр V-TV ; ! ""
+файҙалан:файҙалан V-IV ; ! ""
+фаразла:фаразла V-TV ; ! ""
+финансла:финансла V-TV ; ! ""
+хупла:хупла V-TV ; ! ""
+һайла:һайла V-TV ; ! ""
+һаҡлан:һаҡлан V-IV ; ! ""
+һаҡла:һаҡла V-TV ; ! ""
+һат:һат V-TV ; ! ""
+һөйлә:һөйлә V-TV ; ! ""
+һыуыт:һыуыт V-TV ; ! ""
+шартла:шартла V-IV ; ! ""
+эшкәрт:эшкәрт V-TV ; ! ""
+яҡла:яҡла V-TV ; ! ""
+яңырт:яңырт V-TV ; ! ""
+яула:яула V-TV ; ! ""
+яһа:яһа V-TV ; ! ""
+арттырыл:арттырыл V-IV ; ! ""
+арттыр:арттыр V-TV ; ! ""
+айыр:айыр V-TV ; ! ""
+формалаштыр:формалаштыр V-TV ; ! ""
+үткәрел:үткәрел V-IV ; ! ""
+сәләмлә:сәләмлә V-TV ; ! ""
+саҡырыл:саҡырыл V-IV ; ! ""
+киңәйтел:киңәйтел V-IV ; ! ""
+ҡара:ҡара V-TV ; ! ""
+әүҙемләштер:әүҙемләштер V-TV ; ! ""
+әҙерлә:әҙерлә V-TV ; ! ""
+бүлен:бүлен V-TV ; ! ""
+яҡшырт:яҡшырт V-TV ; ! ""
+аҡла:аҡла V-TV ; ! ""
+алмаштыр:алмаштыр V-TV ; ! ""
+алмаш:алмаш V-IV ; ! ""
+ал:ал V-TV ; ! ""
+алыш:алыш V-IV ; ! ""
+аныҡла:аныҡла V-TV ; ! ""
+аралаш:аралаш V-IV ; ! ""
+арт:арт V-IV ; ! ""
+арттыр:арттыр V-TV ; ! ""
+ары:ары V-IV ; ! ""
+асыҡлан:асыҡлан V-IV ; ! ""
+асыҡла:асыҡла V-TV ; ! ""
+асыл:асыл V-IV ; ! ""
+аш:аш V-IV ; ! ""
+ашырыл:ашырыл V-IV ; ! ""
+ашыр:ашыр V-TV ; ! ""
+әҙерлә:әҙерлә V-TV ; ! ""
+әҙерлән:әҙерлән V-IV ; ! ""
+әңгәмәләш:әңгәмәләш V-IV ; ! ""
+барыл:барыл V-IV ; ! ""
+бар:бар V-IV ; ! ""
+баҫтыр:баҫтыр V-TV ; ! ""
+баҫтырыл:баҫтырыл V-IV ; ! ""
+баҫыл:баҫыл V-IV ; ! ""
+баһалан:баһалан V-IV ; ! ""
+баһала:баһала V-TV ; ! ""
+башҡар:башҡар V-TV ; ! ""
+башҡарыл:башҡарыл V-IV ; ! ""
+бейе:бейе V-TV ; ! ""
+белдер:белдер V-TV ; ! ""
+берләштер:берләштер V-TV ; ! ""
+бил:бил V-TV ; ! ""
+билдәлә:билдәлә V-TV ; ! ""
+билдәлән:билдәлән V-IV ; ! ""
+бирел:бирел V-IV ; ! ""
+бир:бир V-TV ; ! ""
+боҙ:боҙ V-TV ; ! ""
+борсо:борсо V-TV ; ! ""
+бөтөр:бөтөр V-TV ; ! ""
+бул:бул V-IV ; ! ""
+булдырыл:булдырыл V-IV ; ! ""
+булдыр:булдыр V-TV ; ! ""
+бүл:бүл V-TV ; ! ""
+бүләклән:бүләклән V-IV ; ! ""
+бүләклә:бүләклә V-TV ; ! ""
+бүлен:бүлен V-IV ; ! ""
+бүлеш:бүлеш V-TV ; ! ""
+бүлеш:бүлеш V-IV ; ! ""
+бысран:бысран V-IV ; ! ""
+ҡапла:ҡапла V-TV ; ! ""
+йәшер:йәшер V-TV ; ! ""
+тасуирла:тасуирла V-TV ; ! ""
+тыу:тыу V-IV ; ! ""
+урынлаш:урынлаш V-IV ; ! ""
+яҙҙыр:яҙҙыр V-TV ; ! ""
 
 ! auto translated
 
-абай% бул:абай% бул V-IV-LEX ; ! ""
-абайла:абайла V-TV-LEX ; ! ""
-абалатып% йөр:абалатып% йөр V-IV-LEX ; ! ""
-ауаз% һал:ауаз% һал V-IV-LEX ; ! ""
-ауыр:ауыр V-IV-LEX ; ! ""
-ауырай:ауырай V-IV-LEX ; ! ""
-ауырһын:ауырһын V-IV-LEX ; ! ""
-ауырт:ауырт V-IV-LEX ; ! ""
-ауырттыр:ауырттыр V-TV-LEX ; ! ""
-һөҙәк:һөҙәк V-IV-LEX ; ! ""
-даими% булмаған:даими% булмаған V-IV-LEX ; ! ""
-ағарт:ағарт V-TV-LEX ; ! ""
-ағарын:ағарын V-IV-LEX ; ! ""
-ағыҙ:ағыҙ V-TV-LEX ; ! ""
-ағыл:ағыл V-IV-LEX ; ! ""
-аҙаш:аҙаш V-IV-LEX ; ! ""
-айныҡ:айныҡ V-IV-LEX ; ! ""
-айырыл:айырыл V-IV-LEX ; ! ""
-айырымлан:айырымлан V-IV-LEX ; ! ""
-аҙ:аҙ V-IV-LEX ; ! ""
-аҙай:аҙай V-IV-LEX ; ! ""
-азат:азат V-TV-LEX ; ! ""
-аҙғындан:аҙғындан V-IV-LEX ; ! ""
-аҙҙыр:аҙҙыр V-TV-LEX ; ! ""
-айҡалды:айҡалды V-TV-LEX ; ! ""
-айны:айны V-IV-LEX ; ! ""
-аҡай:аҡай V-IV-LEX ; ! ""
-аҡ:аҡ V-IV-LEX ; ! ""
-аҡса:аҡса V-IV-LEX ; ! ""
-акыр:акыр V-IV-LEX ; ! ""
-аталан:аталан V-IV-LEX ; ! ""
-алға% бар:алға% бар V-IV-LEX ; ! ""
-алға% ебәр:алға% ебәр V-TV-LEX ; ! ""
-алға% ил:алға% ил V-IV-LEX ; ! ""
-алға% кит:алға% кит V-IV-LEX ; ! ""
-алда:алда V-TV-LEX ; ! ""
-алдаҡсыға% әйлән:алдаҡсыға% әйлән V-IV-LEX ; ! ""
-алдап%-сула:алдап%-сула V-TV-LEX ; ! ""
-алдыр:алдыр V-TV-LEX ; ! ""
-алышта:алышта V-TV-LEX ; ! ""
-алпан%-толпан% йөр:алпан%-толпан% йөр V-IV-LEX ; ! ""
-алһыуҙан:алһыуҙан V-IV-LEX ; ! ""
-алтында:алтында V-TV-LEX ; ! ""
-алын:алын V-IV-LEX ; ! ""
-алып% бар:алып% бар V-TV-LEX ; ! ""
-алып% бир:алып% бир V-TV-LEX ; ! ""
-алып% кил:алып% кил V-TV-LEX ; ! ""
-алып% кит:алып% кит V-TV-LEX ; ! ""
-алып% ташла:алып% ташла V-TV-LEX ; ! ""
-алыштыр:алыштыр V-TV-LEX ; ! ""
-алышын:алышын V-IV-LEX ; ! ""
-анализла:анализла V-TV-LEX ; ! ""
-анатомдар:анатомдар V-TV-LEX ; ! ""
-аннексиялау:аннексиялау V-TV-LEX ; ! ""
-анһаттан:анһаттан V-IV-LEX ; ! ""
-аңҡы:аңҡы V-TV-LEX ; ! ""
-аптыра:аптыра V-IV-LEX ; ! ""
-аптырап% кал:аптырап% кал V-IV-LEX ; ! ""
-арала:арала V-TV-LEX ; ! ""
-арҡанла:арҡанла V-TV-LEX ; ! ""
-нисек% етте% шулай% һал:нисек% етте% шулай% һал V-TV-LEX ; ! ""
-арсы:арсы V-TV-LEX ; ! ""
-аршында:аршында V-TV-LEX ; ! ""
-арығай:арығай V-TV-LEX ; ! ""
-арык:арык V-IV-LEX ; ! ""
-арын:арын V-IV-LEX ; ! ""
-арат:арат V-TV-LEX ; ! ""
-ас:ас V-TV-LEX ; ! ""
-ара:ара V-TV-LEX ; ! ""
-ассимиляциялау:ассимиляциялау V-TV-LEX ; ! ""
-асылын% аңла:асылын% аңла V-IV-LEX ; ! ""
-асылын:асылын V-IV-LEX ; ! ""
-аталан:аталан V-IV-LEX ; ! ""
-атап% күрһәт:атап% күрһәт V-TV-LEX ; ! ""
-атла:атла V-IV-LEX ; ! ""
-атлан:атлан V-IV-LEX ; ! ""
-атлыҡ:атлыҡ V-IV-LEX ; ! ""
-ауҙар:ауҙар V-TV-LEX ; ! ""
-аула:аула V-TV-LEX ; ! ""
-ауна:ауна V-IV-LEX ; ! ""
-аунат:аунат V-TV-LEX ; ! ""
-аурупала:аурупала V-IV-LEX ; ! ""
-аурупала:аурупала V-IV-LEX ; ! ""
-ахылда:ахылда V-IV-LEX ; ! ""
-аҙағына% еткер:аҙағына% еткер V-TV-LEX ; ! ""
-асыуҙан:асыуҙан V-TV-LEX ; ! ""
-асыҡтан%-асыҡ:асыҡтан%-асыҡ V-IV-LEX ; ! ""
-асын:асын V-IV-LEX ; ! ""
-асы:асы V-TV-LEX ; ! ""
-ашап% ал:ашап% ал V-TV-LEX ; ! ""
-ашарға% пеер:ашарға% пеер V-TV-LEX ; ! ""
-ашат:ашат V-TV-LEX ; ! ""
-ашҡын:ашҡын V-IV-LEX ; ! ""
-арлы:арлы V-IV-LEX ; ! ""
-арлы:арлы V-IV-LEX ; ! ""
-ашыҡтыр:ашыҡтыр V-TV-LEX ; ! ""
-ая:ая V-TV-LEX ; ! ""
-аяҡҡа% йылғаһы:аяҡҡа% йылғаһы V-IV-LEX ; ! ""
-бағыш:бағыш V-TV-LEX ; ! ""
-байт:байт V-TV-LEX ; ! ""
-баз:баз V-IV-LEX ; ! ""
-бак:бак V-TV-LEX ; ! ""
-баҡыла:баҡыла V-IV-LEX ; ! ""
-баҡыр% әйберҙәр:баҡыр% әйберҙәр V-IV-LEX ; ! ""
-балҡы:балҡы V-IV-LEX ; ! ""
-ер% сыла:ер% сыла V-TV-LEX ; ! ""
-барҙа:барҙа V-TV-LEX ; ! ""
-барлыҡҡа% китер:барлыҡҡа% китер V-TV-LEX ; ! ""
-баррикадала:баррикадала V-TV-LEX ; ! ""
-барымталар:барымталар V-TV-LEX ; ! ""
-барып% ысыҡ:барып% ысыҡ V-IV-LEX ; ! ""
-баҫып% тор:баҫып% тор V-IV-LEX ; ! ""
-бат:бат V-IV-LEX ; ! ""
-батыр:батыр V-TV-LEX ; ! ""
-был% тау% түбәһе:был% тау% түбәһе V-IV-LEX ; ! ""
-баш% ҡоро:баш% ҡоро V-IV-LEX ; ! ""
-башын% әйләндер:башын% әйләндер V-IV-LEX ; ! ""
-берекмә:берекмә V-IV-LEX ; ! ""
-беркет:беркет V-TV-LEX ; ! ""
-берләш:берләш V-IV-LEX ; ! ""
-бәйлә:бәйлә V-TV-LEX ; ! ""
-бәйләнеш:бәйләнеш V-IV-LEX ; ! ""
-байрам% ит:байрам% ит V-TV-LEX ; ! ""
-бар:бар V-TV-LEX ; ! ""
-бәрел:бәрел V-IV-LEX ; ! ""
-ҡатыу% алыу:ҡатыу% алыу V-IV-LEX ; ! ""
-бәхәсләш:бәхәсләш V-IV-LEX ; ! ""
-бәхилләшә:бәхилләшә V-IV-LEX ; ! ""
-изложение% ит:изложение% ит V-TV-LEX ; ! ""
-бәндә:бәндә V-TV-LEX ; ! ""
-биҙ:биҙ V-IV-LEX ; ! ""
-биҙә:биҙә V-TV-LEX ; ! ""
-биҙән:биҙән V-IV-LEX ; ! ""
-бил% алыш:бил% алыш V-IV-LEX ; ! ""
-билдә% таҡ:билдә% таҡ V-TV-LEX ; ! ""
-биләмдә% йөр:биләмдә% йөр  V-IV-LEX ; ! ""
-бимазалап:бимазалап V-TV-LEX ; ! ""
-бишәүҙә:бишәүҙә V-TV-LEX ; ! ""
-биш% эштә:биш% эштә V-TV-LEX ; ! ""
-богата:богата V-TV-LEX ; ! ""
-бер:бер V-TV-LEX ; ! ""
-боҙола:боҙола V-IV-LEX ; ! ""
-боҙол:боҙол V-IV-LEX ; ! ""
-боҙоп% күрһәт:боҙоп% күрһәт V-TV-LEX ; ! ""
-былай% ит:былай% ит V-TV-LEX ; ! ""
-браула:браула V-TV-LEX ; ! ""
-бор:бор V-TV-LEX ; ! ""
-бормалана:бормалана V-IV-LEX ; ! ""
-борсол:борсол V-IV-LEX ; ! ""
-ботаҡтан:ботаҡтан V-IV-LEX ; ! ""
-ботарла:ботарла V-TV-LEX ; ! ""
-бөгөл:бөгөл V-IV-LEX ; ! ""
-бөҙрәле:бөҙрәле V-TV-LEX ; ! ""
-бөк:бөк V-TV-LEX ; ! ""
-бөклә:бөклә V-TV-LEX ; ! ""
-бөкөрәйә:бөкөрәйә V-IV-LEX ; ! ""
-бул:бул V-IV-LEX ; ! ""
-бөрлән:бөрлән V-IV-LEX ; ! ""
-һөймән:һөймән V-IV-LEX ; ! ""
-бөркә:бөркә V-TV-LEX ; ! ""
-бөркән:бөркән V-TV-LEX ; ! ""
-бөрмәлә:бөрмәлә V-TV-LEX ; ! ""
-бөтөнлә:бөтөнлә V-TV-LEX ; ! ""
-был:был V-TV-LEX ; ! ""
-боғаҙҙа:боғаҙҙа V-TV-LEX ; ! ""
-буй% ет:буй% ет V-IV-LEX ; ! ""
-буйла:буйла V-TV-LEX ; ! ""
-буйһын:буйһын V-IV-LEX ; ! ""
-булдыра% ал:булдыра% ал V-TV-LEX ; ! ""
-булып% ысыҡ:булып% ысыҡ V-IV-LEX ; ! ""
-булыш:булыш V-IV-LEX ; ! ""
-бурычкаb% ал:бурычкаb% ал V-TV-LEX ; ! ""
-бурысҡа% кер:бурысҡа% кер V-IV-LEX ; ! ""
-бутал:бутал V-IV-LEX ; ! ""
-буша:буша V-IV-LEX ; ! ""
-бушат:бушат V-TV-LEX ; ! ""
-был:был V-IV-LEX ; ! ""
-өр% быуылып:өр% быуылып V-IV-LEX ; ! ""
-буя:буя V-TV-LEX ; ! ""
-бүлдер:бүлдер V-TV-LEX ; ! ""
-бүлеп% ҡара:бүлеп% ҡара V-TV-LEX ; ! ""
-бүләк% ит:бүләк% ит V-TV-LEX ; ! ""
-бығырҙай:бығырҙай V-IV-LEX ; ! ""
-батылда:батылда V-IV-LEX ; ! ""
-быхылдап:быхылдап V-IV-LEX ; ! ""
-был% барыбер% булған:был% барыбер% булған V-IV-LEX ; ! ""
-ваз% кисә:ваз% кисә V-IV-LEX ; ! ""
-ваҡтан:ваҡтан V-IV-LEX ; ! ""
-аҡһын:аҡһын V-TV-LEX ; ! ""
-ватыл:ватыл V-IV-LEX ; ! ""
-вафат% был:вафат% был V-IV-LEX ; ! ""
-вафат% ит:вафат% ит V-IV-LEX ; ! ""
-вәғәздә:вәғәздә V-TV-LEX ; ! ""
-винтлы:винтлы V-TV-LEX ; ! ""
-ғәҙәттән:ғәҙәттән V-IV-LEX ; ! ""
-ганишты:ганишты V-TV-LEX ; ! ""
-гаепле:гаепле V-TV-LEX ; ! ""
-ғәйеп% таҡ:ғәйеп% таҡ V-IV-LEX ; ! ""
-ғазапта:ғазапта V-TV-LEX ; ! ""
-ғазаптан:ғазаптан V-IV-LEX ; ! ""
-хәбәр% тарат:хәбәр% тарат V-IV-LEX ; ! ""
-ғәриптән:ғәриптән V-IV-LEX ; ! ""
-был% ғарыҡ:был% ғарыҡ V-IV-LEX ; ! ""
-белмәй% торған% был:белмәй% торған% был V-IV-LEX ; ! ""
-ғәфү% ит:ғәфү% ит V-TV-LEX ; ! ""
-ғүмер% ит:ғүмер% ит V-IV-LEX ; ! ""
-ғорурлан:ғорурлан V-IV-LEX ; ! ""
-гөрөлдәй:гөрөлдәй V-IV-LEX ; ! ""
-сыу% кил:сыу% кил V-IV-LEX ; ! ""
-гөрлә:гөрлә V-IV-LEX ; ! ""
-гөрһөлдәй:гөрһөлдәй V-IV-LEX ; ! ""
-дегетлә:дегетлә V-TV-LEX ; ! ""
-демократла:демократла V-IV-LEX ; ! ""
-дерелдәй:дерелдәй V-IV-LEX ; ! ""
-дауала:дауала V-TV-LEX ; ! ""
-дауам% ит:дауам% ит V-TV-LEX ; ! ""
-дәлиллә:дәлиллә V-TV-LEX ; ! ""
-дәртләндер:дәртләндер V-TV-LEX ; ! ""
-был% дәфен:был% дәфен V-IV-LEX ; ! ""
-дәфен% ит:дәфен% ит V-TV-LEX ; ! ""
-дәш:дәш V-TV-LEX ; ! ""
-тиҫтәлә:тиҫтәлә V-TV-LEX ; ! ""
-дошманлаша:дошманлаша V-IV-LEX ; ! ""
-тулҡынлан:тулҡынлан V-IV-LEX ; ! ""
-дуҫлаш:дуҫлаш V-IV-LEX ; ! ""
-дусар% был:дусар% был V-IV-LEX ; ! ""
-дыңғырҙап:дыңғырҙап V-IV-LEX ; ! ""
-дыңғырҙатып:дыңғырҙатып V-TV-LEX ; ! ""
-был% йәш% кеше:был% йәш% кеше V-IV-LEX ; ! ""
-ек:ек V-TV-LEX ; ! ""
-ела:ела V-IV-LEX ; ! ""
-йырағай:йырағай V-IV-LEX ; ! ""
-ералаш:ералаш V-IV-LEX ; ! ""
-йыраҡлаштыр:йыраҡлаштыр V-TV-LEX ; ! ""
-ер:ер V-TV-LEX ; ! ""
-йорт:йорт V-TV-LEX ; ! ""
-шай:шай V-IV-LEX ; ! ""
-шайт:шайт V-TV-LEX ; ! ""
-әүерел:әүерел V-IV-LEX ; ! ""
-әҙәпһеҙҙән:әҙәпһеҙҙән V-IV-LEX ; ! ""
-әҙерлектә:әҙерлектә V-TV-LEX ; ! ""
-шулай% булһын:шулай% булһын V-TV-LEX ; ! ""
-әйлендереп% ал:әйлендереп% ал V-TV-LEX ; ! ""
-әйләндер:әйләндер V-TV-LEX ; ! ""
-әйткәле:әйткәле V-IV-LEX ; ! ""
-әйттер:әйттер V-TV-LEX ; ! ""
-әкренәй:әкренәй V-IV-LEX ; ! ""
-әмәлдә:әмәлдә V-TV-LEX ; ! ""
-әрҙәнәгә% өй:әрҙәнәгә% өй V-TV-LEX ; ! ""
-әрәм% ит:әрәм% ит V-TV-LEX ; ! ""
-әрәм%-шәрәм% ит:әрәм%-шәрәм% ит V-TV-LEX ; ! ""
-әҫәрҙән:әҫәрҙән V-IV-LEX ; ! ""
-әтәстән:әтәстән V-IV-LEX ; ! ""
-әсе:әсе V-IV-LEX ; ! ""
-яуап% бир:яуап% бир V-TV-LEX ; ! ""
-жайын% тап:жайын% тап V-IV-LEX ; ! ""
-йайла:йайла V-TV-LEX ; ! ""
-айҙаш:айҙаш V-IV-LEX ; ! ""
-жалоба% бир:жалоба% бир V-IV-LEX ; ! ""
-йандан:йандан V-IV-LEX ; ! ""
-жаны% сыҡҡан% был:жаны% сыҡҡан% был V-IV-LEX ; ! ""
-йәйелдер:йәйелдер V-TV-LEX ; ! ""
-йәйел:йәйел V-IV-LEX ; ! ""
-азата:азата V-TV-LEX ; ! ""
-йәйҙә:йәйҙә V-IV-LEX ; ! ""
-йәлеп% ит:йәлеп% ит V-TV-LEX ; ! ""
-йәрәхәтлә:йәрәхәтлә V-TV-LEX ; ! ""
-екер:екер V-IV-LEX ; ! ""
-ек:ек V-TV-LEX ; ! ""
-ектер:ектер V-TV-LEX ; ! ""
-елдер:елдер V-TV-LEX ; ! ""
-елемле:елемле V-TV-LEX ; ! ""
-елендә:елендә V-IV-LEX ; ! ""
-елен% үҫтер:елен% үҫтер V-IV-LEX ; ! ""
-елдән:елдән V-IV-LEX ; ! ""
-елдәт:елдәт V-TV-LEX ; ! ""
-елферҙәй:елферҙәй V-IV-LEX ; ! ""
-емер:емер V-TV-LEX ; ! ""
-еңеләйт:еңеләйт V-TV-LEX ; ! ""
-тун% еңе:тун% еңе V-TV-LEX ; ! ""
-ең% һыҙған:ең% һыҙған V-IV-LEX ; ! ""
-ерәнеп% ҡара:ерәнеп% ҡара V-TV-LEX ; ! ""
-ерән:ерән V-IV-LEX ; ! ""
-ерҙә:ерҙә V-TV-LEX ; ! ""
-етеҙ:етеҙ V-IV-LEX ; ! ""
-тәьмин% итеү:тәьмин% итеү V-IV-LEX ; ! ""
-етештер:етештер V-TV-LEX ; ! ""
-етәклә:етәклә V-TV-LEX ; ! ""
-етеҙ:етеҙ V-TV-LEX ; ! ""
-еткер:еткер V-TV-LEX ; ! ""
-йыһазландыр:йыһазландыр V-TV-LEX ; ! ""
-йыһазлан:йыһазлан V-IV-LEX ; ! ""
-баҙнат% ит:баҙнат% ит V-TV-LEX ; ! ""
-йыл:йыл V-IV-LEX ; ! ""
-төшөү% юлы:төшөү% юлы V-IV-LEX ; ! ""
-йыйыл:йыйыл V-IV-LEX ; ! ""
-йыйҙы:йыйҙы V-TV-LEX ; ! ""
-йыйна:йыйна V-TV-LEX ; ! ""
-йылыт:йылыт V-TV-LEX ; ! ""
-зарлан:зарлан V-IV-LEX ; ! ""
-зарык:зарык V-IV-LEX ; ! ""
-зауыҡтан:зауыҡтан V-IV-LEX ; ! ""
-зәңгәрһыулана:зәңгәрһыулана V-IV-LEX ; ! ""
-зәһәре:зәһәре V-IV-LEX ; ! ""
-ҙурайт:ҙурайт V-TV-LEX ; ! ""
-ҙурла:ҙурла V-TV-LEX ; ! ""
-зыян% һал:зыян% һал V-IV-LEX ; ! ""
-игәүләй:игәүләй V-TV-LEX ; ! ""
-иғлан% ит:иғлан% ит V-TV-LEX ; ! ""
-иғтибарға% алма:иғтибарға% алма V-TV-LEX ; ! ""
-ҡәҙер%-хөрмәт% ит:ҡәҙер%-хөрмәт% ит V-IV-LEX ; ! ""
-был% иғтибарһыҙ% башҡарылған:был% иғтибарһыҙ% башҡарылған V-IV-LEX ; ! ""
-идара% ит:идара% ит V-TV-LEX ; ! ""
-ил:ил V-IV-LEX ; ! ""
-иҙел:иҙел V-IV-LEX ; ! ""
-из:из V-TV-LEX ; ! ""
-и:и V-TV-LEX ; ! ""
-абруй% ҡаҙаныу% кеүек:абруй% ҡаҙаныу% кеүек V-TV-LEX ; ! ""
-ил% гиҙеп% йөр:ил% гиҙеп% йөр V-IV-LEX ; ! ""
-итә:итә V-TV-LEX ; ! ""
-илт:илт V-TV-LEX ; ! ""
-илһамлан:илһамлан V-IV-LEX ; ! ""
-өшкөрөү% доғаһы:өшкөрөү% доғаһы V-TV-LEX ; ! ""
-имеҙ:имеҙ V-TV-LEX ; ! ""
-имгән:имгән V-IV-LEX ; ! ""
-имергә% ысыҡ:имергә% ысыҡ V-IV-LEX ; ! ""
-имзала:имзала V-TV-LEX ; ! ""
-имәндәштәр:имәндәштәр V-TV-LEX ; ! ""
-имсәктән% айыр:имсәктән% айыр V-TV-LEX ; ! ""
-инҡар% ит:инҡар% ит V-TV-LEX ; ! ""
-интек:интек V-IV-LEX ; ! ""
-интекте:интекте V-TV-LEX ; ! ""
-иңрә:иңрә V-IV-LEX ; ! ""
-иптә:иптә V-TV-LEX ; ! ""
-ҡыҫҡыста% һ.% б.:ҡыҫҡыста% һ.% б. V-IV-LEX ; ! ""
-иреше:иреше V-IV-LEX ; ! ""
-иреш:иреш V-IV-LEX ; ! ""
-ирештер:ирештер V-TV-LEX ; ! ""
-иркендә:иркендә V-IV-LEX ; ! ""
-иркәлә:иркәлә V-TV-LEX ; ! ""
-исем% ҡушып:исем% ҡушып V-TV-LEX ; ! ""
-иҫер:иҫер V-IV-LEX ; ! ""
-иҫәнләш:иҫәнләш V-IV-LEX ; ! ""
-иҫәплә:иҫәплә V-TV-LEX ; ! ""
-иҫәпләш:иҫәпләш V-IV-LEX ; ! ""
-ис:ис V-IV-LEX ; ! ""
-искер:искер V-IV-LEX ; ! ""
-тип% ал:тип% ал V-TV-LEX ; ! ""
-иҫкәрт:иҫкәрт V-TV-LEX ; ! ""
-тип% төшөр:тип% төшөр V-TV-LEX ; ! ""
-иһә:иһә V-TV-LEX ; ! ""
-иҫтә% тот:иҫтә% тот V-TV-LEX ; ! ""
-иттер:иттер V-TV-LEX ; ! ""
-иш:иш V-TV-LEX ; ! ""
-был% ия:был% ия V-IV-LEX ; ! ""
-иртә:иртә V-TV-LEX ; ! ""
-ярт:ярт V-TV-LEX ; ! ""
-йоғошһоҙландырыу:йоғошһоҙландырыу V-TV-LEX ; ! ""
-йоҡ:йоҡ V-TV-LEX ; ! ""
-йоҡомһора:йоҡомһора V-IV-LEX ; ! ""
-йолҡа:йолҡа V-TV-LEX ; ! ""
-йомғаҡта:йомғаҡта V-TV-LEX ; ! ""
-йом:йом V-TV-LEX ; ! ""
-йомша:йомша V-IV-LEX ; ! ""
-йомшарт:йомшарт V-TV-LEX ; ! ""
-ашағы% килеү:ашағы% килеү V-TV-LEX ; ! ""
-йөҙгәндә:йөҙгәндә V-TV-LEX ; ! ""
-йугәнһеҙҙәр:йугәнһеҙҙәр V-IV-LEX ; ! ""
-йөҙ:йөҙ V-IV-LEX ; ! ""
-йөктә:йөктә V-TV-LEX ; ! ""
-йөреп% ысыҡ:йөреп% ысыҡ V-TV-LEX ; ! ""
-йөрөтөл:йөрөтөл V-IV-LEX ; ! ""
-йөрөт:йөрөт V-TV-LEX ; ! ""
-уткер:уткер V-TV-LEX ; ! ""
-ашыҡ%-бошоҡ:ашыҡ%-бошоҡ V-IV-LEX ; ! ""
-ҡабарын:ҡабарын V-IV-LEX ; ! ""
-ҡабул% ит:ҡабул% ит V-TV-LEX ; ! ""
-ҡабул% итмә:ҡабул% итмә V-TV-LEX ; ! ""
-ҡабығынан% арындыр:ҡабығынан% арындыр V-TV-LEX ; ! ""
-ҡабыҙ:ҡабыҙ V-TV-LEX ; ! ""
-ҡабын:ҡабын V-IV-LEX ; ! ""
-ҡабырсыҡтан:ҡабырсыҡтан V-IV-LEX ; ! ""
-кағыл:кағыл V-IV-LEX ; ! ""
-ҡағыш:ҡағыш V-TV-LEX ; ! ""
-ҡала:ҡала V-TV-LEX ; ! ""
-ҡаҙаҡта:ҡаҙаҡта V-TV-LEX ; ! ""
-ҡаҙаҡлап% үлсә:ҡаҙаҡлап% үлсә V-TV-LEX ; ! ""
-кадерле:кадерле V-TV-LEX ; ! ""
-кер:кер V-TV-LEX ; ! ""
-ҡайыш:ҡайыш V-IV-LEX ; ! ""
-ҡаҙан:ҡаҙан V-TV-LEX ; ! ""
-казы:казы V-TV-LEX ; ! ""
-ҡаҙыҡта:ҡаҙыҡта V-TV-LEX ; ! ""
-кайғыр:кайғыр V-IV-LEX ; ! ""
-ҡайғырт:ҡайғырт V-TV-LEX ; ! ""
-кайна:кайна V-IV-LEX ; ! ""
-ҡайтар:ҡайтар V-TV-LEX ; ! ""
-өр%-яңынан% бир:өр%-яңынан% бир V-TV-LEX ; ! ""
-ҡоро:ҡоро V-TV-LEX ; ! ""
-ҡала:ҡала V-TV-LEX ; ! ""
-какша:какша V-IV-LEX ; ! ""
-аҡылда:аҡылда V-IV-LEX ; ! ""
-ҡаҡыр:ҡаҡыр V-TV-LEX ; ! ""
-ҡалала:ҡалала V-TV-LEX ; ! ""
-ҡалҡы:ҡалҡы V-IV-LEX ; ! ""
-ҡалынай:ҡалынай V-IV-LEX ; ! ""
-ҡалыпҡа% кер:ҡалыпҡа% кер V-IV-LEX ; ! ""
-ҡалыптан:ҡалыптан V-IV-LEX ; ! ""
-ҡалыплаш:ҡалыплаш V-IV-LEX ; ! ""
-ҡатын%-ҡыҙ% тураһында:ҡатын%-ҡыҙ% тураһында V-TV-LEX ; ! ""
-камиллаш:камиллаш V-IV-LEX ; ! ""
-камчала:камчала V-TV-LEX ; ! ""
-ҡана:ҡана V-IV-LEX ; ! ""
-ҡанат:ҡанат V-TV-LEX ; ! ""
-ҡәнәғәтләндер:ҡәнәғәтләндер V-TV-LEX ; ! ""
-ҡаңғырап% йөр:ҡаңғырап% йөр V-IV-LEX ; ! ""
-тап:тап V-TV-LEX ; ! ""
-ҡаплан:ҡаплан V-IV-LEX ; ! ""
-ҡаплап% алды:ҡаплап% алды V-TV-LEX ; ! ""
-ҡаплат:ҡаплат V-TV-LEX ; ! ""
-ҡаптыр:ҡаптыр V-TV-LEX ; ! ""
-ҡапсыҡта:ҡапсыҡта V-TV-LEX ; ! ""
-ҡапша:ҡапша V-TV-LEX ; ! ""
-ҡарауылда:ҡарауылда V-TV-LEX ; ! ""
-ҡаралан:ҡаралан V-IV-LEX ; ! ""
-ҡаралт:ҡаралт V-TV-LEX ; ! ""
-рәсәйҙәге:рәсәйҙәге V-IV-LEX ; ! ""
-ҡараңғылан:ҡараңғылан V-IV-LEX ; ! ""
-ҡарар% ит:ҡарар% ит V-TV-LEX ; ! ""
-күҙ% ҡарашы:күҙ% ҡарашы V-TV-LEX ; ! ""
-ҡараштыр:ҡараштыр V-TV-LEX ; ! ""
-ала% ҡарға:ала% ҡарға V-TV-LEX ; ! ""
-ҡарҡылдай:ҡарҡылдай V-IV-LEX ; ! ""
-ҡаршыла:ҡаршыла V-TV-LEX ; ! ""
-ҡаршы% тор:ҡаршы% тор V-IV-LEX ; ! ""
-ҡарышта:ҡарышта V-TV-LEX ; ! ""
-кат:кат V-IV-LEX ; ! ""
-ҡатта:ҡатта V-TV-LEX ; ! ""
-ҡауша:ҡауша V-IV-LEX ; ! ""
-ҡаушатып% ебәр:ҡаушатып% ебәр V-TV-LEX ; ! ""
-ҡәһәрлән:ҡәһәрлән V-IV-LEX ; ! ""
-тау%-тау% йыйыр:тау%-тау% йыйыр V-IV-LEX ; ! ""
-квалификациялана:квалификациялана V-IV-LEX ; ! ""
-әйтерһең% дә% был:әйтерһең% дә% был V-IV-LEX ; ! ""
-кершәнле:кершәнле V-TV-LEX ; ! ""
-кетерҙәп:кетерҙәп V-IV-LEX ; ! ""
-кенә:кенә V-IV-LEX ; ! ""
-ҡәнәғәт% булма:ҡәнәғәт% булма V-IV-LEX ; ! ""
-ҡәнәғәтләндер:ҡәнәғәтләндер V-TV-LEX ; ! ""
-кейен:кейен V-IV-LEX ; ! ""
-кисерел:кисерел V-IV-LEX ; ! ""
-кикер:кикер V-IV-LEX ; ! ""
-нисек:нисек V-TV-LEX ; ! ""
-килеп% ет:килеп% ет V-TV-LEX ; ! ""
-килеп% ысыҡ:килеп% ысыҡ V-IV-LEX ; ! ""
-киме:киме V-IV-LEX ; ! ""
-кимер:кимер V-TV-LEX ; ! ""
-кәмет:кәмет V-TV-LEX ; ! ""
-ситләтеп% әйтелгән% һөйлә:ситләтеп% әйтелгән% һөйлә V-IV-LEX ; ! ""
-киңәй:киңәй V-IV-LEX ; ! ""
-киңәйт:киңәйт V-TV-LEX ; ! ""
-өгөт%-нәсихәт% биреү:өгөт%-нәсихәт% биреү V-IV-LEX ; ! ""
-кәңәшләш:кәңәшләш V-IV-LEX ; ! ""
-кип:кип V-IV-LEX ; ! ""
-кире% бир:кире% бир V-TV-LEX ; ! ""
-кире% ҡаҡ:кире% ҡаҡ V-TV-LEX ; ! ""
-киҫеп% алды:киҫеп% алды V-TV-LEX ; ! ""
-һуғыш:һуғыш V-IV-LEX ; ! ""
-киҫәт:киҫәт V-TV-LEX ; ! ""
-кис:кис V-TV-LEX ; ! ""
-кистер:кистер V-TV-LEX ; ! ""
-кител:кител V-IV-LEX ; ! ""
-кисек:кисек V-IV-LEX ; ! ""
-кисектер:кисектер V-TV-LEX ; ! ""
-кисә:кисә V-TV-LEX ; ! ""
-ҡойондар:ҡойондар V-TV-LEX ; ! ""
-коен:коен V-TV-LEX ; ! ""
-кой:кой V-TV-LEX ; ! ""
-ҡомасау:ҡомасау V-IV-LEX ; ! ""
-комға% утыр:комға% утыр V-IV-LEX ; ! ""
-ҡомһоҙҙан:ҡомһоҙҙан V-IV-LEX ; ! ""
-конфискациялау:конфискациялау V-TV-LEX ; ! ""
-ҡоралландыры:ҡоралландыры V-TV-LEX ; ! ""
-ҡоралдан:ҡоралдан V-IV-LEX ; ! ""
-ҡорғаҡһып:ҡорғаҡһып V-IV-LEX ; ! ""
-кор:кор V-TV-LEX ; ! ""
-ҡоро:ҡоро V-IV-LEX ; ! ""
-ҡорот:ҡорот V-TV-LEX ; ! ""
-коткар:коткар V-TV-LEX ; ! ""
-котла:котла V-TV-LEX ; ! ""
-ҡотолдор:ҡотолдор V-TV-LEX ; ! ""
-котел:котел V-IV-LEX ; ! ""
-ҡоторт:ҡоторт V-TV-LEX ; ! ""
-ҡосаҡла:ҡосаҡла V-TV-LEX ; ! ""
-моң:моң V-IV-LEX ; ! ""
-көйлә:көйлә V-TV-LEX ; ! ""
-көлкө:көлкө V-IV-LEX ; ! ""
-көндәшлек% ит:көндәшлек% ит V-IV-LEX ; ! ""
-көндә:көндә V-TV-LEX ; ! ""
-көпшәкләнде:көпшәкләнде V-TV-LEX ; ! ""
-көрәш:көрәш V-IV-LEX ; ! ""
-курсын:курсын V-IV-LEX ; ! ""
-көсәй:көсәй V-IV-LEX ; ! ""
-көсәйт:көсәйт V-TV-LEX ; ! ""
-көс% һарыҡ:көс% һарыҡ V-IV-LEX ; ! ""
-көслә:көслә V-TV-LEX ; ! ""
-кристалдан:кристалдан V-IV-LEX ; ! ""
-куала:куала V-TV-LEX ; ! ""
-ҡыуандыр:ҡыуандыр V-TV-LEX ; ! ""
-куан:куан V-IV-LEX ; ! ""
-куҙғал:куҙғал V-IV-LEX ; ! ""
-ҡуҙғат:ҡуҙғат V-TV-LEX ; ! ""
-ағас% бәшмәге:ағас% бәшмәге V-TV-LEX ; ! ""
-курай:курай V-IV-LEX ; ! ""
-ҡул% бир:ҡул% бир V-IV-LEX ; ! ""
-ҡулға% ал:ҡулға% ал V-TV-LEX ; ! ""
-был% ҡунаҡ:был% ҡунаҡ V-IV-LEX ; ! ""
-ҡундыр:ҡундыр V-TV-LEX ; ! ""
-кун:кун V-IV-LEX ; ! ""
-куп:куп V-IV-LEX ; ! ""
-кургашла:кургашла V-TV-LEX ; ! ""
-ҡурҡын:ҡурҡын V-IV-LEX ; ! ""
-ҡурҡып% ҡара:ҡурҡып% ҡара V-IV-LEX ; ! ""
-ҡурҡыт:ҡурҡыт V-TV-LEX ; ! ""
-курык:курык V-IV-LEX ; ! ""
-утарҙан:утарҙан V-IV-LEX ; ! ""
-ҡуш:ҡуш V-TV-LEX ; ! ""
-ҡушыр:ҡушыр V-TV-LEX ; ! ""
-ҡыуып% ҡайтар:ҡыуып% ҡайтар V-TV-LEX ; ! ""
-күбектән:күбектән V-IV-LEX ; ! ""
-күбәй:күбәй V-IV-LEX ; ! ""
-күҙ% алдында% китер:күҙ% алдында% китер V-TV-LEX ; ! ""
-был% ҡараш:был% ҡараш V-IV-LEX ; ! ""
-күҙҙә:күҙҙә V-TV-LEX ; ! ""
-күҙ% ташла:күҙ% ташла V-IV-LEX ; ! ""
-күмәктә:күмәктә V-TV-LEX ; ! ""
-күм:күм V-TV-LEX ; ! ""
-күнегеүҙәр% эштә:күнегеүҙәр% эштә V-IV-LEX ; ! ""
-күнек:күнек V-IV-LEX ; ! ""
-күп% ҡан% юғалта:күп% ҡан% юғалта V-IV-LEX ; ! ""
-күп% өлөшөн% эштә:күп% өлөшөн% эштә V-TV-LEX ; ! ""
-күреп% кал:күреп% кал V-TV-LEX ; ! ""
-күтәр:күтәр V-TV-LEX ; ! ""
-күсен:күсен V-IV-LEX ; ! ""
-күсеп% йөр:күсеп% йөр V-IV-LEX ; ! ""
-өйөр%-өйөр:өйөр%-өйөр V-IV-LEX ; ! ""
-ҡыйынлаша:ҡыйынлаша V-IV-LEX ; ! ""
-ҡыҙар:ҡыҙар V-IV-LEX ; ! ""
-ҡыҙған:ҡыҙған V-TV-LEX ; ! ""
-ҡыҙ:ҡыҙ V-IV-LEX ; ! ""
-уйын%-көлкө:уйын%-көлкө V-IV-LEX ; ! ""
-ҡыҙыҡһындыр:ҡыҙыҡһындыр V-TV-LEX ; ! ""
-ҡыҙыҡһын:ҡыҙыҡһын V-IV-LEX ; ! ""
-ҡыҙыҡтыр:ҡыҙыҡтыр V-TV-LEX ; ! ""
-ҡыҙы:ҡыҙы V-IV-LEX ; ! ""
-кый:кый V-TV-LEX ; ! ""
-кайна:кайна V-TV-LEX ; ! ""
-ҡылан:ҡылан V-TV-LEX ; ! ""
-ҡырауҙан:ҡырауҙан V-IV-LEX ; ! ""
-ҡырҡы:ҡырҡы V-TV-LEX ; ! ""
-кыркыла:кыркыла V-IV-LEX ; ! ""
-ялан:ялан V-TV-LEX ; ! ""
-ҡырҡыша:ҡырҡыша V-TV-LEX ; ! ""
-ҡаршы:ҡаршы V-TV-LEX ; ! ""
-ҡырылды:ҡырылды V-TV-LEX ; ! ""
-күҙ% сите% менән:күҙ% сите% менән V-IV-LEX ; ! ""
-күҙ% сите% менән% таныш% булмаған:күҙ% сите% менән% таныш% булмаған V-IV-LEX ; ! ""
-тап%-себер:тап%-себер V-TV-LEX ; ! ""
-ҡыҫҡарт:ҡыҫҡарт V-TV-LEX ; ! ""
-кыс:кыс V-TV-LEX ; ! ""
-ҡырыҡта:ҡырыҡта V-TV-LEX ; ! ""
-ҡыҫтыр:ҡыҫтыр V-TV-LEX ; ! ""
-ҡыһыл:ҡыһыл V-IV-LEX ; ! ""
-кейәүгә% сыҡмаған% ҡыҙ% кал:кейәүгә% сыҡмаған% ҡыҙ% кал V-IV-LEX ; ! ""
-ҡытҡылда:ҡытҡылда V-IV-LEX ; ! ""
-ҡысҡырып% ебәр:ҡысҡырып% ебәр V-IV-LEX ; ! ""
-ҡысҡырып% һөйлә:ҡысҡырып% һөйлә V-IV-LEX ; ! ""
-ҡышта:ҡышта V-IV-LEX ; ! ""
-ҡыштарҙа:ҡыштарҙа V-IV-LEX ; ! ""
-ҡымыҙҙан:ҡымыҙҙан V-IV-LEX ; ! ""
-либераль:либераль V-IV-LEX ; ! ""
-мауыҡ:мауыҡ V-IV-LEX ; ! ""
-мауыҡтыр:мауыҡтыр V-TV-LEX ; ! ""
-май% кун:май% кун V-IV-LEX ; ! ""
-майҙа:майҙа V-TV-LEX ; ! ""
-майҙандар:майҙандар V-TV-LEX ; ! ""
-маймылдан:маймылдан V-IV-LEX ; ! ""
-маҡта:маҡта V-TV-LEX ; ! ""
-маҡтан:маҡтан V-IV-LEX ; ! ""
-ман:ман V-TV-LEX ; ! ""
-масай:масай V-IV-LEX ; ! ""
-маташ:маташ V-IV-LEX ; ! ""
-махсуслаштыра:махсуслаштыра V-TV-LEX ; ! ""
-машиналаштырыу:машиналаштырыу V-TV-LEX ; ! ""
-межала:межала V-TV-LEX ; ! ""
-менге:менге V-TV-LEX ; ! ""
-мәғлүмәтләштереү:мәғлүмәтләштереү V-TV-LEX ; ! ""
-мәғлүм% ит:мәғлүм% ит V-TV-LEX ; ! ""
-мәлйерәп:мәлйерәп V-IV-LEX ; ! ""
-мәңгеләштер:мәңгеләштер V-TV-LEX ; ! ""
-мәсхәрәлә:мәсхәрәлә V-TV-LEX ; ! ""
-мәшәҡәттән:мәшәҡәттән V-IV-LEX ; ! ""
-мәш% кил:мәш% кил V-IV-LEX ; ! ""
-модернизацияла:модернизацияла V-TV-LEX ; ! ""
-был% мөбәрәк:был% мөбәрәк V-IV-LEX ; ! ""
-мала:мала V-IV-LEX ; ! ""
-мырҡылдай:мырҡылдай V-IV-LEX ; ! ""
-мыҫҡыл% ит:мыҫҡыл% ит V-TV-LEX ; ! ""
-мыҫҡыллы:мыҫҡыллы V-TV-LEX ; ! ""
-мыштарҙа:мыштарҙа V-IV-LEX ; ! ""
-наҙла:наҙла V-TV-LEX ; ! ""
-насарҙан:насарҙан V-IV-LEX ; ! ""
-нескә:нескә V-IV-LEX ; ! ""
-нескәртә:нескәртә V-TV-LEX ; ! ""
-накала:накала V-TV-LEX ; ! ""
-нәшер% ит:нәшер% ит V-TV-LEX ; ! ""
-нигеҙҙә:нигеҙҙә V-TV-LEX ; ! ""
-никахлаша:никахлаша V-IV-LEX ; ! ""
-нишлә:нишлә V-IV-LEX ; ! ""
-ниәтлә:ниәтлә V-TV-LEX ; ! ""
-ниәтлән:ниәтлән V-IV-LEX ; ! ""
-нормалаштыра:нормалаштыра V-TV-LEX ; ! ""
-нужа% күр:нужа% күр V-IV-LEX ; ! ""
-нурлан:нурлан V-IV-LEX ; ! ""
-нығы:нығы V-IV-LEX ; ! ""
-ныҡла:ныҡла V-TV-LEX ; ! ""
-ныҡ% тор:ныҡ% тор V-IV-LEX ; ! ""
-ныҡ% тор:ныҡ% тор V-IV-LEX ; ! ""
-ое:ое V-IV-LEX ; ! ""
-от:от V-TV-LEX ; ! ""
-оеш:оеш V-IV-LEX ; ! ""
-оҙата% бар:оҙата% бар V-TV-LEX ; ! ""
-оҙонай:оҙонай V-IV-LEX ; ! ""
-оҙонайта:оҙонайта V-TV-LEX ; ! ""
-олтан% һал:олтан% һал V-IV-LEX ; ! ""
-омтыла:омтыла V-IV-LEX ; ! ""
-оптималләштере:оптималләштере V-TV-LEX ; ! ""
-орнаментта:орнаментта V-TV-LEX ; ! ""
-остар:остар V-IV-LEX ; ! ""
-от:от V-TV-LEX ; ! ""
-оша:оша V-IV-LEX ; ! ""
-осҡолоҡ% тот:осҡолоҡ% тот V-IV-LEX ; ! ""
-осра:осра V-IV-LEX ; ! ""
-осор:осор V-TV-LEX ; ! ""
-оял:оял V-IV-LEX ; ! ""
-өҙлөк:өҙлөк V-IV-LEX ; ! ""
-өҙ:өҙ V-TV-LEX ; ! ""
-өйлән:өйлән V-IV-LEX ; ! ""
-өй:өй V-TV-LEX ; ! ""
-өйрәнеп% кит:өйрәнеп% кит V-IV-LEX ; ! ""
-өйрәт:өйрәт V-TV-LEX ; ! ""
-өләш:өләш V-TV-LEX ; ! ""
-өмөт% ит:өмөт% ит V-TV-LEX ; ! ""
-өндә:өндә V-IV-LEX ; ! ""
-өркә:өркә V-IV-LEX ; ! ""
-өр:өр V-TV-LEX ; ! ""
-өр:өр V-TV-LEX ; ! ""
-өҫкә% күтәрел:өҫкә% күтәрел V-IV-LEX ; ! ""
-өҫтәр:өҫтәр V-TV-LEX ; ! ""
-тергеҙә:тергеҙә V-TV-LEX ; ! ""
-ут:ут V-TV-LEX ; ! ""
-парҙан:парҙан V-IV-LEX ; ! ""
-пеер:пеер V-TV-LEX ; ! ""
-пеш:пеш V-IV-LEX ; ! ""
-популярлашты:популярлашты V-TV-LEX ; ! ""
-программала:программала V-TV-LEX ; ! ""
-пропагандала:пропагандала V-TV-LEX ; ! ""
-профилактикалау:профилактикалау V-TV-LEX ; ! ""
-пысраҡ:пысраҡ V-IV-LEX ; ! ""
-осрат:осрат V-TV-LEX ; ! ""
-ышҡыр:ышҡыр V-IV-LEX ; ! ""
-пышылдау:пышылдау V-IV-LEX ; ! ""
-рамкала:рамкала V-TV-LEX ; ! ""
-ратификациялау:ратификациялау V-TV-LEX ; ! ""
-реконструкцияла:реконструкцияла V-TV-LEX ; ! ""
-реформала:реформала V-TV-LEX ; ! ""
-ранее:ранее V-IV-LEX ; ! ""
-рәнйет:рәнйет V-TV-LEX ; ! ""
-рәсмиләштер:рәсмиләштер V-TV-LEX ; ! ""
-рәттә:рәттә V-TV-LEX ; ! ""
-бер%-бер% артлы% ысыҡ:бер%-бер% артлы% ысыҡ V-IV-LEX ; ! ""
-ризыҡтан:ризыҡтан V-IV-LEX ; ! ""
-рөхсәт% ит:рөхсәт% ит V-TV-LEX ; ! ""
-рухтан:рухтан V-IV-LEX ; ! ""
-сауыҡ:сауыҡ V-IV-LEX ; ! ""
-һағалап% тор:һағалап% тор V-TV-LEX ; ! ""
-сағын:сағын V-TV-LEX ; ! ""
-һаҙҙан:һаҙҙан V-IV-LEX ; ! ""
-һайлат:һайлат V-TV-LEX ; ! ""
-сайра:сайра V-IV-LEX ; ! ""
-был% пост:был% пост V-IV-LEX ; ! ""
-саҡта:саҡта V-TV-LEX ; ! ""
-һалҡын% ти:һалҡын% ти V-IV-LEX ; ! ""
-салон:салон V-IV-LEX ; ! ""
-салынып% урын:салынып% урын V-IV-LEX ; ! ""
-сарыф% ит:сарыф% ит V-TV-LEX ; ! ""
-сарыф% ит:сарыф% ит V-TV-LEX ; ! ""
-һаҫыҡ:һаҫыҡ V-IV-LEX ; ! ""
-саташ:саташ V-IV-LEX ; ! ""
-саттар:саттар V-TV-LEX ; ! ""
-һатып% ал:һатып% ал V-TV-LEX ; ! ""
-иҫән%-һау:иҫән%-һау V-TV-LEX ; ! ""
-һелкенеп% тор:һелкенеп% тор V-IV-LEX ; ! ""
-һелке:һелке V-TV-LEX ; ! ""
-һелкет:һелкет V-TV-LEX ; ! ""
-һеңдер:һеңдер V-TV-LEX ; ! ""
-сың:сың V-IV-LEX ; ! ""
-серен% ас:серен% ас V-IV-LEX ; ! ""
-сертификатта:сертификатта V-TV-LEX ; ! ""
-сәб% еп:сәб% еп V-TV-LEX ; ! ""
-сәб% еп:сәб% еп V-TV-LEX ; ! ""
-сәб% еп:сәб% еп V-TV-LEX ; ! ""
-сәләмәтләндере:сәләмәтләндере V-TV-LEX ; ! ""
-сәләмәт% фекерҙә:сәләмәт% фекерҙә V-IV-LEX ; ! ""
-сәхнәләштер:сәхнәләштер V-TV-LEX ; ! ""
-сизлер:сизлер V-TV-LEX ; ! ""
-һикереп% чап:һикереп% чап V-IV-LEX ; ! ""
-һикер:һикер V-IV-LEX ; ! ""
-бик% тиҙ% чап:бик% тиҙ% чап V-TV-LEX ; ! ""
-һимерт:һимерт V-TV-LEX ; ! ""
-сип:сип V-TV-LEX ; ! ""
-һирәкләнде:һирәкләнде V-TV-LEX ; ! ""
-си:си V-IV-LEX ; ! ""
-сискән:сискән V-IV-LEX ; ! ""
-советлаштырыу:советлаштырыу V-TV-LEX ; ! ""
-соҡтан:соҡтан V-IV-LEX ; ! ""
-һуңға% кал:һуңға% кал V-IV-LEX ; ! ""
-һораштыр:һораштыр V-TV-LEX ; ! ""
-оролан:оролан V-IV-LEX ; ! ""
-һоро% төҫкә% керт:һоро% төҫкә% керт V-TV-LEX ; ! ""
-сендер:сендер V-TV-LEX ; ! ""
-сен:сен V-IV-LEX ; ! ""
-һөҙөш:һөҙөш V-IV-LEX ; ! ""
-һөҙ:һөҙ V-TV-LEX ; ! ""
-һөйләп% бир:һөйләп% бир V-TV-LEX ; ! ""
-һөйләшеп% ултыр:һөйләшеп% ултыр V-IV-LEX ; ! ""
-һөйрәл:һөйрәл V-IV-LEX ; ! ""
-һөйрә:һөйрә V-TV-LEX ; ! ""
-оран% сук:оран% сук V-IV-LEX ; ! ""
-һөр:һөр V-TV-LEX ; ! ""
-һөрт:һөрт V-TV-LEX ; ! ""
-сөя:сөя V-TV-LEX ; ! ""
-специаль:специаль V-IV-LEX ; ! ""
-һуғар:һуғар V-TV-LEX ; ! ""
-һуғыш:һуғыш V-IV-LEX ; ! ""
-судҡа% тарт:судҡа% тарт V-TV-LEX ; ! ""
-суй:суй V-TV-LEX ; ! ""
-һуҡбайлыҡ% йөр:һуҡбайлыҡ% йөр V-IV-LEX ; ! ""
-сук:сук V-IV-LEX ; ! ""
-суҡтыр:суҡтыр V-TV-LEX ; ! ""
-сула:сула V-TV-LEX ; ! ""
-һул:һул V-IV-LEX ; ! ""
-тын% ал:тын% ал V-IV-LEX ; ! ""
-һумалалап:һумалалап V-TV-LEX ; ! ""
-һурәттә:һурәттә V-TV-LEX ; ! ""
-һыуһауын% йылғаһы:һыуһауын% йылғаһы V-IV-LEX ; ! ""
-суса:суса V-IV-LEX ; ! ""
-суат:суат V-TV-LEX ; ! ""
-һалҡын% ти:һалҡын% ти V-IV-LEX ; ! ""
-һыуыр:һыуыр V-TV-LEX ; ! ""
-һыуы:һыуы V-IV-LEX ; ! ""
-һүген:һүген V-IV-LEX ; ! ""
-сүк:сүк V-TV-LEX ; ! ""
-һүлпәнләнә:һүлпәнләнә V-IV-LEX ; ! ""
-сүндер:сүндер V-TV-LEX ; ! ""
-һүҙ:һүҙ V-IV-LEX ; ! ""
-һүтел:һүтел V-IV-LEX ; ! ""
-сут:сут V-TV-LEX ; ! ""
-сыдыр:сыдыр V-TV-LEX ; ! ""
-һыйын:һыйын V-IV-LEX ; ! ""
-сыйыш:сыйыш V-IV-LEX ; ! ""
-сығала:сығала V-TV-LEX ; ! ""
-һыҙғандар:һыҙғандар V-TV-LEX ; ! ""
-һыҙған:һыҙған V-TV-LEX ; ! ""
-һыҙғыр:һыҙғыр V-IV-LEX ; ! ""
-һыҙла:һыҙла V-IV-LEX ; ! ""
-сыз:сыз V-TV-LEX ; ! ""
-һыйыр:һыйыр V-TV-LEX ; ! ""
-сайта:сайта V-TV-LEX ; ! ""
-һыйпа:һыйпа V-TV-LEX ; ! ""
-һый%-хөрмәт:һый%-хөрмәт V-IV-LEX ; ! ""
-һына:һына V-TV-LEX ; ! ""
-һынат:һынат V-IV-LEX ; ! ""
-һындыр:һындыр V-TV-LEX ; ! ""
-кәүҙә:кәүҙә V-IV-LEX ; ! ""
-һыпыр:һыпыр V-TV-LEX ; ! ""
-сыр:сыр V-TV-LEX ; ! ""
-сыт:сыт V-TV-LEX ; ! ""
-табын:табын V-IV-LEX ; ! ""
-табыштыр:табыштыр V-TV-LEX ; ! ""
-тауыштан:тауыштан V-IV-LEX ; ! ""
-тағы:тағы V-IV-LEX ; ! ""
-таҙар:таҙар V-IV-LEX ; ! ""
-таҡмаҡлап% ела:таҡмаҡлап% ела V-IV-LEX ; ! ""
-таҡ:таҡ V-TV-LEX ; ! ""
-тала:тала V-TV-LEX ; ! ""
-шау:шау V-IV-LEX ; ! ""
-талдар:талдар V-TV-LEX ; ! ""
-талап% ит:талап% ит V-TV-LEX ; ! ""
-талпын:талпын V-IV-LEX ; ! ""
-талыҡ:талыҡ V-IV-LEX ; ! ""
-таманда:таманда V-TV-LEX ; ! ""
-тап% уйын%-көлкө:тап% уйын%-көлкө V-TV-LEX ; ! ""
-тамғала:тамғала V-TV-LEX ; ! ""
-тамыр% ебәр:тамыр% ебәр V-IV-LEX ; ! ""
-танһыҡтар:танһыҡтар V-TV-LEX ; ! ""
-тантаналы% рәүештә% иғлан% ит:тантаналы% рәүештә% иғлан% ит V-TV-LEX ; ! ""
-таны:таны V-TV-LEX ; ! ""
-таныт:таныт V-TV-LEX ; ! ""
-таң% кал:таң% кал V-IV-LEX ; ! ""
-тап% ит:тап% ит V-TV-LEX ; ! ""
-таптан:таптан V-IV-LEX ; ! ""
-таптап% етер:таптап% етер V-TV-LEX ; ! ""
-тапта:тапта V-TV-LEX ; ! ""
-тарай:тарай V-IV-LEX ; ! ""
-тарай:тарай V-TV-LEX ; ! ""
-тарал:тарал V-IV-LEX ; ! ""
-тара:тара V-TV-LEX ; ! ""
-тарат:тарат V-TV-LEX ; ! ""
-тар%-мар% ит:тар%-мар% ит V-TV-LEX ; ! ""
-тарҡала:тарҡала V-TV-LEX ; ! ""
-тарттыр:тарттыр V-TV-LEX ; ! ""
-тартын:тартын V-IV-LEX ; ! ""
-тартып% ал:тартып% ал V-TV-LEX ; ! ""
-һүҙ% көрәштереү:һүҙ% көрәштереү V-IV-LEX ; ! ""
-татыулашы:татыулашы V-IV-LEX ; ! ""
-татып% ҡара:татып% ҡара V-TV-LEX ; ! ""
-таты:таты V-TV-LEX ; ! ""
-таушал:таушал V-IV-LEX ; ! ""
-таштан:таштан V-IV-LEX ; ! ""
-таян:таян V-IV-LEX ; ! ""
-теҙҙән:теҙҙән V-IV-LEX ; ! ""
-бөгөм:бөгөм V-TV-LEX ; ! ""
-текәлеп% ҡара:текәлеп% ҡара V-IV-LEX ; ! ""
-текә:текә V-IV-LEX ; ! ""
-шулай% итеп:шулай% итеп V-TV-LEX ; ! ""
-телемдә:телемдә V-TV-LEX ; ! ""
-йоҡа% тар% таҡта:йоҡа% тар% таҡта V-TV-LEX ; ! ""
-ғүмер% ит:ғүмер% ит V-IV-LEX ; ! ""
-терел:терел V-IV-LEX ; ! ""
-терелт:терелт V-TV-LEX ; ! ""
-терәл:терәл V-IV-LEX ; ! ""
-терә:терә V-TV-LEX ; ! ""
-терә:терә V-IV-LEX ; ! ""
-теркә:теркә V-TV-LEX ; ! ""
-тернәкләнеп:тернәкләнеп V-TV-LEX ; ! ""
-тетрә:тетрә V-IV-LEX ; ! ""
-тешлә:тешлә V-TV-LEX ; ! ""
-ҡотлау% ит:ҡотлау% ит V-TV-LEX ; ! ""
-тәбриклә:тәбриклә V-TV-LEX ; ! ""
-тәүәкәллә:тәүәкәллә V-IV-LEX ; ! ""
-тәғәйенлә:тәғәйенлә V-TV-LEX ; ! ""
-тәғәйенлә:тәғәйенлә V-TV-LEX ; ! ""
-тәгәрәп% төш:тәгәрәп% төш V-IV-LEX ; ! ""
-тәгәрә:тәгәрә V-IV-LEX ; ! ""
-тәкәбберҙән:тәкәбберҙән V-IV-LEX ; ! ""
-тәҡдим% ит:тәҡдим% ит V-TV-LEX ; ! ""
-тап% был:тап% был V-IV-LEX ; ! ""
-тамамлан:тамамлан V-IV-LEX ; ! ""
-тамамла:тамамла V-TV-LEX ; ! ""
-тәмлелә:тәмлелә V-IV-LEX ; ! ""
-тәрбиәлә:тәрбиәлә V-TV-LEX ; ! ""
-тәржемә% ит:тәржемә% ит V-TV-LEX ; ! ""
-тәртипһеҙләнә:тәртипһеҙләнә V-IV-LEX ; ! ""
-тәфсилле:тәфсилле V-TV-LEX ; ! ""
-тәшкил% ит:тәшкил% ит V-TV-LEX ; ! ""
-тәьмин% ит:тәьмин% ит V-TV-LEX ; ! ""
-этәргес:этәргес V-IV-LEX ; ! ""
-тигеҙләшә:тигеҙләшә V-IV-LEX ; ! ""
-тиҙҙән:тиҙҙән V-IV-LEX ; ! ""
-тиҙләт:тиҙләт V-TV-LEX ; ! ""
-тиҙ%-тиҙ% сәйнә:тиҙ%-тиҙ% сәйнә V-TV-LEX ; ! ""
-тилер:тилер V-IV-LEX ; ! ""
-тилмер:тилмер V-IV-LEX ; ! ""
-тимерҙә:тимерҙә V-TV-LEX ; ! ""
-типтер:типтер V-IV-LEX ; ! ""
-тип:тип V-TV-LEX ; ! ""
-тирбәл:тирбәл V-IV-LEX ; ! ""
-тирбәт:тирбәт V-TV-LEX ; ! ""
-тирәләй:тирәләй V-IV-LEX ; ! ""
-тиртә:тиртә V-IV-LEX ; ! ""
-ти:ти V-IV-LEX ; ! ""
-той:той V-TV-LEX ; ! ""
-токарҙан:токарҙан V-IV-LEX ; ! ""
-торғоҙ:торғоҙ V-TV-LEX ; ! ""
-тормошҡа% аш:тормошҡа% аш V-IV-LEX ; ! ""
-тормошҡа% ашыр:тормошҡа% ашыр V-TV-LEX ; ! ""
-өҙлөкһөҙ:өҙлөкһөҙ V-IV-LEX ; ! ""
-тоташтыр:тоташтыр V-TV-LEX ; ! ""
-тотҡарлан:тотҡарлан V-IV-LEX ; ! ""
-тотҡарла:тотҡарла V-TV-LEX ; ! ""
-тоттоҡ:тоттоҡ V-IV-LEX ; ! ""
-тот:тот V-TV-LEX ; ! ""
-тотып% тор:тотып% тор V-TV-LEX ; ! ""
-төбә:төбә V-IV-LEX ; ! ""
-билдәле% бел:билдәле% бел V-TV-LEX ; ! ""
-тап% ит:тап% ит V-TV-LEX ; ! ""
-төгәлләр:төгәлләр V-TV-LEX ; ! ""
-төрҙән:төрҙән V-IV-LEX ; ! ""
-төҙөкләндере:төҙөкләндере V-TV-LEX ; ! ""
-төҙәт:төҙәт V-TV-LEX ; ! ""
-төҙәт:төҙәт V-TV-LEX ; ! ""
-төй:төй V-TV-LEX ; ! ""
-төкөр:төкөр V-TV-LEX ; ! ""
-төлкөлән:төлкөлән V-IV-LEX ; ! ""
-төптән:төптән V-IV-LEX ; ! ""
-төплә:төплә V-TV-LEX ; ! ""
-төркәлә:төркәлә V-TV-LEX ; ! ""
-төркәлә:төркәлә V-IV-LEX ; ! ""
-тәбиғәт% күренеше:тәбиғәт% күренеше V-TV-LEX ; ! ""
-төртер:төртер V-TV-LEX ; ! ""
-төрт:төрт V-TV-LEX ; ! ""
-төтөндә:төтөндә V-IV-LEX ; ! ""
-төтәтә:төтәтә V-TV-LEX ; ! ""
-төтәт:төтәт V-TV-LEX ; ! ""
-төкөр:төкөр V-IV-LEX ; ! ""
-төшөнкөлөккә% бирел:төшөнкөлөккә% бирел V-IV-LEX ; ! ""
-төш:төш V-IV-LEX ; ! ""
-туя:туя V-TV-LEX ; ! ""
-тулыр:тулыр V-TV-LEX ; ! ""
-туйын:туйын V-IV-LEX ; ! ""
-туҙғы:туҙғы V-IV-LEX ; ! ""
-туҙ:туҙ V-IV-LEX ; ! ""
-туйҙыр:туйҙыр V-TV-LEX ; ! ""
-байрам:байрам V-IV-LEX ; ! ""
-туҡландыра:туҡландыра V-TV-LEX ; ! ""
-туҡлан:туҡлан V-IV-LEX ; ! ""
-туҡмала:туҡмала V-TV-LEX ; ! ""
-туҡтат:туҡтат V-TV-LEX ; ! ""
-туҡы:туҡы V-TV-LEX ; ! ""
-тулы:тулы V-IV-LEX ; ! ""
-тул:тул V-IV-LEX ; ! ""
-тулыла:тулыла V-TV-LEX ; ! ""
-туна:туна V-TV-LEX ; ! ""
-туплан:туплан V-IV-LEX ; ! ""
-тупла:тупла V-TV-LEX ; ! ""
-турала:турала V-TV-LEX ; ! ""
-турысай:турысай V-IV-LEX ; ! ""
-туп%-тура% кил:туп%-тура% кил V-IV-LEX ; ! ""
-тултыр:тултыр V-TV-LEX ; ! ""
-түбәнәй:түбәнәй V-IV-LEX ; ! ""
-түҙеп% алма% ултыра:түҙеп% алма% ултыра V-IV-LEX ; ! ""
-түҙ:түҙ V-IV-LEX ; ! ""
-ҙур% төргәк:ҙур% төргәк V-TV-LEX ; ! ""
-түҙә:түҙә V-TV-LEX ; ! ""
-тығыла:тығыла V-TV-LEX ; ! ""
-тый:тый V-TV-LEX ; ! ""
-тыҡ:тыҡ V-TV-LEX ; ! ""
-тыҡылдата:тыҡылдата V-TV-LEX ; ! ""
-тыҡылдай:тыҡылдай V-IV-LEX ; ! ""
-дон% алдыр:дон% алдыр V-TV-LEX ; ! ""
-тын% ал:тын% ал V-TV-LEX ; ! ""
-дон% ағастың% һ.% б.:дон% ағастың% һ.% б. V-IV-LEX ; ! ""
-тынысландыр:тынысландыр V-TV-LEX ; ! ""
-тыныслан:тыныслан V-IV-LEX ; ! ""
-тыныслыҡ% урҙашты:тыныслыҡ% урҙашты V-IV-LEX ; ! ""
-тынысһыҙлана:тынысһыҙлана V-IV-LEX ; ! ""
-торна:торна V-TV-LEX ; ! ""
-тышта:тышта V-TV-LEX ; ! ""
-уҙҙыр:уҙҙыр V-TV-LEX ; ! ""
-уз:уз V-TV-LEX ; ! ""
-бәйге:бәйге V-IV-LEX ; ! ""
-уйлап% эшлә:уйлап% эшлә V-TV-LEX ; ! ""
-уйлан:уйлан V-TV-LEX ; ! ""
-уйлан:уйлан V-TV-LEX ; ! ""
-уйлап% ал:уйлап% ал V-TV-LEX ; ! ""
-уйлаш:уйлаш V-IV-LEX ; ! ""
-уйнаҡла:уйнаҡла V-IV-LEX ; ! ""
-уй%-фекер:уй%-фекер V-TV-LEX ; ! ""
-ҡала:ҡала V-TV-LEX ; ! ""
-уҡый%-яҙа% бел:уҡый%-яҙа% бел V-IV-LEX ; ! ""
-уҡыт:уҡыт V-TV-LEX ; ! ""
-ула:ула V-IV-LEX ; ! ""
-уңайҙа:уңайҙа V-TV-LEX ; ! ""
-уң:уң V-IV-LEX ; ! ""
-мул% уңыш% алған% ағастың% һ.% б.:мул% уңыш% алған% ағастың% һ.% б. V-IV-LEX ; ! ""
-урап% ал:урап% ал V-TV-LEX ; ! ""
-урат:урат V-TV-LEX ; ! ""
-ура:ура V-TV-LEX ; ! ""
-шаран:шаран V-IV-LEX ; ! ""
-урта:урта V-TV-LEX ; ! ""
-урҙашты:урҙашты V-TV-LEX ; ! ""
-уртаҡташ:уртаҡташ V-TV-LEX ; ! ""
-ҙур% тулҡын:ҙур% тулҡын V-TV-LEX ; ! ""
-тал:тал V-IV-LEX ; ! ""
-ута:ута V-TV-LEX ; ! ""
-ултырт:ултырт V-TV-LEX ; ! ""
-ултырып% тор:ултырып% тор V-IV-LEX ; ! ""
-у%-у%-у:у%-у%-у V-TV-LEX ; ! ""
-уян:уян V-IV-LEX ; ! ""
-уят:уят V-TV-LEX ; ! ""
-үгетләй:үгетләй V-TV-LEX ; ! ""
-таныш% булмаған% күр:таныш% булмаған% күр V-TV-LEX ; ! ""
-үгәйҙән:үгәйҙән V-IV-LEX ; ! ""
-үжәтләнә:үжәтләнә V-IV-LEX ; ! ""
-үҙгәр:үҙгәр V-IV-LEX ; ! ""
-үҙәкләштере:үҙәкләштере V-TV-LEX ; ! ""
-үҙ% күр:үҙ% күр V-TV-LEX ; ! ""
-үҙһүҙлән:үҙһүҙлән V-IV-LEX ; ! ""
-үкен:үкен V-IV-LEX ; ! ""
-керт:керт V-TV-LEX ; ! ""
-үкер:үкер V-IV-LEX ; ! ""
-үкһе:үкһе V-IV-LEX ; ! ""
-үлсә:үлсә V-TV-LEX ; ! ""
-үпкәлә:үпкәлә V-IV-LEX ; ! ""
-үрҙәр:үрҙәр V-TV-LEX ; ! ""
-үрҙә:үрҙә V-IV-LEX ; ! ""
-үрмәлә:үрмәлә V-IV-LEX ; ! ""
-ҡалҡыулыҡ:ҡалҡыулыҡ V-TV-LEX ; ! ""
-үрсет:үрсет V-TV-LEX ; ! ""
-үрсе:үрсе V-IV-LEX ; ! ""
-үс:үс V-IV-LEX ; ! ""
-үтеп% бар:үтеп% бар V-TV-LEX ; ! ""
-үтәт:үтәт V-TV-LEX ; ! ""
-үтә:үтә V-TV-LEX ; ! ""
-үткәндән:үткәндән V-IV-LEX ; ! ""
-үтмәҫләнде:үтмәҫләнде V-TV-LEX ; ! ""
-файҙағыҙҙан:файҙағыҙҙан V-IV-LEX ; ! ""
-уй% кешелә:уй% кешелә V-IV-LEX ; ! ""
-фаш% ит:фаш% ит V-TV-LEX ; ! ""
-фекер% алыш:фекер% алыш V-IV-LEX ; ! ""
-фекерҙә:фекерҙә V-TV-LEX ; ! ""
-формалаш:формалаш V-IV-LEX ; ! ""
-халыҡҡа% сығар:халыҡҡа% сығар V-TV-LEX ; ! ""
-характерҙа:характерҙа V-TV-LEX ; ! ""
-барлыҡҡа% был:барлыҡҡа% был V-IV-LEX ; ! ""
-барлыҡҡа% ит:барлыҡҡа% ит V-TV-LEX ; ! ""
-хастан:хастан V-IV-LEX ; ! ""
-хафалан:хафалан V-IV-LEX ; ! ""
-хеҙмәт% ит:хеҙмәт% ит V-IV-LEX ; ! ""
-хәбәр% ит:хәбәр% ит V-TV-LEX ; ! ""
-хәүефлән:хәүефлән V-IV-LEX ; ! ""
-хәйерселәнә:хәйерселәнә V-IV-LEX ; ! ""
-хәҙерҙән:хәҙерҙән V-IV-LEX ; ! ""
-хәҙерҙә:хәҙерҙә V-TV-LEX ; ! ""
-хәйләлә:хәйләлә V-IV-LEX ; ! ""
-хәлдән% тай:хәлдән% тай V-IV-LEX ; ! ""
-халығ% еп:халығ% еп V-TV-LEX ; ! ""
-хәл% ит:хәл% ит V-TV-LEX ; ! ""
-хәлдән:хәлдән V-IV-LEX ; ! ""
-хәлһеҙлән:хәлһеҙлән V-IV-LEX ; ! ""
-хәрефтә:хәрефтә V-TV-LEX ; ! ""
-хәстәрҙән:хәстәрҙән V-IV-LEX ; ! ""
-хәстәрлә:хәстәрлә V-TV-LEX ; ! ""
-хәтерҙә% тот:хәтерҙә% тот V-TV-LEX ; ! ""
-хәтерен% ҡалдыр:хәтерен% ҡалдыр V-IV-LEX ; ! ""
-хәтерләт:хәтерләт V-TV-LEX ; ! ""
-хосусилаштыр:хосусилаштыр V-TV-LEX ; ! ""
-хөрмәттә:хөрмәттә V-TV-LEX ; ! ""
-хулигандан:хулигандан V-IV-LEX ; ! ""
-хурла:хурла V-TV-LEX ; ! ""
-йә% кил:йә% кил V-IV-LEX ; ! ""
-хушлаш:хушлаш V-IV-LEX ; ! ""
-хырылдап:хырылдап V-TV-LEX ; ! ""
-хырылдап:хырылдап V-IV-LEX ; ! ""
-хыяллан:хыяллан V-IV-LEX ; ! ""
-был% иҫәбе%-хисабы% юҡ:был% иҫәбе%-хисабы% юҡ V-IV-LEX ; ! ""
-һәләкәткә% осра:һәләкәткә% осра V-IV-LEX ; ! ""
-һуштан% яҙ:һуштан% яҙ V-IV-LEX ; ! ""
-цемента:цемента V-TV-LEX ; ! ""
-цинкла:цинкла V-TV-LEX ; ! ""
-сағылдыр:сағылдыр V-TV-LEX ; ! ""
-сағыштыр:сағыштыр V-TV-LEX ; ! ""
-чайка:чайка V-TV-LEX ; ! ""
-саҡ%-саҡ:саҡ%-саҡ V-TV-LEX ; ! ""
-саҡырт:саҡырт V-TV-LEX ; ! ""
-саҡырып% сығар:саҡырып% сығар V-TV-LEX ; ! ""
-йәнлек% тиреһенә% ҡарата:йәнлек% тиреһенә% ҡарата V-TV-LEX ; ! ""
-самала:самала V-TV-LEX ; ! ""
-чапала:чапала V-TV-LEX ; ! ""
-сатана:сатана V-IV-LEX ; ! ""
-чачаклар:чачаклар V-TV-LEX ; ! ""
-серелде:серелде V-IV-LEX ; ! ""
-серет:серет V-TV-LEX ; ! ""
-сере:сере V-IV-LEX ; ! ""
-серкәйҙәрҙән% саҡтан:серкәйҙәрҙән% саҡтан V-IV-LEX ; ! ""
-сәбәлән:сәбәлән V-IV-LEX ; ! ""
-сәйнә:сәйнә V-TV-LEX ; ! ""
-сәкеште:сәкеште V-TV-LEX ; ! ""
-сәперә:сәперә V-IV-LEX ; ! ""
-сәнсеп% тиш:сәнсеп% тиш V-TV-LEX ; ! ""
-сәнсе:сәнсе V-TV-LEX ; ! ""
-сәрҙектә:сәрҙектә V-TV-LEX ; ! ""
-сәскә% ат:сәскә% ат V-IV-LEX ; ! ""
-сәс:сәс V-TV-LEX ; ! ""
-сиген:сиген V-IV-LEX ; ! ""
-сиктә:сиктә V-TV-LEX ; ! ""
-сик% һаҡсыһы:сик% һаҡсыһы V-TV-LEX ; ! ""
-чина:чина V-IV-LEX ; ! ""
-сиратлаш:сиратлаш V-IV-LEX ; ! ""
-сиҙәм% менән% ҡаплан:сиҙәм% менән% ҡаплан V-IV-LEX ; ! ""
-сирҡан:сирҡан V-IV-LEX ; ! ""
-сирҙән:сирҙән V-IV-LEX ; ! ""
-сирт:сирт V-TV-LEX ; ! ""
-чистарту:чистарту V-TV-LEX ; ! ""
-оҡшаш% булған:оҡшаш% булған V-IV-LEX ; ! ""
-ситән:ситән V-IV-LEX ; ! ""
-солға:солға V-TV-LEX ; ! ""
-осорҙа:осорҙа V-TV-LEX ; ! ""
-йүгереп% килеп% ҡоро:йүгереп% килеп% ҡоро V-IV-LEX ; ! ""
-сумер:сумер V-TV-LEX ; ! ""
-ығы%-зығы:ығы%-зығы V-IV-LEX ; ! ""
-сарлап% етер:сарлап% етер V-TV-LEX ; ! ""
-суҡы:суҡы V-TV-LEX ; ! ""
-чум:чум V-IV-LEX ; ! ""
-сумыр:сумыр V-TV-LEX ; ! ""
-сүгәтә:сүгәтә V-IV-LEX ; ! ""
-суктер:суктер V-TV-LEX ; ! ""
-сүместә:сүместә V-TV-LEX ; ! ""
-сүмәләләй:сүмәләләй V-TV-LEX ; ! ""
-сыбыҡта:сыбыҡта V-TV-LEX ; ! ""
-сығарт:сығарт V-TV-LEX ; ! ""
-сығымдан:сығымдан V-IV-LEX ; ! ""
-сыҙа:сыҙа V-IV-LEX ; ! ""
-сылтыра:сылтыра V-IV-LEX ; ! ""
-сында:сында V-IV-LEX ; ! ""
-сыныҡтыра:сыныҡтыра V-TV-LEX ; ! ""
-сыңғыҙҙа:сыңғыҙҙа V-IV-LEX ; ! ""
-тышҡы% ҡиәфәт% сыт:тышҡы% ҡиәфәт% сыт V-IV-LEX ; ! ""
-сатырҙа:сатырҙа V-IV-LEX ; ! ""
-аҡылда:аҡылда V-IV-LEX ; ! ""
-шалтырат:шалтырат V-IV-LEX ; ! ""
-шалтыра:шалтыра V-IV-LEX ; ! ""
-шарҡылда:шарҡылда V-IV-LEX ; ! ""
-шатлан:шатлан V-IV-LEX ; ! ""
-шаулата:шаулата V-TV-LEX ; ! ""
-шаула:шаула V-IV-LEX ; ! ""
-шатлан:шатлан V-IV-LEX ; ! ""
-шаярт:шаярт V-IV-LEX ; ! ""
-шаяр:шаяр V-IV-LEX ; ! ""
-шаярыша:шаярыша V-IV-LEX ; ! ""
-шелтәләй:шелтәләй V-TV-LEX ; ! ""
-шешен:шешен V-IV-LEX ; ! ""
-эренле% шеш:эренле% шеш V-IV-LEX ; ! ""
-шайтан:шайтан V-IV-LEX ; ! ""
-шиктән:шиктән V-IV-LEX ; ! ""
-омар:омар V-IV-LEX ; ! ""
-штраф% һал:штраф% һал V-IV-LEX ; ! ""
-шулай% ит:шулай% ит V-TV-LEX ; ! ""
-шулай% ит:шулай% ит V-TV-LEX ; ! ""
-шыу:шыу V-TV-LEX ; ! ""
-шығырҙата:шығырҙата V-TV-LEX ; ! ""
-шығырҙа:шығырҙа V-IV-LEX ; ! ""
-шыҡһыҙ:шыҡһыҙ V-IV-LEX ; ! ""
-шыптырҙа:шыптырҙа V-IV-LEX ; ! ""
-шартлат:шартлат V-TV-LEX ; ! ""
-ыңғыраш:ыңғыраш V-IV-LEX ; ! ""
-ырғаҡта:ырғаҡта V-TV-LEX ; ! ""
-ырғы:ырғы V-IV-LEX ; ! ""
-ырылда:ырылда V-IV-LEX ; ! ""
-ырылда:ырылда V-IV-LEX ; ! ""
-р:р V-TV-LEX ; ! ""
-ышандыр:ышандыр V-TV-LEX ; ! ""
-ышыҡтан:ышыҡтан V-IV-LEX ; ! ""
-эвакуацияла:эвакуацияла V-TV-LEX ; ! ""
-эҙәрлә:эҙәрлә V-TV-LEX ; ! ""
-эҙләт:эҙләт V-TV-LEX ; ! ""
-экстрадициялау:экстрадициялау V-TV-LEX ; ! ""
-элеп% һарыҡ:элеп% һарыҡ V-TV-LEX ; ! ""
-эләктереп% ал:эләктереп% ал V-TV-LEX ; ! ""
-элек:элек V-IV-LEX ; ! ""
-эл:эл V-TV-LEX ; ! ""
-эндәш:эндәш V-IV-LEX ; ! ""
-эреләнде:эреләнде V-TV-LEX ; ! ""
-эрет:эрет V-TV-LEX ; ! ""
-ҙур:ҙур V-IV-LEX ; ! ""
-эрла:эрла V-TV-LEX ; ! ""
-эҫкерттә:эҫкерттә V-TV-LEX ; ! ""
-этәр:этәр V-TV-LEX ; ! ""
-эт% тиреһенән% тегелгән:эт% тиреһенән% тегелгән V-TV-LEX ; ! ""
-ысын% күңелдән% һөйлә:ысын% күңелдән% һөйлә V-TV-LEX ; ! ""
-эш% ит:эш% ит V-IV-LEX ; ! ""
-эшләп% ал:эшләп% ал V-TV-LEX ; ! ""
-эшләп% бөтөр:эшләп% бөтөр V-TV-LEX ; ! ""
-эшләт:эшләт V-TV-LEX ; ! ""
-ат:ат V-TV-LEX ; ! ""
-юғалып% кал:юғалып% кал V-IV-LEX ; ! ""
-юғал:юғал V-IV-LEX ; ! ""
-юҡ% иттер:юҡ% иттер V-TV-LEX ; ! ""
-юҡ% ит:юҡ% ит V-TV-LEX ; ! ""
-юлға% ысыҡ:юлға% ысыҡ V-IV-LEX ; ! ""
-юләрҙән:юләрҙән V-IV-LEX ; ! ""
-юлда:юлда V-TV-LEX ; ! ""
-йүнәлдер:йүнәлдер V-TV-LEX ; ! ""
-йүнәл:йүнәл V-IV-LEX ; ! ""
-юра:юра V-TV-LEX ; ! ""
-юрттырып% ебәр:юрттырып% ебәр V-TV-LEX ; ! ""
-юртып% бар:юртып% бар V-TV-LEX ; ! ""
-юлын:юлын V-IV-LEX ; ! ""
-ю:ю V-TV-LEX ; ! ""
-ябыҡ% күр:ябыҡ% күр V-TV-LEX ; ! ""
-ябыҡтыр:ябыҡтыр V-TV-LEX ; ! ""
-ябыҡ:ябыҡ V-IV-LEX ; ! ""
-ябын:ябын V-TV-LEX ; ! ""
-ябышты:ябышты V-TV-LEX ; ! ""
-быш:быш V-IV-LEX ; ! ""
-ягыл:ягыл V-IV-LEX ; ! ""
-яғын:яғын V-TV-LEX ; ! ""
-яҙып% бөтөр:яҙып% бөтөр V-TV-LEX ; ! ""
-яҡлаш:яҡлаш V-IV-LEX ; ! ""
-яҡтырт:яҡтырт V-TV-LEX ; ! ""
-яҡтыр:яҡтыр V-TV-LEX ; ! ""
-яҡынайт:яҡынайт V-TV-LEX ; ! ""
-яҡынай:яҡынай V-IV-LEX ; ! ""
-яҡын% ебәр:яҡын% ебәр V-TV-LEX ; ! ""
-яҡын% кил:яҡын% кил V-IV-LEX ; ! ""
-яҡын% кил:яҡын% кил V-IV-LEX ; ! ""
-яҡын% һарыҡ:яҡын% һарыҡ V-TV-LEX ; ! ""
-яҡынлаш:яҡынлаш V-IV-LEX ; ! ""
-як:як V-TV-LEX ; ! ""
-ялағайлана:ялағайлана V-IV-LEX ; ! ""
-яланғасландыра:яланғасландыра V-TV-LEX ; ! ""
-тәбиғи% булмаған:тәбиғи% булмаған V-IV-LEX ; ! ""
-ялғаш:ялғаш V-IV-LEX ; ! ""
-ялға:ялға V-TV-LEX ; ! ""
-ял% иттер:ял% иттер V-TV-LEX ; ! ""
-ял% ит:ял% ит V-IV-LEX ; ! ""
-ялҡауҙан:ялҡауҙан V-IV-LEX ; ! ""
-ялҡынлан:ялҡынлан V-IV-LEX ; ! ""
-ялда:ялда V-TV-LEX ; ! ""
-ялтырат:ялтырат V-TV-LEX ; ! ""
-ялтыра:ялтыра V-IV-LEX ; ! ""
-яҙыҡтыр:яҙыҡтыр V-TV-LEX ; ! ""
-ялын:ялын V-IV-LEX ; ! ""
-яманташ:яманташ V-IV-LEX ; ! ""
-яманла:яманла V-TV-LEX ; ! ""
-яма:яма V-TV-LEX ; ! ""
-яна:яна V-IV-LEX ; ! ""
-яндыр:яндыр V-TV-LEX ; ! ""
-яңғыра:яңғыра V-IV-LEX ; ! ""
-яп:яп V-TV-LEX ; ! ""
-яраҡлаштыр:яраҡлаштыр V-TV-LEX ; ! ""
-яралан:яралан V-IV-LEX ; ! ""
-ярала:ярала V-TV-LEX ; ! ""
-яраш:яраш V-IV-LEX ; ! ""
-ярҙам% ит:ярҙам% ит V-IV-LEX ; ! ""
-ярлыҡа:ярлыҡа V-TV-LEX ; ! ""
-ярһыуҙан:ярһыуҙан V-IV-LEX ; ! ""
-ярһып% һөйлә:ярһып% һөйлә V-IV-LEX ; ! ""
-ярһы:ярһы V-IV-LEX ; ! ""
-яһан:яһан V-IV-LEX ; ! ""
-яһат:яһат V-TV-LEX ; ! ""
-яҫы% бул:яҫы% бул V-IV-LEX ; ! ""
-әтиҙән:әтиҙән V-IV-LEX ; ! ""
-ятла:ятла V-TV-LEX ; ! ""
-ятһын:ятһын V-IV-LEX ; ! ""
-яуҙыр:яуҙыр V-TV-LEX ; ! ""
-яҡшаттан:яҡшаттан V-IV-LEX ; ! ""
-яхшылар:яхшылар V-TV-LEX ; ! ""
-яхшы:яхшы V-IV-LEX ; ! ""
-йәшелләндере:йәшелләндере V-TV-LEX ; ! ""
-йәшелдән:йәшелдән V-IV-LEX ; ! ""
+абай% бул:абай% бул V-IV ; ! ""
+абайла:абайла V-TV ; ! ""
+абалатып% йөр:абалатып% йөр V-IV ; ! ""
+ауаз% һал:ауаз% һал V-IV ; ! ""
+ауыр:ауыр V-IV ; ! ""
+ауырай:ауырай V-IV ; ! ""
+ауырһын:ауырһын V-IV ; ! ""
+ауырт:ауырт V-IV ; ! ""
+ауырттыр:ауырттыр V-TV ; ! ""
+һөҙәк:һөҙәк V-IV ; ! ""
+даими% булмаған:даими% булмаған V-IV ; ! ""
+ағарт:ағарт V-TV ; ! ""
+ағарын:ағарын V-IV ; ! ""
+ағыҙ:ағыҙ V-TV ; ! ""
+ағыл:ағыл V-IV ; ! ""
+аҙаш:аҙаш V-IV ; ! ""
+айныҡ:айныҡ V-IV ; ! ""
+айырыл:айырыл V-IV ; ! ""
+айырымлан:айырымлан V-IV ; ! ""
+аҙ:аҙ V-IV ; ! ""
+аҙай:аҙай V-IV ; ! ""
+азат:азат V-TV ; ! ""
+аҙғындан:аҙғындан V-IV ; ! ""
+аҙҙыр:аҙҙыр V-TV ; ! ""
+айҡалды:айҡалды V-TV ; ! ""
+айны:айны V-IV ; ! ""
+аҡай:аҡай V-IV ; ! ""
+аҡ:аҡ V-IV ; ! ""
+аҡса:аҡса V-IV ; ! ""
+акыр:акыр V-IV ; ! ""
+аталан:аталан V-IV ; ! ""
+алға% бар:алға% бар V-IV ; ! ""
+алға% ебәр:алға% ебәр V-TV ; ! ""
+алға% ил:алға% ил V-IV ; ! ""
+алға% кит:алға% кит V-IV ; ! ""
+алда:алда V-TV ; ! ""
+алдаҡсыға% әйлән:алдаҡсыға% әйлән V-IV ; ! ""
+алдап%-сула:алдап%-сула V-TV ; ! ""
+алдыр:алдыр V-TV ; ! ""
+алышта:алышта V-TV ; ! ""
+алпан%-толпан% йөр:алпан%-толпан% йөр V-IV ; ! ""
+алһыуҙан:алһыуҙан V-IV ; ! ""
+алтында:алтында V-TV ; ! ""
+алын:алын V-IV ; ! ""
+алып% бар:алып% бар V-TV ; ! ""
+алып% бир:алып% бир V-TV ; ! ""
+алып% кил:алып% кил V-TV ; ! ""
+алып% кит:алып% кит V-TV ; ! ""
+алып% ташла:алып% ташла V-TV ; ! ""
+алыштыр:алыштыр V-TV ; ! ""
+алышын:алышын V-IV ; ! ""
+анализла:анализла V-TV ; ! ""
+анатомдар:анатомдар V-TV ; ! ""
+аннексиялау:аннексиялау V-TV ; ! ""
+анһаттан:анһаттан V-IV ; ! ""
+аңҡы:аңҡы V-TV ; ! ""
+аптыра:аптыра V-IV ; ! ""
+аптырап% кал:аптырап% кал V-IV ; ! ""
+арала:арала V-TV ; ! ""
+арҡанла:арҡанла V-TV ; ! ""
+нисек% етте% шулай% һал:нисек% етте% шулай% һал V-TV ; ! ""
+арсы:арсы V-TV ; ! ""
+аршында:аршында V-TV ; ! ""
+арығай:арығай V-TV ; ! ""
+арык:арык V-IV ; ! ""
+арын:арын V-IV ; ! ""
+арат:арат V-TV ; ! ""
+ас:ас V-TV ; ! ""
+ара:ара V-TV ; ! ""
+ассимиляциялау:ассимиляциялау V-TV ; ! ""
+асылын% аңла:асылын% аңла V-IV ; ! ""
+асылын:асылын V-IV ; ! ""
+аталан:аталан V-IV ; ! ""
+атап% күрһәт:атап% күрһәт V-TV ; ! ""
+атла:атла V-IV ; ! ""
+атлан:атлан V-IV ; ! ""
+атлыҡ:атлыҡ V-IV ; ! ""
+ауҙар:ауҙар V-TV ; ! ""
+аула:аула V-TV ; ! ""
+ауна:ауна V-IV ; ! ""
+аунат:аунат V-TV ; ! ""
+аурупала:аурупала V-IV ; ! ""
+аурупала:аурупала V-IV ; ! ""
+ахылда:ахылда V-IV ; ! ""
+аҙағына% еткер:аҙағына% еткер V-TV ; ! ""
+асыуҙан:асыуҙан V-TV ; ! ""
+асыҡтан%-асыҡ:асыҡтан%-асыҡ V-IV ; ! ""
+асын:асын V-IV ; ! ""
+асы:асы V-TV ; ! ""
+ашап% ал:ашап% ал V-TV ; ! ""
+ашарға% пеер:ашарға% пеер V-TV ; ! ""
+ашат:ашат V-TV ; ! ""
+ашҡын:ашҡын V-IV ; ! ""
+арлы:арлы V-IV ; ! ""
+арлы:арлы V-IV ; ! ""
+ашыҡтыр:ашыҡтыр V-TV ; ! ""
+ая:ая V-TV ; ! ""
+аяҡҡа% йылғаһы:аяҡҡа% йылғаһы V-IV ; ! ""
+бағыш:бағыш V-TV ; ! ""
+байт:байт V-TV ; ! ""
+баз:баз V-IV ; ! ""
+бак:бак V-TV ; ! ""
+баҡыла:баҡыла V-IV ; ! ""
+баҡыр% әйберҙәр:баҡыр% әйберҙәр V-IV ; ! ""
+балҡы:балҡы V-IV ; ! ""
+ер% сыла:ер% сыла V-TV ; ! ""
+барҙа:барҙа V-TV ; ! ""
+барлыҡҡа% китер:барлыҡҡа% китер V-TV ; ! ""
+баррикадала:баррикадала V-TV ; ! ""
+барымталар:барымталар V-TV ; ! ""
+барып% ысыҡ:барып% ысыҡ V-IV ; ! ""
+баҫып% тор:баҫып% тор V-IV ; ! ""
+бат:бат V-IV ; ! ""
+батыр:батыр V-TV ; ! ""
+был% тау% түбәһе:был% тау% түбәһе V-IV ; ! ""
+баш% ҡоро:баш% ҡоро V-IV ; ! ""
+башын% әйләндер:башын% әйләндер V-IV ; ! ""
+берекмә:берекмә V-IV ; ! ""
+беркет:беркет V-TV ; ! ""
+берләш:берләш V-IV ; ! ""
+бәйлә:бәйлә V-TV ; ! ""
+бәйләнеш:бәйләнеш V-IV ; ! ""
+байрам% ит:байрам% ит V-TV ; ! ""
+бар:бар V-TV ; ! ""
+бәрел:бәрел V-IV ; ! ""
+ҡатыу% алыу:ҡатыу% алыу V-IV ; ! ""
+бәхәсләш:бәхәсләш V-IV ; ! ""
+бәхилләшә:бәхилләшә V-IV ; ! ""
+изложение% ит:изложение% ит V-TV ; ! ""
+бәндә:бәндә V-TV ; ! ""
+биҙ:биҙ V-IV ; ! ""
+биҙә:биҙә V-TV ; ! ""
+биҙән:биҙән V-IV ; ! ""
+бил% алыш:бил% алыш V-IV ; ! ""
+билдә% таҡ:билдә% таҡ V-TV ; ! ""
+биләмдә% йөр:биләмдә% йөр  V-IV ; ! ""
+бимазалап:бимазалап V-TV ; ! ""
+бишәүҙә:бишәүҙә V-TV ; ! ""
+биш% эштә:биш% эштә V-TV ; ! ""
+богата:богата V-TV ; ! ""
+бер:бер V-TV ; ! ""
+боҙола:боҙола V-IV ; ! ""
+боҙол:боҙол V-IV ; ! ""
+боҙоп% күрһәт:боҙоп% күрһәт V-TV ; ! ""
+былай% ит:былай% ит V-TV ; ! ""
+браула:браула V-TV ; ! ""
+бор:бор V-TV ; ! ""
+бормалана:бормалана V-IV ; ! ""
+борсол:борсол V-IV ; ! ""
+ботаҡтан:ботаҡтан V-IV ; ! ""
+ботарла:ботарла V-TV ; ! ""
+бөгөл:бөгөл V-IV ; ! ""
+бөҙрәле:бөҙрәле V-TV ; ! ""
+бөк:бөк V-TV ; ! ""
+бөклә:бөклә V-TV ; ! ""
+бөкөрәйә:бөкөрәйә V-IV ; ! ""
+бул:бул V-IV ; ! ""
+бөрлән:бөрлән V-IV ; ! ""
+һөймән:һөймән V-IV ; ! ""
+бөркә:бөркә V-TV ; ! ""
+бөркән:бөркән V-TV ; ! ""
+бөрмәлә:бөрмәлә V-TV ; ! ""
+бөтөнлә:бөтөнлә V-TV ; ! ""
+был:был V-TV ; ! ""
+боғаҙҙа:боғаҙҙа V-TV ; ! ""
+буй% ет:буй% ет V-IV ; ! ""
+буйла:буйла V-TV ; ! ""
+буйһын:буйһын V-IV ; ! ""
+булдыра% ал:булдыра% ал V-TV ; ! ""
+булып% ысыҡ:булып% ысыҡ V-IV ; ! ""
+булыш:булыш V-IV ; ! ""
+бурычкаb% ал:бурычкаb% ал V-TV ; ! ""
+бурысҡа% кер:бурысҡа% кер V-IV ; ! ""
+бутал:бутал V-IV ; ! ""
+буша:буша V-IV ; ! ""
+бушат:бушат V-TV ; ! ""
+был:был V-IV ; ! ""
+өр% быуылып:өр% быуылып V-IV ; ! ""
+буя:буя V-TV ; ! ""
+бүлдер:бүлдер V-TV ; ! ""
+бүлеп% ҡара:бүлеп% ҡара V-TV ; ! ""
+бүләк% ит:бүләк% ит V-TV ; ! ""
+бығырҙай:бығырҙай V-IV ; ! ""
+батылда:батылда V-IV ; ! ""
+быхылдап:быхылдап V-IV ; ! ""
+был% барыбер% булған:был% барыбер% булған V-IV ; ! ""
+ваз% кисә:ваз% кисә V-IV ; ! ""
+ваҡтан:ваҡтан V-IV ; ! ""
+аҡһын:аҡһын V-TV ; ! ""
+ватыл:ватыл V-IV ; ! ""
+вафат% был:вафат% был V-IV ; ! ""
+вафат% ит:вафат% ит V-IV ; ! ""
+вәғәздә:вәғәздә V-TV ; ! ""
+винтлы:винтлы V-TV ; ! ""
+ғәҙәттән:ғәҙәттән V-IV ; ! ""
+ганишты:ганишты V-TV ; ! ""
+гаепле:гаепле V-TV ; ! ""
+ғәйеп% таҡ:ғәйеп% таҡ V-IV ; ! ""
+ғазапта:ғазапта V-TV ; ! ""
+ғазаптан:ғазаптан V-IV ; ! ""
+хәбәр% тарат:хәбәр% тарат V-IV ; ! ""
+ғәриптән:ғәриптән V-IV ; ! ""
+был% ғарыҡ:был% ғарыҡ V-IV ; ! ""
+белмәй% торған% был:белмәй% торған% был V-IV ; ! ""
+ғәфү% ит:ғәфү% ит V-TV ; ! ""
+ғүмер% ит:ғүмер% ит V-IV ; ! ""
+ғорурлан:ғорурлан V-IV ; ! ""
+гөрөлдәй:гөрөлдәй V-IV ; ! ""
+сыу% кил:сыу% кил V-IV ; ! ""
+гөрлә:гөрлә V-IV ; ! ""
+гөрһөлдәй:гөрһөлдәй V-IV ; ! ""
+дегетлә:дегетлә V-TV ; ! ""
+демократла:демократла V-IV ; ! ""
+дерелдәй:дерелдәй V-IV ; ! ""
+дауала:дауала V-TV ; ! ""
+дауам% ит:дауам% ит V-TV ; ! ""
+дәлиллә:дәлиллә V-TV ; ! ""
+дәртләндер:дәртләндер V-TV ; ! ""
+был% дәфен:был% дәфен V-IV ; ! ""
+дәфен% ит:дәфен% ит V-TV ; ! ""
+дәш:дәш V-TV ; ! ""
+тиҫтәлә:тиҫтәлә V-TV ; ! ""
+дошманлаша:дошманлаша V-IV ; ! ""
+тулҡынлан:тулҡынлан V-IV ; ! ""
+дуҫлаш:дуҫлаш V-IV ; ! ""
+дусар% был:дусар% был V-IV ; ! ""
+дыңғырҙап:дыңғырҙап V-IV ; ! ""
+дыңғырҙатып:дыңғырҙатып V-TV ; ! ""
+был% йәш% кеше:был% йәш% кеше V-IV ; ! ""
+ек:ек V-TV ; ! ""
+ела:ела V-IV ; ! ""
+йырағай:йырағай V-IV ; ! ""
+ералаш:ералаш V-IV ; ! ""
+йыраҡлаштыр:йыраҡлаштыр V-TV ; ! ""
+ер:ер V-TV ; ! ""
+йорт:йорт V-TV ; ! ""
+шай:шай V-IV ; ! ""
+шайт:шайт V-TV ; ! ""
+әүерел:әүерел V-IV ; ! ""
+әҙәпһеҙҙән:әҙәпһеҙҙән V-IV ; ! ""
+әҙерлектә:әҙерлектә V-TV ; ! ""
+шулай% булһын:шулай% булһын V-TV ; ! ""
+әйлендереп% ал:әйлендереп% ал V-TV ; ! ""
+әйләндер:әйләндер V-TV ; ! ""
+әйткәле:әйткәле V-IV ; ! ""
+әйттер:әйттер V-TV ; ! ""
+әкренәй:әкренәй V-IV ; ! ""
+әмәлдә:әмәлдә V-TV ; ! ""
+әрҙәнәгә% өй:әрҙәнәгә% өй V-TV ; ! ""
+әрәм% ит:әрәм% ит V-TV ; ! ""
+әрәм%-шәрәм% ит:әрәм%-шәрәм% ит V-TV ; ! ""
+әҫәрҙән:әҫәрҙән V-IV ; ! ""
+әтәстән:әтәстән V-IV ; ! ""
+әсе:әсе V-IV ; ! ""
+яуап% бир:яуап% бир V-TV ; ! ""
+жайын% тап:жайын% тап V-IV ; ! ""
+йайла:йайла V-TV ; ! ""
+айҙаш:айҙаш V-IV ; ! ""
+жалоба% бир:жалоба% бир V-IV ; ! ""
+йандан:йандан V-IV ; ! ""
+жаны% сыҡҡан% был:жаны% сыҡҡан% был V-IV ; ! ""
+йәйелдер:йәйелдер V-TV ; ! ""
+йәйел:йәйел V-IV ; ! ""
+азата:азата V-TV ; ! ""
+йәйҙә:йәйҙә V-IV ; ! ""
+йәлеп% ит:йәлеп% ит V-TV ; ! ""
+йәрәхәтлә:йәрәхәтлә V-TV ; ! ""
+екер:екер V-IV ; ! ""
+ек:ек V-TV ; ! ""
+ектер:ектер V-TV ; ! ""
+елдер:елдер V-TV ; ! ""
+елемле:елемле V-TV ; ! ""
+елендә:елендә V-IV ; ! ""
+елен% үҫтер:елен% үҫтер V-IV ; ! ""
+елдән:елдән V-IV ; ! ""
+елдәт:елдәт V-TV ; ! ""
+елферҙәй:елферҙәй V-IV ; ! ""
+емер:емер V-TV ; ! ""
+еңеләйт:еңеләйт V-TV ; ! ""
+тун% еңе:тун% еңе V-TV ; ! ""
+ең% һыҙған:ең% һыҙған V-IV ; ! ""
+ерәнеп% ҡара:ерәнеп% ҡара V-TV ; ! ""
+ерән:ерән V-IV ; ! ""
+ерҙә:ерҙә V-TV ; ! ""
+етеҙ:етеҙ V-IV ; ! ""
+тәьмин% итеү:тәьмин% итеү V-IV ; ! ""
+етештер:етештер V-TV ; ! ""
+етәклә:етәклә V-TV ; ! ""
+етеҙ:етеҙ V-TV ; ! ""
+еткер:еткер V-TV ; ! ""
+йыһазландыр:йыһазландыр V-TV ; ! ""
+йыһазлан:йыһазлан V-IV ; ! ""
+баҙнат% ит:баҙнат% ит V-TV ; ! ""
+йыл:йыл V-IV ; ! ""
+төшөү% юлы:төшөү% юлы V-IV ; ! ""
+йыйыл:йыйыл V-IV ; ! ""
+йыйҙы:йыйҙы V-TV ; ! ""
+йыйна:йыйна V-TV ; ! ""
+йылыт:йылыт V-TV ; ! ""
+зарлан:зарлан V-IV ; ! ""
+зарык:зарык V-IV ; ! ""
+зауыҡтан:зауыҡтан V-IV ; ! ""
+зәңгәрһыулана:зәңгәрһыулана V-IV ; ! ""
+зәһәре:зәһәре V-IV ; ! ""
+ҙурайт:ҙурайт V-TV ; ! ""
+ҙурла:ҙурла V-TV ; ! ""
+зыян% һал:зыян% һал V-IV ; ! ""
+игәүләй:игәүләй V-TV ; ! ""
+иғлан% ит:иғлан% ит V-TV ; ! ""
+иғтибарға% алма:иғтибарға% алма V-TV ; ! ""
+ҡәҙер%-хөрмәт% ит:ҡәҙер%-хөрмәт% ит V-IV ; ! ""
+был% иғтибарһыҙ% башҡарылған:был% иғтибарһыҙ% башҡарылған V-IV ; ! ""
+идара% ит:идара% ит V-TV ; ! ""
+ил:ил V-IV ; ! ""
+иҙел:иҙел V-IV ; ! ""
+из:из V-TV ; ! ""
+и:и V-TV ; ! ""
+абруй% ҡаҙаныу% кеүек:абруй% ҡаҙаныу% кеүек V-TV ; ! ""
+ил% гиҙеп% йөр:ил% гиҙеп% йөр V-IV ; ! ""
+итә:итә V-TV ; ! ""
+илт:илт V-TV ; ! ""
+илһамлан:илһамлан V-IV ; ! ""
+өшкөрөү% доғаһы:өшкөрөү% доғаһы V-TV ; ! ""
+имеҙ:имеҙ V-TV ; ! ""
+имгән:имгән V-IV ; ! ""
+имергә% ысыҡ:имергә% ысыҡ V-IV ; ! ""
+имзала:имзала V-TV ; ! ""
+имәндәштәр:имәндәштәр V-TV ; ! ""
+имсәктән% айыр:имсәктән% айыр V-TV ; ! ""
+инҡар% ит:инҡар% ит V-TV ; ! ""
+интек:интек V-IV ; ! ""
+интекте:интекте V-TV ; ! ""
+иңрә:иңрә V-IV ; ! ""
+иптә:иптә V-TV ; ! ""
+ҡыҫҡыста% һ.% б.:ҡыҫҡыста% һ.% б. V-IV ; ! ""
+иреше:иреше V-IV ; ! ""
+иреш:иреш V-IV ; ! ""
+ирештер:ирештер V-TV ; ! ""
+иркендә:иркендә V-IV ; ! ""
+иркәлә:иркәлә V-TV ; ! ""
+исем% ҡушып:исем% ҡушып V-TV ; ! ""
+иҫер:иҫер V-IV ; ! ""
+иҫәнләш:иҫәнләш V-IV ; ! ""
+иҫәплә:иҫәплә V-TV ; ! ""
+иҫәпләш:иҫәпләш V-IV ; ! ""
+ис:ис V-IV ; ! ""
+искер:искер V-IV ; ! ""
+тип% ал:тип% ал V-TV ; ! ""
+иҫкәрт:иҫкәрт V-TV ; ! ""
+тип% төшөр:тип% төшөр V-TV ; ! ""
+иһә:иһә V-TV ; ! ""
+иҫтә% тот:иҫтә% тот V-TV ; ! ""
+иттер:иттер V-TV ; ! ""
+иш:иш V-TV ; ! ""
+был% ия:был% ия V-IV ; ! ""
+иртә:иртә V-TV ; ! ""
+ярт:ярт V-TV ; ! ""
+йоғошһоҙландырыу:йоғошһоҙландырыу V-TV ; ! ""
+йоҡ:йоҡ V-TV ; ! ""
+йоҡомһора:йоҡомһора V-IV ; ! ""
+йолҡа:йолҡа V-TV ; ! ""
+йомғаҡта:йомғаҡта V-TV ; ! ""
+йом:йом V-TV ; ! ""
+йомша:йомша V-IV ; ! ""
+йомшарт:йомшарт V-TV ; ! ""
+ашағы% килеү:ашағы% килеү V-TV ; ! ""
+йөҙгәндә:йөҙгәндә V-TV ; ! ""
+йугәнһеҙҙәр:йугәнһеҙҙәр V-IV ; ! ""
+йөҙ:йөҙ V-IV ; ! ""
+йөктә:йөктә V-TV ; ! ""
+йөреп% ысыҡ:йөреп% ысыҡ V-TV ; ! ""
+йөрөтөл:йөрөтөл V-IV ; ! ""
+йөрөт:йөрөт V-TV ; ! ""
+уткер:уткер V-TV ; ! ""
+ашыҡ%-бошоҡ:ашыҡ%-бошоҡ V-IV ; ! ""
+ҡабарын:ҡабарын V-IV ; ! ""
+ҡабул% ит:ҡабул% ит V-TV ; ! ""
+ҡабул% итмә:ҡабул% итмә V-TV ; ! ""
+ҡабығынан% арындыр:ҡабығынан% арындыр V-TV ; ! ""
+ҡабыҙ:ҡабыҙ V-TV ; ! ""
+ҡабын:ҡабын V-IV ; ! ""
+ҡабырсыҡтан:ҡабырсыҡтан V-IV ; ! ""
+кағыл:кағыл V-IV ; ! ""
+ҡағыш:ҡағыш V-TV ; ! ""
+ҡала:ҡала V-TV ; ! ""
+ҡаҙаҡта:ҡаҙаҡта V-TV ; ! ""
+ҡаҙаҡлап% үлсә:ҡаҙаҡлап% үлсә V-TV ; ! ""
+кадерле:кадерле V-TV ; ! ""
+кер:кер V-TV ; ! ""
+ҡайыш:ҡайыш V-IV ; ! ""
+ҡаҙан:ҡаҙан V-TV ; ! ""
+казы:казы V-TV ; ! ""
+ҡаҙыҡта:ҡаҙыҡта V-TV ; ! ""
+кайғыр:кайғыр V-IV ; ! ""
+ҡайғырт:ҡайғырт V-TV ; ! ""
+кайна:кайна V-IV ; ! ""
+ҡайтар:ҡайтар V-TV ; ! ""
+өр%-яңынан% бир:өр%-яңынан% бир V-TV ; ! ""
+ҡоро:ҡоро V-TV ; ! ""
+ҡала:ҡала V-TV ; ! ""
+какша:какша V-IV ; ! ""
+аҡылда:аҡылда V-IV ; ! ""
+ҡаҡыр:ҡаҡыр V-TV ; ! ""
+ҡалала:ҡалала V-TV ; ! ""
+ҡалҡы:ҡалҡы V-IV ; ! ""
+ҡалынай:ҡалынай V-IV ; ! ""
+ҡалыпҡа% кер:ҡалыпҡа% кер V-IV ; ! ""
+ҡалыптан:ҡалыптан V-IV ; ! ""
+ҡалыплаш:ҡалыплаш V-IV ; ! ""
+ҡатын%-ҡыҙ% тураһында:ҡатын%-ҡыҙ% тураһында V-TV ; ! ""
+камиллаш:камиллаш V-IV ; ! ""
+камчала:камчала V-TV ; ! ""
+ҡана:ҡана V-IV ; ! ""
+ҡанат:ҡанат V-TV ; ! ""
+ҡәнәғәтләндер:ҡәнәғәтләндер V-TV ; ! ""
+ҡаңғырап% йөр:ҡаңғырап% йөр V-IV ; ! ""
+тап:тап V-TV ; ! ""
+ҡаплан:ҡаплан V-IV ; ! ""
+ҡаплап% алды:ҡаплап% алды V-TV ; ! ""
+ҡаплат:ҡаплат V-TV ; ! ""
+ҡаптыр:ҡаптыр V-TV ; ! ""
+ҡапсыҡта:ҡапсыҡта V-TV ; ! ""
+ҡапша:ҡапша V-TV ; ! ""
+ҡарауылда:ҡарауылда V-TV ; ! ""
+ҡаралан:ҡаралан V-IV ; ! ""
+ҡаралт:ҡаралт V-TV ; ! ""
+рәсәйҙәге:рәсәйҙәге V-IV ; ! ""
+ҡараңғылан:ҡараңғылан V-IV ; ! ""
+ҡарар% ит:ҡарар% ит V-TV ; ! ""
+күҙ% ҡарашы:күҙ% ҡарашы V-TV ; ! ""
+ҡараштыр:ҡараштыр V-TV ; ! ""
+ала% ҡарға:ала% ҡарға V-TV ; ! ""
+ҡарҡылдай:ҡарҡылдай V-IV ; ! ""
+ҡаршыла:ҡаршыла V-TV ; ! ""
+ҡаршы% тор:ҡаршы% тор V-IV ; ! ""
+ҡарышта:ҡарышта V-TV ; ! ""
+кат:кат V-IV ; ! ""
+ҡатта:ҡатта V-TV ; ! ""
+ҡауша:ҡауша V-IV ; ! ""
+ҡаушатып% ебәр:ҡаушатып% ебәр V-TV ; ! ""
+ҡәһәрлән:ҡәһәрлән V-IV ; ! ""
+тау%-тау% йыйыр:тау%-тау% йыйыр V-IV ; ! ""
+квалификациялана:квалификациялана V-IV ; ! ""
+әйтерһең% дә% был:әйтерһең% дә% был V-IV ; ! ""
+кершәнле:кершәнле V-TV ; ! ""
+кетерҙәп:кетерҙәп V-IV ; ! ""
+кенә:кенә V-IV ; ! ""
+ҡәнәғәт% булма:ҡәнәғәт% булма V-IV ; ! ""
+ҡәнәғәтләндер:ҡәнәғәтләндер V-TV ; ! ""
+кейен:кейен V-IV ; ! ""
+кисерел:кисерел V-IV ; ! ""
+кикер:кикер V-IV ; ! ""
+нисек:нисек V-TV ; ! ""
+килеп% ет:килеп% ет V-TV ; ! ""
+килеп% ысыҡ:килеп% ысыҡ V-IV ; ! ""
+киме:киме V-IV ; ! ""
+кимер:кимер V-TV ; ! ""
+кәмет:кәмет V-TV ; ! ""
+ситләтеп% әйтелгән% һөйлә:ситләтеп% әйтелгән% һөйлә V-IV ; ! ""
+киңәй:киңәй V-IV ; ! ""
+киңәйт:киңәйт V-TV ; ! ""
+өгөт%-нәсихәт% биреү:өгөт%-нәсихәт% биреү V-IV ; ! ""
+кәңәшләш:кәңәшләш V-IV ; ! ""
+кип:кип V-IV ; ! ""
+кире% бир:кире% бир V-TV ; ! ""
+кире% ҡаҡ:кире% ҡаҡ V-TV ; ! ""
+киҫеп% алды:киҫеп% алды V-TV ; ! ""
+һуғыш:һуғыш V-IV ; ! ""
+киҫәт:киҫәт V-TV ; ! ""
+кис:кис V-TV ; ! ""
+кистер:кистер V-TV ; ! ""
+кител:кител V-IV ; ! ""
+кисек:кисек V-IV ; ! ""
+кисектер:кисектер V-TV ; ! ""
+кисә:кисә V-TV ; ! ""
+ҡойондар:ҡойондар V-TV ; ! ""
+коен:коен V-TV ; ! ""
+кой:кой V-TV ; ! ""
+ҡомасау:ҡомасау V-IV ; ! ""
+комға% утыр:комға% утыр V-IV ; ! ""
+ҡомһоҙҙан:ҡомһоҙҙан V-IV ; ! ""
+конфискациялау:конфискациялау V-TV ; ! ""
+ҡоралландыры:ҡоралландыры V-TV ; ! ""
+ҡоралдан:ҡоралдан V-IV ; ! ""
+ҡорғаҡһып:ҡорғаҡһып V-IV ; ! ""
+кор:кор V-TV ; ! ""
+ҡоро:ҡоро V-IV ; ! ""
+ҡорот:ҡорот V-TV ; ! ""
+коткар:коткар V-TV ; ! ""
+котла:котла V-TV ; ! ""
+ҡотолдор:ҡотолдор V-TV ; ! ""
+котел:котел V-IV ; ! ""
+ҡоторт:ҡоторт V-TV ; ! ""
+ҡосаҡла:ҡосаҡла V-TV ; ! ""
+моң:моң V-IV ; ! ""
+көйлә:көйлә V-TV ; ! ""
+көлкө:көлкө V-IV ; ! ""
+көндәшлек% ит:көндәшлек% ит V-IV ; ! ""
+көндә:көндә V-TV ; ! ""
+көпшәкләнде:көпшәкләнде V-TV ; ! ""
+көрәш:көрәш V-IV ; ! ""
+курсын:курсын V-IV ; ! ""
+көсәй:көсәй V-IV ; ! ""
+көсәйт:көсәйт V-TV ; ! ""
+көс% һарыҡ:көс% һарыҡ V-IV ; ! ""
+көслә:көслә V-TV ; ! ""
+кристалдан:кристалдан V-IV ; ! ""
+куала:куала V-TV ; ! ""
+ҡыуандыр:ҡыуандыр V-TV ; ! ""
+куан:куан V-IV ; ! ""
+куҙғал:куҙғал V-IV ; ! ""
+ҡуҙғат:ҡуҙғат V-TV ; ! ""
+ағас% бәшмәге:ағас% бәшмәге V-TV ; ! ""
+курай:курай V-IV ; ! ""
+ҡул% бир:ҡул% бир V-IV ; ! ""
+ҡулға% ал:ҡулға% ал V-TV ; ! ""
+был% ҡунаҡ:был% ҡунаҡ V-IV ; ! ""
+ҡундыр:ҡундыр V-TV ; ! ""
+кун:кун V-IV ; ! ""
+куп:куп V-IV ; ! ""
+кургашла:кургашла V-TV ; ! ""
+ҡурҡын:ҡурҡын V-IV ; ! ""
+ҡурҡып% ҡара:ҡурҡып% ҡара V-IV ; ! ""
+ҡурҡыт:ҡурҡыт V-TV ; ! ""
+курык:курык V-IV ; ! ""
+утарҙан:утарҙан V-IV ; ! ""
+ҡуш:ҡуш V-TV ; ! ""
+ҡушыр:ҡушыр V-TV ; ! ""
+ҡыуып% ҡайтар:ҡыуып% ҡайтар V-TV ; ! ""
+күбектән:күбектән V-IV ; ! ""
+күбәй:күбәй V-IV ; ! ""
+күҙ% алдында% китер:күҙ% алдында% китер V-TV ; ! ""
+был% ҡараш:был% ҡараш V-IV ; ! ""
+күҙҙә:күҙҙә V-TV ; ! ""
+күҙ% ташла:күҙ% ташла V-IV ; ! ""
+күмәктә:күмәктә V-TV ; ! ""
+күм:күм V-TV ; ! ""
+күнегеүҙәр% эштә:күнегеүҙәр% эштә V-IV ; ! ""
+күнек:күнек V-IV ; ! ""
+күп% ҡан% юғалта:күп% ҡан% юғалта V-IV ; ! ""
+күп% өлөшөн% эштә:күп% өлөшөн% эштә V-TV ; ! ""
+күреп% кал:күреп% кал V-TV ; ! ""
+күтәр:күтәр V-TV ; ! ""
+күсен:күсен V-IV ; ! ""
+күсеп% йөр:күсеп% йөр V-IV ; ! ""
+өйөр%-өйөр:өйөр%-өйөр V-IV ; ! ""
+ҡыйынлаша:ҡыйынлаша V-IV ; ! ""
+ҡыҙар:ҡыҙар V-IV ; ! ""
+ҡыҙған:ҡыҙған V-TV ; ! ""
+ҡыҙ:ҡыҙ V-IV ; ! ""
+уйын%-көлкө:уйын%-көлкө V-IV ; ! ""
+ҡыҙыҡһындыр:ҡыҙыҡһындыр V-TV ; ! ""
+ҡыҙыҡһын:ҡыҙыҡһын V-IV ; ! ""
+ҡыҙыҡтыр:ҡыҙыҡтыр V-TV ; ! ""
+ҡыҙы:ҡыҙы V-IV ; ! ""
+кый:кый V-TV ; ! ""
+кайна:кайна V-TV ; ! ""
+ҡылан:ҡылан V-TV ; ! ""
+ҡырауҙан:ҡырауҙан V-IV ; ! ""
+ҡырҡы:ҡырҡы V-TV ; ! ""
+кыркыла:кыркыла V-IV ; ! ""
+ялан:ялан V-TV ; ! ""
+ҡырҡыша:ҡырҡыша V-TV ; ! ""
+ҡаршы:ҡаршы V-TV ; ! ""
+ҡырылды:ҡырылды V-TV ; ! ""
+күҙ% сите% менән:күҙ% сите% менән V-IV ; ! ""
+күҙ% сите% менән% таныш% булмаған:күҙ% сите% менән% таныш% булмаған V-IV ; ! ""
+тап%-себер:тап%-себер V-TV ; ! ""
+ҡыҫҡарт:ҡыҫҡарт V-TV ; ! ""
+кыс:кыс V-TV ; ! ""
+ҡырыҡта:ҡырыҡта V-TV ; ! ""
+ҡыҫтыр:ҡыҫтыр V-TV ; ! ""
+ҡыһыл:ҡыһыл V-IV ; ! ""
+кейәүгә% сыҡмаған% ҡыҙ% кал:кейәүгә% сыҡмаған% ҡыҙ% кал V-IV ; ! ""
+ҡытҡылда:ҡытҡылда V-IV ; ! ""
+ҡысҡырып% ебәр:ҡысҡырып% ебәр V-IV ; ! ""
+ҡысҡырып% һөйлә:ҡысҡырып% һөйлә V-IV ; ! ""
+ҡышта:ҡышта V-IV ; ! ""
+ҡыштарҙа:ҡыштарҙа V-IV ; ! ""
+ҡымыҙҙан:ҡымыҙҙан V-IV ; ! ""
+либераль:либераль V-IV ; ! ""
+мауыҡ:мауыҡ V-IV ; ! ""
+мауыҡтыр:мауыҡтыр V-TV ; ! ""
+май% кун:май% кун V-IV ; ! ""
+майҙа:майҙа V-TV ; ! ""
+майҙандар:майҙандар V-TV ; ! ""
+маймылдан:маймылдан V-IV ; ! ""
+маҡта:маҡта V-TV ; ! ""
+маҡтан:маҡтан V-IV ; ! ""
+ман:ман V-TV ; ! ""
+масай:масай V-IV ; ! ""
+маташ:маташ V-IV ; ! ""
+махсуслаштыра:махсуслаштыра V-TV ; ! ""
+машиналаштырыу:машиналаштырыу V-TV ; ! ""
+межала:межала V-TV ; ! ""
+менге:менге V-TV ; ! ""
+мәғлүмәтләштереү:мәғлүмәтләштереү V-TV ; ! ""
+мәғлүм% ит:мәғлүм% ит V-TV ; ! ""
+мәлйерәп:мәлйерәп V-IV ; ! ""
+мәңгеләштер:мәңгеләштер V-TV ; ! ""
+мәсхәрәлә:мәсхәрәлә V-TV ; ! ""
+мәшәҡәттән:мәшәҡәттән V-IV ; ! ""
+мәш% кил:мәш% кил V-IV ; ! ""
+модернизацияла:модернизацияла V-TV ; ! ""
+был% мөбәрәк:был% мөбәрәк V-IV ; ! ""
+мала:мала V-IV ; ! ""
+мырҡылдай:мырҡылдай V-IV ; ! ""
+мыҫҡыл% ит:мыҫҡыл% ит V-TV ; ! ""
+мыҫҡыллы:мыҫҡыллы V-TV ; ! ""
+мыштарҙа:мыштарҙа V-IV ; ! ""
+наҙла:наҙла V-TV ; ! ""
+насарҙан:насарҙан V-IV ; ! ""
+нескә:нескә V-IV ; ! ""
+нескәртә:нескәртә V-TV ; ! ""
+накала:накала V-TV ; ! ""
+нәшер% ит:нәшер% ит V-TV ; ! ""
+нигеҙҙә:нигеҙҙә V-TV ; ! ""
+никахлаша:никахлаша V-IV ; ! ""
+нишлә:нишлә V-IV ; ! ""
+ниәтлә:ниәтлә V-TV ; ! ""
+ниәтлән:ниәтлән V-IV ; ! ""
+нормалаштыра:нормалаштыра V-TV ; ! ""
+нужа% күр:нужа% күр V-IV ; ! ""
+нурлан:нурлан V-IV ; ! ""
+нығы:нығы V-IV ; ! ""
+ныҡла:ныҡла V-TV ; ! ""
+ныҡ% тор:ныҡ% тор V-IV ; ! ""
+ныҡ% тор:ныҡ% тор V-IV ; ! ""
+ое:ое V-IV ; ! ""
+от:от V-TV ; ! ""
+оеш:оеш V-IV ; ! ""
+оҙата% бар:оҙата% бар V-TV ; ! ""
+оҙонай:оҙонай V-IV ; ! ""
+оҙонайта:оҙонайта V-TV ; ! ""
+олтан% һал:олтан% һал V-IV ; ! ""
+омтыла:омтыла V-IV ; ! ""
+оптималләштере:оптималләштере V-TV ; ! ""
+орнаментта:орнаментта V-TV ; ! ""
+остар:остар V-IV ; ! ""
+от:от V-TV ; ! ""
+оша:оша V-IV ; ! ""
+осҡолоҡ% тот:осҡолоҡ% тот V-IV ; ! ""
+осра:осра V-IV ; ! ""
+осор:осор V-TV ; ! ""
+оял:оял V-IV ; ! ""
+өҙлөк:өҙлөк V-IV ; ! ""
+өҙ:өҙ V-TV ; ! ""
+өйлән:өйлән V-IV ; ! ""
+өй:өй V-TV ; ! ""
+өйрәнеп% кит:өйрәнеп% кит V-IV ; ! ""
+өйрәт:өйрәт V-TV ; ! ""
+өләш:өләш V-TV ; ! ""
+өмөт% ит:өмөт% ит V-TV ; ! ""
+өндә:өндә V-IV ; ! ""
+өркә:өркә V-IV ; ! ""
+өр:өр V-TV ; ! ""
+өр:өр V-TV ; ! ""
+өҫкә% күтәрел:өҫкә% күтәрел V-IV ; ! ""
+өҫтәр:өҫтәр V-TV ; ! ""
+тергеҙә:тергеҙә V-TV ; ! ""
+ут:ут V-TV ; ! ""
+парҙан:парҙан V-IV ; ! ""
+пеер:пеер V-TV ; ! ""
+пеш:пеш V-IV ; ! ""
+популярлашты:популярлашты V-TV ; ! ""
+программала:программала V-TV ; ! ""
+пропагандала:пропагандала V-TV ; ! ""
+профилактикалау:профилактикалау V-TV ; ! ""
+пысраҡ:пысраҡ V-IV ; ! ""
+осрат:осрат V-TV ; ! ""
+ышҡыр:ышҡыр V-IV ; ! ""
+пышылдау:пышылдау V-IV ; ! ""
+рамкала:рамкала V-TV ; ! ""
+ратификациялау:ратификациялау V-TV ; ! ""
+реконструкцияла:реконструкцияла V-TV ; ! ""
+реформала:реформала V-TV ; ! ""
+ранее:ранее V-IV ; ! ""
+рәнйет:рәнйет V-TV ; ! ""
+рәсмиләштер:рәсмиләштер V-TV ; ! ""
+рәттә:рәттә V-TV ; ! ""
+бер%-бер% артлы% ысыҡ:бер%-бер% артлы% ысыҡ V-IV ; ! ""
+ризыҡтан:ризыҡтан V-IV ; ! ""
+рөхсәт% ит:рөхсәт% ит V-TV ; ! ""
+рухтан:рухтан V-IV ; ! ""
+сауыҡ:сауыҡ V-IV ; ! ""
+һағалап% тор:һағалап% тор V-TV ; ! ""
+сағын:сағын V-TV ; ! ""
+һаҙҙан:һаҙҙан V-IV ; ! ""
+һайлат:һайлат V-TV ; ! ""
+сайра:сайра V-IV ; ! ""
+был% пост:был% пост V-IV ; ! ""
+саҡта:саҡта V-TV ; ! ""
+һалҡын% ти:һалҡын% ти V-IV ; ! ""
+салон:салон V-IV ; ! ""
+салынып% урын:салынып% урын V-IV ; ! ""
+сарыф% ит:сарыф% ит V-TV ; ! ""
+сарыф% ит:сарыф% ит V-TV ; ! ""
+һаҫыҡ:һаҫыҡ V-IV ; ! ""
+саташ:саташ V-IV ; ! ""
+саттар:саттар V-TV ; ! ""
+һатып% ал:һатып% ал V-TV ; ! ""
+иҫән%-һау:иҫән%-һау V-TV ; ! ""
+һелкенеп% тор:һелкенеп% тор V-IV ; ! ""
+һелке:һелке V-TV ; ! ""
+һелкет:һелкет V-TV ; ! ""
+һеңдер:һеңдер V-TV ; ! ""
+сың:сың V-IV ; ! ""
+серен% ас:серен% ас V-IV ; ! ""
+сертификатта:сертификатта V-TV ; ! ""
+сәб% еп:сәб% еп V-TV ; ! ""
+сәб% еп:сәб% еп V-TV ; ! ""
+сәб% еп:сәб% еп V-TV ; ! ""
+сәләмәтләндере:сәләмәтләндере V-TV ; ! ""
+сәләмәт% фекерҙә:сәләмәт% фекерҙә V-IV ; ! ""
+сәхнәләштер:сәхнәләштер V-TV ; ! ""
+сизлер:сизлер V-TV ; ! ""
+һикереп% чап:һикереп% чап V-IV ; ! ""
+һикер:һикер V-IV ; ! ""
+бик% тиҙ% чап:бик% тиҙ% чап V-TV ; ! ""
+һимерт:һимерт V-TV ; ! ""
+сип:сип V-TV ; ! ""
+һирәкләнде:һирәкләнде V-TV ; ! ""
+си:си V-IV ; ! ""
+сискән:сискән V-IV ; ! ""
+советлаштырыу:советлаштырыу V-TV ; ! ""
+соҡтан:соҡтан V-IV ; ! ""
+һуңға% кал:һуңға% кал V-IV ; ! ""
+һораштыр:һораштыр V-TV ; ! ""
+оролан:оролан V-IV ; ! ""
+һоро% төҫкә% керт:һоро% төҫкә% керт V-TV ; ! ""
+сендер:сендер V-TV ; ! ""
+сен:сен V-IV ; ! ""
+һөҙөш:һөҙөш V-IV ; ! ""
+һөҙ:һөҙ V-TV ; ! ""
+һөйләп% бир:һөйләп% бир V-TV ; ! ""
+һөйләшеп% ултыр:һөйләшеп% ултыр V-IV ; ! ""
+һөйрәл:һөйрәл V-IV ; ! ""
+һөйрә:һөйрә V-TV ; ! ""
+оран% сук:оран% сук V-IV ; ! ""
+һөр:һөр V-TV ; ! ""
+һөрт:һөрт V-TV ; ! ""
+сөя:сөя V-TV ; ! ""
+специаль:специаль V-IV ; ! ""
+һуғар:һуғар V-TV ; ! ""
+һуғыш:һуғыш V-IV ; ! ""
+судҡа% тарт:судҡа% тарт V-TV ; ! ""
+суй:суй V-TV ; ! ""
+һуҡбайлыҡ% йөр:һуҡбайлыҡ% йөр V-IV ; ! ""
+сук:сук V-IV ; ! ""
+суҡтыр:суҡтыр V-TV ; ! ""
+сула:сула V-TV ; ! ""
+һул:һул V-IV ; ! ""
+тын% ал:тын% ал V-IV ; ! ""
+һумалалап:һумалалап V-TV ; ! ""
+һурәттә:һурәттә V-TV ; ! ""
+һыуһауын% йылғаһы:һыуһауын% йылғаһы V-IV ; ! ""
+суса:суса V-IV ; ! ""
+суат:суат V-TV ; ! ""
+һалҡын% ти:һалҡын% ти V-IV ; ! ""
+һыуыр:һыуыр V-TV ; ! ""
+һыуы:һыуы V-IV ; ! ""
+һүген:һүген V-IV ; ! ""
+сүк:сүк V-TV ; ! ""
+һүлпәнләнә:һүлпәнләнә V-IV ; ! ""
+сүндер:сүндер V-TV ; ! ""
+һүҙ:һүҙ V-IV ; ! ""
+һүтел:һүтел V-IV ; ! ""
+сут:сут V-TV ; ! ""
+сыдыр:сыдыр V-TV ; ! ""
+һыйын:һыйын V-IV ; ! ""
+сыйыш:сыйыш V-IV ; ! ""
+сығала:сығала V-TV ; ! ""
+һыҙғандар:һыҙғандар V-TV ; ! ""
+һыҙған:һыҙған V-TV ; ! ""
+һыҙғыр:һыҙғыр V-IV ; ! ""
+һыҙла:һыҙла V-IV ; ! ""
+сыз:сыз V-TV ; ! ""
+һыйыр:һыйыр V-TV ; ! ""
+сайта:сайта V-TV ; ! ""
+һыйпа:һыйпа V-TV ; ! ""
+һый%-хөрмәт:һый%-хөрмәт V-IV ; ! ""
+һына:һына V-TV ; ! ""
+һынат:һынат V-IV ; ! ""
+һындыр:һындыр V-TV ; ! ""
+кәүҙә:кәүҙә V-IV ; ! ""
+һыпыр:һыпыр V-TV ; ! ""
+сыр:сыр V-TV ; ! ""
+сыт:сыт V-TV ; ! ""
+табын:табын V-IV ; ! ""
+табыштыр:табыштыр V-TV ; ! ""
+тауыштан:тауыштан V-IV ; ! ""
+тағы:тағы V-IV ; ! ""
+таҙар:таҙар V-IV ; ! ""
+таҡмаҡлап% ела:таҡмаҡлап% ела V-IV ; ! ""
+таҡ:таҡ V-TV ; ! ""
+тала:тала V-TV ; ! ""
+шау:шау V-IV ; ! ""
+талдар:талдар V-TV ; ! ""
+талап% ит:талап% ит V-TV ; ! ""
+талпын:талпын V-IV ; ! ""
+талыҡ:талыҡ V-IV ; ! ""
+таманда:таманда V-TV ; ! ""
+тап% уйын%-көлкө:тап% уйын%-көлкө V-TV ; ! ""
+тамғала:тамғала V-TV ; ! ""
+тамыр% ебәр:тамыр% ебәр V-IV ; ! ""
+танһыҡтар:танһыҡтар V-TV ; ! ""
+тантаналы% рәүештә% иғлан% ит:тантаналы% рәүештә% иғлан% ит V-TV ; ! ""
+таны:таны V-TV ; ! ""
+таныт:таныт V-TV ; ! ""
+таң% кал:таң% кал V-IV ; ! ""
+тап% ит:тап% ит V-TV ; ! ""
+таптан:таптан V-IV ; ! ""
+таптап% етер:таптап% етер V-TV ; ! ""
+тапта:тапта V-TV ; ! ""
+тарай:тарай V-IV ; ! ""
+тарай:тарай V-TV ; ! ""
+тарал:тарал V-IV ; ! ""
+тара:тара V-TV ; ! ""
+тарат:тарат V-TV ; ! ""
+тар%-мар% ит:тар%-мар% ит V-TV ; ! ""
+тарҡала:тарҡала V-TV ; ! ""
+тарттыр:тарттыр V-TV ; ! ""
+тартын:тартын V-IV ; ! ""
+тартып% ал:тартып% ал V-TV ; ! ""
+һүҙ% көрәштереү:һүҙ% көрәштереү V-IV ; ! ""
+татыулашы:татыулашы V-IV ; ! ""
+татып% ҡара:татып% ҡара V-TV ; ! ""
+таты:таты V-TV ; ! ""
+таушал:таушал V-IV ; ! ""
+таштан:таштан V-IV ; ! ""
+таян:таян V-IV ; ! ""
+теҙҙән:теҙҙән V-IV ; ! ""
+бөгөм:бөгөм V-TV ; ! ""
+текәлеп% ҡара:текәлеп% ҡара V-IV ; ! ""
+текә:текә V-IV ; ! ""
+шулай% итеп:шулай% итеп V-TV ; ! ""
+телемдә:телемдә V-TV ; ! ""
+йоҡа% тар% таҡта:йоҡа% тар% таҡта V-TV ; ! ""
+ғүмер% ит:ғүмер% ит V-IV ; ! ""
+терел:терел V-IV ; ! ""
+терелт:терелт V-TV ; ! ""
+терәл:терәл V-IV ; ! ""
+терә:терә V-TV ; ! ""
+терә:терә V-IV ; ! ""
+теркә:теркә V-TV ; ! ""
+тернәкләнеп:тернәкләнеп V-TV ; ! ""
+тетрә:тетрә V-IV ; ! ""
+тешлә:тешлә V-TV ; ! ""
+ҡотлау% ит:ҡотлау% ит V-TV ; ! ""
+тәбриклә:тәбриклә V-TV ; ! ""
+тәүәкәллә:тәүәкәллә V-IV ; ! ""
+тәғәйенлә:тәғәйенлә V-TV ; ! ""
+тәғәйенлә:тәғәйенлә V-TV ; ! ""
+тәгәрәп% төш:тәгәрәп% төш V-IV ; ! ""
+тәгәрә:тәгәрә V-IV ; ! ""
+тәкәбберҙән:тәкәбберҙән V-IV ; ! ""
+тәҡдим% ит:тәҡдим% ит V-TV ; ! ""
+тап% был:тап% был V-IV ; ! ""
+тамамлан:тамамлан V-IV ; ! ""
+тамамла:тамамла V-TV ; ! ""
+тәмлелә:тәмлелә V-IV ; ! ""
+тәрбиәлә:тәрбиәлә V-TV ; ! ""
+тәржемә% ит:тәржемә% ит V-TV ; ! ""
+тәртипһеҙләнә:тәртипһеҙләнә V-IV ; ! ""
+тәфсилле:тәфсилле V-TV ; ! ""
+тәшкил% ит:тәшкил% ит V-TV ; ! ""
+тәьмин% ит:тәьмин% ит V-TV ; ! ""
+этәргес:этәргес V-IV ; ! ""
+тигеҙләшә:тигеҙләшә V-IV ; ! ""
+тиҙҙән:тиҙҙән V-IV ; ! ""
+тиҙләт:тиҙләт V-TV ; ! ""
+тиҙ%-тиҙ% сәйнә:тиҙ%-тиҙ% сәйнә V-TV ; ! ""
+тилер:тилер V-IV ; ! ""
+тилмер:тилмер V-IV ; ! ""
+тимерҙә:тимерҙә V-TV ; ! ""
+типтер:типтер V-IV ; ! ""
+тип:тип V-TV ; ! ""
+тирбәл:тирбәл V-IV ; ! ""
+тирбәт:тирбәт V-TV ; ! ""
+тирәләй:тирәләй V-IV ; ! ""
+тиртә:тиртә V-IV ; ! ""
+ти:ти V-IV ; ! ""
+той:той V-TV ; ! ""
+токарҙан:токарҙан V-IV ; ! ""
+торғоҙ:торғоҙ V-TV ; ! ""
+тормошҡа% аш:тормошҡа% аш V-IV ; ! ""
+тормошҡа% ашыр:тормошҡа% ашыр V-TV ; ! ""
+өҙлөкһөҙ:өҙлөкһөҙ V-IV ; ! ""
+тоташтыр:тоташтыр V-TV ; ! ""
+тотҡарлан:тотҡарлан V-IV ; ! ""
+тотҡарла:тотҡарла V-TV ; ! ""
+тоттоҡ:тоттоҡ V-IV ; ! ""
+тот:тот V-TV ; ! ""
+тотып% тор:тотып% тор V-TV ; ! ""
+төбә:төбә V-IV ; ! ""
+билдәле% бел:билдәле% бел V-TV ; ! ""
+тап% ит:тап% ит V-TV ; ! ""
+төгәлләр:төгәлләр V-TV ; ! ""
+төрҙән:төрҙән V-IV ; ! ""
+төҙөкләндере:төҙөкләндере V-TV ; ! ""
+төҙәт:төҙәт V-TV ; ! ""
+төҙәт:төҙәт V-TV ; ! ""
+төй:төй V-TV ; ! ""
+төкөр:төкөр V-TV ; ! ""
+төлкөлән:төлкөлән V-IV ; ! ""
+төптән:төптән V-IV ; ! ""
+төплә:төплә V-TV ; ! ""
+төркәлә:төркәлә V-TV ; ! ""
+төркәлә:төркәлә V-IV ; ! ""
+тәбиғәт% күренеше:тәбиғәт% күренеше V-TV ; ! ""
+төртер:төртер V-TV ; ! ""
+төрт:төрт V-TV ; ! ""
+төтөндә:төтөндә V-IV ; ! ""
+төтәтә:төтәтә V-TV ; ! ""
+төтәт:төтәт V-TV ; ! ""
+төкөр:төкөр V-IV ; ! ""
+төшөнкөлөккә% бирел:төшөнкөлөккә% бирел V-IV ; ! ""
+төш:төш V-IV ; ! ""
+туя:туя V-TV ; ! ""
+тулыр:тулыр V-TV ; ! ""
+туйын:туйын V-IV ; ! ""
+туҙғы:туҙғы V-IV ; ! ""
+туҙ:туҙ V-IV ; ! ""
+туйҙыр:туйҙыр V-TV ; ! ""
+байрам:байрам V-IV ; ! ""
+туҡландыра:туҡландыра V-TV ; ! ""
+туҡлан:туҡлан V-IV ; ! ""
+туҡмала:туҡмала V-TV ; ! ""
+туҡтат:туҡтат V-TV ; ! ""
+туҡы:туҡы V-TV ; ! ""
+тулы:тулы V-IV ; ! ""
+тул:тул V-IV ; ! ""
+тулыла:тулыла V-TV ; ! ""
+туна:туна V-TV ; ! ""
+туплан:туплан V-IV ; ! ""
+тупла:тупла V-TV ; ! ""
+турала:турала V-TV ; ! ""
+турысай:турысай V-IV ; ! ""
+туп%-тура% кил:туп%-тура% кил V-IV ; ! ""
+тултыр:тултыр V-TV ; ! ""
+түбәнәй:түбәнәй V-IV ; ! ""
+түҙеп% алма% ултыра:түҙеп% алма% ултыра V-IV ; ! ""
+түҙ:түҙ V-IV ; ! ""
+ҙур% төргәк:ҙур% төргәк V-TV ; ! ""
+түҙә:түҙә V-TV ; ! ""
+тығыла:тығыла V-TV ; ! ""
+тый:тый V-TV ; ! ""
+тыҡ:тыҡ V-TV ; ! ""
+тыҡылдата:тыҡылдата V-TV ; ! ""
+тыҡылдай:тыҡылдай V-IV ; ! ""
+дон% алдыр:дон% алдыр V-TV ; ! ""
+тын% ал:тын% ал V-TV ; ! ""
+дон% ағастың% һ.% б.:дон% ағастың% һ.% б. V-IV ; ! ""
+тынысландыр:тынысландыр V-TV ; ! ""
+тыныслан:тыныслан V-IV ; ! ""
+тыныслыҡ% урҙашты:тыныслыҡ% урҙашты V-IV ; ! ""
+тынысһыҙлана:тынысһыҙлана V-IV ; ! ""
+торна:торна V-TV ; ! ""
+тышта:тышта V-TV ; ! ""
+уҙҙыр:уҙҙыр V-TV ; ! ""
+уз:уз V-TV ; ! ""
+бәйге:бәйге V-IV ; ! ""
+уйлап% эшлә:уйлап% эшлә V-TV ; ! ""
+уйлан:уйлан V-TV ; ! ""
+уйлан:уйлан V-TV ; ! ""
+уйлап% ал:уйлап% ал V-TV ; ! ""
+уйлаш:уйлаш V-IV ; ! ""
+уйнаҡла:уйнаҡла V-IV ; ! ""
+уй%-фекер:уй%-фекер V-TV ; ! ""
+ҡала:ҡала V-TV ; ! ""
+уҡый%-яҙа% бел:уҡый%-яҙа% бел V-IV ; ! ""
+уҡыт:уҡыт V-TV ; ! ""
+ула:ула V-IV ; ! ""
+уңайҙа:уңайҙа V-TV ; ! ""
+уң:уң V-IV ; ! ""
+мул% уңыш% алған% ағастың% һ.% б.:мул% уңыш% алған% ағастың% һ.% б. V-IV ; ! ""
+урап% ал:урап% ал V-TV ; ! ""
+урат:урат V-TV ; ! ""
+ура:ура V-TV ; ! ""
+шаран:шаран V-IV ; ! ""
+урта:урта V-TV ; ! ""
+урҙашты:урҙашты V-TV ; ! ""
+уртаҡташ:уртаҡташ V-TV ; ! ""
+ҙур% тулҡын:ҙур% тулҡын V-TV ; ! ""
+тал:тал V-IV ; ! ""
+ута:ута V-TV ; ! ""
+ултырт:ултырт V-TV ; ! ""
+ултырып% тор:ултырып% тор V-IV ; ! ""
+у%-у%-у:у%-у%-у V-TV ; ! ""
+уян:уян V-IV ; ! ""
+уят:уят V-TV ; ! ""
+үгетләй:үгетләй V-TV ; ! ""
+таныш% булмаған% күр:таныш% булмаған% күр V-TV ; ! ""
+үгәйҙән:үгәйҙән V-IV ; ! ""
+үжәтләнә:үжәтләнә V-IV ; ! ""
+үҙгәр:үҙгәр V-IV ; ! ""
+үҙәкләштере:үҙәкләштере V-TV ; ! ""
+үҙ% күр:үҙ% күр V-TV ; ! ""
+үҙһүҙлән:үҙһүҙлән V-IV ; ! ""
+үкен:үкен V-IV ; ! ""
+керт:керт V-TV ; ! ""
+үкер:үкер V-IV ; ! ""
+үкһе:үкһе V-IV ; ! ""
+үлсә:үлсә V-TV ; ! ""
+үпкәлә:үпкәлә V-IV ; ! ""
+үрҙәр:үрҙәр V-TV ; ! ""
+үрҙә:үрҙә V-IV ; ! ""
+үрмәлә:үрмәлә V-IV ; ! ""
+ҡалҡыулыҡ:ҡалҡыулыҡ V-TV ; ! ""
+үрсет:үрсет V-TV ; ! ""
+үрсе:үрсе V-IV ; ! ""
+үс:үс V-IV ; ! ""
+үтеп% бар:үтеп% бар V-TV ; ! ""
+үтәт:үтәт V-TV ; ! ""
+үтә:үтә V-TV ; ! ""
+үткәндән:үткәндән V-IV ; ! ""
+үтмәҫләнде:үтмәҫләнде V-TV ; ! ""
+файҙағыҙҙан:файҙағыҙҙан V-IV ; ! ""
+уй% кешелә:уй% кешелә V-IV ; ! ""
+фаш% ит:фаш% ит V-TV ; ! ""
+фекер% алыш:фекер% алыш V-IV ; ! ""
+фекерҙә:фекерҙә V-TV ; ! ""
+формалаш:формалаш V-IV ; ! ""
+халыҡҡа% сығар:халыҡҡа% сығар V-TV ; ! ""
+характерҙа:характерҙа V-TV ; ! ""
+барлыҡҡа% был:барлыҡҡа% был V-IV ; ! ""
+барлыҡҡа% ит:барлыҡҡа% ит V-TV ; ! ""
+хастан:хастан V-IV ; ! ""
+хафалан:хафалан V-IV ; ! ""
+хеҙмәт% ит:хеҙмәт% ит V-IV ; ! ""
+хәбәр% ит:хәбәр% ит V-TV ; ! ""
+хәүефлән:хәүефлән V-IV ; ! ""
+хәйерселәнә:хәйерселәнә V-IV ; ! ""
+хәҙерҙән:хәҙерҙән V-IV ; ! ""
+хәҙерҙә:хәҙерҙә V-TV ; ! ""
+хәйләлә:хәйләлә V-IV ; ! ""
+хәлдән% тай:хәлдән% тай V-IV ; ! ""
+халығ% еп:халығ% еп V-TV ; ! ""
+хәл% ит:хәл% ит V-TV ; ! ""
+хәлдән:хәлдән V-IV ; ! ""
+хәлһеҙлән:хәлһеҙлән V-IV ; ! ""
+хәрефтә:хәрефтә V-TV ; ! ""
+хәстәрҙән:хәстәрҙән V-IV ; ! ""
+хәстәрлә:хәстәрлә V-TV ; ! ""
+хәтерҙә% тот:хәтерҙә% тот V-TV ; ! ""
+хәтерен% ҡалдыр:хәтерен% ҡалдыр V-IV ; ! ""
+хәтерләт:хәтерләт V-TV ; ! ""
+хосусилаштыр:хосусилаштыр V-TV ; ! ""
+хөрмәттә:хөрмәттә V-TV ; ! ""
+хулигандан:хулигандан V-IV ; ! ""
+хурла:хурла V-TV ; ! ""
+йә% кил:йә% кил V-IV ; ! ""
+хушлаш:хушлаш V-IV ; ! ""
+хырылдап:хырылдап V-TV ; ! ""
+хырылдап:хырылдап V-IV ; ! ""
+хыяллан:хыяллан V-IV ; ! ""
+был% иҫәбе%-хисабы% юҡ:был% иҫәбе%-хисабы% юҡ V-IV ; ! ""
+һәләкәткә% осра:һәләкәткә% осра V-IV ; ! ""
+һуштан% яҙ:һуштан% яҙ V-IV ; ! ""
+цемента:цемента V-TV ; ! ""
+цинкла:цинкла V-TV ; ! ""
+сағылдыр:сағылдыр V-TV ; ! ""
+сағыштыр:сағыштыр V-TV ; ! ""
+чайка:чайка V-TV ; ! ""
+саҡ%-саҡ:саҡ%-саҡ V-TV ; ! ""
+саҡырт:саҡырт V-TV ; ! ""
+саҡырып% сығар:саҡырып% сығар V-TV ; ! ""
+йәнлек% тиреһенә% ҡарата:йәнлек% тиреһенә% ҡарата V-TV ; ! ""
+самала:самала V-TV ; ! ""
+чапала:чапала V-TV ; ! ""
+сатана:сатана V-IV ; ! ""
+чачаклар:чачаклар V-TV ; ! ""
+серелде:серелде V-IV ; ! ""
+серет:серет V-TV ; ! ""
+сере:сере V-IV ; ! ""
+серкәйҙәрҙән% саҡтан:серкәйҙәрҙән% саҡтан V-IV ; ! ""
+сәбәлән:сәбәлән V-IV ; ! ""
+сәйнә:сәйнә V-TV ; ! ""
+сәкеште:сәкеште V-TV ; ! ""
+сәперә:сәперә V-IV ; ! ""
+сәнсеп% тиш:сәнсеп% тиш V-TV ; ! ""
+сәнсе:сәнсе V-TV ; ! ""
+сәрҙектә:сәрҙектә V-TV ; ! ""
+сәскә% ат:сәскә% ат V-IV ; ! ""
+сәс:сәс V-TV ; ! ""
+сиген:сиген V-IV ; ! ""
+сиктә:сиктә V-TV ; ! ""
+сик% һаҡсыһы:сик% һаҡсыһы V-TV ; ! ""
+чина:чина V-IV ; ! ""
+сиратлаш:сиратлаш V-IV ; ! ""
+сиҙәм% менән% ҡаплан:сиҙәм% менән% ҡаплан V-IV ; ! ""
+сирҡан:сирҡан V-IV ; ! ""
+сирҙән:сирҙән V-IV ; ! ""
+сирт:сирт V-TV ; ! ""
+чистарту:чистарту V-TV ; ! ""
+оҡшаш% булған:оҡшаш% булған V-IV ; ! ""
+ситән:ситән V-IV ; ! ""
+солға:солға V-TV ; ! ""
+осорҙа:осорҙа V-TV ; ! ""
+йүгереп% килеп% ҡоро:йүгереп% килеп% ҡоро V-IV ; ! ""
+сумер:сумер V-TV ; ! ""
+ығы%-зығы:ығы%-зығы V-IV ; ! ""
+сарлап% етер:сарлап% етер V-TV ; ! ""
+суҡы:суҡы V-TV ; ! ""
+чум:чум V-IV ; ! ""
+сумыр:сумыр V-TV ; ! ""
+сүгәтә:сүгәтә V-IV ; ! ""
+суктер:суктер V-TV ; ! ""
+сүместә:сүместә V-TV ; ! ""
+сүмәләләй:сүмәләләй V-TV ; ! ""
+сыбыҡта:сыбыҡта V-TV ; ! ""
+сығарт:сығарт V-TV ; ! ""
+сығымдан:сығымдан V-IV ; ! ""
+сыҙа:сыҙа V-IV ; ! ""
+сылтыра:сылтыра V-IV ; ! ""
+сында:сында V-IV ; ! ""
+сыныҡтыра:сыныҡтыра V-TV ; ! ""
+сыңғыҙҙа:сыңғыҙҙа V-IV ; ! ""
+тышҡы% ҡиәфәт% сыт:тышҡы% ҡиәфәт% сыт V-IV ; ! ""
+сатырҙа:сатырҙа V-IV ; ! ""
+аҡылда:аҡылда V-IV ; ! ""
+шалтырат:шалтырат V-IV ; ! ""
+шалтыра:шалтыра V-IV ; ! ""
+шарҡылда:шарҡылда V-IV ; ! ""
+шатлан:шатлан V-IV ; ! ""
+шаулата:шаулата V-TV ; ! ""
+шаула:шаула V-IV ; ! ""
+шатлан:шатлан V-IV ; ! ""
+шаярт:шаярт V-IV ; ! ""
+шаяр:шаяр V-IV ; ! ""
+шаярыша:шаярыша V-IV ; ! ""
+шелтәләй:шелтәләй V-TV ; ! ""
+шешен:шешен V-IV ; ! ""
+эренле% шеш:эренле% шеш V-IV ; ! ""
+шайтан:шайтан V-IV ; ! ""
+шиктән:шиктән V-IV ; ! ""
+омар:омар V-IV ; ! ""
+штраф% һал:штраф% һал V-IV ; ! ""
+шулай% ит:шулай% ит V-TV ; ! ""
+шулай% ит:шулай% ит V-TV ; ! ""
+шыу:шыу V-TV ; ! ""
+шығырҙата:шығырҙата V-TV ; ! ""
+шығырҙа:шығырҙа V-IV ; ! ""
+шыҡһыҙ:шыҡһыҙ V-IV ; ! ""
+шыптырҙа:шыптырҙа V-IV ; ! ""
+шартлат:шартлат V-TV ; ! ""
+ыңғыраш:ыңғыраш V-IV ; ! ""
+ырғаҡта:ырғаҡта V-TV ; ! ""
+ырғы:ырғы V-IV ; ! ""
+ырылда:ырылда V-IV ; ! ""
+ырылда:ырылда V-IV ; ! ""
+р:р V-TV ; ! ""
+ышандыр:ышандыр V-TV ; ! ""
+ышыҡтан:ышыҡтан V-IV ; ! ""
+эвакуацияла:эвакуацияла V-TV ; ! ""
+эҙәрлә:эҙәрлә V-TV ; ! ""
+эҙләт:эҙләт V-TV ; ! ""
+экстрадициялау:экстрадициялау V-TV ; ! ""
+элеп% һарыҡ:элеп% һарыҡ V-TV ; ! ""
+эләктереп% ал:эләктереп% ал V-TV ; ! ""
+элек:элек V-IV ; ! ""
+эл:эл V-TV ; ! ""
+эндәш:эндәш V-IV ; ! ""
+эреләнде:эреләнде V-TV ; ! ""
+эрет:эрет V-TV ; ! ""
+ҙур:ҙур V-IV ; ! ""
+эрла:эрла V-TV ; ! ""
+эҫкерттә:эҫкерттә V-TV ; ! ""
+этәр:этәр V-TV ; ! ""
+эт% тиреһенән% тегелгән:эт% тиреһенән% тегелгән V-TV ; ! ""
+ысын% күңелдән% һөйлә:ысын% күңелдән% һөйлә V-TV ; ! ""
+эш% ит:эш% ит V-IV ; ! ""
+эшләп% ал:эшләп% ал V-TV ; ! ""
+эшләп% бөтөр:эшләп% бөтөр V-TV ; ! ""
+эшләт:эшләт V-TV ; ! ""
+ат:ат V-TV ; ! ""
+юғалып% кал:юғалып% кал V-IV ; ! ""
+юғал:юғал V-IV ; ! ""
+юҡ% иттер:юҡ% иттер V-TV ; ! ""
+юҡ% ит:юҡ% ит V-TV ; ! ""
+юлға% ысыҡ:юлға% ысыҡ V-IV ; ! ""
+юләрҙән:юләрҙән V-IV ; ! ""
+юлда:юлда V-TV ; ! ""
+йүнәлдер:йүнәлдер V-TV ; ! ""
+йүнәл:йүнәл V-IV ; ! ""
+юра:юра V-TV ; ! ""
+юрттырып% ебәр:юрттырып% ебәр V-TV ; ! ""
+юртып% бар:юртып% бар V-TV ; ! ""
+юлын:юлын V-IV ; ! ""
+ю:ю V-TV ; ! ""
+ябыҡ% күр:ябыҡ% күр V-TV ; ! ""
+ябыҡтыр:ябыҡтыр V-TV ; ! ""
+ябыҡ:ябыҡ V-IV ; ! ""
+ябын:ябын V-TV ; ! ""
+ябышты:ябышты V-TV ; ! ""
+быш:быш V-IV ; ! ""
+ягыл:ягыл V-IV ; ! ""
+яғын:яғын V-TV ; ! ""
+яҙып% бөтөр:яҙып% бөтөр V-TV ; ! ""
+яҡлаш:яҡлаш V-IV ; ! ""
+яҡтырт:яҡтырт V-TV ; ! ""
+яҡтыр:яҡтыр V-TV ; ! ""
+яҡынайт:яҡынайт V-TV ; ! ""
+яҡынай:яҡынай V-IV ; ! ""
+яҡын% ебәр:яҡын% ебәр V-TV ; ! ""
+яҡын% кил:яҡын% кил V-IV ; ! ""
+яҡын% кил:яҡын% кил V-IV ; ! ""
+яҡын% һарыҡ:яҡын% һарыҡ V-TV ; ! ""
+яҡынлаш:яҡынлаш V-IV ; ! ""
+як:як V-TV ; ! ""
+ялағайлана:ялағайлана V-IV ; ! ""
+яланғасландыра:яланғасландыра V-TV ; ! ""
+тәбиғи% булмаған:тәбиғи% булмаған V-IV ; ! ""
+ялғаш:ялғаш V-IV ; ! ""
+ялға:ялға V-TV ; ! ""
+ял% иттер:ял% иттер V-TV ; ! ""
+ял% ит:ял% ит V-IV ; ! ""
+ялҡауҙан:ялҡауҙан V-IV ; ! ""
+ялҡынлан:ялҡынлан V-IV ; ! ""
+ялда:ялда V-TV ; ! ""
+ялтырат:ялтырат V-TV ; ! ""
+ялтыра:ялтыра V-IV ; ! ""
+яҙыҡтыр:яҙыҡтыр V-TV ; ! ""
+ялын:ялын V-IV ; ! ""
+яманташ:яманташ V-IV ; ! ""
+яманла:яманла V-TV ; ! ""
+яма:яма V-TV ; ! ""
+яна:яна V-IV ; ! ""
+яндыр:яндыр V-TV ; ! ""
+яңғыра:яңғыра V-IV ; ! ""
+яп:яп V-TV ; ! ""
+яраҡлаштыр:яраҡлаштыр V-TV ; ! ""
+яралан:яралан V-IV ; ! ""
+ярала:ярала V-TV ; ! ""
+яраш:яраш V-IV ; ! ""
+ярҙам% ит:ярҙам% ит V-IV ; ! ""
+ярлыҡа:ярлыҡа V-TV ; ! ""
+ярһыуҙан:ярһыуҙан V-IV ; ! ""
+ярһып% һөйлә:ярһып% һөйлә V-IV ; ! ""
+ярһы:ярһы V-IV ; ! ""
+яһан:яһан V-IV ; ! ""
+яһат:яһат V-TV ; ! ""
+яҫы% бул:яҫы% бул V-IV ; ! ""
+әтиҙән:әтиҙән V-IV ; ! ""
+ятла:ятла V-TV ; ! ""
+ятһын:ятһын V-IV ; ! ""
+яуҙыр:яуҙыр V-TV ; ! ""
+яҡшаттан:яҡшаттан V-IV ; ! ""
+яхшылар:яхшылар V-TV ; ! ""
+яхшы:яхшы V-IV ; ! ""
+йәшелләндере:йәшелләндере V-TV ; ! ""
+йәшелдән:йәшелдән V-IV ; ! ""
 
 !! added for testing twol rules
-ҡуй:ҡуй V-TV-LEX ; ! ""
-һөй:һөй V-TV-LEX ; ! ""
-йәй:йәй V-TV-LEX ; ! ""
-йый:йый V-TV-LEX ; ! ""
+ҡуй:ҡуй V-TV ; ! ""
+һөй:һөй V-TV ; ! ""
+йәй:йәй V-TV ; ! ""
+йый:йый V-TV ; ! ""
 
-яу:яу V-IV-LEX ; ! ""
-бай:бай V-IV-LEX ; ! ""            FIXME:check - might be "байы"
+яу:яу V-IV ; ! ""
+бай:бай V-IV ; ! ""            FIXME:check - might be "байы"
 
 
 !=====================!
