@@ -113,6 +113,8 @@ Rules
 "L desonorisation after non-continuants"
 %{L%}:д <=> [ :CnsVcdNonConts ]/[ %>: | :0 | %  ] _ ;
 
+!@ р е с у р с {ъ}:0 >:0 {L}:т {A}:а р >:0 {h}:0 {I}:ы {n}:0 >:0 {N}:н {I}:ы ң
+
 "N desonorisation after non-continuants"
 %{N%}:д <=> [ :CnsVcdNonConts ]/[ %>: | :0 | %  ] _ ;
             except
@@ -163,7 +165,7 @@ Cx:Cy <=> :Vow (:0) _ %>: (:0) :Vow ;
 !                                 %{n%}: %>: _ %{I%}: .#. ;
 
 "Forward voicing assimilation"
-Cx:Cy <=> :CnsVoiceless/[ %>: | %  ] _ ;
+Cx:Cy <=> :CnsVoiceless/[ %>: | :0 | %  ] _ ;
           where Cx in ( %{M%}  %{L%}  %{N%} )
                 Cy in (   п      т      т   )
                 matched;
