@@ -133,28 +133,41 @@
                                                       ! {{test|tt|Бараһым килә.|Барасым килә.}}
                                                       ! {{test|tt|Барғым килә.|Барасым килә.}}
 %<prc_cond%>       ! -h{A}
+
 !! Verbal adverbs - Хәл фигыльләр - Глаголные наречия
 %<gna_cond%>       ! -с{A}  !# "...кайда икәнен _белсә_ дә, әйтми..."
-%<gna_perf%>           ! -{I}п  !# "...ул вакытта инде кояш _баеп_, йолдызлар күренә башлаган иде..." (Ф.Хөсни)
-
-! Gerunds
-
-%<prc_perf%>  ! Perfect participle
-             
-%<prc_impf%>  ! Imperfect participle
-              
-%<prc_vol%>   ! Volition participle
-              
-%<prc_cond%>  ! Conditional participle
-              
-%<prc_fplan%> ! Future plan participle
-              
-!!! Verbal adverbs ! Хәл фигыльләр ! Глагольные наречия
 %<gna_perf%>  
-%<gna_cond%>  
 %<gna_until%> 
 %<gna_after%> 
 
+!!! Gerunds (verbal nouns) ! Исем фигыльләр
+%<ger%>       ! -{U}
+%<ger_past%>  ! -{G}{A}н
+%<ger_perf%>  ! -{G}{A}нл{I}к
+              ! (stresses the fact that something happened)
+              !# "Барысының да мәсьәләне үз башында _йөрткәнлеге_, теге яктан
+              !# да, бу яктан да үлчәп _караганлыгы_ сизелеп тора." (Ф. Хөсни);
+%<ger_ppot%>  ! -{I}рл{I}к/-{A}рл{I}к
+              ! (~the ability to do the denoted action)
+%<ger_abs%>   ! -{U}ч{I}л{I}к
+              ! This form shouldn't be that productive in Tatar, consider adding
+              ! them as nouns if they appear in corpus. Kazakh <ger_abs> is
+              ! translated with <ger>
+%<ger_fut%>   ! -{I}р/-{A}р
+              !# "Ярым кем _булырын_ белмим, мин әле ялгыз йөрим." (Ш.Галиев);
+%<ger_fut2%>  ! -{A}ч{A}к
+%<ger_fut3%>  ! {E}с{I}
+              ! (NOTE: ambigious with the volition participle (see above))
+              !# "_Күрәселәре_ алда әле";
+%<ger1%>      ! -м{A}к
+%<inf%>       ! -{A/I}рг{A}
+
+%<prc_perf%>  ! Perfect participle
+%<prc_impf%>  ! Imperfect participle
+%<prc_vol%>   ! Volition participle
+%<prc_cond%>  ! Conditional participle
+%<prc_fplan%> ! Future plan participle
+              
 !! Transitivity ! Күчмәлек ! Переходность
 %<tv%>        ! Transitive
 %<iv%>        ! Intransitive
@@ -204,6 +217,8 @@
 
 %>                 !
 %~                 !
+
+%{☭%}		   ! For Russian load words
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                       M O R P H O T A C T I C S                         !!!
@@ -1977,7 +1992,7 @@ PRNLEX-PERS ;
 климат:климат N1 ; ! ""
 клуб:клуб N1 ; ! ""
 клип:клип N1 ; ! ""
-код:код N1 ; ! ""
+код:код N1-RUS ; ! ""
 кодекс:кодекс%{ъ%} N1 ; ! ""
 коллега:коллега N1 ; ! ""
 колхоз:колхоз N1 ; ! ""
@@ -2446,7 +2461,7 @@ PRNLEX-PERS ;
 пәйғәмбәр:пәйғәмбәр N1 ; ! ""
 Раббы:раббы N1 ; ! ""
 рада:рада N1 ; ! ""
-район:район N1 ; ! ""
+район:район N1-RUS ; ! ""
 рапс:рапс N1 ; ! ""
 реакция:реакция N1 ; ! ""
 революция:революция N1 ; ! ""
@@ -49165,6 +49180,7 @@ COP-I ; ! ""
 тыу:тыу V-IV ; ! ""
 урынлаш:урынлаш V-IV ; ! ""
 яҙҙыр:яҙҙыр V-TV ; ! ""
+районла:районла V-TV ; ! "районировать"
 
 ! auto translated
 
