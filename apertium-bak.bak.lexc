@@ -175,10 +175,6 @@
               !# "_Күрәселәре_ алда әле";
 %<ger1%>      ! -м{A}к
 %<inf%>       ! -{A/I}рг{A}
-              
-!! Transitivity ! Күчмәлек ! Переходность
-%<tv%>        ! Transitive
-%<iv%>        ! Intransitive
 
 ! Transitivity ! Переходность
 %<tv%>             ! Transitive
@@ -206,6 +202,7 @@
 %<lquot%>          ! Quote marker (left hand side)
 %<rpar%>           ! Parenthetical marker (right hand side)
 %<lpar%>           ! Parenthetical marker (left hand side)
+%<punct%>          ! Other
 
 %{L%}              !
 %{N%}              !
@@ -278,7 +275,7 @@ LEXICON CLIT-EMPH-SANA
 
 LEXICON CLIT-EMPH-CHI
 
-%+cы%<emph%>:%>c%{I%} # ; ! ""
+%+cы%<emph%>:%>с%{I%} # ; ! ""
 # ;
 
 LEXICON CLIT-EMPH
@@ -367,7 +364,11 @@ LEXICON ATTR-SUBST
 
 %<attr%>: # ;
 %<subst%>: CASES ;
+%<subst%>: POSSESSIVES ;
 %<subst%>%<pl%>:%>%{L%}%{A%}р CASES ;
+%<subst%>%<pl%>:%>%{L%}%{A%}р POSSESSIVES ;
+
+%<attr%>: GENERAL-POSSESSIVE-ETC ;
 
 LEXICON GENERAL-POSSESSIVE-ETC
 
@@ -690,33 +691,33 @@ LEXICON V-FINITE-REGULAR_NEGATIVE
 %<pres%>:%>%{E%} V-PERS-PRESENT ;
 %<past%>:%>%{G%}%{A%}н V-PERS-S1 ;
 %<ifi%>:%>%{N%}%{I%} V-PERS-S2 ;
-%<fut2%>:%>%{j%}%{A%}c%{A%}%{K%} V-PERS-S1 ;
+%<fut2%>:%>%{j%}%{A%}с%{A%}%{K%} V-PERS-S1 ;
 
 LEXICON V-NONFINITE-IRREGULAR_NEGATIVE
 
 ! Participles
 %<prc_perf%>:%>%{I%}п CLIT-GHANA-ETC ;
-%<neg%>%<prc_perf%>:%>м%{A%}й%{е%}нc%{A%} CLIT-GHANA-ETC ;
+%<neg%>%<prc_perf%>:%>м%{A%}й%{е%}нс%{A%} CLIT-GHANA-ETC ;
 %<neg%>%<prc_perf%>:%>м%{A%}й CLIT-GHANA-ETC ;       ! Dir/LR
-%<neg%>%<prc_perf%>:%>м%{A%}йc%{A%} CLIT-GHANA-ETC ;      ! Dir/LR
+%<neg%>%<prc_perf%>:%>м%{A%}йс%{A%} CLIT-GHANA-ETC ;      ! Dir/LR
 
 %<prc_impf%>:%>%{E%} CLIT-GHANA-ETC ;
-%<neg%>%<prc_impf%>:%>м%{A%}й%{е%}нc%{A%} CLIT-GHANA-ETC ;
+%<neg%>%<prc_impf%>:%>м%{A%}й%{е%}нс%{A%} CLIT-GHANA-ETC ;
 %<neg%>%<prc_impf%>:%>м%{A%}й CLIT-GHANA-ETC ;       ! Dir/LR
-%<neg%>%<prc_impf%>:%>м%{A%}йc%{A%} CLIT-GHANA-ETC ;      ! Dir/LR
+%<neg%>%<prc_impf%>:%>м%{A%}йс%{A%} CLIT-GHANA-ETC ;      ! Dir/LR
 
 %<prc_vol%>:%>%{E%}һ%{I%} V-PERS-VOLITIONAL ;   ! FIXME:NOTE: this is the first type of volitative
                                     ! participle in Bashkir (see comment for <prc_vol> tag above).
                                     ! Former it was called <ger8>.
                                     ! A transfer rule to match bashkir prc_vol2 to tatar prc_vol is needed. /I.S./
 
-%<prc_fplan%>:%>м%{A%}ҡc%{I%} CLITICS-NO-COP ;
+%<prc_fplan%>:%>м%{A%}ҡс%{I%} CLITICS-NO-COP ;
 
 ! Verbal adverbs
 %<gna_perf%>:%>%{I%}п CLITICS-NO-COP ;
-%<neg%>%<gna_perf%>:%>м%{A%}й%{е%}нc%{A%} CLITICS-NO-COP ;
+%<neg%>%<gna_perf%>:%>м%{A%}й%{е%}нс%{A%} CLITICS-NO-COP ;
 %<neg%>%<gna_perf%>:%>м%{A%}й CLITICS-NO-COP ;       ! Dir/LR
-%<neg%>%<gna_perf%>:%>м%{A%}йc%{A%} CLITICS-NO-COP ;      ! Dir/LR
+%<neg%>%<gna_perf%>:%>м%{A%}йс%{A%} CLITICS-NO-COP ;      ! Dir/LR
 
 %<gna_until%>:%>%{G%}%{A%}нс%{I%} CLITICS-NO-COP ;
 
@@ -727,7 +728,7 @@ LEXICON V-NONFINITE-IRREGULAR_NEGATIVE
 %<ger1%>:%>м%{A%}%{K%} GER-INFL ;
 %<ger_fut3%>:%>%{E%}һ%{I%} GER_FUT3-POSS-REAL ;
 
-%<fut_plan%>:%>м%{A%}ҡc%{I%} V-PERS-S1 ;
+%<fut_plan%>:%>м%{A%}ҡс%{I%} V-PERS-S1 ;
 
 LEXICON V-NONFINITE-REGULAR_NEGATIVE
 
@@ -741,15 +742,15 @@ LEXICON V-NONFINITE-REGULAR_NEGATIVE
 ! Verbal adjectives
 %<gpr_past%>:%>%{G%}%{A%}н V-ADJ ;
 %<gpr_impf%>:%>%{E%}% торған V-ADJ ;
-%<gpr_pot%>:%>%{U%}c%{е%} V-ADJ ;
-%<gpr_fut2%>:%>%{j%}%{A%}c%{A%}%{K%} V-ADJ ;
+%<gpr_pot%>:%>%{U%}с%{е%} V-ADJ ;
+%<gpr_fut2%>:%>%{j%}%{A%}с%{A%}%{K%} V-ADJ ;
 
 ! Gerunds
 %<ger%>:%>%{U%} GER-INFL ;
 %<ger_past%>:%>%{G%}%{A%}н GER-INFL ;
 %<ger_perf%>:%>%{G%}%{A%}н%>%{L%}%{I%}%{K%} GER-INFL ;
 %<ger_abs%>:%>%{U%}%>с%{e%}%>%{L%}%{I%}%{K%} GER-INFL ;
-%<ger_fut2%>:%>%{j%}%{A%}c%{A%}%{K%} GER-POSS-REAL ;
+%<ger_fut2%>:%>%{j%}%{A%}с%{A%}%{K%} GER-POSS-REAL ;
 
 ! Imperatives
 %<imp%>%<p2%>%<sg%>: CLITICS-AFTER-IMP-SG ;
