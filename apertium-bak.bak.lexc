@@ -538,10 +538,10 @@ LEXICON V-ADJ
 
 LEXICON V-PERS-S1-NO1SG
 
-%<p2%>%<sg%>:%>%{h%}%{I%}ң CLITICS-NO-COP ;
+%<p2%>%<sg%>:%>һ{I%}ң CLITICS-NO-COP ;
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
 %<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
-%<p2%>%<pl%>:%>%{h%}%{I%}г%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>һ%{I%}г%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
 LEXICON V-PERS-S1
