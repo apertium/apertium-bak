@@ -214,6 +214,7 @@
 %{т%}              ! Realised as т before vowels, 0 otherwise
 %{ъ%}              ! Disappears and makes back harmony
 %{е%}              !
+%{j%}              !
 
 %>                 !
 %~                 !
