@@ -125,20 +125,34 @@
 ! Non-Finite verb forms ! WARNING: Number part of the tags is subject to change :)
                     ! Stay up-to-date
 
-!! Participles
-%<prc_impf%>       ! -{E}    !# ул _уйный_ алмады; мин _килә_ алмадым
-%<prc_perf%>           ! -{I}п   !# "_Йоклап_ яткан мәче авызына тычкан үзе _килеп_ керми."
-%<prc_vol%>        ! -{G}{I} !# _барғым_ килә             ! FIXME:NOTE: as far as I know, there are two types of vol.prc in Bashkir:
+!!! Participles
+%<prc_impf%>       ! -{E}    Imperfect participle  !# ул _уйный_ алмады; мин _килә_ алмадым
+%<prc_perf%>       ! -{I}п   Perfect participle    !# "_Йоклап_ яткан мәче авызына тычкан үзе _килеп_ керми."
+%<prc_vol%>        ! -{G}{I} Volition participle   !# _барғым_ килә             ! FIXME:NOTE: as far as I know, there are two types of vol.prc in Bashkir:
                                                       ! 1. looks like Bashkir vol.prc, 2. the second is like in in the example above.
                                                       ! {{test|tt|Бараһым килә.|Барасым килә.}}
                                                       ! {{test|tt|Барғым килә.|Барасым килә.}}
-%<prc_cond%>       ! -h{A}
+%<prc_cond%>       ! -h{A}   Conditional participle
+%<prc_fplan%> 	   ! -м{A}ҡc{I} Future plan participle
 
-!! Verbal adverbs - Хәл фигыльләр - Глаголные наречия
-%<gna_cond%>       ! -с{A}  !# "...кайда икәнен _белсә_ дә, әйтми..."
-%<gna_perf%>  
-%<gna_until%> 
-%<gna_after%> 
+
+!!! Verbal adverbs - Хәл фигыльләр - Глаголные наречия
+%<gna_cond%>       ! -һ{A}  !# "...кайда икәнен _белсә_ дә, әйтми..."
+%<gna_perf%>       ! -{I}п
+%<gna_until%>      ! -{G}{A}нс{I}
+%<gna_after%>      ! -{G}{A}с
+
+!!! Verbal adjectives ! Сыйфат фигыльләр ! Глагольные причастия
+%<gpr_past%>  ! -{G}{A}н
+%<gpr_impf%>  ! -{E}
+              ! TODO: this is equivalent of Kazakh <gpr_impf>; compound forms
+              ! should be handled in transfer, so check once more, whether
+              ! there is a real reason not to handle it there (it seemed so)
+%<gpr_pot%>   ! -{U}c{e}
+%<gpr_ppot%>  ! -{I}рл{I}к
+%<gpr_fut%>   ! -{I}р
+%<gpr_fut2%>  ! -{A}c{A}к
+%<gpr_fut3%>  ! -{E}һ{I}
 
 !!! Gerunds (verbal nouns) ! Исем фигыльләр
 %<ger%>       ! -{U}
@@ -155,18 +169,12 @@
               ! translated with <ger>
 %<ger_fut%>   ! -{I}р/-{A}р
               !# "Ярым кем _булырын_ белмим, мин әле ялгыз йөрим." (Ш.Галиев);
-%<ger_fut2%>  ! -{A}ч{A}к
+%<ger_fut2%>  ! -{A}c{A}к
 %<ger_fut3%>  ! {E}с{I}
               ! (NOTE: ambigious with the volition participle (see above))
               !# "_Күрәселәре_ алда әле";
 %<ger1%>      ! -м{A}к
 %<inf%>       ! -{A/I}рг{A}
-
-%<prc_perf%>  ! Perfect participle
-%<prc_impf%>  ! Imperfect participle
-%<prc_vol%>   ! Volition participle
-%<prc_cond%>  ! Conditional participle
-%<prc_fplan%> ! Future plan participle
               
 !! Transitivity ! Күчмәлек ! Переходность
 %<tv%>        ! Transitive
@@ -538,7 +546,7 @@ LEXICON V-ADJ
 
 LEXICON V-PERS-S1-NO1SG
 
-%<p2%>%<sg%>:%>һ{I%}ң CLITICS-NO-COP ;
+%<p2%>%<sg%>:%>һ%{I%}ң CLITICS-NO-COP ;
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
 %<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
 %<p2%>%<pl%>:%>һ%{I%}г%{I%}ҙ CLITICS-NO-COP ;
@@ -553,11 +561,11 @@ V-PERS-S1-NO1SG ;
 LEXICON V-PERS-S1-COP
 
 %<p1%>%<sg%>:%>%{I%}м CLITICS-NO-COP ;
-%<p2%>%<sg%>:%>%{h%}%{I%}ң CLITICS-NO-COP ;
+%<p2%>%<sg%>:%>һ%{I%}ң CLITICS-NO-COP ;
 %<p2%>%<frm%>%<sg%>:%{h%}%{I%}г%{I%}ҙ CLITICS-NO-COP ; ! FIXME: Check %'Ни өчен беләһегеҙме?%' ! <frm><sg> and <frm><pl> are the same forms in Bashkir; so maybe <frm><sp> would be better /I.S./
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
 %<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
-%<p2%>%<pl%>:%>%{h%}%{I%}г%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>һ%{I%}г%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
 LEXICON V-PERS-S2
