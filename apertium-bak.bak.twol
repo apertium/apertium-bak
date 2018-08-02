@@ -10,9 +10,9 @@ Alphabet
 
  %{h%}:һ %{n%}:н %{l%}:л %{j%}:0
 
- %{т%}:0 %{д%}:0 %{ъ%}:0 %{☭%}:0 %{е%}:ы
+ %{т%}:0 %{д%}:0 %{ъ%}:0 %{☭%}:0
 
- %{j%}:0 %>:0  ; 
+ %{е%}:ы %{ger%}:0 %{j%}:0 %>:0  ; 
 
 Sets
 
@@ -86,8 +86,8 @@ Rules
          :SurVow %>: _ ;
 
 "U Vowel Harmony"
-%{U%}:ү <=> [ :FrontVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
-
+!%{U%}:ү <=> [ :FrontVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+%{U%}:ү <=> [ :FrontVow :Cns* [ :Cns | %{ger%}: ] ]/[ %>: | %  | :0 ] _ ;
 
 
 "Deletion of {I} after vowels"
@@ -205,4 +205,10 @@ Cx:Cy <=> :CnsVoiceless/[ %>: | :0 | %  ] _ ;
 
 "Convert {e} to e"
 %{е%}:е <=> [ :FrontVow :Cns* :Cns ]/%>: _ ;
+
+"Rule for the penultimate vowel in gerunds"
+%{ger%}:Vy <=> [ :PreviousVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+             where          Vy in ( о ө е е е е е ы ы ы ы ы)
+                   PreviousVow in ( о ө ә е э и ү а у ы я ю) 
+             matched;
 

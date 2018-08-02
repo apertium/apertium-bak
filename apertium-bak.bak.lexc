@@ -189,6 +189,7 @@
 
 ! Clitics
 %<qst%>            ! Modal question particle
+%<emph%>           ! Emphasizing modal particle
 %<mod_foc%>        ! focus thingy
 %<mod_ass%>        ! assertive
 %<mod_ind%>        ! indefinite (expressing doubt)
@@ -220,6 +221,7 @@
 %{ъ%}              ! Disappears and makes back harmony
 %{е%}              !
 %{j%}              !
+%{ger%}            !
 
 %>                 !
 %~                 !
@@ -234,6 +236,7 @@
  LEXICON Root
 !============!
 
+Copula ;
 Conjunctions ;
 Postpositions ;
 Postadverbs ;
@@ -245,9 +248,9 @@ ProperNouns ;
 Adjectives ;
 Adverbs ;
 Verbs ;
+Interjections ;
 Abbreviations ;
 Punctuation ;
-Interjections ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -550,7 +553,7 @@ LEXICON V-PERS-S1-NO1SG
 %<p2%>%<sg%>:%>һ%{I%}ң CLITICS-NO-COP ;
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
 %<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
-%<p2%>%<pl%>:%>һ%{I%}г%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>һ%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
 LEXICON V-PERS-S1
@@ -561,12 +564,12 @@ V-PERS-S1-NO1SG ;
 
 LEXICON V-PERS-S1-COP
 
-%<p1%>%<sg%>:%>%{I%}м CLITICS-NO-COP ;
+%<p1%>%<sg%>:%>м%{I%}н CLITICS-NO-COP ;
 %<p2%>%<sg%>:%>һ%{I%}ң CLITICS-NO-COP ;
-%<p2%>%<frm%>%<sg%>:%{h%}%{I%}г%{I%}ҙ CLITICS-NO-COP ; ! FIXME: Check %'Ни өчен беләһегеҙме?%' ! <frm><sg> and <frm><pl> are the same forms in Bashkir; so maybe <frm><sp> would be better /I.S./
+%<p2%>%<frm%>%<sg%>:%{h%}%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ; ! FIXME: Check %'Ни өчен беләһегеҙме?%' ! <frm><sg> and <frm><pl> are the same forms in Bashkir; so maybe <frm><sp> would be better /I.S./
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
 %<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
-%<p2%>%<pl%>:%>һ%{I%}г%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>һ%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
 LEXICON V-PERS-S2
@@ -574,8 +577,8 @@ LEXICON V-PERS-S2
 %<p1%>%<sg%>:%>м CLITICS-NO-COP ;
 %<p2%>%<sg%>:%>ң CLITICS-NO-COP ;
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
-%<p1%>%<pl%>:%>ҡ CLITICS-NO-COP ;
-%<p2%>%<pl%>:%>г%{I%}ҙ CLITICS-NO-COP ;
+%<p1%>%<pl%>:%>%{K%} CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>%{G%}%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
 LEXICON V-PERS-PRESENT
@@ -590,11 +593,11 @@ LEXICON V-PERS-VOLITIONAL
 %<p2%>%<sg%>:%>ң CLIT-GHANA-ETC ;
 %<p3%>%<sg%>: CLIT-GHANA-ETC ;
 %<p1%>%<pl%>:%>б%{I%}ҙ CLIT-GHANA-ETC ;
-%<p2%>%<pl%>:%>г%{I%}ҙ CLIT-GHANA-ETC ;
+%<p2%>%<pl%>:%>%{G%}%{I%}ҙ CLIT-GHANA-ETC ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р%>%{I%} CLIT-GHANA-ETC ;
 
-%<p2%>%<frm%>%<sg%>:%>г%{I%}ҙ CLIT-GHANA-ETC ;
-%<p2%>%<frm%>%<pl%>:%>г%{I%}ҙ CLIT-GHANA-ETC ;
+%<p2%>%<frm%>%<sg%>:%>%{G%}%{I%}ҙ CLIT-GHANA-ETC ;
+%<p2%>%<frm%>%<pl%>:%>%{G%}%{I%}ҙ CLIT-GHANA-ETC ;
 
 ! G E R U N D S   I N F L E C T I O N
 
@@ -742,21 +745,21 @@ LEXICON V-NONFINITE-REGULAR_NEGATIVE
 ! Verbal adjectives
 %<gpr_past%>:%>%{G%}%{A%}н V-ADJ ;
 %<gpr_impf%>:%>%{E%}% торған V-ADJ ;
-%<gpr_pot%>:%>%{U%}с%{е%} V-ADJ ;
+%<gpr_pot%>:%>%{ger%}%{U%}с%{е%} V-ADJ ;
 %<gpr_fut2%>:%>%{j%}%{A%}с%{A%}%{K%} V-ADJ ;
 
 ! Gerunds
-%<ger%>:%>%{U%} GER-INFL ;
+%<ger%>:%>%{ger%}%{U%} GER-INFL ;
 %<ger_past%>:%>%{G%}%{A%}н GER-INFL ;
 %<ger_perf%>:%>%{G%}%{A%}н%>%{L%}%{I%}%{K%} GER-INFL ;
-%<ger_abs%>:%>%{U%}%>с%{e%}%>%{L%}%{I%}%{K%} GER-INFL ;
+%<ger_abs%>:%>%{ger%}%{U%}%>с%{e%}%>%{L%}%{I%}%{K%} GER-INFL ;
 %<ger_fut2%>:%>%{j%}%{A%}с%{A%}%{K%} GER-POSS-REAL ;
 
 ! Imperatives
 %<imp%>%<p2%>%<sg%>: CLITICS-AFTER-IMP-SG ;
-%<imp%>%<p2%>%<pl%>:%>%{I%}г%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
-%<imp%>%<p2%>%<frm%>%<sg%>:%>%{I%}г%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
-%<imp%>%<p2%>%<frm%>%<pl%>:%>%{I%}г%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
+%<imp%>%<p2%>%<pl%>:%>%{I%}%{G%}%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
+%<imp%>%<p2%>%<frm%>%<sg%>:%>%{I%}%{G%}%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
+%<imp%>%<p2%>%<frm%>%<pl%>:%>%{I%}%{G%}%{I%}ҙ  CLITICS-AFTER-IMP-PL ;
 
 ! Optative/jussive forms
 
@@ -985,6 +988,14 @@ LEXICON INTERJ
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!==============!
+ LEXICON Copula
+!==============!
+
+
+COP-I ; ! ""
 
 
 !====================!
@@ -5848,7 +5859,6 @@ PRNLEX-PERS ;
 сановник:сановник N1 ; ! ""
 лантан:лантан N1 ; ! ""
 эсәк%-ҡарын:эсәк%-ҡарын N1 ; ! ""
-: N1 ; ! ""
 ҡабатланыусы:ҡабатланыусы N1 ; ! ""
 һүндереү:һүндереү N1 ; ! ""
 декстрин:декстрин N1 ; ! ""
@@ -6224,7 +6234,6 @@ PRNLEX-PERS ;
 океанология:океанология N1 ; ! ""
 эҙлеклелек:эҙлеклелек N1 ; ! ""
 бөкрө:бөкрө N1 ; ! ""
-: N1 ; ! ""
 токарь:токарь N1 ; ! ""
 санация:санация N1 ; ! ""
 феномен:феномен N1 ; ! ""
@@ -6713,7 +6722,6 @@ PRNLEX-PERS ;
 шпага:шпага N1 ; ! ""
 терренкур:терренкур N1 ; ! ""
 тоталитарлыҡ:тоталитарлыҡ N1 ; ! ""
-: N1 ; ! ""
 кон:кон N1 ; ! ""
 холоп:холоп N1 ; ! ""
 тәкәбберлек:тәкәбберлек N1 ; ! ""
@@ -53998,8 +54006,6 @@ orgy:orgy N1 ; ! ""
 бар:бар A3 ; ! ""
 юҡ:юҡ A3 ; ! ""
 
-COP-I ; ! ""
-
 кил:кил VAUX ; ! ""
 ал:ал VAUX ; ! ""
 
@@ -54823,8 +54829,8 @@ COP-I ; ! ""
 ауырһын:ауырһын V-IV ; ! ""
 ауырт:ауырт V-IV ; ! ""
 ауырттыр:ауырттыр V-TV ; ! ""
-һөҙәк:һөҙәк V-IV ; ! ""
-даими% булмаған:даими% булмаған V-IV ; ! ""
+ауыш:ауыш V-IV ; ! ""
+ағар:ағар V-IV ; ! ""
 ағарт:ағарт V-TV ; ! ""
 ағарын:ағарын V-IV ; ! ""
 ағыҙ:ағыҙ V-TV ; ! ""
@@ -54871,7 +54877,7 @@ COP-I ; ! ""
 анһаттан:анһаттан V-IV ; ! ""
 аңҡы:аңҡы V-TV ; ! ""
 аптыра:аптыра V-IV ; ! ""
-аптырап% кал:аптырап% кал V-IV ; ! ""
+аптырап% ҡал:аптырап% ҡал V-IV ; ! ""
 арала:арала V-TV ; ! ""
 арҡанла:арҡанла V-TV ; ! ""
 нисек% етте% шулай% һал:нисек% етте% шулай% һал V-TV ; ! ""
@@ -54883,7 +54889,7 @@ COP-I ; ! ""
 арат:арат V-TV ; ! ""
 ас:ас V-TV ; ! ""
 ара:ара V-TV ; ! ""
-ассимиляциялау:ассимиляциялау V-TV ; ! ""
+ассимиляцияла:ассимиляцияла V-TV ; ! ""
 асылын% аңла:асылын% аңла V-IV ; ! ""
 асылын:асылын V-IV ; ! ""
 аталан:аталан V-IV ; ! ""
@@ -55040,8 +55046,8 @@ COP-I ; ! ""
 тулҡынлан:тулҡынлан V-IV ; ! ""
 дуҫлаш:дуҫлаш V-IV ; ! ""
 дусар% был:дусар% был V-IV ; ! ""
-дыңғырҙап:дыңғырҙап V-IV ; ! ""
-дыңғырҙатып:дыңғырҙатып V-TV ; ! ""
+дыңғырла:дыңғырла V-IV ; ! ""
+дыңғырлат:дыңғырлат V-TV ; ! ""
 был% йәш% кеше:был% йәш% кеше V-IV ; ! ""
 ек:ек V-TV ; ! ""
 ела:ела V-IV ; ! ""
@@ -55188,7 +55194,7 @@ COP-I ; ! ""
 йөрөтөл:йөрөтөл V-IV ; ! ""
 йөрөт:йөрөт V-TV ; ! ""
 уткер:уткер V-TV ; ! ""
-ашыҡ%-бошоҡ:ашыҡ%-бошоҡ V-IV ; ! ""
+ҡабалан:ҡабалан V-IV ; ! ""
 ҡабарын:ҡабарын V-IV ; ! ""
 ҡабул% ит:ҡабул% ит V-TV ; ! ""
 ҡабул% итмә:ҡабул% итмә V-TV ; ! ""
@@ -55847,7 +55853,7 @@ COP-I ; ! ""
 хәбәр% ит:хәбәр% ит V-TV ; ! ""
 хәүефлән:хәүефлән V-IV ; ! ""
 хәйерселәнә:хәйерселәнә V-IV ; ! ""
-хәҙерҙән:хәҙерҙән V-IV ; ! ""
+әҙерлән:әҙерлән V-IV ; ! ""
 хәҙерҙә:хәҙерҙә V-TV ; ! ""
 хәйләлә:хәйләлә V-IV ; ! ""
 хәлдән% тай:хәлдән% тай V-IV ; ! ""
@@ -55924,7 +55930,7 @@ COP-I ; ! ""
 суктер:суктер V-TV ; ! ""
 сүместә:сүместә V-TV ; ! ""
 сүмәләләй:сүмәләләй V-TV ; ! ""
-сыбыҡта:сыбыҡта V-TV ; ! ""
+сыбыҡла:сыбыҡла V-TV ; ! ""
 сығарт:сығарт V-TV ; ! ""
 сығымдан:сығымдан V-IV ; ! ""
 сыҙа:сыҙа V-IV ; ! ""
@@ -56257,7 +56263,6 @@ COP-I ; ! ""
 һылап%-һыйпа:һылап%-һыйпа V-TV ; ! ""
 әрләш:әрләш V-IV ; ! ""
 ятла:ятла V-TV ; ! ""
-әс:әс V-TV ; ! ""
 хәллән:хәллән V-IV ; ! ""
 кител:кител V-IV ; ! ""
 кәкрәйт:кәкрәйт V-TV ; ! ""
@@ -56665,7 +56670,6 @@ COP-I ; ! ""
 тимерлә:тимерлә V-TV ; ! ""
 сәлдер:сәлдер V-TV ; ! ""
 теҙлән:теҙлән V-TV ; ! ""
-: V-TV ; ! ""
 аша:аша V-TV ; ! ""
 ирен:ирен V-TV ; ! ""
 алда:алда V-TV ; ! ""
@@ -56893,3 +56897,9 @@ UTC:UTC ABBR ; ! ""
 /%<sent%>:/ # ;
 
 <(%0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+>  DIGITLEX ; ! Use/Circ
+
+<( %* | %# | © | %+ | • | %& | = )+> PUNCT ; ! Use/MT
+
+LEXICON PUNCT
+
+%<punct%>: # ;
