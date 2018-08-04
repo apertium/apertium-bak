@@ -98,6 +98,8 @@ Rules
 
 "Deletion of {A} after vowels"
 %{A%}:0 <=> [ :SurVow ]/[ :0 | %>: ] _ ;
+            except 
+            %{j%}:/[ :0 | %>: ] _ ;
 
 
 !!!! Desonorisation !!!!
@@ -173,9 +175,9 @@ Cx:Cy <=> :CnsVoiceless/[ %>: | :0 | %  ] _ ;
 "Back assimilation of G"
 %{G%}:ғ <=> [ :BackVow :Cns* ]/[ %>: | :0 | :и | :у ] _ ;
             except
-    :CnsVoiceless/[ %>: | :0 ] _ ;
-        :FrontCns/[ %>: | :0 ] _ ;
-                   :Nasals %>: _ %{A%}: .#. ;
+     :CnsVoiceless/[ %>: | :0 ] _ ;
+         :FrontCns/[ %>: | :0 ] _ ;
+                    !:Nasals %>: _ %{A%}: .#. ;
 
 "Voicing assimilation of back G"
 %{G%}:ҡ <=> [ :BackVow :Cns* [ :CnsVoiceless - :FrontCns ] ]/[ %>: | :0 ] _ ;
@@ -197,11 +199,11 @@ Cx:Cy <=> :CnsVoiceless/[ %>: | :0 | %  ] _ ;
 "{д} surfaces before vowels"
 %{д%}:д <=> _ :Vow/[ %>: | :0 ] ;
 
-"Convert {A} to я after й and {j}"
-%{A%}:я <=> [ [ :BackVow %{j%}: ] | й: ]/%>: _ ;
+"Convert {A} to я after BackVow and й or {j}"
+%{A%}:я <=> [  :BackVow [ %{j%}: | й: ] ]/[ %>: | %  | :0 ] _ ;
 
-"Convert {A} to йә after й and {j}"
-%{A%}:йә <=> [ [ :FrontVow %{j%}: ] | й: ]/%>: _ ;
+"Convert {A} to йә after FrontVow and й or {j}"
+%{A%}:йә <=> [  :FrontVow [ %{j%}: | й: ] ]/[ %>: | %  | :0 ] _ ;
 
 "Convert {e} to e"
 %{е%}:е <=> [ :FrontVow :Cns* :Cns ]/%>: _ ;

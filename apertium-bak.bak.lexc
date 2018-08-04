@@ -556,6 +556,9 @@ LEXICON V-PERS-S1-NO1SG
 %<p2%>%<pl%>:%>һ%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
 
+%<p2%>%<frm%>%<sg%>:%>һ%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<frm%>%<pl%>:%>һ%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
+
 LEXICON V-PERS-S1
 
 %<p1%>%<sg%>:%>м%{I%}н CLITICS-NO-COP ;
@@ -566,11 +569,14 @@ LEXICON V-PERS-S1-COP
 
 %<p1%>%<sg%>:%>м%{I%}н CLITICS-NO-COP ;
 %<p2%>%<sg%>:%>һ%{I%}ң CLITICS-NO-COP ;
-%<p2%>%<frm%>%<sg%>:%{h%}%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ; ! FIXME: Check %'Ни өчен беләһегеҙме?%' ! <frm><sg> and <frm><pl> are the same forms in Bashkir; so maybe <frm><sp> would be better /I.S./
+!%<p2%>%<frm%>%<sg%>:h%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ; ! FIXME: Check %'Ни өчен беләһегеҙме?%' ! !!!!<frm><sg> and <frm><pl> are the same forms in Bashkir; so maybe <frm><sp> would be better /I.S./
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
 %<p1%>%<pl%>:%>б%{I%}ҙ CLITICS-NO-COP ;
 %<p2%>%<pl%>:%>һ%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
+
+%<p2%>%<frm%>%<sg%>:%>h%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
+%<p2%>%<frm%>%<pl%>:%>h%{I%}%{G%}%{I%}ҙ CLITICS-NO-COP ;
 
 LEXICON V-PERS-S2
 
@@ -580,6 +586,9 @@ LEXICON V-PERS-S2
 %<p1%>%<pl%>:%>%{K%} CLITICS-NO-COP ;
 %<p2%>%<pl%>:%>%{G%}%{I%}ҙ CLITICS-NO-COP ;
 %<p3%>%<pl%>:%>%{L%}%{A%}р CLITICS-NO-COP ;
+
+%<p2%>%<frm%>%<sg%>:%>%{G%}%{I%}з CLITICS-NO-COP ;
+%<p2%>%<frm%>%<pl%>:%>%{G%}%{I%}з CLITICS-NO-COP ;
 
 LEXICON V-PERS-PRESENT
 
