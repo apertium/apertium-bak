@@ -41,6 +41,7 @@
 %<pat%>            ! Patronym     ! Отчество
 %<org%>            ! Organization ! Организация
 %<al%>             ! Other        ! Остальное
+%<unk%>            ! Unknown      !
 
 !! gender of anthroponyms and cognomes
 %<m%>              ! Masculine    ! Мужской род
@@ -253,6 +254,7 @@ Verbs ;
 Interjections ;
 Abbreviations ;
 Punctuation ;
+Guesser ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -957,17 +959,33 @@ LEXICON PRON-IND
 
 %<prn%>%<ind%>: CASES ;
 
-LEXICON DETQNTLEX
+!!!!!!!!!!!!!!!!!!!!!      DETERMINERS
+
+LEXICON DET-DEM
+
+%<det%>%<dem%>: # ;
+
+LEXICON DET-QNT
 
 %<det%>%<qnt%>: # ;
 
-LEXICON DETINDLEX
+LEXICON DET-IND
 
 %<det%>%<ind%>: # ;
 
-LEXICON DETDEMLEX
+LEXICON DET-ITG
 
-%<det%>%<dem%>: # ;
+%<det%>%<itg%>: # ;
+
+LEXICON DET-NEG
+
+%<det%>%<neg%>: # ;
+
+LEXICON DET-REF
+
+%<det%>%<ref%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!
 
 LEXICON POSTLEX
 
@@ -1220,19 +1238,35 @@ PRNLEX-PERS ;
 !===================!
 
 
-был:был DETDEMLEX ; ! ""
-ошо:ошо DETDEMLEX ; ! ""
-шул:шул DETDEMLEX ; ! ""
-теге:теге DETDEMLEX ; ! ""
+был:был DET-DEM ; ! ""
+ошо:ошо DET-DEM ; ! ""
+теге:теге DET-DEM ; ! ""
+ул:ул DET-DEM ; ! ""
+шул:шул DET-DEM ; ! ""
+әлеге:әлеге DET-DEM ; ! ""
 
-бөтә:бөтә DETQNTLEX ; ! ""
-бар:бар DETQNTLEX ; ! ""
-барлыҡ:барлыҡ DETQNTLEX ; ! ""
+бар:бар DET-QNT ; ! ""
+барлыҡ:барлыҡ DET-QNT ; ! ""
+барса:барса DET-QNT ; ! ""
+бер% нисә:бер% нисә DET-QNT ; ! ""
+бөтә:бөтә DET-QNT ; ! ""
+һәммә:һәммә DET-QNT ; ! ""
+һәр:һәр DET-QNT ; ! ""
+һәр% бер:һәр% бер DET-QNT ; ! ""
+һәр% төрлө:һәр% төрлө DET-QNT ; ! ""
 
-бер:бер DETINDLEX ; ! ""
-берәр:берәр DETINDLEX ; ! ""
-бер% ниндәй:бер% ниндәй DETINDLEX ; ! ""
+бер:бер DET-IND ; ! ""
+берәр:берәр DET-IND ; ! ""
 
+ҡай:ҡай DET-ITG ; ! ""
+ҡайһы:ҡайһы DET-ITG ; ! "which"
+күпме:күпме DET-ITG ; ! ""
+
+бер% ниндәй:бер% ниндәй DET-NEG ; ! ""
+һис% бер:һис% бер DET-NEG ; ! ""
+һис% ниндәй:һис% ниндәй DET-NEG ; ! ""
+
+үҙ:үҙ DET-REF ; ! ""
 
 !================!
  LEXICON Numerals
@@ -2206,6 +2240,7 @@ PRNLEX-PERS ;
 ҡеүәт:ҡеүәт N1 ; ! ""
 ҡиәфәт:ҡиәфәт N1 ; ! ""
 ҡойма:ҡойма N1 ; ! ""
+ҡойоусы:ҡойоусы N1 ; ! ""
 ҡойроҡ:ҡойроҡ N1 ; ! ""
 ҡол:ҡол N1 ; ! ""
 ҡолаҡ:ҡолаҡ N1 ; ! ""
@@ -15246,6 +15281,7 @@ PRNLEX-PERS ;
 Антарктика:Антарктика NP-TOP ; ! ""
 Антигуа:Антигуа NP-TOP ; ! ""
 Антиль:Антиль NP-TOP ; ! ""
+Анхальт:Анхальт NP-TOP ; ! ""
 Апас:Апас NP-TOP ; ! ""
 Аракс:Аракс NP-TOP ; ! ""
 Арал:Арал NP-TOP ; ! ""
@@ -16168,6 +16204,7 @@ PRNLEX-PERS ;
 Чистай:Чистай NP-TOP ; ! ""
 Чита:Чита NP-TOP ; ! ""
 Чукотка:Чукотка NP-TOP ; ! ""
+Чулым:Чулым NP-TOP ; ! ""
 Шанхай:Шанхай NP-TOP ; ! ""
 Шахтинск:Шахтинск NP-TOP ; ! ""
 Швейцария:Швейцария NP-TOP ; ! ""
@@ -18763,6 +18800,7 @@ PRNLEX-PERS ;
 Иҙел:Иҙел NP-TOP ; ! ""
 Кама:Кама NP-TOP ; ! ""
 Обь:Обь NP-TOP ; ! ""
+Обь:Объ NP-TOP ; ! "" Dir/LR
 Ока:Ока NP-TOP ; ! ""
 
 ! Rivers from wikidata
@@ -19650,6 +19688,7 @@ PRNLEX-PERS ;
 Бишелап:Бишелап NP-TOP ; ! ""
 Бишенде:Бишенде NP-TOP ; ! ""
 Биәтьяҙы:Биәтьяҙы NP-TOP ; ! ""
+Бия:Бия NP-TOP ; ! ""
 Биявашка:Биявашка NP-TOP ; ! ""
 Блазновка:Блазновка NP-TOP ; ! ""
 Блашта:Блашта NP-TOP ; ! ""
@@ -20753,6 +20792,7 @@ PRNLEX-PERS ;
 Керчик:Керчик NP-TOP ; ! ""
 Кет%-Ю:Кет%-Ю NP-TOP ; ! ""
 Кетчер:Кетчер NP-TOP ; ! ""
+Кеть:Кеть NP-TOP ; ! ""
 Кеум:Кеум NP-TOP ; ! ""
 Кёдза:Кёдза NP-TOP ; ! ""
 Кёшка:Кёшка NP-TOP ; ! ""
@@ -56923,10 +56963,11 @@ UTC:UTC ABBR ; ! ""
 %:%<sent%>:%: # ;
 %!%<sent%>:%! # ;
 %-%<guio%>:%- # ;
+%–%<guio%>:%– # ;
 %—%<guio%>:%— # ;
 ,%<cm%>:, # ;
 %?%<sent%>:%? # ;
-%%'%<apos%>:%%' # ;
+%'%<apos%>:%' # ;
 %"%<sent%>:%" # ;
 %«%<lquot%>:%« # ;
 %»%<rquot%>:%» # ;
@@ -56936,8 +56977,8 @@ UTC:UTC ABBR ; ! ""
 %]%<rpar%>:%] # ;
 %[%<lpar%>:%[ # ;
 %)%<rpar%>:%) # ;
-\%<sent%>:\ # ;
-/%<sent%>:/ # ;
+%\%<sent%>:\ # ;
+%/%<sent%>:/ # ;
 
 <(%0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+>  DIGITLEX ; ! Use/Circ
 
@@ -56946,3 +56987,40 @@ UTC:UTC ABBR ; ! ""
 LEXICON PUNCT
 
 %<punct%>: # ;
+
+LEXICON NP-UNK 
+
+%<np%>%<unk%>: # ;
+
+LEXICON GUESS-QUEUE
+
+<(a | b | c | d | e | f | g | h | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+> NP-UNK ;
+
+LEXICON Guesser
+
+A:A GUESS-QUEUE ; 
+B:B GUESS-QUEUE ; 
+C:C GUESS-QUEUE ; 
+D:D GUESS-QUEUE ; 
+E:E GUESS-QUEUE ; 
+F:F GUESS-QUEUE ; 
+G:G GUESS-QUEUE ; 
+H:H GUESS-QUEUE ; 
+J:J GUESS-QUEUE ; 
+K:K GUESS-QUEUE ; 
+L:L GUESS-QUEUE ; 
+M:M GUESS-QUEUE ; 
+N:N GUESS-QUEUE ; 
+O:O GUESS-QUEUE ; 
+P:P GUESS-QUEUE ; 
+Q:Q GUESS-QUEUE ; 
+R:R GUESS-QUEUE ; 
+S:S GUESS-QUEUE ; 
+T:T GUESS-QUEUE ; 
+U:U GUESS-QUEUE ; 
+V:V GUESS-QUEUE ; 
+W:W GUESS-QUEUE ; 
+X:X GUESS-QUEUE ; 
+Y:Y GUESS-QUEUE ; 
+Z:Z GUESS-QUEUE ; 
+
