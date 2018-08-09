@@ -10,9 +10,11 @@ Alphabet
 
  %{h%}:һ %{n%}:н %{l%}:л %{j%}:0
 
- %{т%}:0 %{д%}:0 %{ъ%}:0 %{☭%}:0
+ %{т%}:0 %{д%}:0 %{ъ%}:0 %{ь%}:0
 
- %{е%}:ы %{ger%}:0 %{j%}:0 %>:0  ; 
+ %{е%}:ы %{ger%}:0 %{j%}:0 %{☭%}:0
+
+ %{np%}:0 %>:0  ; 
 
 Sets
 
@@ -64,10 +66,11 @@ Rules
 
 !!!! Vowel Harmony !!!!
 "A Vowel Harmony"
-%{A%}:ә <=> [ :FrontVow :Cns* :Cns ]/[ %>: | %  | :0 ] _ ;
+%{A%}:ә <=> [ :FrontVow :Cns* :Cns ]/[ %>: | %  | [ :0 - [ %{ъ%}: | %{☭%}: ] ] ] _ ;
 
 "I Vowel Harmony"
 %{I%}:Vy <=> [ :PreviousVow :Cns* :Cns ]/[ %>: | %  | [ :0 - [ %{ъ%}: | %{☭%}: ] ] ] _ ;
+                                               [ %{ь%}:0 :Cns* ]/[ [ :0 - %{ь%}:0 ] ] _ ;
              except
                                       %{n%}:н/[ :0 | %>: ] _ ;
              where          Vy in ( о е е е е ө е )
@@ -213,4 +216,27 @@ Cx:Cy <=> :CnsVoiceless/[ %>: | :0 | %  ] _ ;
              where          Vy in ( о ө е е е е е ы ы ы ы ы)
                    PreviousVow in ( о ө ә е э и ү а у ы я ю) 
              matched;
+
+"Soft sign deletion before suffixes"
+ь:0 <=> _ (:0) %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+
+"т deletion in ст before suffixes"
+ст:с%{ъ%} <=> _ (:0) %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+         except
+                  _ %{np%}:/:0 %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+
+"ть deletion in сть before suffixes"
+сть:с%{ъ%} <=> _ (:0) %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+         except
+                  _ %{np%}:/:0 %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+
+"т deletion in вт before suffixes"
+вт:в%{ъ%} <=> _ (:0) %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+         except
+                  _ %{np%}:/:0 %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+
+"д deletion in зд before suffixes"
+зд:з%{ъ%} <=> _ (:0) %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
+         except
+                  _ %{np%}:/:0 %>: [ :Vow | :Cns ]/[ :0 | %>: ] ;
 
