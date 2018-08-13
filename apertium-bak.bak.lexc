@@ -79,6 +79,7 @@
 %<abe%>        ! Abessive=Privative
 !лишительный   !# -һыз/-һез !! not used after posessives
 !обладательный !# -Lы/-Lе   !! not used after posessives
+%<equ%>        !  -са
 
 ! Levels of comparison of adjectives
 %<comp%>           ! Comparative
@@ -89,7 +90,7 @@
 
 ! Pronoun types
 %<pers%>           ! Personal
-%<ref%>            ! Reflexive
+%<recip%>          ! Reciprocal
 
 ! Pronoun and determiner types
 %<dem%>            ! Demonstrative
@@ -97,6 +98,7 @@
 %<itg%>            ! Interrogative
 %<qnt%>            ! Quantifier
 %<neg%>            ! Negative    ! FIXME:NOTE: also used for verbs
+%<ref%>            ! Reflexive
 
 ! Numeral types
 %<ord%>            ! Ordinal
@@ -226,6 +228,16 @@
 %{ger%}            ! For vowel in gerunds
 %{np%}             ! For proper nouns
 
+%{а%}              ! Archiphoneme for back vowel numerals/abbreviation
+%{э%}              ! Archiphoneme for front vowel numerals/abbreviation
+
+%{й%}              !
+%{л%}              !
+%{н%}              !
+%{з%}              !
+%{т%}              !
+%{с%}              !
+
 %>                 !
 %~                 !
 
@@ -239,6 +251,7 @@
  LEXICON Root
 !============!
 
+ModalParticles ;
 Copula ;
 Conjunctions ;
 Postpositions ;
@@ -252,8 +265,10 @@ Adjectives ;
 Adverbs ;
 Verbs ;
 Interjections ;
+Ideophones ;
 Abbreviations ;
 Punctuation ;
+Digits ; ! Use/Circ
 Guesser ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -273,7 +288,178 @@ Guesser ;
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-!!!!!!!!!!!!!!!!!!!!!!     CLITICS
+!==============================================================================!
+!                               N U M E R A L S
+!==============================================================================!
+
+LEXICON CASE-NONOM
+
+! This continuation lexicon is a copy of the normal case lexicon,
+! only it does not include nominative
+!   1<num><nom> = 1, 1<num><acc> = 1-{N}{I}
+
+%<gen%>:%>%{N%}%{I%}ң CLITICS-NO-COP ;
+%<dat%>:%>%{G%}%{A%} CLITICS-NO-COP ;
+%<acc%>:%>%{N%}%{I%} CLITICS-NO-COP ;
+%<abl%>:%>%{G%}%{A%}н # ;
+%<loc%>:%>%{L%}%{A%} # ;
+
+LEXICON CASE-ETC-NONOM
+
+CASE-NONOM ;
+GENERAL-POSSESSIVE-ETC ;
+
+LEXICON N-INFL-COMMON-NONOM
+
+POSSESSIVES ;
+CASE-ETC-NONOM ;
+
+LEXICON SUBST-NONOM
+
+N-INFL-COMMON-NONOM ;
+%<pl%>:%>%{L%}%{A%}р N-INFL-COMMON-NONOM ;
+
+LEXICON SQRD
+! This lexicon includes common ways of writing squared, cubed etc.
+
+²%<num%>:2 # ;  ! Dir/LR
+³%<num%>:3 # ;  ! Dir/LR
+²%<num%>:² # ;
+³%<num%>:³ # ;
+%<num%>: # ;
+
+LEXICON NUM-DIGIT
+
+%<num%>: # ;
+%<num%>%<subst%>%<nom%>: # ;
+%<num%>%<subst%>:%- SUBST-NONOM ;
+%<num%>%<subst%>: SUBST-NONOM ; ! Dir/LR
+
+%<num%>%<ord%>:% нс%{I%} # ;
+%<num%>%<ord%>%<subst%>%<nom%>:% нс%{I%} # ;
+%<num%>%<ord%>%<subst%>:% нс%{I%} SUBST-NONOM ;
+%<num%>%<ord%>:% нсе # ; ! Dir/LR hack
+%<num%>%<ord%>%<subst%>%<nom%>:% нсе # ; ! Dir/LR hack
+%<num%>%<ord%>%<subst%>:% нсе SUBST-NONOM ; ! Dir/LR hack
+%<num%>%<ord%>:%-н SUBST-NONOM ; ! Dir/LR hack
+%<num%>%<ord%>:н SUBST-NONOM ; ! Dir/LR hack
+
+%<num%>%<ord%>:нс%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>%<nom%>:нс%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>:нс%{I%} SUBST-NONOM ; ! Dir/LR
+%<num%>%<ord%>:%-нс%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>%<nom%>:%-нс%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>:%-нс%{I%} SUBST-NONOM ; ! Dir/LR
+! FIXME CHECK If there is a rule for deletion of {I} after the vowel
+! of the stem, variants below should be default ones
+%<num%>%<ord%>:%-%{I%}нс%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>%<nom%>:%-%{I%}нс%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>:%-%{I%}нс%{I%} SUBST-NONOM ; ! Dir/LR
+%<num%>%<ord%>:%-с%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>%<nom%>:%-с%{I%} # ; ! Dir/LR
+%<num%>%<ord%>%<subst%>:%-с%{I%} SUBST-NONOM ; ! Dir/LR
+
+%<num%>%<coll%>%<advl%>:%-%{A%}%{U%} # ;
+%<num%>%<coll%>%<nom%>:%-%{A%}%{U%} # ;
+%<num%>%<coll%>:%-%{A%}%{U%} SUBST-NONOM ;
+
+%<num%>%<percent%>:%% # ;
+%<num%>%<percent%>%<subst%>%<nom%>:%% # ;
+
+%<num%>%<percent%>%<subst%>:%%%{а%}%{з%}%- SUBST-NONOM ; ! FIXME check
+%<num%>%<percent%>%<subst%>:%%%{а%}%{з%} SUBST-NONOM ; ! Dir/LR ! FIXME check
+%<num%>%<percent%>%<subst%>:%%%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+%<num%>%<percent%>%<subst%>:%%%{э%}%{с%} SUBST-NONOM ; ! Dir/LR ! FIXME check
+
+°С%<num%>:°С # ;
+°С%<num%>%<subst%>%<nom%>:°С # ;
+°С%<num%>%<subst%>:°С%{а%}%{с%}%- SUBST-NONOM ; ! FIXME check
+°С%<num%>%<subst%>:°С%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+°С%<num%>:ºС # ; ! Dir/LR
+°С%<num%>%<subst%>%<nom%>:ºС # ; ! Dir/LR
+°С%<num%>%<subst%>:ºС%{а%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+°С%<num%>%<subst%>:ºС%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+°С%<num%>:С # ; ! Dir/LR
+°С%<num%>%<subst%>%<nom%>:С # ; ! Dir/LR
+°С%<num%>%<subst%>:С%{а%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+°С%<num%>%<subst%>:С%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+
+С%<num%>:° # ; ! Dir/LR
+С%<num%>%<subst%>%<nom%>:° # ; ! Dir/LR
+С%<num%>%<subst%>:°%{а%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+С%<num%>%<subst%>:°%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR ! FIXME check
+
+! Measurement units
+
+км:км SQRD ;
+мм:мм SQRD ;
+см:см SQRD ;
+м:м SQRD ;
+
+LEXICON LASTDIGIT
+
+1:1%{э%}%{й%}           NUM-DIGIT ; ! "бер" ! FIXME check
+2:2%{э%}                NUM-DIGIT ; ! "ике" ! FIXME check
+3:3%{э%}%{с%}           NUM-DIGIT ; ! "өс" ! FIXME check
+4:4%{э%}%{с%}           NUM-DIGIT ; ! "дүрт" ! FIXME check
+5:5%{э%}%{с%}           NUM-DIGIT ; ! "биш" ! FIXME check
+6:6%{а%}                NUM-DIGIT ; ! "алты" ! FIXME check
+7:7%{э%}                NUM-DIGIT ; ! "ете" ! FIXME check
+8:8%{э%}%{з%}           NUM-DIGIT ; ! "һигеҙ" ! FIXME check
+9:9%{а%}%{з%}           NUM-DIGIT ; ! "туғыҙ" ! FIXME check
+
+LEXICON LASTDIGIT-REST
+
+1%0:1%0%{а%}%{н%}       NUM-DIGIT ; ! "ун" ! FIXME check
+2%0:2%0%{э%}            NUM-DIGIT ; ! "егерме" ! FIXME check
+3%0:3%0%{а%}%{з%}       NUM-DIGIT ; ! "утыҙ" ! FIXME check
+4%0:4%0%{а%}%{с%}       NUM-DIGIT ; ! "ҡырҡ" ! FIXME check
+5%0:5%0%{э%}%{й%}       NUM-DIGIT ; ! "илле" ! FIXME check
+6%0:6%0%{а%}%{с%}       NUM-DIGIT ; ! "алтмыш" ! FIXME check
+7%0:7%0%{э%}%{с%}       NUM-DIGIT ; ! "етмеш" ! FIXME check
+8%0:8%0%{э%}%{н%}       NUM-DIGIT ; ! "һикһән" ! FIXME check
+9%0:9%0%{а%}%{н%}       NUM-DIGIT ; ! "туҡһан" ! FIXME check
+
+LEXICON POWERS
+%0%0:%0%0%{э%}%{з%}     NUM-DIGIT ; ! "йөз" ! FIXME check
+%0%0%0:%0%0%0%{э%}%{н%} NUM-DIGIT ; ! "мең" ! FIXME check
+
+LEXICON LOOP
+
+%,:%, DIGITLEX ;
+%.:%. DIGITLEX ;
+%,:%, LASTDIGIT ;
+%.:%. LASTDIGIT ;
+%,:%, LASTDIGIT-REST ;
+%.:%. LASTDIGIT-REST ;
+%,:%, POWERS ;
+%.:%. POWERS ;
+      DIGITLEX ;
+      LASTDIGIT ;
+      LASTDIGIT-REST ;
+      POWERS ;
+
+LEXICON DIGITLEX
+
+%0:%0 LOOP ;
+1:1   LOOP ;
+2:2   LOOP ;
+3:3   LOOP ;
+4:4   LOOP ;
+5:5   LOOP ;
+6:6   LOOP ;
+7:7   LOOP ;
+8:8   LOOP ;
+9:9   LOOP ;
+
+!==============================================================================!
+!          N U M E R A L     L E X I C O N     E N D S     H E R E
+!==============================================================================!
+
+!==============================================================================!
+!                                 CLITICS
+!==============================================================================!
+
 
 LEXICON CLIT-EMPH-SANA
 
@@ -351,8 +537,11 @@ CLIT-EMPH-CHI ;
 CLIT-GHANA ;
 CLIT-DA-CNJ ;
 
-
-!!!!!!!!!!!!!!!!!!!!!!     NOMINAL INFLECTION (N-INFL-COMMON)
+!==============================================================================!
+!                            NOMINAL INFLECTION
+! This section contains everyhing needed to describe inflection of nominals.
+! It starts with the LEXICON FULL-NOMINAL-INFLECTION
+!==============================================================================!
 
 LEXICON CASES-COMMON
 
@@ -379,10 +568,14 @@ LEXICON ATTR-SUBST
 
 LEXICON GENERAL-POSSESSIVE-ETC
 
-%<px%>:%>%{L%}%{I%}%{K%}%{I%}%{n%} CASES ;
-%<px%>%<pl%>:%>%{L%}%{I%}%{K%}%{I%}%>%{L%}%{A%}р CASES ;
+%<gen%>%<subst%>:%>%{L%}%{I%}%{K%}%{I%}%{n%} CASES ;
+%<gen%>%<subst%>%<pl%>:%>%{L%}%{I%}%{K%}%{I%}%>%{L%}%{A%}р CASES ;
 %<loc%>:%>%{L%}%{A%}%{G%}%{I%} ATTR-SUBST ;
-%<sim%>:%>%{L%}%{A%}й CLITICS-NO-COP ;
+%<sim%>:%>%{L%}%{A%}й CLITICS-INCL-COP ;
+%<sim%>:%>%{L%}%{A%}й POSSESSIVES ;
+%<sim%>:%>%{L%}%{A%}й CASES ;
+%<sim%>:%>%{L%}%{A%}й PLURAL ;
+%<equ%>:%>с%{A%} CLITICS-INCL-COP ;
 
 LEXICON CASES-ETC
 
@@ -444,101 +637,18 @@ POSSESSIVES ;
 ABESSIVE-POSTPOSITION ;
 LI-POSTPOSITION ;
 
-!!!!!!!!!!!!!!!!!!!!!!     PART-OF-SPEECH LEXICONS (beginning)
+!==============================================================================!
+!                 ADJECTIVE'S (ADJECTIVIAL) INFLECTION
+!
+! FIXME: this section might need some refactoring
+!! e.g. change <adj><comp><subst> to <adj><subst><comp>
+!! and make use of COMPARATIVE continuation class
+!==============================================================================!
 
-LEXICON N1
-
-%<n%>%<attr%>: # ;
-%<n%>: FULL-NOMINAL-INFLECTION ;
-
-LEXICON N1-RUS
-
-:%{☭%} N1 ;
-
-LEXICON N-COMPOUND-PX
-
-!%<n%>:%>%{h%}%{I%}%{n%} CASES-ETC ;
-%<n%>:%>%{h%}%{I%} CASES-POSSESSIVES-PX3-SG ;
-!%<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%}%{n%} CASES-ETC ; ! (e.g. чик сакчылары=пограничники)
-%<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%} CASES-POSSESSIVES-PX3-SG ;
-%<n%>: POSSESSIVES ; ! for stuff like "біздің ауа райымыз" and even "оның ауа райы",
-               ! which should have a <px3sp> analysis
-
-LEXICON N3
-! Singularia tantum
-
-%<n%>%<attr%>: # ;
-%<n%>: CASES-ETC ;
-%<n%>: POSSESSIVES ;
-%<n%>: ABESSIVE-POSTPOSITION ;
-
-LEXICON ADV-LANG
-
-N1 ;
-ADV ;
-
-LEXICON DIGITLEX
-
-%<num%>: # ;
-
-LEXICON NUMLEX
-
-%<num%>: CLITICS-NO-COP ;
-%<num%>%<subst%>: CLITICS-INCL-COP ;
-%<num%>%<ord%>:%>%{I%}нс%{I%} # ;
-%<num%>%<ord%>:%>%{I%}нс%{I%} CLITICS-INCL-COP ;
-%<num%>%<dist%>:%>%{A%}р CLITICS-INCL-COP ;
-
-LEXICON NP-COMMON
-
-CASES-ETC ;
-POSSESSIVES ;
-ABESSIVE-POSTPOSITION ;
-
-LEXICON NP-COG-M
-
-%<np%>%<cog%>%<m%>: NP-COMMON ;
-
-LEXICON NP-COG-F
-
-%<np%>%<cog%>%<f%>: NP-COMMON ;
-
-LEXICON NP-COG-MF
-
-%<np%>%<cog%>%<mf%>: NP-COMMON ;
-
-LEXICON NP-ANT-M
-
-%<np%>%<ant%>%<m%>: NP-COMMON ;
-
-LEXICON NP-ANT-F
-
-%<np%>%<ant%>%<f%>: NP-COMMON ;
-
-LEXICON NP-COG-OB
-
-%<np%>%<cog%>%<m%>:%{☭%} NP-COMMON ; ! Dir/LR
-%<np%>%<cog%>%<m%>:%{а%}%{с%} NP-COMMON ;
-
-LEXICON NP-PAT-VICH
-
-%<np%>%<pat%>%<m%>:вич NP-COMMON ;
-
-%<np%>%<pat%>%<f%>:вна NP-COMMON ;
-
-LEXICON NP-TOP
-
-%<np%>%<top%>: CASES ;
-
-LEXICON NP-ORG
-
-%<np%>%<org%>: CASES ;
-
-LEXICON NP-AL
-
-%<np%>%<al%>: CASES ;
-
-!!!!!!!!!!!!!!!!!!!!!!     ADJECTIVE'S (ADJECTIVIAL) INFLECTION
+!LEXICON COMPARATIVE
+!
+!%<comp%>:%>р%{A%}%{K%} CLITICS-NO-COP ;
+!CLITICS-NO-COP ;
 
 LEXICON A1
 
@@ -573,8 +683,9 @@ LEXICON V-ADJ
 # ;
 %<subst%>: GER-INFL ;
 
-
-!!!!!!!!!!!!!!!!!!!!!!     VERBAL INFLECTION
+!==============================================================================!
+!                            VERBAL INFLECTION
+!==============================================================================!
 
 LEXICON V-PERS-S1-NO1SG
 
@@ -589,9 +700,8 @@ LEXICON V-PERS-S1-NO1SG
 
 LEXICON V-PERS-S1
 
-%<p1%>%<sg%>:%>м%{I%}н CLITICS-NO-COP ;
-
 V-PERS-S1-NO1SG ;
+%<p1%>%<sg%>:%>м%{I%}н CLITICS-NO-COP ;
 
 LEXICON V-PERS-S1-COP
 
@@ -608,6 +718,8 @@ LEXICON V-PERS-S1-COP
 
 LEXICON V-PERS-S2
 
+! Used for: -NI-<ifi>, -һA-<prc_cond>, -һA-<gna_cond>
+
 %<p1%>%<sg%>:%>м CLITICS-NO-COP ;
 %<p2%>%<sg%>:%>ң CLITICS-NO-COP ;
 %<p3%>%<sg%>:%> CLITICS-NO-COP ;
@@ -619,6 +731,8 @@ LEXICON V-PERS-S2
 %<p2%>%<frm%>%<pl%>:%>%{G%}%{I%}з CLITICS-NO-COP ;
 
 LEXICON V-PERS-PRESENT
+
+! As the name indicates, used for -{E}-<pres>
 
 V-PERS-S1-NO1SG ;
 %<p1%>%<sg%>:%>м CLITICS-NO-COP ;
@@ -636,7 +750,14 @@ LEXICON V-PERS-VOLITIONAL
 %<p2%>%<frm%>%<sg%>:%>%{G%}%{I%}ҙ CLIT-GHANA-ETC ;
 %<p2%>%<frm%>%<pl%>:%>%{G%}%{I%}ҙ CLIT-GHANA-ETC ;
 
-! G E R U N D S   I N F L E C T I O N
+!!!!!!!   G E R U N D S   I N F L E C T I O N
+
+! This is a somewhat simplified version of N-INFL-COMMON.
+! The idea was to avoid overgeneration (I don't think that ger+DAGI would take
+! case endings e.g. Same for ger+NIKI). Still, this cont.class might be not
+! suitable for all of the gerunds. /IS/
+
+! FIXME: duplicated code here. GER-CASE-NO_COPULA, for instance, is the same thing as "CasesWithoutCopulas" cont.class
 
 LEXICON GER-CASE-NO_COPULA
 
@@ -760,6 +881,7 @@ LEXICON V-NONFINITE-IRREGULAR_NEGATIVE
 %<neg%>%<gna_perf%>:%>м%{A%}йс%{A%} CLITICS-NO-COP ;      ! Dir/LR
 
 %<gna_until%>:%>%{G%}%{A%}нс%{I%} CLITICS-NO-COP ;
+%<gna_until%>:%>%{G%}%{A%}нч%{A%} CLITICS-NO-COP ; ! Dir/LR FIXME check
 
 ! Verbal adjectives
 %<gpr_fut3%>:%>%{E%}һ%{I%} V-ADJ ;
@@ -877,87 +999,189 @@ LEXICON COP-I
 
 !!!!!!!!!!!!!!!!!!!!!!     PRONOUN'S INFLECTION
 
-LEXICON PRNLEX-PERS
+!!!!!!!   P E R S O N A L
 
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:мин # ;
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:минең # ;
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:миңә # ;
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<acc%>:мине # ;
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:миндә # ;
-мин%<prn%>%<pers%>%<p1%>%<sg%>%<abl%>:минән # ;
+LEXICON PRON-P12SG-CASES
 
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>:һин # ;
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<gen%>:һинең # ;
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:һиңә # ;
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<acc%>:һине # ;
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:һиндә # ;
-һин%<prn%>%<pers%>%<p2%>%<sg%>%<abl%>:һинән # ;
+%<nom%>:ин CLITICS-NO-COP ;
+%<gen%>:инең CLITICS-NO-COP ;
+%<dat%>:иңә CLITICS-NO-COP ;
+%<acc%>:ине CLITICS-NO-COP ;
+%<abl%>:инән CLITICS-NO-COP ;
+%<loc%>:индә CLITICS-NO-COP ;
+%<px%>:инеке%{n%} CASES ;
+%<loc%>:индә ATTR-SUBST ;
+%<sim%>:индәй CLITICS-NO-COP ;
+%<adv%>:инеңсә CLITICS-NO-COP ;
 
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:ул # ;
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:уның # ;
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:уға # ;
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:уны # ;
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:унда # ;
-ул%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:унан # ;
+LEXICON PRON-PERS-INFL
 
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:беҙ # ;
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<gen%>:беҙҙең # ;
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<dat%>:беҙғә # ;
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<acc%>:беҙҙе # ;
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<loc%>:беҙҙә # ;
-беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<abl%>:беҙҙән # ;
+CASES-ETC ;
 
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:һеҙ # ;
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<gen%>:һеҙҙең # ;
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<dat%>:һеҙғә # ;
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<acc%>:һеҙҙе # ;
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<loc%>:һеҙҙә # ;
-һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<abl%>:һеҙҙән # ;
+LEXICON PRON-PERS
 
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<nom%>:улар # ;
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<gen%>:уларҙың # ;
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<dat%>:уларға # ;
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<acc%>:уларҙы # ;
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<loc%>:уларҙа # ;
-улар%<prn%>%<pers%>%<p3%>%<pl%>%<abl%>:уларҙан # ;
+мин%<prn%>%<pers%>%<p1%>%<sg%>:м PRON-P12SG-CASES ;
 
-LEXICON PRNDEM-BUL
+һин%<prn%>%<pers%>%<p2%>%<sg%>:һ PRON-P12SG-CASES ;
 
-%<prn%>%<dem%>%<nom%>:л # ;
-%<prn%>%<dem%>%<gen%>:ның # ;
-%<prn%>%<dem%>%<dat%>:ға # ;
-%<prn%>%<dem%>%<acc%>:ны # ;
-%<prn%>%<dem%>%<loc%>:нда # ;
-%<prn%>%<dem%>%<abl%>:нан # ;
-%<prn%>%<dem%>%<pl%>:л%>%{L%}%{A%}р CASES ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:ул CLITICS-NO-COP ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:уның CLITICS-NO-COP ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:уға CLITICS-NO-COP ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:уны CLITICS-NO-COP ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:унда CLITICS-NO-COP ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:унан CLITICS-NO-COP ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<px%>:уныҡы%{n%} CASES ;
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<sim%>:ундәй CLITICS-NO-COP ; ! FIXME check
+ул%<prn%>%<pers%>%<p3%>%<sg%>%<adv%>:уныңса CLITICS-NO-COP ;
 
-LEXICON PRNDEM-UL       ! FIXME: Unify demonstrative pronouns later
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>:беҙ PRON-PERS-INFL ;
+беҙ%<prn%>%<pers%>%<p1%>%<pl%>%<adv%>:беҙҙеңсә CLITICS-NO-COP ;
 
-%<prn%>%<dem%>%<nom%>:ул # ;
-%<prn%>%<dem%>%<gen%>:уның # ;
-%<prn%>%<dem%>%<dat%>:уға # ;
-%<prn%>%<dem%>%<acc%>:уны # ;
-%<prn%>%<dem%>%<loc%>:унда # ;
-%<prn%>%<dem%>%<abl%>:унан # ;
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>:һеҙ PRON-PERS-INFL ;
+һеҙ%<prn%>%<pers%>%<p2%>%<pl%>%<adv%>:һеҙҙеңсә CLITICS-NO-COP ;
 
-%<prn%>%<dem%>%<pl%>:улар CASES ;
+улар%<prn%>%<pers%>%<p3%>%<pl%>:улар PRON-PERS-INFL ;
+улар%<prn%>%<pers%>%<p3%>%<pl%>%<adv%>:уларҙыңса CLITICS-NO-COP ; ! FIXME check
 
-LEXICON PRNITGLEX
+Һеҙ%<prn%>%<pers%>%<p2%>%<sp%>%<frm%>:Һеҙ PRON-PERS-INFL ;
+Һеҙ%<prn%>%<pers%>%<p2%>%<sp%>%<frm%>%<adv%>:Һеҙҙеңсә CLITICS-NO-COP ;
 
-%<prn%>%<itg%>: POSSESSIVES ;
+!!!!!!!   D E M O N S T R A T I V E
 
-LEXICON PRNDEMLEX
+LEXICON PRON-DEM-INFL
 
-%<prn%>%<dem%>: CASES ;
-%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASES ;
+%<prn%>%<dem%>%<gen%>:%{N%}%{I%}ң CLITICS-NO-COP ;
+%<prn%>%<dem%>%<dat%>:%{G%}%{A%} CLITICS-NO-COP ;
+%<prn%>%<dem%>%<acc%>:%{N%}%{I%} CLITICS-NO-COP ;
+%<prn%>%<dem%>%<abl%>:%{N%}%{A%}н CLITICS-INCL-COP ;
+%<prn%>%<dem%>%<loc%>:нд%{A%} CLITICS-INCL-COP ;
+%<prn%>%<dem%>%<px%>:%{L%}%{I%}%{K%}%{I%}%{n%} CASES ; ! FIXME check
+%<prn%>%<dem%>%<loc%>:нд%{A%}г%{I%} ATTR-SUBST ; ! FIXME check
+%<prn%>%<dem%>%<sim%>:нд%{I%}й CASES ; ! FIXME check
+%<prn%>%<dem%>%<adv%>:л%{A%}й CLITICS-INCL-COP ; ! FIXME check
+%<prn%>%<dem%>%<px3sp%>:%{h%}%{I%}%{n%} CASES ; ! FIXME check
 
-LEXICON PRNREFLEX
+%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASES-ETC ; ! FIXME check
+%<prn%>%<dem%>%<pl%>%<px3sp%>:%>%{L%}%{A%}р%{I%}%{n%} CASES ; ! FIXME check
 
-%<prn%>%<ref%>: POSSESSIVES ;
+LEXICON PRON-DEM-BUL-ŠUL
+
+%<prn%>%<dem%>%<nom%>:л CLITICS-INCL-COP ;
+%<prn%>%<dem%>%<gen%>:ның CLITICS-NO-COP ;
+%<prn%>%<dem%>%<dat%>:ға CLITICS-NO-COP ;
+%<prn%>%<dem%>%<acc%>:ны CLITICS-NO-COP ;
+%<prn%>%<dem%>%<loc%>:нда CLITICS-INCL-COP ;
+%<prn%>%<dem%>%<abl%>:нан CLITICS-INCL-COP ;
+%<prn%>%<dem%>%<px%>:ныҡы%{n%} CASES ;
+%<prn%>%<dem%>%<loc%>:ндағы ATTR-SUBST ;
+%<prn%>%<dem%>%<adv%>:лай CLITICS-INCL-COP ;
+%<prn%>%<dem%>%<qnt%>:л% тиклем CLITICS-NO-COP ;
+%<prn%>%<dem%>%<px3sp%>:ныһы%{n%} CASES ;
+
+%<prn%>%<dem%>%<pl%>:лар CASES-ETC ; ! FIXME check
+%<prn%>%<dem%>%<pl%>%<px3sp%>:лары{n%} CASES ; ! FIXME check
+
+LEXICON PRON-DEM-UL       ! FIXME: Unify demonstrative pronouns later
+
+ул%<prn%>%<dem%>%<nom%>:ул CLITICS-INCL-COP ;
+ул%<prn%>%<dem%>%<gen%>:уның CLITICS-NO-COP ;
+ул%<prn%>%<dem%>%<dat%>:уға CLITICS-NO-COP ;
+ул%<prn%>%<dem%>%<acc%>:уны CLITICS-NO-COP ;
+ул%<prn%>%<dem%>%<loc%>:унда CLITICS-INCL-COP ;
+ул%<prn%>%<dem%>%<abl%>:унан CLITICS-INCL-COP ;
+ул%<prn%>%<dem%>%<px%>:уныҡы%{n%} CASES ;
+ул%<prn%>%<dem%>%<loc%>:ундағы ATTR-SUBST ;
+ул%<prn%>%<dem%>%<sim%>:ундәй CLITICS-NO-COP ; ! FIXME check
+ул%<prn%>%<dem%>%<adv%>:улай CLITICS-INCL-COP ;
+ул%<prn%>%<dem%>%<px3sp%>:улы%{n%} CASES ;
+
+ул%<prn%>%<dem%>%<pl%>:улар CASES-ETC ;
+ул%<prn%>%<dem%>%<pl%>%<px3sp%>:улары%{n%} CASES ;
+
+LEXICON DemonstrativePronouns
+
+PRON-DEM-UL ; ! ""
+
+был:бы PRON-DEM-BUL-ŠUL ; ! ""
+шул:шу PRON-DEM-BUL-ŠUL ; ! ""
+теге:теге PRON-DEM-INFL ; ! ""
+ошо:ошо PRON-DEM-INFL ; 
 
 LEXICON PRON-IND
 
 %<prn%>%<ind%>: CASES ;
+
+!!!!!!!   I N T E R R O G A T I V E
+
+LEXICON PRON-ITG-INFL
+
+%<prn%>%<itg%>: FULL-NOMINAL-INFLECTION ;
+
+LEXICON PRON-ITG-QAYHI
+
+ҡайһы%<prn%>%<itg%>%<nom%>:ҡайһы CLITICS-NO-COP ;
+ҡайһы%<prn%>%<itg%>%<gen%>:ҡайһының CLITICS-NO-COP ;
+ҡайһы%<prn%>%<itg%>%<dat%>:ҡайһына CLITICS-NO-COP ;
+ҡайһы%<prn%>%<itg%>%<acc%>:ҡайһын CLITICS-NO-COP ;
+ҡайһы%<prn%>%<itg%>%<abl%>:ҡайһынан CLITICS-NO-COP ;
+ҡайһы%<prn%>%<itg%>%<loc%>:ҡайһында CLITICS-NO-COP ;
+
+ҡайһы%<prn%>%<itg%>:ҡайһы GER-POSS-REAL ;
+
+LEXICON PRON-ITG-NINDI
+
+! Might be not complete (қандайларығыз? and possessive stuff in general)
+
+ниндәй%<prn%>%<itg%>%<sim%>:ниндәй CLITICS-NO-COP ;
+ниндәй%<prn%>%<itg%>%<sim%>:ниндәй CASES ; ! Dir/LR ! FIXME check
+ниндәй%<prn%>%<itg%>%<sim%>%<px3sp%>:ниндәй%{n%} CLITICS-NO-COP ; ! FIXME check
+ниндәй%<prn%>%<itg%>%<sim%>%<px3sp%>:ниндәй%{n%} CASES ; ! Dir/LR ! FIXME check
+ниндәй%<prn%>%<itg%>%<sim%>%<pl%>:ниндәйҙәр CLITICS-NO-COP ; ! FIXME check
+ниндәй%<prn%>%<itg%>%<sim%>%<pl%>:ниндәйҙәр CASES ; ! Dir/LR ! FIXME check
+ниндәй%<prn%>%<itg%>%<sim%>%<pl%>%<px3sp%>:ниндәйҙәрен%{n%} CLITICS-NO-COP ; ! FIXME check
+ниндәй%<prn%>%<itg%>%<sim%>%<pl%>%<px3sp%>:ниндәйҙәрен%{n%} CASES ; ! Dir/LR ! FIXME check
+
+LEXICON InterrogativePronouns
+
+PRON-ITG-QAYHI ;
+PRON-ITG-NINDI ;
+ни:ни PRON-ITG-INFL ; ! "what"
+нимә:нимә PRON-ITG-INFL ; ! ""
+кем:кем PRON-ITG-INFL ; ! "who"
+күпме:күпме PRON-ITG-INFL ; ! ""
+
+LEXICON PRON-QNT-POSS
+
+%<prn%>%<qnt%>: GER-POSS-REAL ;
+
+LEXICON PRON-QNT
+
+%<prn%>%<qnt%>: GER-INFL ;
+
+LEXICON PRNNEG
+
+%<prn%>%<neg%>: CASES ;
+
+LEXICON PRON-RECIP
+
+%<prn%>%<recip%>: GER-POSS-REAL ;
+
+LEXICON PRON-REF-ADV
+
+CASES-ETC ;
+%<adv%>:сә CLITICS-NO-COP ;
+
+LEXICON PRON-REF
+
+%<prn%>%<ref%>%<px1sg%>:%>%{I%}м PRON-REF-ADV ;
+%<prn%>%<ref%>%<px2sg%>:%>%{I%}ң PRON-REF-ADV ;
+%<prn%>%<ref%>%<px3sp%>:%>%{h%}%{I%}%{n%} PRON-REF-ADV ; ! FIXME <px3sg>?
+%<prn%>%<ref%>%<px1pl%>:%>%{I%}б%{I%}ҙ PRON-REF-ADV ;
+%<prn%>%<ref%>%<px2pl%>:%>%{I%}г%{I%}ҙ PRON-REF-ADV ;
+%<prn%>%<ref%>%<px3pl%>:%>л%{A%}р%>%{h%}%{I%}%{n%} PRON-REF-ADV ;
+
+%<prn%>%<ref%>%<px2sg%>%<frm%>:%>%{I%}г%{I%}ҙ PRON-REF-ADV ;
+%<prn%>%<ref%>%<px2pl%>%<frm%>:%>%{I%}г%{I%}ҙ PRON-REF-ADV ;
 
 !!!!!!!!!!!!!!!!!!!!!      DETERMINERS
 
@@ -985,24 +1209,157 @@ LEXICON DET-REF
 
 %<det%>%<ref%>: # ;
 
-!!!!!!!!!!!!!!!!!!!!!!
+!==============================================================================!
+!                         PART-OF-SPEECH LEXICONS
+! Stems will continue with one of the following lexicons:
+!==============================================================================!
 
-LEXICON POSTLEX
+LEXICON N1
 
-%<post%>: # ;
+%<n%>%<attr%>: # ;
+%<n%>: FULL-NOMINAL-INFLECTION ;
+
+LEXICON N1-RUS
+
+:%{☭%} N1 ;
+
+LEXICON N-COMPOUND-PX
+
+!%<n%>:%>%{h%}%{I%}%{n%} CASES-ETC ;
+%<n%>:%>%{h%}%{I%} CASES-POSSESSIVES-PX3-SG ;
+!%<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%}%{n%} CASES-ETC ; ! (e.g. чик сакчылары=пограничники)
+%<n%>%<pl%>:%>%{L%}%{A%}р%>%{h%}%{I%} CASES-POSSESSIVES-PX3-SG ;
+%<n%>: POSSESSIVES ; ! for stuff like "біздің ауа райымыз" and even "оның ауа райы",
+               ! which should have a <px3sp> analysis
+
+LEXICON N3
+! Singularia tantum
+
+%<n%>%<attr%>: # ;
+%<n%>: CASES-ETC ;
+%<n%>: POSSESSIVES ;
+%<n%>: ABESSIVE-POSTPOSITION ;
+
+LEXICON ADV-LANG
+
+N1 ;
+ADV ;
+
+LEXICON NP-COMMON
+
+CASES-ETC ;
+POSSESSIVES ;
+ABESSIVE-POSTPOSITION ;
+
+LEXICON NP-TOP
+
+%<np%>%<top%>: CASES ;
+%<np%>%<top%>%<attr%>: # ;
+
+LEXICON NP-ANT-M
+
+%<np%>%<ant%>%<m%>: NP-COMMON ;
+%<np%>%<ant%>%<m%>%<pl%>:%>%{L%}%{A%}р NP-COMMON ;
+
+LEXICON NP-ANT-F
+
+%<np%>%<ant%>%<f%>: NP-COMMON ;
+%<np%>%<ant%>%<f%>%<pl%>:%>%{L%}%{A%}р NP-COMMON ;
+
+LEXICON NP-COG-M
+
+%<np%>%<cog%>%<m%>: NP-COMMON ;
+%<np%>%<cog%>%<m%>%<pl%>:%>%{L%}%{A%}р NP-COMMON ;
+
+LEXICON NP-COG-F
+
+%<np%>%<cog%>%<f%>: NP-COMMON ;
+%<np%>%<cog%>%<f%>%<pl%>:%>%{L%}%{A%}р NP-COMMON ;
+
+LEXICON NP-COG-MF
+
+%<np%>%<cog%>%<mf%>: NP-COMMON ;
+%<np%>%<cog%>%<mf%>%<pl%>:%>%{L%}%{A%}р NP-COMMON ;
+
+LEXICON NP-COG-OBIN-FEM
+
+%<np%>%<cog%>%<f%>:а NP-COMMON ;
+%<np%>%<cog%>%<f%>%<pl%>:а%>%{L%}%{A%}р NP-COMMON ;
+
+LEXICON NP-COG-OB
+
+! For cognoms ending with -ов, -ев
+! They derive feminine equivalets taking -а /I.S./
+! Also, even the ев ones are normally pronounced
+!    (and take harmony) as if they end in йыф/йып
+
+%<np%>%<cog%>%<m%>:%{☭%} NP-COMMON ;                       ! Dir/LR
+%<np%>%<cog%>%<m%>%<pl%>:%{☭%}%>%{L%}%{A%}р NP-COMMON ;    ! Dir/LR
+
+%<np%>%<cog%>%<m%>:%{а%}%{с%} NP-COMMON ;
+%<np%>%<cog%>%<m%>%<pl%>:%{а%}%{с%}%>%{L%}%{A%}р NP-COMMON ;
+
+NP-COG-OBIN-FEM ;
+
+LEXICON NP-PAT-VICH
+
+%<np%>%<pat%>%<m%>:вич NP-COMMON ;
+
+%<np%>%<pat%>%<f%>:вна NP-COMMON ;
+
+LEXICON NP-ORG
+
+%<np%>%<org%>: CASES ;
+
+LEXICON NP-AL
+
+%<np%>%<al%>: CASES ;
+
+LEXICON NUM
+
+%<num%>: # ;
+%<num%>%<subst%>: FULL-NOMINAL-INFLECTION ;
+%<num%>%<ord%>:%>%{I%}нс%{I%} # ;
+%<num%>%<ord%>:%>%{I%}нс%{I%} FULL-NOMINAL-INFLECTION ;
+%<num%>%<dist%>:%>%{A%}р FULL-NOMINAL-INFLECTION ; ! FIXME
+
+LEXICON NUM-ITG ! This is a temporal solution
+                ! (could be integrated with the above)
+
+%<num%>%<itg%>: # ;
+%<num%>%<itg%>%<subst%>: FULL-NOMINAL-INFLECTION ;
+%<num%>%<ord%>:%>%{I%}нс%{I%} # ;
+%<num%>%<itg%>%<ord%>:%>%{I%}нс%{I%} FULL-NOMINAL-INFLECTION ;
+%<num%>%<itg%>%<dist%>:%>%{A%}р FULL-NOMINAL-INFLECTION ; ! FIXME
+
+LEXICON NUM-COLL
+
+%<num%>%<coll%>: # ;
+%<num%>%<coll%>: FULL-NOMINAL-INFLECTION ;
+
+LEXICON NUM-ITG-COLL
+
+%<num%>%<itg%>%<coll%>: # ;
+%<num%>%<itg%>%<coll%>: FULL-NOMINAL-INFLECTION ;
+
+LEXICON NUM-ROMAN
+
+%<num%>%<ord%>: # ;
+
+LEXICON POST
+
+%<post%>: CLITICS-NO-COP ;
 
 LEXICON POSTADV
 
 %<postadv%>: # ;
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 LEXICON KI
 
 %<attr%>:%>%{G%}%{I%}  CLITICS-NO-COP ;
 %<subst%>:%>%{G%}%{I%} FULL-NOMINAL-INFLECTION ;
-
-LEXICON ADVITGLEX
-
-%<adv%>%<itg%>: CLITICS-NO-COP ;
 
 LEXICON ADV
 
@@ -1018,6 +1375,12 @@ LEXICON ADV-WITH-KI-BIRE
 ADV ;
 %<adv%>%<attr%>:%>%{L%}%{A%}%{G%}%{I%} CLITICS-NO-COP ;
 
+LEXICON ADV-ITG
+
+%<adv%>%<itg%>: CLITICS-INCL-COP ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 LEXICON CC
 
 %<cnjcoo%>: # ;
@@ -1028,19 +1391,85 @@ LEXICON CS
 
 LEXICON CA
 
-%<cnjadv%>: # ;
+%<cnjadv%>: CLIT-GHANA-ETC ;
 
-LEXICON ABBR
+LEXICON QST
 
-%<abbr%>: # ;
+%<qst%>: # ; 
+
+LEXICON MOD-ASS
+
+%<mod_ass%>: # ;
+
+LEXICON MOD-IND
+
+%<mod_ind%>: # ;
+
+LEXICON EMPH
+
+%<emph%>: # ;
 
 LEXICON INTERJ
 
 %<ij%>: # ;
 
+LEXICON IDEO
+
+%<ideo%>: # ;
+
+LEXICON ABBR
+
+%<abbr%>: # ;
+%<abbr%>: CASE-NONOM ;
+
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!                          L E X I C O N                                  !!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!======================!
+ LEXICON ModalParticles
+!======================!
+
+
+! Question modal particles
+! ========================
+
+әллә:әллә QST ; ! "y/n question"
+мы:%~мы QST ; ! "y/n question" ! Dir/RL
+мы:мы QST ; ! "y/n question" ! Dir/LR
+мы:ме QST ; ! "y/n question" ! Dir/LR
+мы:мо QST ; ! "y/n question" ! Dir/LR
+мы:мө QST ; ! "y/n question" ! Dir/LR
+мы% ни:%~мы% ни QST ; ! "y/n question" ! Dir/RL
+мы% ни:мы% ни QST ; ! "y/n question" ! Dir/LR
+мы% ни:ме% ни QST ; ! "y/n question" ! Dir/LR
+мы% ни:мо% ни QST ; ! "y/n question" ! Dir/LR
+мы% ни:мө% ни QST ; ! "y/n question" ! Dir/LR
+мы% икән:%~мы% икән QST ; ! Dir/RL
+мы% икән:мы% икән QST ; ! Dir/LR
+мы% икән:ме% икән QST ; ! Dir/LR
+мы% икән:мо% икән QST ; ! Dir/LR
+мы% икән:мө% икән QST ; ! Dir/LR
+
+! Assertive (emphasizing) modal particles
+! =======================================
+
+бит:бит MOD-ASS ;
+лаһа:лаһа MOD-ASS ;
+ла% баһа:%{L%}а% баһа MOD-ASS ;
+шул:шул MOD-ASS ;
+
+! Indefinite modal particles
+! ==========================
+
+лыр:%~%{L%}%{I%}р MOD-IND ; ! "" ! Dir/RL
+лыр:%{L%}%{I%}р MOD-IND ; ! "" ! Dir/LR
+
+! 'Emphasizing'/politeness modal particles
+! ========================================
+
+әле:әле EMPH ; ! ""
 
 
 !==============!
@@ -1129,67 +1558,67 @@ COP-I ; ! ""
 !=====================!
 
 
-инде:инде POSTLEX ; ! ""
-кәрәк:кәрәк POSTLEX ; ! ""
-аҫтында:аҫтында POSTLEX ; ! ""
-ҡарамағында:ҡарамағында POSTLEX ; ! ""
-тапҡыр:тапҡыр POSTLEX ; ! ""
-аҫтына:аҫтына POSTLEX ; ! ""
-хаҡына:хаҡына POSTLEX ; ! ""
+инде:инде POST ; ! ""
+кәрәк:кәрәк POST ; ! ""
+аҫтында:аҫтында POST ; ! ""
+ҡарамағында:ҡарамағында POST ; ! ""
+тапҡыр:тапҡыр POST ; ! ""
+аҫтына:аҫтына POST ; ! ""
+хаҡына:хаҡына POST ; ! ""
 
 ! which Govern the Nominative Case
 ! ================================
 
-булараҡ:булараҡ POSTLEX ; ! ""
+булараҡ:булараҡ POST ; ! ""
 
 ! which Govern the Nominative Case of Nouns and
 ! the Genitive Case of (Personal and Demonstrative) Pronouns
 ! ==========================================================
 
-арҡыры:арҡыры POSTLEX ; ! ""
-аша:аша POSTLEX ; ! ""
-буйы:буйы POSTLEX ; ! ""
-буйынса:буйынса POSTLEX ; ! ""
-буйлап:буйлап POSTLEX ; ! ""
-кеүек:кеүек POSTLEX ; ! ""
-күк:күк POSTLEX ; ! ""
-менән:менән POSTLEX ; ! ""
-өсөн:өсөн POSTLEX ; ! ""
-тураһында:тураһында POSTLEX ; ! ""
-хаҡында:хаҡында POSTLEX ; ! ""
-һайын:һайын POSTLEX ; ! ""
-һымаҡ:һымаҡ POSTLEX ; ! ""
-шикелле:шикелле POSTLEX ; ! ""
+арҡыры:арҡыры POST ; ! ""
+аша:аша POST ; ! ""
+буйы:буйы POST ; ! ""
+буйынса:буйынса POST ; ! ""
+буйлап:буйлап POST ; ! ""
+кеүек:кеүек POST ; ! ""
+күк:күк POST ; ! ""
+менән:менән POST ; ! ""
+өсөн:өсөн POST ; ! ""
+тураһында:тураһында POST ; ! ""
+хаҡында:хаҡында POST ; ! ""
+һайын:һайын POST ; ! ""
+һымаҡ:һымаҡ POST ; ! ""
+шикелле:шикелле POST ; ! ""
 
 ! which Govern Nominative/Genitive/Dative cases
 ! =============================================
 
-ҡәҙәр:ҡәҙәр POSTLEX ; ! ""
-саҡлы:саҡлы POSTLEX ; ! ""
-тиклем:тиклем POSTLEX ; ! ""
-хәтле:хәтле POSTLEX ; ! ""
+ҡәҙәр:ҡәҙәр POST ; ! ""
+саҡлы:саҡлы POST ; ! ""
+тиклем:тиклем POST ; ! ""
+хәтле:хәтле POST ; ! ""
 
 ! which Govern the Dative Case
 ! ============================
 
-ҡарағанда:ҡарағанда POSTLEX ; ! ""
-ҡарамаҫтан:ҡарамаҫтан POSTLEX ; ! ""
-ҡарата:ҡарата POSTLEX ; ! ""
-ҡаршы:ҡаршы POSTLEX ; ! ""
-күрә:күрә POSTLEX ; ! ""
-табан:табан POSTLEX ; ! ""
-яҡын:яҡын POSTLEX ; ! ""
+ҡарағанда:ҡарағанда POST ; ! ""
+ҡарамаҫтан:ҡарамаҫтан POST ; ! ""
+ҡарата:ҡарата POST ; ! ""
+ҡаршы:ҡаршы POST ; ! ""
+күрә:күрә POST ; ! ""
+табан:табан POST ; ! ""
+яҡын:яҡын POST ; ! ""
 
 ! which Govern the Ablative Case
 ! ==============================
 
-ары:ары POSTLEX ; ! ""
-башҡа:башҡа POSTLEX ; ! ""
-бирле:бирле POSTLEX ; ! ""
-бүтән:бүтән POSTLEX ; ! ""
-һуң:һуң POSTLEX ; ! ""
-тыш:тыш POSTLEX ; ! ""
-элек:элек POSTLEX ; ! ""
+ары:ары POST ; ! ""
+башҡа:башҡа POST ; ! ""
+бирле:бирле POST ; ! ""
+бүтән:бүтән POST ; ! ""
+һуң:һуң POST ; ! ""
+тыш:тыш POST ; ! ""
+элек:элек POST ; ! ""
 
 
 !===================!
@@ -1203,34 +1632,63 @@ COP-I ; ! ""
 ғына:ҡына POSTADV ; ! "" Dir/LR
 ғына:кенә POSTADV ; ! "" Dir/LR
 
+да:%~да POSTADV ; ! "" Dir/RL
+да:да POSTADV ; ! "" Dir/LR
+да:та POSTADV ; ! "" Dir/LR
+да:ҙа POSTADV ; ! "" Dir/LR
+да:ла POSTADV ; ! "" Dir/LR
+да:дә POSTADV ; ! "" Dir/LR
+да:тә POSTADV ; ! "" Dir/LR
+да:ҙә POSTADV ; ! "" Dir/LR
+да:лә POSTADV ; ! "" Dir/LR
+
+ук:%~ук POSTADV ; ! "же, даже" Dir/RL
+ук:ук POSTADV ; ! "" Dir/LR
+ук:үк POSTADV ; ! "" Dir/LR
+
 
 !================!
  LEXICON Pronouns
 !================!
 
 
-PRNLEX-PERS ;
+PRON-PERS ;
 
-ни:ни PRNITGLEX ; ! ""
-нимә:нимә PRNITGLEX ; ! ""
-ҡайһы:ҡайһы PRNITGLEX ; ! ""
-кем:кем PRNITGLEX ; ! ""
-күпме:күпме PRNITGLEX ; ! ""
-ниндәй:ниндәй PRNITGLEX ; ! ""
-ниңә:ниңә PRNITGLEX ; ! ""
-нисә:нисә PRNITGLEX ; ! ""
-нисәнсе:нисәнсе PRNITGLEX ; ! ""
-нисәшәр:нисәшәр PRNITGLEX ; ! ""
+DemonstrativePronouns ;
 
-был:бы PRNDEM-BUL ; ! ""
-шул:шу PRNDEM-BUL ; ! ""
-ошо:ошо PRNDEMLEX ; ! ""
-теге:теге PRNDEMLEX ; ! ""
-ул: PRNDEM-UL ; ! ""
+InterrogativePronouns ;
 
-үҙ:үҙ PRNREFLEX ; ! ""
+башҡа:башҡа PRON-IND ; ! "other"
+береһе:береһе%{n%} PRON-IND ; ! "one of" FIXME check
+ҡайһы% бер:ҡайһы% бер PRON-IND ; ! "some"
+ҡайһы% берәү:ҡайһы% берәү PRON-IND ; ! "some"
 
-береһе:береһе%{n%} PRON-IND ; ! ""
+барлыҡ:барлыҡ PRON-QNT-POSS ; ! ""
+барсаһы:барса PRON-QNT-POSS ; ! ""
+бары:бары PRON-QNT-POSS ; ! ""
+берәрһе:берәр%>һ%{I%}%{n%} PRNNEG ; ! ""
+берәү:берәү PRON-QNT ; ! ""
+бөтәһе:бөтә PRON-QNT-POSS ; ! ""
+һәммәһе:һәммә PRON-QNT-POSS ; ! ""
+һәр% бере:һәр% бер%>%{I%}%{n%} PRON-QNT-POSS ; ! ""
+һәр% береһе:һәр% бере%>һ%{I%}%{n%} PRON-QNT-POSS ; ! ""
+һәр% ҡайһы:һәр% ҡайһы PRON-QNT ; ! ""
+һәр% кем:һәр% кем PRON-QNT ; ! ""
+һәр% нәмә:һәр% нәмә PRON-QNT ; ! ""
+
+бер% кем:бер% кем PRNNEG ; ! ""
+бер% нәмә:бер% нәмә PRNNEG ; ! ""
+бер% ни:бер% ни PRNNEG ; ! ""
+һис% берәү:һис% берәү PRNNEG ; ! ""
+һис% бере:һис% бер%>%{I%}%{n%} PRNNEG ; ! ""
+һис% береһе:һис% бере%>һ%{I%}%{n%} PRNNEG ; ! ""
+һис% кем:һис% кем PRNNEG ; ! ""
+һис% нәмә:һис% нәмә PRNNEG ; ! ""
+һис% ни:һис% ни PRNNEG ; ! ""
+
+бер%-бере:бер%-бер PRON-RECIP ; ! "each-other, one another"
+
+үҙ:үҙ PRON-REF ; ! ""
 
 
 !===================!
@@ -1273,45 +1731,61 @@ PRNLEX-PERS ;
 !================!
 
 
-нуль:нуль NUMLEX ; ! ""
-бер:бер NUMLEX ; ! ""
-ике:ике NUMLEX ; ! ""
-өс:өс NUMLEX ; ! ""
-дүрт:дүрт NUMLEX ; ! ""
-биш:биш NUMLEX ; ! ""
-алты:алты NUMLEX ; ! ""
-ете:ете  NUMLEX ; ! ""
-һигеҙ:һигеҙ NUMLEX ; ! ""
-туғыҙ:туғыҙ  NUMLEX ; ! ""
-ун:ун NUMLEX ; ! ""
+нуль:нуль NUM ; ! ""
+нуль:ноль NUM ; ! "" Dir/LR
+нуль:нол NUM ; ! "" Dir/LR
+нуль:нүл NUM ; ! "" Dir/LR
+бер:бер NUM ; ! ""
+ике:ике NUM ; ! ""
+өс:өс NUM ; ! ""
+дүрт:дүрт NUM ; ! ""
+биш:биш NUM ; ! ""
+алты:алты NUM ; ! ""
+ете:ете  NUM ; ! ""
+һигеҙ:һигеҙ NUM ; ! ""
+туғыҙ:туғыҙ  NUM ; ! ""
+ун:ун NUM ; ! ""
 
-ун% бер:ун% бер NUMLEX ; ! ""
-ун% ике:ун% ике NUMLEX ; ! ""
-ун% өс:ун% өс NUMLEX ; ! ""
-ун% дүрт:ун% дүрт NUMLEX ; ! ""
-ун% биш:ун% биш NUMLEX ; ! ""
-ун% алты:ун% алты NUMLEX ; ! ""
-ун% ете:ун% ете NUMLEX ; ! ""
-ун% һигеҙ:ун% һигеҙ NUMLEX ; ! ""
-ун% туғыҙ:ун% туғыҙ NUMLEX ; ! ""
+ун% бер:ун% бер NUM ; ! ""
+ун% ике:ун% ике NUM ; ! ""
+ун% өс:ун% өс NUM ; ! ""
+ун% дүрт:ун% дүрт NUM ; ! ""
+ун% биш:ун% биш NUM ; ! ""
+ун% алты:ун% алты NUM ; ! ""
+ун% ете:ун% ете NUM ; ! ""
+ун% һигеҙ:ун% һигеҙ NUM ; ! ""
+ун% туғыҙ:ун% туғыҙ NUM ; ! ""
 
-егерме:егерме NUMLEX ; ! ""
-утыҙ:утыҙ NUMLEX ; ! ""
-ҡырҡ:ҡырҡ NUMLEX ; ! ""
-илле:илле NUMLEX ; ! ""
-алтмыш:алтмыш NUMLEX ; ! ""
-етмеш:етмеш NUMLEX ; ! ""
-һикһән:һикһән NUMLEX ; ! ""
-туҡһан:туҡһан NUMLEX ; ! ""
-йөҙ:йөҙ NUMLEX ; ! ""
+егерме:егерме NUM ; ! ""
+утыҙ:утыҙ NUM ; ! ""
+ҡырҡ:ҡырҡ NUM ; ! ""
+илле:илле NUM ; ! ""
+алтмыш:алтмыш NUM ; ! ""
+етмеш:етмеш NUM ; ! ""
+һикһән:һикһән NUM ; ! ""
+туҡһан:туҡһан NUM ; ! ""
+йөҙ:йөҙ NUM ; ! ""
 
-мең:мең NUMLEX ; ! ""
-төмән:төмән NUMLEX ; ! "archaic for 10 000"
-миллион:миллион NUMLEX ; ! ""
-миллиард:миллиард NUMLEX ; ! ""
-триллион:триллион NUMLEX ; ! "trillion"
-триллиард:триллиард NUMLEX ; ! "trilliard"
+мең:мең NUM ; ! ""
+төмән:төмән NUM ; ! "archaic for 10 000"
+миллион:миллион NUM ; ! ""
+миллиард:миллиард NUM ; ! ""
+триллион:триллион NUM ; ! "trillion"
+триллиард:триллиард NUM ; ! "trilliard"
 
+бер:берәү NUM-COLL ;
+ике:икәү NUM-COLL ;
+өс:өсәү NUM-COLL ;
+дүрт:дүртәү NUM-COLL ;
+биш:бишәү NUM-COLL ;
+алты:алтау NUM-COLL ;
+ете:етәү NUM-COLL ;
+ун:унау NUM-COLL ; ! ""
+
+нисә:нисә NUM-ITG ;
+нисә:нисәү NUM-ITG-COLL ;
+
+<(M | D | C | L | X | V | I)+> NUM-ROMAN ; ! ""
 
 !=============!
  LEXICON Nouns
@@ -53791,12 +54265,15 @@ orgy:orgy N1 ; ! ""
 !===============!
 
 
-нисек:нисек ADVITGLEX ; ! ""
-ни% өсөн:ни% өсөн ADVITGLEX ; ! "why,what for" Use/MT
-ҡайҙа:ҡайҙа ADVITGLEX ; ! ""
-ҡайҙан:ҡайҙан ADVITGLEX ; ! ""
-ҡасан:ҡасан ADVITGLEX ; ! ""
-ҡая:ҡая ADVITGLEX ; ! ""
+! "Interrogative adverbs", "pronoun-adverbs"
+! ==========================================
+
+нисек:нисек ADV-ITG ; ! ""
+ни% өсөн:ни% өсөн ADV-ITG ; ! "why,what for" Use/MT
+ҡайҙа:ҡайҙа ADV-ITG ; ! ""
+ҡайҙан:ҡайҙан ADV-ITG ; ! ""
+ҡасан:ҡасан ADV-ITG ; ! ""
+ҡая:ҡая ADV-ITG ; ! ""
 
 айырыуса:айырыуса ADV ; ! ""
 аҡрынлап:аҡрынлап ADV ; ! ""
@@ -56837,14 +57314,212 @@ orgy:orgy N1 ; ! ""
 !=====================!
 
 
+абау:абау INTERJ ; ! ""
+ай% Аллам:ай% Аллам INTERJ ; ! ""
+ай%-вай:ай%-вай INTERJ ; ! ""
+алло:алло INTERJ ; ! ""
+амин:амин INTERJ ; ! ""
+аңлашылды:аңлашылды INTERJ ; ! ""
+афарин:афарин INTERJ ; ! ""
+ах:ах INTERJ ; ! ""
+аһ:аһ INTERJ ; ! ""
+ах%-вах:ах%-вах INTERJ ; ! ""
+аһ%-ваһ:аһ%-ваһ INTERJ ; ! ""
+ах%-ух:ах%-ух INTERJ ; ! ""
+бәй:бәй INTERJ ; ! ""
+бәлли%-бәү:бәлли%-бәү INTERJ ; ! ""
+бәрәкалла:бәрәкалла INTERJ ; ! ""
+бәтәс:бәтәс INTERJ ; ! "" ! FIXME check
+биғәйбә:биғәйбә INTERJ ; ! ""
+бисмилла:бисмилла INTERJ ; ! ""
+булды:булды INTERJ ; ! ""
+валлаһ:валлаһ INTERJ ; ! ""
+валлаһи:валлаһи INTERJ ; ! ""
+вау:вау INTERJ ; ! ""
+вәссәләм:вәссәләм INTERJ ; ! ""
+тимәк:тимәк INTERJ ; ! ""
+әйҙәгеҙ:әйҙәгеҙ INTERJ ; ! ""
+әйҙәле:әйҙәле INTERJ ; ! ""
+әйҙүк:әйҙүк INTERJ ; ! ""
+әйе:әйе INTERJ ; ! ""
+әй:әй INTERJ ; ! ""
+әлли%-бәлли:әлли%-бәлли INTERJ ; ! ""
+әтекәйем:әтекәйем INTERJ ; ! "" ! FIXME check
+әттәгенәһе:әттәгенәһе INTERJ ; ! "" ! FIXME check
+әү:әү INTERJ ; ! ""
+әһә:әһә INTERJ ; ! ""
+әх:әх INTERJ ; ! ""
+эйе% шул:эйе% шул INTERJ ; ! ""
+ий:ий INTERJ ; ! ""
+илаһым:илаһым INTERJ ; ! ""
+иншалла:иншалла INTERJ ; ! ""
+һаумы:һаумы INTERJ ; ! ""
+һаумыһығыҙ:һаумыһығыҙ INTERJ ; ! ""
+иһи:иһи INTERJ ; ! ""
+их:их INTERJ ; ! ""
+иһи%-һи:иһи%-һи INTERJ ; ! ""
+кит% унан:кит% унан INTERJ ; ! "" ! FIXME check
+көш:көш INTERJ ; ! ""
+көш%-көш:көш%-көш INTERJ ; ! ""
+кыхым:кыхым INTERJ ; ! "" ! FIXME check
+кыһым:кыһым INTERJ ; ! "" ! FIXME check
+машалла:машалла INTERJ ; ! ""
+мәгеҙ:мәгеҙ INTERJ ; ! ""
+мә:мә INTERJ ; ! ""
+мәрхәбә:мәрхәбә INTERJ ; ! ""
+бына:бына INTERJ ; ! ""
+нихәл:нихәл INTERJ ; ! ""
+ну:ну INTERJ ; ! ""
+ой:ой INTERJ ; ! "" ! FIXME check
+ой%-һой:ой%-һой INTERJ ; ! "" ! FIXME check
+оһо:оһо INTERJ ; ! "" ! FIXME check
+ох:ох INTERJ ; ! "" ! FIXME check
+брес:брес INTERJ ; ! ""
+бес%-бес:бес%-бес INTERJ ; ! ""
+рәхим% итегеҙ:рәхим% итегеҙ INTERJ ; ! ""
+рәхим% ит:рәхим% ит INTERJ ; ! ""
+тсс:тсс INTERJ ; ! ""
+уф:уф INTERJ ; ! ""
+ух:ух INTERJ ; ! ""
+фи:фи INTERJ ; ! ""
+фу:фу INTERJ ; ! ""
+хе%-хе:хе%-хе INTERJ ; ! ""
+суҡынғыры:суҡынғыры INTERJ ; ! "" ! FIXME check
+сеү:сеү INTERJ ; ! ""
+сеүегеҙ:сеүегеҙ INTERJ ; ! ""
+сеү%-сеү:сеү%-сеү INTERJ ; ! ""
+эһем:эһем INTERJ ; ! ""
+юҡ:юҡ INTERJ ; ! ""
+йә:йә INTERJ ; ! ""
+йәгеҙ:йәгеҙ INTERJ ; ! ""
+әле:әле INTERJ ; ! ""
+йәме:йәме INTERJ ; ! ""
+я% рабби:я% рабби INTERJ ; ! ""
+ярар:ярар INTERJ ; ! ""
+ярай:ярай INTERJ ; ! ""
+
 ! Вводные слова
 ! =============
 
-мәҫәлән:мәҫәлән INTERJ ; ! "e.g."
+уның% ҡарауы:уның% ҡарауы INTERJ ; ! ""
+ахыры:ахыры INTERJ ; ! ""
+ахырыһы:ахырыһы INTERJ ; ! ""
+әйтәйек:әйтәйек INTERJ ; ! ""
+бәлкем:бәлкем INTERJ ; ! ""
+берүк:берүк INTERJ ; ! ""
+буғай:буғай INTERJ ; ! ""
+зинһар:зинһар INTERJ ; ! ""
+зинһар% өсөн:зинһар% өсөн INTERJ ; ! ""
+имеш:имеш INTERJ ; ! ""
+имештер:имештер INTERJ ; ! ""
+исмаһа:исмаһа INTERJ ; ! ""
+исмаһам:исмаһам INTERJ ; ! ""
+моғайын:моғайын INTERJ ; ! ""
+мәҫәлән:мәҫәлән INTERJ ; ! ""
+ниһайәт:ниһайәт INTERJ ; ! ""
+һүҙ% араһында:һүҙ% араһында INTERJ ; ! ""
+ихтимал:ихтимал INTERJ ; ! "" ! FIXME check
+шәт:шәт INTERJ ; ! ""
+һәр% хәлдә:һәр% хәлдә INTERJ ; ! ""
+йәнәһе:йәнәһе INTERJ ; ! ""
 
-әйе:әйе INTERJ ; ! ""
-юҡ:юҡ INTERJ ; ! ""
 
+!==================!
+ LEXICON Ideophones
+!==================!
+
+ау%-ау:ау%-ау IDEO ; ! "" ! FIXME check
+ба%-бах:ба%-бах IDEO ; ! "" ! FIXME check
+бак%-бак:бак%-бак IDEO ; ! "" ! FIXME check
+бутыр%-бутыр:бутыр%-бутыр IDEO ; ! "" ! FIXME check
+барк:барк IDEO ; ! "" ! FIXME check
+бах:бах IDEO ; ! "" ! FIXME check
+би%-биип:би%-биип IDEO ; ! "" ! FIXME check
+бух:бух IDEO ; ! "" ! FIXME check
+бығыр%-боғор:бығыр%-боғор IDEO ; ! "" ! FIXME check
+бығыр%-бығыр:бығыр%-бығыр IDEO ; ! "" ! FIXME check
+быҙ:быҙ IDEO ; ! "" ! FIXME check
+баҡыр%-быҡыр:баҡыр%-быҡыр IDEO ; ! "" ! FIXME check
+быҡырт:быҡырт IDEO ; ! "" ! FIXME check
+былт%-былт:былт%-былт IDEO ; ! "" ! FIXME check
+былыҡ%-былыҡ:былыҡ%-былыҡ IDEO ; ! "" ! FIXME check
+быр%-быр:быр%-быр IDEO ; ! "" ! FIXME check
+быжыр%-быжыр:быжыр%-быжыр IDEO ; ! "" ! FIXME check
+бүлк:бүлк IDEO ; ! "" ! FIXME check
+бә:бә IDEO ; ! "" ! FIXME check
+выж%-выж:выж%-выж IDEO ; ! "" ! FIXME check
+выжт:выжт IDEO ; ! "" ! FIXME check
+выр%-выр:выр%-выр IDEO ; ! "" ! FIXME check
+ға%-ға:ға%-ға IDEO ; ! "" ! FIXME check
+ғалдыр%-ғолдор:ғалдыр%-ғолдор IDEO ; ! "" ! FIXME check
+ғолдор:ғолдор IDEO ; ! "" ! FIXME check
+ғолт%-ғолт:ғолт%-ғолт IDEO ; ! "" ! FIXME check
+гор%-гор:гор%-гор IDEO ; ! "" ! FIXME check
+гу%-у:гу%-у IDEO ; ! "" ! FIXME check
+ғығы:ғығы IDEO ; ! "" ! FIXME check
+ғыж%-ғыж:ғыж%-ғыж IDEO ; ! "" ! FIXME check
+ғыж:ғыж IDEO ; ! "" ! FIXME check
+ғыҡ:ғыҡ IDEO ; ! "" ! FIXME check
+ғолдор%-ғолдор:ғолдор%-ғолдор IDEO ; ! "" ! FIXME check
+ғылдыр:ғылдыр IDEO ; ! "" ! FIXME check
+ғыр%-ғыр:ғыр%-ғыр IDEO ; ! "" ! FIXME check
+ғыр:ғыр IDEO ; ! "" ! FIXME check
+ғырыл%-ғырыл:ғырыл%-ғырыл IDEO ; ! "" ! FIXME check
+ғырыл:ғырыл IDEO ; ! "" ! FIXME check
+гү%-гү:гү%-гү IDEO ; ! "" ! FIXME check
+гү:гү IDEO ; ! "" ! FIXME check
+гүп%-гүп:гүп%-гүп IDEO ; ! "" ! FIXME check
+гүп:гүп IDEO ; ! "" ! FIXME check
+гөбөр%-гөбөр:гөбөр%-гөбөр IDEO ; ! "" ! FIXME check
+гөберт:гөберт IDEO ; ! "" ! FIXME check
+геү:геү IDEO ; ! "" ! FIXME check
+гөжт:гөжт IDEO ; ! "" ! FIXME check
+гөлдөр%-гөлдөр:гөлдөр%-гөлдөр IDEO ; ! "" ! FIXME check
+гөлдәр:гөлдәр IDEO ; ! "" ! FIXME check
+йылт:йылт IDEO ; ! "" ! FIXME check
+гөмбөрт:гөмбөрт IDEO ; ! "" ! FIXME check
+гөп:гөп IDEO ; ! "" ! FIXME check
+гөрҫ%-гөрҫ:гөрҫ%-гөрҫ IDEO ; ! "" ! FIXME check
+гөрҫ:гөрҫ IDEO ; ! "" ! FIXME check
+гөрст:гөрст IDEO ; ! "" ! FIXME check
+гөрт%-гөрт:гөрт%-гөрт IDEO ; ! "" ! FIXME check
+гөрт:гөрт IDEO ; ! "" ! FIXME check
+дак%-док:дак%-док IDEO ; ! "" ! FIXME check
+дак:дак IDEO ; ! "" ! FIXME check
+даң:даң IDEO ; ! "" ! FIXME check
+даңғыр%-доңғор:даңғыр%-доңғор IDEO ; ! "" ! FIXME check
+даңғыр%-доңғор:даңғыр%-доңғор IDEO ; ! "" ! FIXME check
+дер%-дер:дер%-дер IDEO ; ! "" ! FIXME check
+дер:дер IDEO ; ! "" ! FIXME check
+дерт%-дерт:дерт%-дерт IDEO ; ! "" ! FIXME check
+дерт:дерт IDEO ; ! "" ! FIXME check
+дең%-дең:дең%-дең IDEO ; ! "" ! FIXME check
+дең:дең IDEO ; ! "" ! FIXME check
+дыңғыр%-дыңғыр:дыңғыр%-дыңғыр IDEO ; ! "" ! FIXME check
+деңгер:деңгер IDEO ; ! "" ! FIXME check
+деңгерт:деңгерт IDEO ; ! "" ! FIXME check
+док%-док:док%-док IDEO ; ! "" ! FIXME check
+доң%-доң:доң%-доң IDEO ; ! "" ! FIXME check
+доң:доң IDEO ; ! "" ! FIXME check
+дуңғыр%-даңғыр:дуңғыр%-даңғыр IDEO ; ! "" ! FIXME check
+доңҡ:доңҡ IDEO ; ! "" ! FIXME check
+дабыр%-дабыр:дабыр%-дабыр IDEO ; ! "" ! FIXME check
+дык%-дыҡ:дык%-дыҡ IDEO ; ! "" ! FIXME check
+дык:дык IDEO ; ! "" ! FIXME check
+дыҡы%-дыҡы:дыҡы%-дыҡы IDEO ; ! "" ! FIXME check
+дыр%-дыр:дыр%-дыр IDEO ; ! "" ! FIXME check
+дырыҡ%-дырыҡ:дырыҡ%-дырыҡ IDEO ; ! "" ! FIXME check
+дырыҡ:дырыҡ IDEO ; ! "" ! FIXME check
+дың%-дың:дың%-дың IDEO ; ! "" ! FIXME check
+дың:дың IDEO ; ! "" ! FIXME check
+дыңғыр%-дыңғыр:дыңғыр%-дыңғыр IDEO ; ! "" ! FIXME check
+дыңғыр:дыңғыр IDEO ; ! "" ! FIXME check
+дыңғыр:дыңғыр IDEO ; ! "" ! FIXME check
+дыңҡ:дыңҡ IDEO ; ! "" ! FIXME check
+дөбөр%-дөбөр:дөбөр%-дөбөр IDEO ; ! "" ! FIXME check
+дөбөр%-шатыр:дөбөр%-шатыр IDEO ; ! "" ! FIXME check
+дөбөр:дөбөр IDEO ; ! "" ! FIXME check
+шарт:шарт IDEO ; ! "" ! FIXME check
 
 !=====================!
  LEXICON Abbreviations
@@ -56980,13 +57655,22 @@ UTC:UTC ABBR ; ! ""
 %\%<sent%>:\ # ;
 %/%<sent%>:/ # ;
 
-<(%0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+>  DIGITLEX ; ! Use/Circ
-
 <( %* | %# | © | %+ | • | %& | = )+> PUNCT ; ! Use/MT
 
 LEXICON PUNCT
 
 %<punct%>: # ;
+
+!==============!
+ LEXICON Digits ! Use/Circ
+!==============!
+
+
+%0:%0 NUM ;  ! Use/Circ
+№:№ DIGITLEX ;  ! Use/Circ
+DIGITLEX ; ! Use/Circ
+LASTDIGIT ; ! Use/Circ
+LASTDIGIT-REST ; ! Use/Circ
 
 LEXICON NP-UNK 
 
