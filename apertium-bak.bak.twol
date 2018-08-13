@@ -12,9 +12,17 @@ Alphabet
 
  %{т%}:0 %{д%}:0 %{ъ%}:0 %{ь%}:0
 
- %{е%}:ы %{ger%}:0 %{j%}:0 %{☭%}:0
+ %{е%}:ы %{ger%}:0 %{j%}:0 
 
- %{np%}:0 %>:0  ; 
+ %{np%}:0 %>:0 
+
+ !!! These are needed for the phonology of numbers, alphabetisms, and acronyms
+ !!! They trigger relevant phonology and disappear
+ %{а%}:0 %{э%}:0
+ %{й%}:0 %{л%}:0 %{н%}:0 %{з%}:0 %{с%}:0 
+ !!! And this is for Russian nouns
+ %{☭%}:0 ;
+
 
 Sets
 

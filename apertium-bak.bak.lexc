@@ -608,7 +608,7 @@ LEXICON POSSESSIVES
 %<px1sg%>:%>%{I%}м CASES-POSSESSIVES-PX1-2-SG ;
 %<px2sg%>:%>%{I%}ң CASES-POSSESSIVES-PX1-2-SG ;
 !%<px3sp%>:%>%{h%}%{I%}%{n%} CASES-POSSESSIVES-PX3-SG ;
-%<px3sp%>:%>%{h%}%{I%} CASES-POSSESSIVES-PX3-SG ;
+%<px3sp%>:%>%{h%}%{I%}%{n%} CASES-POSSESSIVES-PX3-SG ;
 %<px1pl%>:%>%{I%}б%{I%}ҙ CASES-ETC ;
 %<px2pl%>:%>%{I%}%{G%}%{I%}ҙ CASES-ETC ;
 
@@ -24983,6 +24983,9 @@ InterrogativePronouns ;
 Ячей:Ячей NP-TOP ; ! ""
 Ячменка:Ячменка NP-TOP ; ! ""
 Яшкуль:Яшкуль NP-TOP ; ! ""
+Малая:Малая NP-TOP ; ! ""
+Еган:Еган NP-TOP ; ! ""
+Вага:Вага NP-TOP ; ! ""
 
 ! Anthroponyms
 ! ============
