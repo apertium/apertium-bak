@@ -584,10 +584,17 @@ GENERAL-POSSESSIVE-ETC ;
 
 LEXICON CASES-POSSESSIVES
 
-GENERAL-POSSESSIVE-ETC ;
 %<nom%>: CLITICS-INCL-COP ;
 %<gen%>:%>%{N%}%{I%}ң CLITICS-NO-COP ;
 %<abl%>:%>%{N%}%{A%}н CLITICS-INCL-COP ;
+
+%<gen%>%<subst%>:%>%{L%}%{I%}%{K%}%{I%}%{n%} CASES ;
+%<gen%>%<subst%>%<pl%>:%>%{L%}%{I%}%{K%}%{I%}%>%{L%}%{A%}р CASES ;
+%<sim%>:%>%{L%}%{A%}й CLITICS-INCL-COP ;
+%<sim%>:%>%{L%}%{A%}й POSSESSIVES ;
+%<sim%>:%>%{L%}%{A%}й CASES ;
+%<sim%>:%>%{L%}%{A%}й PLURAL ;
+%<equ%>:%>с%{A%} CLITICS-INCL-COP ;
 
 LEXICON CASES-POSSESSIVES-PX1-2-SG
 
@@ -595,6 +602,7 @@ CASES-POSSESSIVES ;
 %<dat%>:%>%{A%} CLITICS-NO-COP ;
 %<acc%>:%>%{N%}%{I%} CLITICS-NO-COP ;
 %<loc%>:%>%{L%}%{A%} CLITICS-INCL-COP ;
+%<loc%>:%>%{L%}%{A%}%{G%}%{I%} ATTR-SUBST ;
 
 LEXICON CASES-POSSESSIVES-PX3-SG
 
@@ -602,13 +610,14 @@ CASES-POSSESSIVES ;
 %<dat%>:%>н%{A%} CLITICS-NO-COP ;
 %<acc%>:%>%{N%} CLITICS-NO-COP ;
 %<loc%>:%>нд%{A%} CLITICS-INCL-COP ;
+%<loc%>:%>нд%{A%}%{G%}%{I%} ATTR-SUBST ;
 
 LEXICON POSSESSIVES
 
 %<px1sg%>:%>%{I%}м CASES-POSSESSIVES-PX1-2-SG ;
 %<px2sg%>:%>%{I%}ң CASES-POSSESSIVES-PX1-2-SG ;
 !%<px3sp%>:%>%{h%}%{I%}%{n%} CASES-POSSESSIVES-PX3-SG ;
-%<px3sp%>:%>%{h%}%{I%}%{n%} CASES-POSSESSIVES-PX3-SG ;
+%<px3sp%>:%>%{h%}%{I%} CASES-POSSESSIVES-PX3-SG ;
 %<px1pl%>:%>%{I%}б%{I%}ҙ CASES-ETC ;
 %<px2pl%>:%>%{I%}%{G%}%{I%}ҙ CASES-ETC ;
 
@@ -3451,7 +3460,6 @@ InterrogativePronouns ;
 хаҡиҡәт:хаҡиҡәт N1 ; ! ""
 халыҡ:хал%{е%}ҡ N1 ; ! ""
 халыҡ:халыҡ N1 ; ! "" ! Dir/LR ! Err/Orth
-халыҡ:халыҡ N1 ; ! ""
 халыҡ% төркөмө:халыҡ% төркөмө N1 ; ! ""
 хан:хан N1 ; ! ""
 ханлыҡ:ханлыҡ N1 ; ! ""
@@ -55928,7 +55936,7 @@ orgy:orgy N1 ; ! ""
 күтәр:күтәр V-TV ; ! ""
 күсен:күсен V-IV ; ! ""
 күсеп% йөр:күсеп% йөр V-IV ; ! ""
-өйөр%-өйөр:өйөр%-өйөр V-IV ; ! ""
+күс:күс V-IV ; ! ""
 ҡыйынлаша:ҡыйынлаша V-IV ; ! ""
 ҡыҙар:ҡыҙар V-IV ; ! ""
 ҡыҙған:ҡыҙған V-TV ; ! ""
