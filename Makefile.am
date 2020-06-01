@@ -2,8 +2,6 @@
 ## Makefile for apertium-bak
 ###############################################################################
 
-RELEASE=0.1
-VERSION=0.1.0
 LANG1=bak
 BASENAME=apertium-$(LANG1)
 
@@ -135,7 +133,7 @@ if HAVE_HFSTOSPELL
 EXTRA_TARGETS += $(LANG1).zhfst
 endif # HAVE_HFSTOSPELL
 
-apertium_bak_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS)
+apertium_bak_DATA=$(TARGETS_COMMON) $(EXTRA_TARGETS) $(LANG1).prob
 
 pkgconfigdir = $(prefix)/share/pkgconfig
 pkgconfig_DATA = $(BASENAME).pc
@@ -143,7 +141,6 @@ pkgconfig_DATA = $(BASENAME).pc
 noinst_DATA=modes/$(LANG1)-morph.mode
 
 install-data-local: install-modes
-	test -d $(DESTDIR)$(apertium_bak_srcdir) || mkdir -p $(DESTDIR)$(apertium_bak_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).lexc $(DESTDIR)$(apertium_bak_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).twol $(DESTDIR)$(apertium_bak_srcdir)
 	$(INSTALL_DATA) $(BASENAME).$(LANG1).rlx $(DESTDIR)$(apertium_bak_srcdir)
