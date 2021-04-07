@@ -1793,7 +1793,7 @@ InterrogativePronouns ;
 нисә:нисә NUM-ITG ;
 нисә:нисәү NUM-ITG-COLL ;
 
-<(M | D | C | L | X | V | I)+> NUM-ROMAN ; ! ""
+<[ M | D | C | L | X | V | I ]+> NUM-ROMAN ; ! ""
 
 !=============!
  LEXICON Nouns
@@ -58175,7 +58175,7 @@ UTC:UTC ABBR ; ! ""
 %\%<sent%>:\ # ;
 %/%<sent%>:/ # ;
 
-<( %* | %# | © | %+ | • | %& | = )+> PUNCT ; ! Use/MT
+<[ %* | %# | © | %+ | • | %& | = ]+> PUNCT ; ! Use/MT
 
 LEXICON PUNCT
 
@@ -58198,7 +58198,7 @@ LEXICON NP-UNK
 
 LEXICON GUESS-QUEUE
 
-<(a | b | c | d | e | f | g | h | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z)+> NP-UNK ;
+<[ a | b | c | d | e | f | g | h | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z ]+> NP-UNK ;
 
 LEXICON Guesser
 
