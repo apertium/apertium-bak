@@ -22,3 +22,15 @@ _	ил<n><pl><nom>	илдәр
 _	көн<n><pl><nom>	көндәр
 _	ер<n><pl><nom>	ерҙәр
 _	бала<n><pl><nom>	балалар
+
+! Word-final в is devoiced and takes the voiceless allomorphs, in the plural
+! and in every case. Surface forms below are attested in a 145M-character
+! Bashkir corpus; the forms generated before the fix (коллективҙа, архивҙан …)
+! do not occur in it at all.
+_	коллектив<n><pl><nom>	коллективтар
+_	коллектив<n><loc>	коллективта
+_	архив<n><pl><nom>	архивтар
+_	архив<n><loc>	архивта
+_	архив<n><abl>	архивтан
+_	состав<n><loc>	составта
+_	мотив<n><gen>	мотивтың

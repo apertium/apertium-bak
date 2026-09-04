@@ -48,11 +48,11 @@ FrontVow         =  Ә Е Э И Ө Ү
 Cns              =  Б В Г Ғ Д Ҙ Ж З Й К Ҡ Л М Н Ң П Р С Ҫ Т Ф Х Һ Ц Ч Ш Щ Ъ Ь 
                     б в г ғ д ҙ ж з й к ҡ л м н ң п р с ҫ т ф х һ ц ч ш щ ъ ь ; 
 
-CnsVoiceless     =  П Т К Ҡ Ф Ҫ С Ш Щ Х Һ Б Г Ғ Д Ц Ч
-                    п т к ҡ ф ҫ с ш щ х һ б г ғ д ц ч ; 
+CnsVoiceless     =  П Т К Ҡ Ф Ҫ С Ш Щ Х Һ Б Г Ғ Д Ц Ч В
+                    п т к ҡ ф ҫ с ш щ х һ б г ғ д ц ч в ; 
 
-CnsVcdConts      =  Й В Р Ҙ      ! Voiced Continuants
-                    й в р ҙ ;
+CnsVcdConts      =  Й Р Ҙ      ! Voiced Continuants
+                    й р ҙ ;
 
 CnsVcdNonConts   =  Л М Н Ң Ж З    ! Voiced Non-Continuants
                     л м н ң ж з ;
